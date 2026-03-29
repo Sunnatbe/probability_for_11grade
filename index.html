@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ehtimollik Nazariyasi — 11-sinf</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg2: #111827;
+  --bg3: #1a2235;
+  --card: #141c2e;
+  --border: #1e2d47;
+  --accent: #38bdf8;
+  --accent2: #818cf8;
+  --accent3: #34d399;
+  --accent4: #f472b6;
+  --accent5: #fb923c;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --gold: #fbbf24;
+  --red: #f87171;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(56,189,248,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 80% 80%, rgba(129,140,248,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(52,211,153,0.05) 0%, transparent 60%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 8s ease-in-out infinite;
+}
+.orb1 { width: 300px; height: 300px; background: rgba(56,189,248,0.06); top: 10%; left: 5%; animation-delay: 0s; }
+.orb2 { width: 200px; height: 200px; background: rgba(129,140,248,0.08); top: 60%; right: 10%; animation-delay: -3s; }
+.orb3 { width: 150px; height: 150px; background: rgba(52,211,153,0.06); bottom: 20%; left: 30%; animation-delay: -5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+
+.hero h1 span { 
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 600px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+.stat { text-align: center; }
+.stat-num { font-size: 2rem; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+.stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  animation: fadeUp 0.6s ease 0.5s both;
+}
+.scroll-dot { width: 4px; height: 20px; background: linear-gradient(var(--accent), transparent); border-radius: 2px; animation: scrollPulse 2s ease infinite; }
+@keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,14,26,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-btn:hover { color: var(--text); }
+.nav-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* SECTIONS */
+.section {
+  display: none;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeUp 0.4s ease both;
+}
+.section.active { display: block; }
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--border);
+  line-height: 1;
+  min-width: 60px;
+}
+.section-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; line-height: 1.2; }
+.section-meta { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover::before { opacity: 1; }
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+/* FORMULA */
+.formula {
+  background: rgba(56,189,248,0.06);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--accent);
+  margin: 1rem 0;
+}
+
+.formula-big {
+  font-size: 1.8rem;
+}
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 2px;
+}
+.tag-blue { background: rgba(56,189,248,0.1); color: var(--accent); }
+.tag-purple { background: rgba(129,140,248,0.1); color: var(--accent2); }
+.tag-green { background: rgba(52,211,153,0.1); color: var(--accent3); }
+.tag-red { background: rgba(248,113,113,0.1); color: var(--red); }
+.tag-gold { background: rgba(251,191,36,0.1); color: var(--gold); }
+
+/* BUTTON */
+.btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(56,189,248,0.3); }
+.btn:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ===== SECTION 1: TASODIFIY HODISALAR ===== */
+.event-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media(max-width:700px){ .event-types { grid-template-columns: 1fr; } }
+
+.event-card {
+  border-radius: 14px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.event-card.reliable {
+  background: linear-gradient(135deg, rgba(52,211,153,0.1), rgba(52,211,153,0.05));
+  border: 1px solid rgba(52,211,153,0.25);
+}
+.event-card.impossible {
+  background: linear-gradient(135deg, rgba(248,113,113,0.1), rgba(248,113,113,0.05));
+  border: 1px solid rgba(248,113,113,0.25);
+}
+.event-card.random {
+  background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(56,189,248,0.05));
+  border: 1px solid rgba(56,189,248,0.25);
+}
+.event-card .ev-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.event-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.event-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.event-card .ev-p { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 600; margin-top: 0.8rem; }
+
+/* COIN FLIP */
+.coin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.coin {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 900;
+  position: relative;
+  transition: transform 0.1s;
+  user-select: none;
+}
+.coin-heads {
+  background: radial-gradient(circle at 35% 35%, #fde68a, var(--gold), #d97706);
+  border: 3px solid rgba(251,191,36,0.4);
+  box-shadow: 0 0 30px rgba(251,191,36,0.3), inset 0 2px 4px rgba(255,255,255,0.2);
+  color: #92400e;
+}
+.coin-tails {
+  background: radial-gradient(circle at 35% 35%, #94a3b8, #64748b, #334155);
+  border: 3px solid rgba(148,163,184,0.4);
+  box-shadow: 0 0 30px rgba(100,116,139,0.3), inset 0 2px 4px rgba(255,255,255,0.1);
+  color: #cbd5e1;
+}
+
+.coin-flipping {
+  animation: coinFlip 0.6s ease;
+}
+@keyframes coinFlip {
+  0% { transform: rotateY(0); }
+  50% { transform: rotateY(90deg) scale(0.8); }
+  100% { transform: rotateY(0); }
+}
+
+.coin-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+.coin-stat {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+.coin-stat .cs-num { font-size: 1.8rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+.coin-stat .cs-label { font-size: 0.75rem; color: var(--muted); }
+.cs-heads { color: var(--gold); }
+.cs-tails { color: var(--muted); }
+
+.freq-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.freq-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.coin-history {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-height: 80px;
+  overflow-y: auto;
+  width: 100%;
+}
+.coin-chip {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.chip-h { background: rgba(251,191,36,0.2); color: var(--gold); border: 1px solid rgba(251,191,36,0.3); }
+.chip-t { background: rgba(100,116,139,0.2); color: var(--muted); border: 1px solid rgba(100,116,139,0.3); }
+
+/* PROBABILITY SCALE */
+.prob-scale {
+  position: relative;
+  margin: 1.5rem 0;
+}
+.prob-track {
+  height: 12px;
+  background: linear-gradient(90deg, #f87171, #fb923c, #fbbf24, #34d399, #38bdf8);
+  border-radius: 6px;
+  position: relative;
+}
+.prob-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.prob-markers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.prob-marker {
+  flex: 1;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+.prob-marker .pm-num { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600; }
+
+/* DICE */
+.dice-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.dice-display {
+  display: flex;
+  gap: 1rem;
+}
+.dice {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #1e3a5f, #0f2a4a);
+  border: 2px solid rgba(56,189,248,0.3);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  transition: transform 0.15s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.05);
+}
+.dice-rolling { animation: diceRoll 0.5s ease; }
+@keyframes diceRoll {
+  0% { transform: rotate(0) scale(1); }
+  25% { transform: rotate(15deg) scale(0.9); }
+  75% { transform: rotate(-10deg) scale(1.1); }
+  100% { transform: rotate(0) scale(1); }
+}
+
+.dice-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 100px;
+  width: 100%;
+}
+.dice-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.dice-bar {
+  width: 100%;
+  background: linear-gradient(0deg, var(--accent), var(--accent2));
+  border-radius: 4px 4px 0 0;
+  min-height: 2px;
+  transition: height 0.4s ease;
+  opacity: 0.8;
+}
+.dice-bar-label { font-size: 0.7rem; color: var(--muted); }
+.dice-bar-count { font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
+
+/* ===== SECTION 2: VENN ===== */
+.venn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.venn-svg-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.venn-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.venn-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.venn-btn:hover, .venn-btn.active {
+  background: rgba(56,189,248,0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.venn-info {
+  background: rgba(56,189,248,0.06);
+  border: 1px solid rgba(56,189,248,0.15);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+.venn-info .vi-name { font-size: 1rem; font-weight: 600; color: var(--accent); }
+.venn-info .vi-formula { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; margin: 0.5rem 0; }
+.venn-info .vi-desc { font-size: 0.85rem; color: var(--muted); }
+
+/* OPERATIONS TABLE */
+.ops-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.ops-table th {
+  background: rgba(56,189,248,0.08);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.ops-table td {
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+}
+.ops-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+.ops-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: var(--accent); }
+
+/* ===== SECTION 3: ADDITION & MULTIPLICATION ===== */
+.rule-card {
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.rule-card.add {
+  background: linear-gradient(135deg, rgba(52,211,153,0.06), rgba(56,189,248,0.04));
+  border: 1px solid rgba(52,211,153,0.2);
+}
+.rule-card.mul {
+  background: linear-gradient(135deg, rgba(129,140,248,0.06), rgba(244,114,182,0.04));
+  border: 1px solid rgba(129,140,248,0.2);
+}
+.rule-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
+
+/* PROBABILITY CALCULATOR */
+.prob-calc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media(max-width:600px){ .prob-calc { grid-template-columns: 1fr; } }
+
+.calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.calc-label { font-size: 0.8rem; color: var(--muted); }
+.calc-input {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+.calc-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.1);
+}
+.calc-result {
+  background: rgba(56,189,248,0.06);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.calc-result .cr-label { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+.calc-result .cr-value { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--accent); }
+
+/* MARBLE DEMO */
+.marble-bag {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  min-height: 50px;
+  align-items: center;
+}
+.marble {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.15);
+}
+.marble:hover { transform: scale(1.2); }
+.marble.red { background: radial-gradient(circle at 35% 35%, #fca5a5, #ef4444, #b91c1c); }
+.marble.blue { background: radial-gradient(circle at 35% 35%, #93c5fd, #3b82f6, #1d4ed8); }
+.marble.green { background: radial-gradient(circle at 35% 35%, #86efac, #22c55e, #15803d); }
+.marble.gold { background: radial-gradient(circle at 35% 35%, #fde68a, #f59e0b, #b45309); }
+.marble.selected { opacity: 0.4; transform: scale(0.9); }
+
+/* ===== SECTION 4: DISTRIBUTIONS ===== */
+.dist-canvas-wrap {
+  width: 100%;
+  position: relative;
+}
+canvas.dist-canvas {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  background: var(--bg3);
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.slider-label { display: flex; justify-content: space-between; font-size: 0.85rem; }
+.slider-label span:first-child { color: var(--muted); }
+.slider-label span:last-child { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: 600; }
+input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(56,189,248,0.4);
+}
+
+/* BINOMIAL GRID */
+.binom-grid {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 200px;
+  width: 100%;
+  margin-top: 1rem;
+}
+.binom-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.binom-bar {
+  width: 100%;
+  background: linear-gradient(0deg, var(--accent2), var(--accent));
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+  transition: height 0.4s ease;
+  opacity: 0.85;
+}
+.binom-label { font-size: 0.65rem; color: var(--muted); }
+
+/* INFO BOXES */
+.info-box {
+  background: rgba(251,191,36,0.06);
+  border: 1px solid rgba(251,191,36,0.2);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.info-icon { font-size: 1.2rem; }
+.info-text { font-size: 0.85rem; line-height: 1.6; color: var(--muted); }
+
+/* STEP INDICATOR */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.step-num {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-body { flex: 1; padding-top: 4px; }
+.step-title { font-weight: 600; margin-bottom: 0.3rem; }
+.step-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+/* NORMAL CURVE */
+#normalCanvas {
+  width: 100%;
+  height: 250px;
+  background: var(--bg3);
+  border-radius: 12px;
+}
+
+/* EXAMPLE PROBLEMS */
+.problem-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+.problem-card .p-q {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.problem-card .p-a { display: none; font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+.problem-card .p-a.show { display: block; animation: fadeUp 0.3s ease; }
+.problem-card .p-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.problem-card .p-toggle:hover { background: rgba(56,189,248,0.1); }
+
+/* HIGHLIGHT */
+.hl { color: var(--accent); font-weight: 600; }
+.hl2 { color: var(--accent2); font-weight: 600; }
+.hl3 { color: var(--accent3); font-weight: 600; }
+.hl4 { color: var(--gold); font-weight: 600; }
+.hl5 { color: var(--red); font-weight: 600; }
+
+p, li { line-height: 1.7; margin-bottom: 0.5rem; }
+ul { padding-left: 1.5rem; }
+strong { color: var(--text); }
+
+/* TABS inside section */
+.sub-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.sub-tab {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sub-tab.active {
+  background: rgba(56,189,248,0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.sub-panel { display: none; }
+.sub-panel.active { display: block; animation: fadeUp 0.3s ease; }
+
+/* TREE DIAGRAM */
+.tree {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 2;
+  padding: 1rem;
+}
+.tree .t-root { color: var(--text); font-weight: 600; }
+.tree .t-branch { color: var(--accent); }
+.tree .t-leaf { color: var(--accent3); }
+
+/* RESULT BOX */
+.result-box {
+  background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(56,189,248,0.06));
+  border: 1px solid rgba(52,211,153,0.25);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.result-icon { font-size: 1.5rem; }
+.result-text .rt-label { font-size: 0.75rem; color: var(--muted); }
+.result-text .rt-val { font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; font-weight: 700; color: var(--accent3); }
+
+/* BIG FORMULA */
+.big-formula-box {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(129,140,248,0.08), rgba(244,114,182,0.05));
+  border: 1px solid rgba(129,140,248,0.2);
+  border-radius: 16px;
+  margin: 1.5rem 0;
+}
+.big-formula-box .bf-name { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.big-formula-box .bf-formula { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; color: var(--accent2); font-weight: 600; }
+.big-formula-box .bf-sub { font-size: 0.85rem; color: var(--muted); margin-top: 1rem; }
+
+/* LEGEND */
+.legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* Responsive */
+@media(max-width:600px) {
+  .section { padding: 2rem 1rem; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-stats { gap: 1rem; }
+  .section-num { font-size: 2rem; }
+  .section-title { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="floating-orb orb1"></div>
+  <div class="floating-orb orb2"></div>
+  <div class="floating-orb orb3"></div>
+  
+  <div class="hero-badge">📐 11-sinf · Matematika</div>
+  <h1>Ehtimollik<br><span>Nazariyasi</span></h1>
+  <p class="hero-sub">Tasodifiy hodisalar va ehtimollik hisoblashning interaktiv qo'llanmasi — ko'rish, his qilish va tushunish orqali o'rganish</p>
+  
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Mavzu</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Dars</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Misol</div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <div class="scroll-dot"></div>
+    Pastga aylantiring
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('s1', this)">1. Tasodifiy hodisalar</button>
+  <button class="nav-btn" onclick="showSection('s2', this)">2. Eyler-Venn diagrammalar</button>
+  <button class="nav-btn" onclick="showSection('s3', this)">3. Qo'shish va ko'paytirish</button>
+  <button class="nav-btn" onclick="showSection('s4', this)">4. Binomial va normal taqsimot</button>
+</nav>
+
+<!-- ============ SECTION 1 ============ -->
+<div id="s1" class="section active">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div>
+      <div class="section-title">Tasodifiy hodisalar va<br>ularning ehtimolligi</div>
+      <div class="section-meta">2 ta 45 daqiqalik dars &nbsp;·&nbsp; <span class="tag tag-blue">Nazariya</span> <span class="tag tag-green">Interaktiv</span></div>
+    </div>
+  </div>
+
+  <!-- HODISA TURLARI -->
+  <div class="card">
+    <div class="card-title">Hodisalar turlari</div>
+    <div class="event-types">
+      <div class="event-card reliable">
+        <div class="ev-icon">✅</div>
+        <h3 style="color:#34d399">Ishonchli hodisa</h3>
+        <p>Har bir tajribada albatta ro'y beradigan hodisa</p>
+        <p style="margin-top:0.5rem; font-size:0.8rem">Misol: Dicing Tashlanganda 1 dan 6 gacha son tushishi</p>
+        <div class="ev-p" style="color:#34d399">P(A) = 1</div>
+      </div>
+      <div class="event-card impossible">
+        <div class="ev-icon">❌</div>
+        <h3 style="color:#f87171">Imkonsiz hodisa</h3>
+        <p>Hech qachon ro'y bermaydigan hodisa</p>
+        <p style="margin-top:0.5rem; font-size:0.8rem">Misol: Tanga tashlanganda ikki tomondan ikkalasi ham tushishi</p>
+        <div class="ev-p" style="color:#f87171">P(A) = 0</div>
+      </div>
+      <div class="event-card random">
+        <div class="ev-icon">🎲</div>
+        <h3 style="color:#38bdf8">Tasodifiy hodisa</h3>
+        <p>Ba'zi tajribalarda ro'y berishi mumkin, ba'zilarida esa yo'q</p>
+        <p style="margin-top:0.5rem; font-size:0.8rem">Misol: Tanga tashlanganda "gerb" tushishi</p>
+        <div class="ev-p" style="color:#38bdf8">0 &lt; P(A) &lt; 1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EHTIMOLLIK SHKALASI -->
+  <div class="card">
+    <div class="card-title">Ehtimollik shkalasi</div>
+    <div class="prob-scale">
+      <div class="prob-track"></div>
+      <div class="prob-labels">
+        <span>0</span>
+        <span>0.1</span>
+        <span>0.2</span>
+        <span>0.3</span>
+        <span>0.4</span>
+        <span>0.5</span>
+        <span>0.6</span>
+        <span>0.7</span>
+        <span>0.8</span>
+        <span>0.9</span>
+        <span>1</span>
+      </div>
+    </div>
+    <div class="prob-markers">
+      <div class="prob-marker">
+        <div class="pm-num" style="color:#f87171">0</div>
+        <div style="font-size:0.7rem;color:var(--muted)">Imkonsiz</div>
+      </div>
+      <div class="prob-marker">
+        <div class="pm-num" style="color:#fb923c">0.1–0.3</div>
+        <div style="font-size:0.7rem;color:var(--muted)">Kam ehtimol</div>
+      </div>
+      <div class="prob-marker">
+        <div class="pm-num" style="color:#fbbf24">0.5</div>
+        <div style="font-size:0.7rem;color:var(--muted)">Teng ehtimol</div>
+      </div>
+      <div class="prob-marker">
+        <div class="pm-num" style="color:#86efac">0.7–0.9</div>
+        <div style="font-size:0.7rem;color:var(--muted)">Ko'p ehtimol</div>
+      </div>
+      <div class="prob-marker">
+        <div class="pm-num" style="color:#34d399">1</div>
+        <div style="font-size:0.7rem;color:var(--muted)">Ishonchli</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KLASSIK FORMULA -->
+  <div class="card">
+    <div class="card-title">Klassik ehtimollik formulasi</div>
+    <div class="grid-2">
+      <div>
+        <div class="formula formula-big">P(A) = m / n</div>
+        <ul style="margin-top:1rem">
+          <li><span class="hl">m</span> — hodisa A ga qulay natijalar soni</li>
+          <li><span class="hl">n</span> — barcha teng ehtimolly natijalar soni</li>
+          <li><span class="hl3">0 ≤ P(A) ≤ 1</span></li>
+        </ul>
+        <div class="info-box" style="margin-top:1rem">
+          <div class="info-icon">💡</div>
+          <div class="info-text">Klassik ehtimollik faqat teng ehtimolly natijalarda qo'llaniladi. Masalan: ideal tanga, ideal zar, ideal karta to'plami.</div>
+        </div>
+      </div>
+      <div>
+        <div class="problem-card">
+          <div class="p-q">
+            🎴 <strong>Misol:</strong> 10 ta kartada 1 dan 10 gacha raqamlar bor. Bir karta olinadi. Juft raqamli karta tushish ehtimolligi qanday?
+          </div>
+          <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+          <div class="p-a">
+            <strong>n</strong> = 10 (jami kartalar)<br>
+            <strong>Juft raqamlar:</strong> 2, 4, 6, 8, 10 → <strong>m = 5</strong><br>
+            <br>
+            <span class="formula">P(A) = 5/10 = 0.5</span>
+            <br>
+            Juft raqamli karta tushish ehtimolligi <span class="hl3">0.5 (50%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TANGA SIMULYATSIYA -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🪙 Tanga tashlash simulyatsiyasi</div>
+      <div class="coin-container">
+        <div class="coin coin-heads" id="coinDisplay" onclick="flipCoin()">👑</div>
+        <div style="display:flex;gap:0.75rem">
+          <button class="btn" onclick="flipCoin()">Tashlash</button>
+          <button class="btn-ghost" onclick="flipMany(10)">×10</button>
+          <button class="btn-ghost" onclick="flipMany(100)">×100</button>
+          <button class="btn-ghost" onclick="resetCoin()">Reset</button>
+        </div>
+        <div class="coin-stats">
+          <div class="coin-stat">
+            <div class="coin-stat-inner">
+              <div class="cs-num cs-heads" id="headsCount">0</div>
+              <div class="cs-label">Gerb (H)</div>
+            </div>
+            <div class="freq-bar"><div class="freq-fill" id="headsFill" style="width:50%"></div></div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem;font-family:'JetBrains Mono',monospace" id="headsProb">P = 0.000</div>
+          </div>
+          <div class="coin-stat">
+            <div class="cs-num cs-tails" id="tailsCount">0</div>
+            <div class="cs-label">Panja (T)</div>
+            <div class="freq-bar"><div class="freq-fill" id="tailsFill" style="width:50%;background:linear-gradient(90deg,var(--muted),#334155)"></div></div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem;font-family:'JetBrains Mono',monospace" id="tailsProb">P = 0.000</div>
+          </div>
+        </div>
+        <div style="width:100%;font-size:0.75rem;color:var(--muted);text-align:center" id="totalFlips">Jami: 0 ta tashlash</div>
+        <div class="coin-history" id="coinHistory"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎲 Zar tashlash simulyatsiyasi</div>
+      <div class="dice-section">
+        <div class="dice-display">
+          <div class="dice" id="diceDisplay">⚀</div>
+        </div>
+        <div style="display:flex;gap:0.75rem">
+          <button class="btn" onclick="rollDice()">Tashlash</button>
+          <button class="btn-ghost" onclick="rollMany(50)">×50</button>
+          <button class="btn-ghost" onclick="resetDice()">Reset</button>
+        </div>
+        <div style="font-size:0.85rem;color:var(--muted);text-align:center" id="diceResult">Natijani ko'rish uchun tashlang</div>
+        <div class="dice-chart" id="diceChart">
+          <div class="dice-bar-wrap"><div class="dice-bar" id="db1" style="height:20px"></div><div class="dice-bar-label">1</div><div class="dice-bar-count" id="dc1">0</div></div>
+          <div class="dice-bar-wrap"><div class="dice-bar" id="db2" style="height:20px"></div><div class="dice-bar-label">2</div><div class="dice-bar-count" id="dc2">0</div></div>
+          <div class="dice-bar-wrap"><div class="dice-bar" id="db3" style="height:20px"></div><div class="dice-bar-label">3</div><div class="dice-bar-count" id="dc3">0</div></div>
+          <div class="dice-bar-wrap"><div class="dice-bar" id="db4" style="height:20px"></div><div class="dice-bar-label">4</div><div class="dice-bar-count" id="dc4">0</div></div>
+          <div class="dice-bar-wrap"><div class="dice-bar" id="db5" style="height:20px"></div><div class="dice-bar-label">5</div><div class="dice-bar-count" id="dc5">0</div></div>
+          <div class="dice-bar-wrap"><div class="dice-bar" id="db6" style="height:20px"></div><div class="dice-bar-label">6</div><div class="dice-bar-count" id="dc6">0</div></div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--muted);text-align:center">Nazariy ehtimollik: <span style="color:var(--accent);font-family:'JetBrains Mono',monospace">P = 1/6 ≈ 0.167</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AMALIY MASALALAR -->
+  <div class="card">
+    <div class="card-title">📝 Amaliy masalalar</div>
+    <div class="problem-card">
+      <div class="p-q">🔴 Sumkada 5 ta qizil, 3 ta ko'k va 2 ta yashil shar bor. Bir shar olinadi. Ko'k shar tushish ehtimolligi?</div>
+      <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+      <div class="p-a">n = 5 + 3 + 2 = <strong>10</strong> (jami sharlar)<br>m = <strong>3</strong> (ko'k sharlar)<br><br><span class="formula">P(ko'k) = 3/10 = 0.3</span><br>Ko'k shar tushish ehtimolligi <span class="hl3">30%</span></div>
+    </div>
+    <div class="problem-card">
+      <div class="p-q">🃏 52 ta kartadan iborat to'plamdan bir karta olinadi. Bu kartaning to'z (tuз) bo'lish ehtimolligi?</div>
+      <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+      <div class="p-a">n = <strong>52</strong> (jami kartalar)<br>m = <strong>4</strong> (to'rt xil rang to'z: ♠♥♦♣)<br><br><span class="formula">P(to'z) = 4/52 = 1/13 ≈ 0.077</span><br>To'z tushish ehtimolligi ≈ <span class="hl3">7.7%</span></div>
+    </div>
+    <div class="problem-card">
+      <div class="p-q">🎓 Sinfda 30 o'quvchidan 18 tasi qiz. Tasodifiy tanlangan o'quvchi o'g'il bo'lish ehtimolligi?</div>
+      <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+      <div class="p-a">n = <strong>30</strong>, m(o'g'il) = 30 − 18 = <strong>12</strong><br><br><span class="formula">P(o'g'il) = 12/30 = 0.4</span><br>O'g'il tushish ehtimolligi = <span class="hl3">0.4 (40%)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION 2 ============ -->
+<div id="s2" class="section">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div>
+      <div class="section-title">Qarama-qarshi hodisa.<br>Hodisalar ustida amallar va Eyler-Venn diagrammalar</div>
+      <div class="section-meta">2 ta 45 daqiqalik dars &nbsp;·&nbsp; <span class="tag tag-purple">Diagrammalar</span> <span class="tag tag-green">Interaktiv</span></div>
+    </div>
+  </div>
+
+  <!-- QARAMA-QARSHI HODISA -->
+  <div class="card">
+    <div class="card-title">Qarama-qarshi hodisa</div>
+    <div class="grid-2">
+      <div>
+        <p>Agar A hodisa ro'y bermasa, uning <strong>qarama-qarshi hodisasi Ā</strong> ro'y beradi.</p>
+        <div class="formula" style="margin:1rem 0">P(A) + P(Ā) = 1</div>
+        <div class="formula">P(Ā) = 1 − P(A)</div>
+        <ul style="margin-top:1rem">
+          <li>Gerb tushsa → Panja tushmagan <span class="hl3">✓</span></li>
+          <li>Yomg'ir yog'sa → Yomg'ir yog'magan <span class="hl3">✓</span></li>
+          <li>Juft son tushsa → Toq son tushmagan <span class="hl3">✓</span></li>
+        </ul>
+      </div>
+      <div>
+        <!-- Simple visual -->
+        <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:12px;background:var(--bg3)">
+          <rect width="300" height="180" fill="#111827" rx="12"/>
+          <text x="150" y="20" text-anchor="middle" fill="#64748b" font-size="11" font-family="Space Grotesk">Omega (Ω) — Namuna fazosi</text>
+          <rect x="20" y="30" width="260" height="130" rx="10" fill="none" stroke="#1e2d47" stroke-width="2"/>
+          <!-- A region -->
+          <rect x="30" y="40" width="115" height="110" rx="8" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="88" y="100" text-anchor="middle" fill="#38bdf8" font-size="20" font-weight="700">A</text>
+          <!-- A-bar region -->
+          <rect x="155" y="40" width="115" height="110" rx="8" fill="rgba(248,113,113,0.15)" stroke="#f87171" stroke-width="1.5"/>
+          <text x="213" y="95" text-anchor="middle" fill="#f87171" font-size="20" font-weight="700">Ā</text>
+          <!-- divider -->
+          <line x1="150" y1="40" x2="150" y2="150" stroke="#1e2d47" stroke-width="1" stroke-dasharray="4,4"/>
+          <text x="88" y="130" text-anchor="middle" fill="#64748b" font-size="10">P(A)</text>
+          <text x="213" y="130" text-anchor="middle" fill="#64748b" font-size="10">P(Ā) = 1 − P(A)</text>
+        </svg>
+        <div class="info-box" style="margin-top:1rem">
+          <div class="info-icon">💡</div>
+          <div class="info-text">Agar biron hodisaning ehtimolligini hisoblash qiyin bo'lsa, uning qarama-qarshisini hisoblash oson bo'lishi mumkin!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VENN DIAGRAMMA INTERAKTIV -->
+  <div class="card">
+    <div class="card-title">Eyler-Venn diagrammasi — Interaktiv</div>
+    <div class="venn-container">
+      <div class="venn-controls">
+        <button class="venn-btn active" onclick="setVenn('union',this)">A ∪ B (Birlashma)</button>
+        <button class="venn-btn" onclick="setVenn('intersect',this)">A ∩ B (Kesishma)</button>
+        <button class="venn-btn" onclick="setVenn('diff_ab',this)">A \ B (Ayirma)</button>
+        <button class="venn-btn" onclick="setVenn('diff_ba',this)">B \ A (Ayirma)</button>
+        <button class="venn-btn" onclick="setVenn('comp_a',this)">Ā (To'ldiruvchi)</button>
+        <button class="venn-btn" onclick="setVenn('comp_b',this)">B̄ (To'ldiruvchi)</button>
+      </div>
+
+      <svg id="vennSvg" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;border-radius:16px;background:var(--bg3)">
+        <defs>
+          <clipPath id="clipA"><circle cx="180" cy="150" r="100"/></clipPath>
+          <clipPath id="clipB"><circle cx="320" cy="150" r="100"/></clipPath>
+          <clipPath id="clipOmega"><rect x="20" y="20" width="460" height="260"/></clipPath>
+        </defs>
+        <!-- Omega background -->
+        <rect x="10" y="10" width="480" height="280" rx="14" fill="#0a0e1a" stroke="#1e2d47" stroke-width="1.5"/>
+        <text x="470" y="35" text-anchor="end" fill="#1e2d47" font-size="18" font-weight="700" font-family="Space Grotesk">Ω</text>
+        <!-- Highlight regions (updated by JS) -->
+        <!-- Omega only (complement) -->
+        <rect id="omegaHL" x="10" y="10" width="480" height="280" rx="14" fill="rgba(248,113,113,0.12)" opacity="0"/>
+        <!-- A only region highlight -->
+        <circle id="aOnlyHL" cx="180" cy="150" r="100" fill="rgba(56,189,248,0.3)" opacity="0"/>
+        <!-- B only region highlight -->
+        <circle id="bOnlyHL" cx="320" cy="150" r="100" fill="rgba(129,140,248,0.3)" opacity="0"/>
+        <!-- Intersection highlight -->
+        <circle id="intersectHL_a" cx="180" cy="150" r="100" fill="rgba(52,211,153,0.4)" clip-path="url(#clipB)" opacity="0"/>
+        <!-- Main circles -->
+        <circle cx="180" cy="150" r="100" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-width="2"/>
+        <circle cx="320" cy="150" r="100" fill="rgba(129,140,248,0.08)" stroke="#818cf8" stroke-width="2"/>
+        <!-- Labels -->
+        <text x="120" y="155" text-anchor="middle" fill="#38bdf8" font-size="32" font-weight="700" font-family="Playfair Display">A</text>
+        <text x="380" y="155" text-anchor="middle" fill="#818cf8" font-size="32" font-weight="700" font-family="Playfair Display">B</text>
+        <text x="250" y="155" text-anchor="middle" fill="#64748b" font-size="14" font-family="JetBrains Mono">∩</text>
+      </svg>
+
+      <div class="venn-info" id="vennInfo">
+        <div class="vi-name">A ∪ B — Birlashma</div>
+        <div class="vi-formula" id="vennFormula">A yoki B da bo'lgan barcha elementlar</div>
+        <div class="vi-desc" id="vennDesc">P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AMALLAR JADVALI -->
+  <div class="card">
+    <div class="card-title">Hodisalar ustida amallar jadvali</div>
+    <table class="ops-table">
+      <thead>
+        <tr>
+          <th>Amal</th>
+          <th>Belgi</th>
+          <th>Ta'rif</th>
+          <th>Misol (zar)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Birlashma</td>
+          <td class="mono">A ∪ B</td>
+          <td>A yoki B (yoki ikkalasi) ro'y beradi</td>
+          <td>A={1,2}, B={2,3} → A∪B={1,2,3}</td>
+        </tr>
+        <tr>
+          <td>Kesishma</td>
+          <td class="mono">A ∩ B</td>
+          <td>A ham, B ham ro'y beradi</td>
+          <td>A={1,2}, B={2,3} → A∩B={2}</td>
+        </tr>
+        <tr>
+          <td>Ayirma</td>
+          <td class="mono">A \ B</td>
+          <td>A ro'y beradi, lekin B emas</td>
+          <td>A={1,2}, B={2,3} → A\B={1}</td>
+        </tr>
+        <tr>
+          <td>To'ldiruvchi</td>
+          <td class="mono">Ā</td>
+          <td>A ro'y bermaydi</td>
+          <td>A={1,2} → Ā={3,4,5,6}</td>
+        </tr>
+        <tr>
+          <td>Mos kelmaslik</td>
+          <td class="mono">A ∩ B = ∅</td>
+          <td>A va B bir vaqtda bo'la olmaydi</td>
+          <td>A={1,3}, B={2,4} → ∩=∅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MASALALAR -->
+  <div class="card">
+    <div class="card-title">📝 Amaliy masalalar</div>
+    <div class="problem-card">
+      <div class="p-q">🎲 Zar tashlanadi. A = {toq son}, B = {3 dan katta son}. A ∩ B ni toping.</div>
+      <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+      <div class="p-a">A = {1, 3, 5} (toq sonlar)<br>B = {4, 5, 6} (3 dan katta)<br><br>A ∩ B = {<strong>5</strong>}<br><br><span class="formula">P(A ∩ B) = 1/6 ≈ 0.167</span></div>
+    </div>
+    <div class="problem-card">
+      <div class="p-q">🃏 P(A) = 0.4 bo'lsa, qarama-qarshi hodisa P(Ā) = ?</div>
+      <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+      <div class="p-a"><span class="formula">P(Ā) = 1 − P(A) = 1 − 0.4 = 0.6</span><br>Qarama-qarshi hodisa ehtimolligi = <span class="hl3">0.6</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION 3 ============ -->
+<div id="s3" class="section">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div>
+      <div class="section-title">Ehtimolliklarni qo'shish va ko'paytirish</div>
+      <div class="section-meta">3 ta 45 daqiqalik dars &nbsp;·&nbsp; <span class="tag tag-green">Formulalar</span> <span class="tag tag-blue">Hisoblash</span></div>
+    </div>
+  </div>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSubPanel('sp_add',this)">Qo'shish qoidasi</button>
+    <button class="sub-tab" onclick="showSubPanel('sp_mul',this)">Ko'paytirish qoidasi</button>
+    <button class="sub-tab" onclick="showSubPanel('sp_calc',this)">Kalkulyator</button>
+    <button class="sub-tab" onclick="showSubPanel('sp_problems',this)">Masalalar</button>
+  </div>
+
+  <!-- QOSHISH -->
+  <div id="sp_add" class="sub-panel active">
+    <div class="rule-card add">
+      <h3 style="color:#34d399">➕ Ehtimolliklarni qo'shish qoidasi</h3>
+      <div class="grid-2">
+        <div>
+          <p style="color:var(--muted);margin-bottom:1rem"><strong style="color:var(--text)">Mos kelmaydigan hodisalar</strong> (A ∩ B = ∅):</p>
+          <div class="formula">P(A ∪ B) = P(A) + P(B)</div>
+          <ul style="margin-top:1rem;font-size:0.85rem">
+            <li>A va B bir vaqtda ro'y bera olmaydi</li>
+            <li>Misol: Tanga gerb tushishi va panja tushishi</li>
+          </ul>
+          
+          <!-- Visual: mos kelmaydigan -->
+          <svg viewBox="0 0 300 120" style="width:100%;margin-top:1rem;border-radius:10px;background:var(--bg3)">
+            <rect width="300" height="120" fill="#111827" rx="10"/>
+            <rect x="10" y="15" width="280" height="90" rx="8" fill="none" stroke="#1e2d47" stroke-width="1.5"/>
+            <circle cx="100" cy="60" r="40" fill="rgba(52,211,153,0.15)" stroke="#34d399" stroke-width="2"/>
+            <circle cx="200" cy="60" r="40" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" stroke-width="2"/>
+            <text x="100" y="65" text-anchor="middle" fill="#34d399" font-size="18" font-weight="700">A</text>
+            <text x="200" y="65" text-anchor="middle" fill="#38bdf8" font-size="18" font-weight="700">B</text>
+            <text x="150" y="110" text-anchor="middle" fill="#64748b" font-size="9">A ∩ B = ∅ (mos kelmaydigan)</text>
+          </svg>
+        </div>
+        <div>
+          <p style="color:var(--muted);margin-bottom:1rem"><strong style="color:var(--text)">Mos keladigan hodisalar</strong> (A ∩ B ≠ ∅):</p>
+          <div class="formula">P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</div>
+          <ul style="margin-top:1rem;font-size:0.85rem">
+            <li>A va B kesishishi mumkin</li>
+            <li>Kesishma ikki marta hisoblanmasin deb ayiramiz</li>
+          </ul>
+          
+          <svg viewBox="0 0 300 120" style="width:100%;margin-top:1rem;border-radius:10px;background:var(--bg3)">
+            <rect width="300" height="120" fill="#111827" rx="10"/>
+            <rect x="10" y="15" width="280" height="90" rx="8" fill="none" stroke="#1e2d47" stroke-width="1.5"/>
+            <circle cx="120" cy="60" r="50" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="2"/>
+            <circle cx="180" cy="60" r="50" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="2"/>
+            <!-- intersection highlight -->
+            <circle cx="120" cy="60" r="50" fill="rgba(251,191,36,0.2)" clip-path="url(#clipBSmall)"/>
+            <defs><clipPath id="clipBSmall"><circle cx="180" cy="60" r="50"/></clipPath></defs>
+            <text x="90" y="65" text-anchor="middle" fill="#34d399" font-size="16" font-weight="700">A</text>
+            <text x="210" y="65" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="700">B</text>
+            <text x="150" y="65" text-anchor="middle" fill="#fbbf24" font-size="11">∩</text>
+            <text x="150" y="110" text-anchor="middle" fill="#64748b" font-size="9">A ∩ B ≠ ∅ (mos keladigan)</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="p-q">🎲 Zar tashlanadi. A = {juft son}, B = {3 dan kichik son}.<br>P(A) = ?, P(B) = ?, P(A ∩ B) = ?, P(A ∪ B) = ?</div>
+      <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+      <div class="p-a">
+        A = {2,4,6} → <span class="hl3">P(A) = 3/6 = 0.5</span><br>
+        B = {1,2} → <span class="hl3">P(B) = 2/6 = 1/3 ≈ 0.333</span><br>
+        A ∩ B = {2} → <span class="hl3">P(A ∩ B) = 1/6 ≈ 0.167</span><br><br>
+        <span class="formula">P(A ∪ B) = 0.5 + 0.333 − 0.167 = 0.667</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KOPAYTIRISH -->
+  <div id="sp_mul" class="sub-panel">
+    <div class="rule-card mul">
+      <h3 style="color:#818cf8">✖️ Ehtimolliklarni ko'paytirish qoidasi</h3>
+      <div class="grid-2">
+        <div>
+          <p style="color:var(--muted);margin-bottom:1rem"><strong style="color:var(--text)">Mustaqil hodisalar:</strong></p>
+          <div class="formula">P(A ∩ B) = P(A) · P(B)</div>
+          <p style="font-size:0.85rem;color:var(--muted);margin-top:1rem">A hodisa B hodisaning ehtimolligiga ta'sir qilmaydi.</p>
+          <div class="info-box" style="margin-top:1rem">
+            <div class="info-icon">🔗</div>
+            <div class="info-text">Misol: Ikkita tanga tashlash. Birinchisida gerb tushishi ikkinchisiga ta'sir qilmaydi.</div>
+          </div>
+          <p style="margin-top:0.5rem;font-size:0.9rem">P(ikkalasida gerb) = 1/2 · 1/2 = <span class="hl2">1/4 = 0.25</span></p>
+        </div>
+        <div>
+          <p style="color:var(--muted);margin-bottom:1rem"><strong style="color:var(--text)">Bog'liq hodisalar (shartli ehtimollik):</strong></p>
+          <div class="formula">P(A ∩ B) = P(A) · P(B|A)</div>
+          <p style="font-size:0.85rem;color:var(--muted);margin-top:1rem">P(B|A) — A ro'y bergan sharti ostida B ning ehtimolligi.</p>
+          <div class="info-box" style="margin-top:1rem">
+            <div class="info-icon">🔗</div>
+            <div class="info-text">Misol: Sumkadan qaytarib qo'ymasdan 2 ta shar olish. Birinchi sharning rangi ikkinchisiga ta'sir qiladi.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DARAXT DIAGRAMMASI -->
+    <div class="card">
+      <div class="card-title">🌳 Ehtimollik daraxti — Ikkita tanga</div>
+      <div class="grid-2">
+        <div>
+          <svg viewBox="0 0 320 260" style="width:100%;background:var(--bg3);border-radius:12px">
+            <defs>
+              <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#64748b"/>
+              </marker>
+            </defs>
+            <!-- Root -->
+            <circle cx="40" cy="130" r="18" fill="#1a2235" stroke="#38bdf8" stroke-width="2"/>
+            <text x="40" y="135" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="700">START</text>
+            <!-- 1st level -->
+            <line x1="58" y1="118" x2="128" y2="72" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <line x1="58" y1="142" x2="128" y2="188" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <circle cx="145" cy="65" r="18" fill="#1a2235" stroke="#fbbf24" stroke-width="2"/>
+            <text x="145" y="69" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="700">H</text>
+            <circle cx="145" cy="195" r="18" fill="#1a2235" stroke="#64748b" stroke-width="2"/>
+            <text x="145" y="199" text-anchor="middle" fill="#64748b" font-size="12" font-weight="700">P</text>
+            <!-- Labels 1st -->
+            <text x="90" y="82" fill="#34d399" font-size="10" font-family="JetBrains Mono">1/2</text>
+            <text x="90" y="160" fill="#34d399" font-size="10" font-family="JetBrains Mono">1/2</text>
+            <!-- 2nd level -->
+            <line x1="163" y1="53" x2="223" y2="30" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <line x1="163" y1="77" x2="223" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <line x1="163" y1="183" x2="223" y2="160" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <line x1="163" y1="207" x2="223" y2="230" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <!-- Leaf nodes -->
+            <circle cx="240" cy="25" r="15" fill="rgba(52,211,153,0.15)" stroke="#34d399" stroke-width="1.5"/>
+            <text x="240" y="29" text-anchor="middle" fill="#34d399" font-size="9">HH</text>
+            <circle cx="240" cy="105" r="15" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="240" y="109" text-anchor="middle" fill="#38bdf8" font-size="9">HP</text>
+            <circle cx="240" cy="155" r="15" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="240" y="159" text-anchor="middle" fill="#38bdf8" font-size="9">PH</text>
+            <circle cx="240" cy="235" r="15" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1.5"/>
+            <text x="240" y="239" text-anchor="middle" fill="#818cf8" font-size="9">PP</text>
+            <!-- Probabilities -->
+            <text x="280" y="28" fill="#34d399" font-size="9" font-family="JetBrains Mono">1/4</text>
+            <text x="280" y="108" fill="#38bdf8" font-size="9" font-family="JetBrains Mono">1/4</text>
+            <text x="280" y="158" fill="#38bdf8" font-size="9" font-family="JetBrains Mono">1/4</text>
+            <text x="280" y="238" fill="#818cf8" font-size="9" font-family="JetBrains Mono">1/4</text>
+            <!-- Labels -->
+            <text x="197" y="25" fill="#34d399" font-size="9" font-family="JetBrains Mono">1/2</text>
+            <text x="197" y="95" fill="#34d399" font-size="9" font-family="JetBrains Mono">1/2</text>
+            <text x="197" y="148" fill="#34d399" font-size="9" font-family="JetBrains Mono">1/2</text>
+            <text x="197" y="225" fill="#34d399" font-size="9" font-family="JetBrains Mono">1/2</text>
+          </svg>
+        </div>
+        <div>
+          <p style="font-size:0.9rem;margin-bottom:1rem">Ikkita tanga tashlanganda 4 xil natija mumkin:</p>
+          <ul style="font-size:0.85rem;margin-bottom:1rem">
+            <li><span class="hl3">HH</span> — ikkalasi gerb: P = 1/4</li>
+            <li><span class="hl">HP</span> — gerb keyin panja: P = 1/4</li>
+            <li><span class="hl">PH</span> — panja keyin gerb: P = 1/4</li>
+            <li><span class="hl2">PP</span> — ikkalasi panja: P = 1/4</li>
+          </ul>
+          <div class="result-box">
+            <div class="result-icon">🎯</div>
+            <div class="result-text">
+              <div class="rt-label">Kamida 1 ta gerb tushish ehtimolligi</div>
+              <div class="rt-val">P = 1 − P(PP) = 3/4 = 0.75</div>
+            </div>
+          </div>
+          <div class="result-box" style="margin-top:0.75rem">
+            <div class="result-icon">👑</div>
+            <div class="result-text">
+              <div class="rt-label">Aynan 2 ta gerb tushish</div>
+              <div class="rt-val">P(HH) = 1/2 × 1/2 = 0.25</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KALKULYATOR -->
+  <div id="sp_calc" class="sub-panel">
+    <div class="card">
+      <div class="card-title">🧮 Ehtimollik kalkulyatori</div>
+      <div style="margin-bottom:1rem">
+        <select id="calcType" onchange="updateCalc()" style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:0.9rem;padding:0.6rem 1rem;width:100%;margin-bottom:1rem">
+          <option value="union_excl">Mos kelmaydigan: P(A ∪ B) = P(A) + P(B)</option>
+          <option value="union_incl">Mos keladigan: P(A ∪ B) = P(A) + P(B) − P(A∩B)</option>
+          <option value="intersect">Mustaqil: P(A ∩ B) = P(A) · P(B)</option>
+          <option value="conditional">Shartli: P(A ∩ B) = P(A) · P(B|A)</option>
+          <option value="complement">Qarama-qarshi: P(Ā) = 1 − P(A)</option>
+          <option value="classical">Klassik: P = m/n</option>
+        </select>
+      </div>
+      <div id="calcFields" class="prob-calc">
+        <!-- filled by JS -->
+      </div>
+      <div style="text-align:center;margin:1rem 0">
+        <button class="btn" onclick="calculate()">Hisoblash</button>
+      </div>
+      <div class="calc-result">
+        <div class="cr-label" id="resultLabel">Natija</div>
+        <div class="cr-value" id="resultValue">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MASALALAR -->
+  <div id="sp_problems" class="sub-panel">
+    <div class="card">
+      <div class="card-title">📝 Murakkab masalalar</div>
+      <div class="problem-card">
+        <div class="p-q">📦 Qutida 5 ta yaxshi va 3 ta nuqsonli mahsulot bor. Ketma-ket 2 ta mahsulot olinadi (qaytarib qo'yilmaydi). Ikkalasi ham yaxshi bo'lish ehtimolligi?</div>
+        <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+        <div class="p-a">
+          <strong>1-olinish:</strong> P(A₁) = 5/8<br>
+          <strong>2-olinish (1-si yaxshi bo'lganda):</strong> P(A₂|A₁) = 4/7<br><br>
+          <span class="formula">P(A₁ ∩ A₂) = 5/8 × 4/7 = 20/56 = 5/14 ≈ 0.357</span><br>
+          Ikkalasi yaxshi bo'lish ehtimolligi ≈ <span class="hl3">35.7%</span>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="p-q">🎯 O'qchi nishonga urish ehtimolligi 0.8. U 3 marta otadi. Kamida 1 marta urish ehtimolligi?</div>
+        <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+        <div class="p-a">
+          Qarama-qarshi hodisa: <strong>3 martada ham urmaslik</strong><br>
+          P(urmaslik 1 marta) = 1 − 0.8 = 0.2<br>
+          P(3 martada ham urmaslik) = 0.2³ = 0.008<br><br>
+          <span class="formula">P(kamida 1 marta) = 1 − 0.008 = 0.992</span><br>
+          Kamida bir marta urish ehtimolligi = <span class="hl3">99.2%</span>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="p-q">🏫 Sinf o'quvchilarining 40% sport, 30% musiqa bilan shug'ullanadi, 10% esa ikkalasi bilan ham. Tasodifiy o'quvchi sport YOKI musiqa bilan shug'ullanish ehtimolligi?</div>
+        <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+        <div class="p-a">
+          P(S) = 0.4, P(M) = 0.3, P(S ∩ M) = 0.1<br><br>
+          <span class="formula">P(S ∪ M) = 0.4 + 0.3 − 0.1 = 0.6</span><br>
+          Kamida bittasi bilan shug'ullanish ehtimolligi = <span class="hl3">60%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION 4 ============ -->
+<div id="s4" class="section">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div>
+      <div class="section-title">Binomial va normal<br>taqsimot</div>
+      <div class="section-meta">2 ta 45 daqiqalik dars &nbsp;·&nbsp; <span class="tag tag-purple">Binomial</span> <span class="tag tag-blue">Normal</span></div>
+    </div>
+  </div>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSubPanel('sp_binom',this)">Binomial taqsimot</button>
+    <button class="sub-tab" onclick="showSubPanel('sp_normal',this)">Normal taqsimot</button>
+    <button class="sub-tab" onclick="showSubPanel('sp_compare',this)">Taqqoslash</button>
+  </div>
+
+  <!-- BINOMIAL -->
+  <div id="sp_binom" class="sub-panel active">
+    <div class="card">
+      <div class="card-title">Binomial taqsimot — B(n, p)</div>
+      <div class="grid-2">
+        <div>
+          <p style="margin-bottom:1rem;font-size:0.9rem">Bir tajriba <strong>n</strong> marta takrorlanganda, <strong>k</strong> marta muvaffaqiyat bo'lish ehtimolligi:</p>
+          <div class="big-formula-box">
+            <div class="bf-name">Bernulli formulasi</div>
+            <div class="bf-formula">P(X=k) = C(n,k) · pᵏ · (1−p)ⁿ⁻ᵏ</div>
+            <div class="bf-sub">
+              n — tajribalar soni &nbsp;|&nbsp; k — muvaffaqiyatlar soni<br>
+              p — muvaffaqiyat ehtimolligi &nbsp;|&nbsp; C(n,k) = n!/(k!(n−k)!)
+            </div>
+          </div>
+          <div style="margin-top:1rem">
+            <div class="slider-group">
+              <div class="slider-label"><span>n — tajribalar soni</span><span id="binN">10</span></div>
+              <input type="range" min="1" max="30" value="10" oninput="updateBinom()" id="sliderN">
+            </div>
+            <div class="slider-group">
+              <div class="slider-label"><span>p — muvaffaqiyat ehtimolligi</span><span id="binP">0.50</span></div>
+              <input type="range" min="0" max="100" value="50" oninput="updateBinom()" id="sliderP">
+            </div>
+            <div style="display:flex;gap:1rem;margin-top:0.5rem">
+              <div style="flex:1;background:var(--bg3);border-radius:10px;padding:1rem;text-align:center">
+                <div style="font-size:0.75rem;color:var(--muted)">Kutilgan qiymat (μ)</div>
+                <div id="binMu" style="font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent)">5.00</div>
+              </div>
+              <div style="flex:1;background:var(--bg3);border-radius:10px;padding:1rem;text-align:center">
+                <div style="font-size:0.75rem;color:var(--muted)">Dispersiya (σ²)</div>
+                <div id="binSigma" style="font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent2)">2.50</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="binomChart" style="height:220px;display:flex;align-items:flex-end;gap:2px;width:100%;background:var(--bg3);border-radius:12px;padding:10px;box-sizing:border-box;overflow:hidden"></div>
+          <div style="text-align:center;font-size:0.8rem;color:var(--muted);margin-top:0.5rem">Muvaffaqiyatlar soni (k)</div>
+          <div id="binomInfo" style="margin-top:0.75rem;font-size:0.8rem;color:var(--muted);background:var(--bg3);border-radius:10px;padding:0.75rem">
+            Ustun ustiga bosing — P(X=k) ko'rasiz
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEPS -->
+    <div class="card">
+      <div class="card-title">Hisoblash bosqichlari</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Shartlarni aniqlang</div>
+            <div class="step-desc">n (tajribalar soni), k (muvaffaqiyatlar soni), p (muvaffaqiyat ehtimolligi) ni belgilang</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">C(n,k) ni hisoblang</div>
+            <div class="step-desc">C(n,k) = n! / (k! · (n−k)!) — kombinatsiyalar soni</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Formulaga qo'ying</div>
+            <div class="step-desc">P(X=k) = C(n,k) · pᵏ · (1−p)ⁿ⁻ᵏ</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">Tekshiring</div>
+            <div class="step-desc">Barcha k = 0,1,...,n uchun P(X=k) lar yig'indisi = 1 bo'lishi shart</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📝 Binomial masalalar</div>
+      <div class="problem-card">
+        <div class="p-q">🌦 Har kuni yomg'ir yog'ish ehtimolligi 0.3. 5 kun ichida aynan 2 kunda yomg'ir yog'ish ehtimolligi?</div>
+        <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+        <div class="p-a">
+          n=5, k=2, p=0.3, (1−p)=0.7<br>
+          C(5,2) = 5!/(2!·3!) = 10<br><br>
+          <span class="formula">P(X=2) = 10 · (0.3)² · (0.7)³ = 10 · 0.09 · 0.343 = 0.309</span><br>
+          Aynan 2 kunda yomg'ir yog'ish ehtimolligi ≈ <span class="hl3">30.9%</span>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="p-q">🎯 Test 10 ta savoldan iborat, har birida 4 ta javob bor (bittasi to'g'ri). Tasodifiy javob berganда aynan 3 ta to'g'ri bo'lish ehtimolligi?</div>
+        <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+        <div class="p-a">
+          n=10, k=3, p=1/4=0.25<br>
+          C(10,3) = 10!/(3!·7!) = 120<br><br>
+          <span class="formula">P(X=3) = 120 · (0.25)³ · (0.75)⁷ ≈ 120 · 0.0156 · 0.1335 ≈ 0.250</span><br>
+          ≈ <span class="hl3">25%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NORMAL -->
+  <div id="sp_normal" class="sub-panel">
+    <div class="card">
+      <div class="card-title">Normal taqsimot — N(μ, σ²)</div>
+      <div class="grid-2">
+        <div>
+          <p style="font-size:0.9rem;margin-bottom:1rem">Normal taqsimot — statistikadagi eng muhim taqsimot. Ko'pgina tabiiy hodisalar normal taqsimlangan.</p>
+          <div class="big-formula-box">
+            <div class="bf-name">Zichlik funktsiyasi</div>
+            <div class="bf-formula" style="font-size:1.2rem">f(x) = (1/σ√2π) · e^(−(x−μ)²/2σ²)</div>
+            <div class="bf-sub">
+              μ — o'rtacha qiymat (simmetria o'qi)<br>
+              σ — standart og'ish (kenglik)
+            </div>
+          </div>
+          <div style="margin-top:1rem">
+            <div class="slider-group">
+              <div class="slider-label"><span>μ (o'rtacha)</span><span id="normMu">0</span></div>
+              <input type="range" min="-3" max="3" value="0" step="0.5" oninput="updateNormal()" id="sliderMu">
+            </div>
+            <div class="slider-group">
+              <div class="slider-label"><span>σ (standart og'ish)</span><span id="normSigma">1.0</span></div>
+              <input type="range" min="0.5" max="3" value="1" step="0.1" oninput="updateNormal()" id="sliderSigma">
+            </div>
+          </div>
+        </div>
+        <div>
+          <canvas id="normalCanvas"></canvas>
+          <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>μ ± σ: 68.3%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent2)"></div>μ ± 2σ: 95.4%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent3)"></div>μ ± 3σ: 99.7%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 68-95-99.7 QOIDASI -->
+    <div class="card">
+      <div class="card-title">📊 68–95–99.7 qoidasi (Empirik qoida)</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
+        <svg viewBox="0 0 500 200" style="width:100%;max-width:550px;background:var(--bg3);border-radius:12px">
+          <defs>
+            <linearGradient id="bell1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="bell2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#818cf8" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#818cf8" stop-opacity="0.02"/>
+            </linearGradient>
+            <linearGradient id="bell3" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#34d399" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#34d399" stop-opacity="0.01"/>
+            </linearGradient>
+          </defs>
+          <!-- Areas -->
+          <path d="M100,170 Q180,20 250,15 Q320,20 400,170 Z" fill="url(#bell3)" stroke="#34d399" stroke-width="1" stroke-dasharray="4,3"/>
+          <path d="M145,170 Q200,40 250,15 Q300,40 355,170 Z" fill="url(#bell2)" stroke="#818cf8" stroke-width="1" stroke-dasharray="4,3"/>
+          <path d="M185,170 Q220,55 250,15 Q280,55 315,170 Z" fill="url(#bell1)" stroke="#38bdf8" stroke-width="1.5"/>
+          <!-- Bell curve main line -->
+          <path d="M80,172 Q130,170 160,150 Q200,110 230,60 Q240,30 250,15 Q260,30 270,60 Q300,110 340,150 Q370,170 420,172" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+          <!-- Tick lines -->
+          <line x1="185" y1="168" x2="185" y2="180" stroke="#38bdf8" stroke-width="1.5"/>
+          <line x1="315" y1="168" x2="315" y2="180" stroke="#38bdf8" stroke-width="1.5"/>
+          <line x1="145" y1="168" x2="145" y2="180" stroke="#818cf8" stroke-width="1.5"/>
+          <line x1="355" y1="168" x2="355" y2="180" stroke="#818cf8" stroke-width="1.5"/>
+          <line x1="100" y1="168" x2="100" y2="180" stroke="#34d399" stroke-width="1.5"/>
+          <line x1="400" y1="168" x2="400" y2="180" stroke="#34d399" stroke-width="1.5"/>
+          <!-- Center -->
+          <line x1="250" y1="15" x2="250" y2="172" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3"/>
+          <!-- Labels -->
+          <text x="250" y="196" text-anchor="middle" fill="#64748b" font-size="10" font-family="JetBrains Mono">μ</text>
+          <text x="185" y="196" text-anchor="middle" fill="#38bdf8" font-size="10" font-family="JetBrains Mono">μ−σ</text>
+          <text x="315" y="196" text-anchor="middle" fill="#38bdf8" font-size="10" font-family="JetBrains Mono">μ+σ</text>
+          <text x="145" y="196" text-anchor="middle" fill="#818cf8" font-size="10" font-family="JetBrains Mono">μ−2σ</text>
+          <text x="355" y="196" text-anchor="middle" fill="#818cf8" font-size="10" font-family="JetBrains Mono">μ+2σ</text>
+          <text x="100" y="196" text-anchor="middle" fill="#34d399" font-size="10" font-family="JetBrains Mono">μ−3σ</text>
+          <text x="400" y="196" text-anchor="middle" fill="#34d399" font-size="10" font-family="JetBrains Mono">μ+3σ</text>
+          <!-- % labels -->
+          <text x="250" y="90" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="700">68.3%</text>
+          <text x="250" y="125" text-anchor="middle" fill="#818cf8" font-size="10">95.4%</text>
+          <text x="250" y="150" text-anchor="middle" fill="#34d399" font-size="9">99.7%</text>
+        </svg>
+
+        <div class="grid-3" style="width:100%;max-width:550px">
+          <div style="background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.2);border-radius:10px;padding:1rem;text-align:center">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent);font-weight:700">68.3%</div>
+            <div style="font-size:0.8rem;color:var(--muted)">μ ± σ oralig'i</div>
+          </div>
+          <div style="background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:1rem;text-align:center">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent2);font-weight:700">95.4%</div>
+            <div style="font-size:0.8rem;color:var(--muted)">μ ± 2σ oralig'i</div>
+          </div>
+          <div style="background:rgba(52,211,153,0.07);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:1rem;text-align:center">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent3);font-weight:700">99.7%</div>
+            <div style="font-size:0.8rem;color:var(--muted)">μ ± 3σ oralig'i</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📝 Normal taqsimot masalalari</div>
+      <div class="problem-card">
+        <div class="p-q">📏 O'quvchilar bo'yi μ = 170 sm, σ = 5 sm bo'lgan normal taqsimotga ega. 165 sm dan 175 sm gacha bo'lgan o'quvchilar ulushi?</div>
+        <button class="p-toggle" onclick="toggleAnswer(this)">Yechimni ko'rish ↓</button>
+        <div class="p-a">
+          Bu oraliq [μ − σ, μ + σ] = [165, 175] — ya'ni <strong>bir standart og'ish oralig'i</strong><br><br>
+          68–95–99.7 qoidasiga ko'ra:<br>
+          <span class="formula">P(165 ≤ X ≤ 175) ≈ 68.3%</span><br>
+          Demak, o'quvchilarning taxminan <span class="hl3">68%</span> i bu oraliqda
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAQQOSLASH -->
+  <div id="sp_compare" class="sub-panel">
+    <div class="card">
+      <div class="card-title">Binomial va Normal taqsimotni taqqoslash</div>
+      <table class="ops-table">
+        <thead>
+          <tr><th>Xususiyat</th><th>Binomial B(n,p)</th><th>Normal N(μ,σ²)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Qiymat turi</td>
+            <td><span class="tag tag-blue">Diskret (butun)</span></td>
+            <td><span class="tag tag-green">Uzluksiz (real)</span></td>
+          </tr>
+          <tr>
+            <td>Parametrlar</td>
+            <td>n (soni), p (ehtimollik)</td>
+            <td>μ (o'rtacha), σ (og'ish)</td>
+          </tr>
+          <tr>
+            <td>O'rtacha (μ)</td>
+            <td class="mono">μ = n·p</td>
+            <td class="mono">μ (beriladi)</td>
+          </tr>
+          <tr>
+            <td>Dispersiya (σ²)</td>
+            <td class="mono">σ² = n·p·(1−p)</td>
+            <td class="mono">σ² (beriladi)</td>
+          </tr>
+          <tr>
+            <td>Shakli</td>
+            <td>Gistogramma (ustunlar)</td>
+            <td>Qo'ng'iroq shakl (egri chiziq)</td>
+          </tr>
+          <tr>
+            <td>Qo'llanishi</td>
+            <td>Standart testlar, sifat nazorati</td>
+            <td>Bo'y/vazn, o'lchov xatolari</td>
+          </tr>
+          <tr>
+            <td>Bog'liqlik</td>
+            <td colspan="2" style="text-align:center;color:var(--muted)">n→∞, p sabit bo'lsa, Binomial → Normal</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box" style="margin-top:1.5rem">
+        <div class="info-icon">🔑</div>
+        <div class="info-text">
+          <strong style="color:var(--gold)">Markaziy limit teoremasi:</strong> n katta bo'lganda (odatda n ≥ 30), ixtiyoriy taqsimot normal taqsimotga yaqinlashadi. Bu statistikaning eng muhim natijalaridan biri!
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔄 Yaqinlashuv misoli: n o'sib boradi</div>
+      <div id="convergenceViz" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+        <!-- JS renders these -->
+      </div>
+      <p style="text-align:center;font-size:0.8rem;color:var(--muted);margin-top:0.75rem">p=0.4 da Binomial B(n,0.4) qanday normal shaklga yaqinlashishi</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ==================== NAVIGATION ====================
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: document.querySelector('.nav').offsetTop, behavior:'smooth'});
+  if(id==='s4') { setTimeout(()=>{updateBinom();updateNormal();renderConvergence();}, 100); }
+}
+
+function showSubPanel(id, btn) {
+  const section = btn.closest('.section') || document.querySelector('.section.active');
+  section.querySelectorAll('.sub-panel').forEach(p => p.classList.remove('active'));
+  section.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  if(id==='sp_normal') setTimeout(updateNormal, 50);
+  if(id==='sp_compare') setTimeout(renderConvergence, 50);
+}
+
+function toggleAnswer(btn) {
+  const ans = btn.nextElementSibling;
+  const showing = ans.classList.contains('show');
+  ans.classList.toggle('show');
+  btn.textContent = showing ? 'Yechimni ko\'rish ↓' : 'Yashirish ↑';
+}
+
+// ==================== COIN ====================
+let heads = 0, tails = 0, coinHistory = [];
+const diceFaces = ['⚀','⚁','⚂','⚃','⚄','⚅'];
+const diceData = [0,0,0,0,0,0];
+
+function flipCoin() {
+  const coin = document.getElementById('coinDisplay');
+  coin.classList.remove('coin-flipping');
+  void coin.offsetWidth;
+  coin.classList.add('coin-flipping');
+  setTimeout(() => {
+    const result = Math.random() < 0.5;
+    if(result) { heads++; coinHistory.push('H'); }
+    else { tails++; coinHistory.push('T'); }
+    updateCoinUI();
+  }, 300);
+}
+
+function flipMany(n) {
+  for(let i=0;i<n;i++) {
+    const r = Math.random() < 0.5;
+    if(r) { heads++; coinHistory.push('H'); }
+    else { tails++; coinHistory.push('T'); }
+  }
+  updateCoinUI();
+}
+
+function updateCoinUI() {
+  const total = heads + tails;
+  const last = coinHistory[coinHistory.length-1];
+  const coin = document.getElementById('coinDisplay');
+  if(last === 'H') {
+    coin.className = 'coin coin-heads';
+    coin.textContent = '👑';
+  } else {
+    coin.className = 'coin coin-tails';
+    coin.textContent = '🌟';
+  }
+  document.getElementById('headsCount').textContent = heads;
+  document.getElementById('tailsCount').textContent = tails;
+  document.getElementById('totalFlips').textContent = `Jami: ${total} ta tashlash`;
+  const hp = total > 0 ? heads/total : 0.5;
+  const tp = total > 0 ? tails/total : 0.5;
+  document.getElementById('headsFill').style.width = (hp*100)+'%';
+  document.getElementById('tailsFill').style.width = (tp*100)+'%';
+  document.getElementById('headsProb').textContent = 'P = '+hp.toFixed(3);
+  document.getElementById('tailsProb').textContent = 'P = '+tp.toFixed(3);
+  // History chips
+  const hist = document.getElementById('coinHistory');
+  hist.innerHTML = '';
+  const show = coinHistory.slice(-80);
+  show.forEach(c => {
+    const chip = document.createElement('div');
+    chip.className = 'coin-chip ' + (c==='H' ? 'chip-h' : 'chip-t');
+    chip.textContent = c;
+    hist.appendChild(chip);
+  });
+}
+
+function resetCoin() {
+  heads=0;tails=0;coinHistory=[];
+  document.getElementById('headsCount').textContent='0';
+  document.getElementById('tailsCount').textContent='0';
+  document.getElementById('totalFlips').textContent='Jami: 0 ta tashlash';
+  document.getElementById('headsFill').style.width='50%';
+  document.getElementById('tailsFill').style.width='50%';
+  document.getElementById('headsProb').textContent='P = 0.000';
+  document.getElementById('tailsProb').textContent='P = 0.000';
+  document.getElementById('coinHistory').innerHTML='';
+  const coin = document.getElementById('coinDisplay');
+  coin.className='coin coin-heads';
+  coin.textContent='👑';
+}
+
+// ==================== DICE ====================
+let diceTotal = 0;
+
+function rollDice() {
+  const dice = document.getElementById('diceDisplay');
+  dice.classList.remove('dice-rolling');
+  void dice.offsetWidth;
+  dice.classList.add('dice-rolling');
+  setTimeout(() => {
+    const v = Math.floor(Math.random()*6)+1;
+    dice.textContent = diceFaces[v-1];
+    diceData[v-1]++;
+    diceTotal++;
+    updateDiceUI(v);
+  }, 250);
+}
+
+function rollMany(n) {
+  for(let i=0;i<n;i++) {
+    const v = Math.floor(Math.random()*6)+1;
+    diceData[v-1]++;
+    diceTotal++;
+  }
+  document.getElementById('diceDisplay').textContent = diceFaces[Math.floor(Math.random()*6)];
+  updateDiceUI();
+}
+
+function updateDiceUI(last) {
+  const maxCount = Math.max(...diceData,1);
+  for(let i=1;i<=6;i++) {
+    const bar = document.getElementById('db'+i);
+    const cnt = document.getElementById('dc'+i);
+    const h = Math.max(4, (diceData[i-1]/maxCount)*90);
+    bar.style.height = h+'px';
+    cnt.textContent = diceData[i-1];
+  }
+  if(last) {
+    const p = (diceData[last-1]/diceTotal).toFixed(3);
+    document.getElementById('diceResult').textContent = `Son: ${last} | Bu son tushish ehtimolligi: P = ${p} (nazariy: 0.167)`;
+  }
+}
+
+function resetDice() {
+  diceData.fill(0); diceTotal=0;
+  for(let i=1;i<=6;i++) {
+    document.getElementById('db'+i).style.height='20px';
+    document.getElementById('dc'+i).textContent='0';
+  }
+  document.getElementById('diceResult').textContent='Natijani ko\'rish uchun tashlang';
+}
+
+// ==================== VENN ====================
+const vennData = {
+  union: { name:'A ∪ B — Birlashma', formula:'P(A ∪ B) = P(A) + P(B) − P(A ∩ B)', desc:'A yoki B (yoki ikkalasi) da bo\'lgan barcha elementlar', aHL:1, bHL:1, iHL:1, omHL:0 },
+  intersect: { name:'A ∩ B — Kesishma', formula:'P(A ∩ B) = P(A) · P(B|A)', desc:'Faqat A ham B ham ro\'y beradi', aHL:0, bHL:0, iHL:1, omHL:0 },
+  diff_ab: { name:'A \\ B — Ayirma', formula:'P(A \\  B) = P(A) − P(A ∩ B)', desc:'A da bor lekin B da yo\'q elementlar', aHL:1, bHL:0, iHL:0, omHL:0 },
+  diff_ba: { name:'B \\ A — Ayirma', formula:'P(B \\ A) = P(B) − P(A ∩ B)', desc:'B da bor lekin A da yo\'q elementlar', aHL:0, bHL:1, iHL:0, omHL:0 },
+  comp_a: { name:'Ā — To\'ldiruvchi', formula:'P(Ā) = 1 − P(A)', desc:'A ga tegishli bo\'lmagan barcha elementlar', aHL:0, bHL:1, iHL:0, omHL:1 },
+  comp_b: { name:'B̄ — To\'ldiruvchi', formula:'P(B̄) = 1 − P(B)', desc:'B ga tegishli bo\'lmagan barcha elementlar', aHL:1, bHL:0, iHL:0, omHL:1 }
+};
+
+function setVenn(type, btn) {
+  document.querySelectorAll('.venn-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const d = vennData[type];
+  document.getElementById('vennInfo').children[0].textContent = d.name;
+  document.getElementById('vennFormula').textContent = d.formula;
+  document.getElementById('vennDesc').textContent = d.desc;
+  // Update SVG
+  document.getElementById('aOnlyHL').style.opacity = d.aHL ? '1' : '0';
+  document.getElementById('bOnlyHL').style.opacity = d.bHL ? '1' : '0';
+  document.getElementById('intersectHL_a').style.opacity = d.iHL ? '1' : '0';
+  document.getElementById('omegaHL').style.opacity = d.omHL ? '0.4' : '0';
+}
+
+// ==================== CALCULATOR ====================
+const calcConfigs = {
+  union_excl: [
+    {id:'pa',label:'P(A)',placeholder:'Masalan: 0.3'},
+    {id:'pb',label:'P(B)',placeholder:'Masalan: 0.4'}
+  ],
+  union_incl: [
+    {id:'pa',label:'P(A)',placeholder:'0.3'},
+    {id:'pb',label:'P(B)',placeholder:'0.4'},
+    {id:'pab',label:'P(A∩B)',placeholder:'0.1'}
+  ],
+  intersect: [
+    {id:'pa',label:'P(A)',placeholder:'0.6'},
+    {id:'pb',label:'P(B)',placeholder:'0.5'}
+  ],
+  conditional: [
+    {id:'pa',label:'P(A)',placeholder:'0.6'},
+    {id:'pba',label:'P(B|A)',placeholder:'0.4'}
+  ],
+  complement: [
+    {id:'pa',label:'P(A)',placeholder:'0.35'}
+  ],
+  classical: [
+    {id:'m',label:'m (qulay natijalar)',placeholder:'3'},
+    {id:'n',label:'n (jami natijalar)',placeholder:'10'}
+  ]
+};
+
+function updateCalc() {
+  const type = document.getElementById('calcType').value;
+  const fields = calcConfigs[type];
+  const html = fields.map(f=>`
+    <div class="calc-input-group">
+      <div class="calc-label">${f.label}</div>
+      <input class="calc-input" id="ci_${f.id}" type="number" step="0.001" min="0" max="1" placeholder="${f.placeholder}">
+    </div>
+  `).join('');
+  document.getElementById('calcFields').innerHTML = html;
+  document.getElementById('resultValue').textContent = '—';
+}
+
+function calculate() {
+  const type = document.getElementById('calcType').value;
+  const get = id => parseFloat(document.getElementById('ci_'+id)?.value||0);
+  let result, label;
+  
+  switch(type) {
+    case 'union_excl': result = get('pa')+get('pb'); label='P(A ∪ B)'; break;
+    case 'union_incl': result = get('pa')+get('pb')-get('pab'); label='P(A ∪ B)'; break;
+    case 'intersect': result = get('pa')*get('pb'); label='P(A ∩ B)'; break;
+    case 'conditional': result = get('pa')*get('pba'); label='P(A ∩ B)'; break;
+    case 'complement': result = 1-get('pa'); label='P(Ā)'; break;
+    case 'classical': result = get('m')/get('n'); label='P(A)'; break;
+  }
+  
+  document.getElementById('resultLabel').textContent = label;
+  document.getElementById('resultValue').textContent = isNaN(result) ? 'Xato' : result.toFixed(4)+' ('+Math.round(result*100)+'%)';
+}
+
+updateCalc();
+
+// ==================== BINOMIAL ====================
+function factorial(n) {
+  if(n<=1) return 1;
+  let r=1; for(let i=2;i<=n;i++) r*=i; return r;
+}
+function combination(n,k) {
+  if(k>n) return 0;
+  return factorial(n)/(factorial(k)*factorial(n-k));
+}
+function binomProb(n,k,p) {
+  return combination(n,k)*Math.pow(p,k)*Math.pow(1-p,n-k);
+}
+
+function updateBinom() {
+  const n = parseInt(document.getElementById('sliderN').value);
+  const p = parseInt(document.getElementById('sliderP').value)/100;
+  document.getElementById('binN').textContent = n;
+  document.getElementById('binP').textContent = p.toFixed(2);
+  document.getElementById('binMu').textContent = (n*p).toFixed(2);
+  document.getElementById('binSigma').textContent = (n*p*(1-p)).toFixed(2);
+  
+  const probs = [];
+  for(let k=0;k<=n;k++) probs.push(binomProb(n,k,p));
+  const maxP = Math.max(...probs);
+  
+  const chart = document.getElementById('binomChart');
+  const maxH = 180;
+  let html = '';
+  probs.forEach((prob,k) => {
+    const h = Math.max(2, (prob/maxP)*maxH);
+    const pct = (prob*100).toFixed(1);
+    const barColor = k === Math.round(n*p) ? '#fbbf24' : 'rgba(129,140,248,0.8)';
+    html += `<div style="flex:1;display:flex;flex-direction:column;align-items:center;cursor:pointer;gap:2px;min-width:0" onclick="showBinomDetail(${k},${prob.toFixed(4)},${n},${p})">
+      <div style="width:100%;height:${h}px;background:${barColor};border-radius:3px 3px 0 0;transition:height 0.4s;"></div>
+      ${n<=15?`<div style="font-size:${n>20?'0':'0.55'}rem;color:var(--muted)">${k}</div>`:''}
+    </div>`;
+  });
+  chart.innerHTML = html;
+}
+
+function showBinomDetail(k,prob,n,p) {
+  document.getElementById('binomInfo').innerHTML = 
+    `k = <strong style="color:var(--accent)">${k}</strong> muvaffaqiyat &nbsp;|&nbsp; P(X=${k}) = <strong style="color:var(--gold)">${prob}</strong> (${(prob*100).toFixed(2)}%)<br>
+     <small style="color:var(--muted)">C(${n},${k}) · ${p}^${k} · ${(1-p).toFixed(2)}^${n-k}</small>`;
+}
+
+// ==================== NORMAL ====================
+function normalPDF(x, mu, sigma) {
+  return (1/(sigma*Math.sqrt(2*Math.PI)))*Math.exp(-0.5*Math.pow((x-mu)/sigma,2));
+}
+
+function updateNormal() {
+  const mu = parseFloat(document.getElementById('sliderMu').value);
+  const sigma = parseFloat(document.getElementById('sliderSigma').value);
+  document.getElementById('normMu').textContent = mu;
+  document.getElementById('normSigma').textContent = sigma.toFixed(1);
+  
+  const canvas = document.getElementById('normalCanvas');
+  if(!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.clientWidth||500;
+  const H = canvas.clientHeight||250;
+  canvas.width = W*dpr;
+  canvas.height = H*dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle = '#111827';
+  ctx.fillRect(0,0,W,H);
+  
+  const xMin = mu-4*sigma, xMax = mu+4*sigma;
+  const pad = 40;
+  const toX = x => pad + ((x-xMin)/(xMax-xMin))*(W-2*pad);
+  const maxY = normalPDF(mu,mu,sigma);
+  const toY = y => H-30 - (y/maxY)*(H-60);
+  
+  const fillRegion = (xA, xB, color) => {
+    ctx.beginPath();
+    ctx.moveTo(toX(xA), H-30);
+    for(let x=xA;x<=xB;x+=(xMax-xMin)/300) {
+      ctx.lineTo(toX(x), toY(normalPDF(x,mu,sigma)));
+    }
+    ctx.lineTo(toX(xB), H-30);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+  };
+  
+  fillRegion(mu-3*sigma, mu+3*sigma, 'rgba(52,211,153,0.15)');
+  fillRegion(mu-2*sigma, mu+2*sigma, 'rgba(129,140,248,0.2)');
+  fillRegion(mu-sigma, mu+sigma, 'rgba(56,189,248,0.3)');
+  
+  // Axis
+  ctx.strokeStyle='#1e2d47'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(pad,H-30); ctx.lineTo(W-pad,H-30); ctx.stroke();
+  
+  // Tick labels
+  ctx.fillStyle='#64748b'; ctx.font='10px JetBrains Mono'; ctx.textAlign='center';
+  [mu-3*sigma,mu-2*sigma,mu-sigma,mu,mu+sigma,mu+2*sigma,mu+3*sigma].forEach(v => {
+    ctx.fillText(v.toFixed(1), toX(v), H-14);
+    ctx.strokeStyle='#1e2d47';
+    ctx.beginPath(); ctx.moveTo(toX(v),H-30); ctx.lineTo(toX(v),H-24); ctx.stroke();
+  });
+  
+  // Bell curve
+  ctx.beginPath();
+  ctx.strokeStyle='#38bdf8'; ctx.lineWidth=2.5;
+  let first=true;
+  for(let x=xMin;x<=xMax;x+=(xMax-xMin)/400) {
+    const px=toX(x), py=toY(normalPDF(x,mu,sigma));
+    if(first){ctx.moveTo(px,py);first=false;}else{ctx.lineTo(px,py);}
+  }
+  ctx.stroke();
+  
+  // Vertical at mu
+  ctx.strokeStyle='rgba(56,189,248,0.4)'; ctx.lineWidth=1; ctx.setLineDash([4,4]);
+  ctx.beginPath(); ctx.moveTo(toX(mu),H-30); ctx.lineTo(toX(mu),20); ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+// ==================== CONVERGENCE ====================
+function renderConvergence() {
+  const container = document.getElementById('convergenceViz');
+  if(!container) return;
+  const nValues = [2,5,15,30];
+  const p = 0.4;
+  container.innerHTML = '';
+  
+  nValues.forEach(n => {
+    const probs = [];
+    for(let k=0;k<=n;k++) probs.push(binomProb(n,k,p));
+    const maxP = Math.max(...probs);
+    const W = 120, H = 100;
+    
+    let bars = probs.map((prob,k)=>{
+      const h = Math.max(1,(prob/maxP)*(H-20));
+      const barW = Math.max(1, (W-10)/probs.length - 1);
+      const x = 5 + k*((W-10)/probs.length);
+      const color = `hsl(${200+k*10},70%,60%)`;
+      return `<rect x="${x}" y="${H-20-h}" width="${barW}" height="${h}" fill="${color}" opacity="0.8" rx="1"/>`;
+    }).join('');
+    
+    container.innerHTML += `
+      <div style="text-align:center">
+        <div style="font-size:0.75rem;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:0.3rem">n = ${n}</div>
+        <svg viewBox="0 0 ${W} ${H}" style="width:${W}px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)">${bars}</svg>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.2rem">B(${n}, 0.4)</div>
+      </div>`;
+  });
+}
+
+// Init
+updateBinom();
+setTimeout(updateNormal, 200);
+setTimeout(renderConvergence, 300);
+</script>
+</body>
+</html>
