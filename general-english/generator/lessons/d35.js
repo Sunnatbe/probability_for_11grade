@@ -1,0 +1,97 @@
+module.exports = {
+  n: 35,
+  short: 'Imtihon_strategiyasi_Mock2',
+  en: 'Exam strategy: Reading and Listening',
+  video: '12 min',
+  now: 'Mock 2 (60 savol, 70 min + Writing)',
+  emoji: {
+    lesson: '🎯', strip: '🎯 ⏱️ 📖 🎧 ✂️ ✅',
+    goal: ['⏱️', '✂️', '✅'],
+    kw: ['⏱️', '👀', '🔑', '✂️', '🎲', '✅', '🔄', '📊'],
+    core: ['⏱️', '🔑', '✂️', '🎲'],
+    ex: ['⏱️', '✂️', '🔍'], tip: '📒',
+  },
+  hook: "Bilim — natijaning yarmi, ikkinchi yarmi — strategiya. Bugun Reading va Listening uchun vaqtni taqsimlash, noto'g'ri variantlarni chiqarib tashlash va javoblarni tekshirishni o'rganamiz, so'ng ikkinchi mock test.",
+  goals: [
+    ['Vaqt', "Har bir bo'limga aniq vaqt"],
+    ['Chiqarib tashlash', "Noto'g'ri variantlarni birma-bir olib tashlash"],
+    ['Tekshiruv', 'Oxirgi 5 daqiqa — xatolarni ushlash'],
+  ],
+  kw: [
+    ['time management', 'vaqtni boshqarish', '20 min for Reading'],
+    ['skim', "ko'z yugurtirmoq", '**skim** the text first'],
+    ['key words', "kalit so'zlar", 'underline the **key words**'],
+    ['eliminate', 'chiqarib tashlamoq', '**eliminate** wrong options'],
+    ['guess', 'taxmin qilmoq', "Don't leave blanks — **guess**!"],
+    ['check', 'tekshirmoq', '**check** spelling and plurals'],
+    ['paraphrase', 'boshqacha ifoda', 'start = begin'],
+    ['score', 'ball', 'My **score** went up.'],
+  ],
+  core: {
+    title: 'Imtihon strategiyasi: 4 qoida', en: 'Exam technique',
+    steps: [
+      ['Vaqtni taqsimla', "Savolga ≈1 min; qiyinini belgilab o'tkaz"],
+      ["Kalit so'zlar", 'Savolda belgila, matnda sinonimini izla'],
+      ['Chiqarib tashla', "Aniq noto'g'ri 2 ta variantni o'chir"],
+      ["Bo'sh qoldirma", 'Taxmin qil — bo\'sh javob baribir 0 ball'],
+    ],
+    note: "Oxirgi 5 daqiqa: imlo, ko'plik -s, artikllar va javoblar varag'ini tekshiring.",
+  },
+  cases: {
+    title: "Chalg'ituvchi variantlar", en: 'Types of distractors',
+    intro: "Noto'g'ri variantlar odatda shu 3 turda bo'ladi:",
+    items: [
+      { badge: '🪤', t: "So'z o'yini", en: 'word match', rule: "matndagi so'z, boshqa ma'no", ex: "matnda «bank» — daryo qirg'og'i", res: "ma'noni tekshiring" },
+      { badge: '🔄', t: 'Teskari', en: 'opposite', rule: "zid ma'no", ex: 'matn: cheap → variant: expensive', res: "noto'g'ri" },
+      { badge: '🎈', t: 'Ortiqcha keng', en: 'too general', rule: 'all, never, always', ex: 'matn: some → variant: all', res: "noto'g'ri" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'vaqt rejasi', strat: 'qolgan vaqt ÷ qolgan savollar',
+      q: 'Reading: 15 questions, 20 minutes. You spent 8 minutes on the first 4 questions. How much time per question is left?',
+      steps: [['Qoldi: 20 − 8 = **12 min**', ''], ['Savollar: 15 − 4 = **11 ta**', ''], ['12 ÷ 11 ≈ **1.1 min**', 'javob']],
+      check: 'Xulosa: boshida sekinlashsangiz, oxiriga vaqt qolmaydi.',
+    },
+    {
+      tag: 'chiqarib tashlash', strat: 'har bir variantni matnga solishtiring',
+      q: 'Text: «Some students prefer online lessons.» Which is true? A) All students like online lessons. B) Online lessons are cheaper. C) A number of students like online lessons.',
+      steps: [['A) **all** ≠ some', 'ortiqcha keng ✗'], ["B) narx — matnda **yo'q**", '✗'], ['C) a number of = **some**', 'sinonim ✓'], ['**C**', 'javob']],
+      check: "Sinonim — to'g'ri javob belgisi ✓",
+    },
+    {
+      tag: 'tekshiruv', strat: 'oxirgi 5 daqiqa',
+      q: 'Check these Listening answers: «two bedroom», «wenesday», «the 3 of May».',
+      steps: [['two bedroom → **two bedrooms**', "ko'plik -s"], ['wenesday → **Wednesday**', 'imlo'], ['the 3 of May → **the 3rd of May**', 'tartib son'], ['3 ta xato topildi', 'javob']],
+      check: "Imlo xatosi — javob noto'g'ri hisoblanadi ✓",
+    },
+  ],
+  trap: {
+    title: "«Bir so'z mos keldi» tuzog'i",
+    q: "Matndagi so'z variantda ham bor — demak to'g'ri? ✗",
+    body: "Ko'pincha aynan shu variant — tuzoq. Ma'no mos kelishini tekshiring: to'g'ri javob ko'pincha sinonim bilan berilgan.",
+  },
+  tip: {
+    short: 'xatolar daftari', title: 'Mock 1 xatolarini tahlil qiling',
+    q: 'Har bir xato: grammatika, lug\'at yoki strategiya?',
+    body: "Xatolar daftarini oching: to'g'ri javob + sabab. Mock 2 dan oldin shu daftarni bir marta ko'rib chiqing.",
+  },
+  mistakes: [
+    "Birinchi qiyin savolda to'xtab, vaqtni yo'qotish.",
+    "Matndagi so'z mos kelgan variantni o'ylamay tanlash.",
+    'Javobsiz savol qoldirish.',
+    'Tekshirishga vaqt qoldirmaslik.',
+  ],
+  practice: [
+    ["Listening: 15 savol, 20 min. Savolga o'rtacha?", ''],
+    ['«always», «all», «never» — nima uchun xavfli?', ''],
+    ["Bo'sh savol qoldirish kerakmi?", ''],
+    ['Imlo: «recieve» yoki «receive»?', ''],
+  ],
+  answers: ['≈1.3 min', "ortiqcha keng ma'no", "yo'q, taxmin qiling", 'receive'],
+  remember: [
+    "Vaqtni bo'limlarga taqsimlang; qiyin savolni belgilab o'ting.",
+    "Ikki aniq noto'g'ri variantni chiqarib tashlang; sinonimni izlang.",
+    "Oxirgi 5 daqiqa — imlo, ko'plik, artikllarni tekshirish.",
+  ],
+};

@@ -1,0 +1,96 @@
+module.exports = {
+  n: 22,
+  short: 'Ish_va_talim_lugati',
+  en: 'Vocabulary: work and study',
+  video: '12 min',
+  emoji: {
+    lesson: '💼', strip: '💼 🎓 📚 🧑‍💻 📝 💰',
+    goal: ['💼', '🎓', '🛠️'],
+    kw: ['📝', '🤝', '💰', '📈', '🎓', '📚', '✅', '🛠️'],
+    core: ['🔍', '📝', '🤝', '💼'],
+    ex: ['🛠️', '🤝', '🎓'], tip: '📄',
+  },
+  hook: "Ish va o'qish — B1 suhbatlari va testlarida eng ko'p uchraydigan mavzu. Bugun shu mavzudagi kollokatsiyalar va make / do / take bilan iboralarni o'rganamiz.",
+  goals: [
+    ["Ish lug'ati", 'apply for, interview, salary'],
+    ["O'qish lug'ati", 'degree, take / pass / fail an exam'],
+    ['make / do / take', "Eng ko'p adashtiriladigan fe'llar"],
+  ],
+  kw: [
+    ['apply for', '… ga ariza bermoq', '**apply for** a job'],
+    ['job interview', 'ish suhbati', 'I have a **job interview** tomorrow.'],
+    ['salary', 'maosh', 'a good **salary**'],
+    ['career', "martaba, kasb yo'li", 'a **career** in IT'],
+    ['degree', 'diplom (oliy)', 'a **degree** in economics'],
+    ['take an exam', 'imtihon topshirmoq', 'I **take** my exam in June.'],
+    ['pass / fail', "o'tmoq / yiqilmoq", 'She **passed** the test.'],
+    ['skills', "ko'nikmalar", 'communication **skills**'],
+  ],
+  core: {
+    title: 'Ish topish: 4 bosqich', en: 'Getting a job',
+    steps: [
+      ["E'lon topish", 'look for a job, find a **vacancy**'],
+      ['Ariza', '**apply for** the job, send a **CV**'],
+      ['Suhbat', 'go to a **job interview**'],
+      ['Ishga kirish', '**get** the job, **earn** a salary'],
+    ],
+    note: "Kollokatsiya: earn money ✓ (win money — lotereyada!), make money ✓.",
+  },
+  cases: {
+    title: 'make, do yoki take?', en: 'Common collocations',
+    intro: "Uchalasi ham «qilmoq» — lekin har biri o'z so'zlari bilan:",
+    items: [
+      { badge: '🛠️', t: 'make', en: 'yaratish', rule: 'make + natija', ex: 'make a mistake, make a decision', res: 'yangi narsa' },
+      { badge: '📋', t: 'do', en: 'ish, vazifa', rule: 'do + faoliyat', ex: 'do homework, do a course', res: 'harakat' },
+      { badge: '⏱️', t: 'take', en: 'olmoq, topshirmoq', rule: 'take + …', ex: 'take an exam, take notes, take a break', res: "birikma sifatida yodlang" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'make / do / take', strat: 'kollokatsiyani eslang',
+      q: "Complete with make, do or take: I need to ___ a decision about university. First, I'll ___ an online course and ___ notes.",
+      steps: [['a decision', '→ **make**'], ['a course', '→ **do**'], ['notes', '→ **take**'], ['**make** a decision … **do** an online course and **take** notes', 'javob']],
+      check: 'do a decision ✗ — har doim make a decision ✓',
+    },
+    {
+      tag: 'ish suhbati', strat: "qiziqish + ko'nikma + misol",
+      q: 'Interviewer: «Why do you want this job?» Give a short answer.',
+      steps: [["Sabab: **I'm interested in**…", ''], ["I'm interested in marketing, and I have good communication skills.", ''], ['Misol: **For example**, …', ''], ['For example, I organised events at my university.', 'javob']],
+      check: "«I need money» ✗ — ishga qiziqishingizni ko'rsating.",
+    },
+    {
+      tag: 'imtihon', strat: "take — topshirish, pass — o'tish",
+      q: 'Correct the mistakes: I gave my exam yesterday. I think I failed from it.',
+      steps: [['gave ✗ →', '**took** my exam'], ['failed from ✗ →', '**failed** it'], ['I **took** my exam yesterday. I think I **failed** it.', 'javob']],
+      check: "pass / fail — predlogsiz: pass an exam, fail a test ✓",
+    },
+  ],
+  trap: {
+    title: '«work» sanalmaydi',
+    q: "I'm looking for a work. ✗",
+    body: "work — sanalmaydigan ot: I'm looking for **a job** ✓ yoki I'm looking for **work** ✓.",
+  },
+  tip: {
+    short: 'CV', title: "CV dagi kuchli fe'llar",
+    q: 'organised · managed · created · improved',
+    body: "«I was responsible for…» o'rniga harakat fe'llari ishlating: I **organised** 5 events. Raqamlar ishonchni oshiradi.",
+  },
+  mistakes: [
+    'a work ✗ → a job ✓.',
+    'make homework ✗ → **do** homework ✓.',
+    'win money (ishda) ✗ → **earn** money ✓.',
+    'apply to a job ✗ → apply **for** a job ✓.',
+  ],
+  practice: [
+    ['I made a big ___ in the test.', 'make'],
+    ['Can we ___ a break?', ''],
+    ['She ___ a lot of money as a doctor.', 'earn / win'],
+    ['He ___ for the job last week.', ''],
+  ],
+  answers: ['mistake', 'take', 'earns', 'applied'],
+  remember: [
+    "apply for, job interview, salary, career — ish lug'ati.",
+    'make — natija; do — vazifa; take — exam, notes, break.',
+    'job — sanaladi; work — sanalmaydi.',
+  ],
+};

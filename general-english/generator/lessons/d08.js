@@ -1,0 +1,96 @@
+module.exports = {
+  n: 8,
+  short: 'Reading_asosiy_fikr',
+  en: 'Reading: main idea and details',
+  video: '12 min',
+  emoji: {
+    lesson: '📖', strip: '📖 🔍 👀 📰 ✅ ❌',
+    goal: ['👀', '🔍', '✅'],
+    kw: ['👀', '🔍', '💡', '🔬', '✅', '❌', '🤷', '📄'],
+    core: ['👀', '❓', '🔍', '✅'],
+    ex: ['💡', '🔍', '✅'], tip: '⏱️',
+  },
+  hook: "O'qishda hamma so'zni tushunish shart emas. Bugun matnga tez ko'z yugurtirib asosiy fikrni topish (skimming) va kerakli ma'lumotni izlab topish (scanning) usullarini o'rganamiz.",
+  goals: [
+    ['Skimming', "Matnni tez o'qib, asosiy fikrni topish"],
+    ['Scanning', 'Raqam, ism, sanani izlab topish'],
+    ['True / False / Not Given', 'Uchala javobni farqlash'],
+  ],
+  kw: [
+    ['skim', "ko'z yugurtirmoq", '**Skim** the text in 1 minute.'],
+    ['scan', 'izlab topmoq', '**Scan** for dates and names.'],
+    ['main idea', 'asosiy fikr', 'The text is mainly about…'],
+    ['detail', 'tafsilot', 'a specific number or name'],
+    ['true', "to'g'ri", 'The text says the same.'],
+    ['false', "noto'g'ri", 'The text says the opposite.'],
+    ['not given', "matnda yo'q", 'No information in the text.'],
+    ['paragraph', 'xatboshi', 'The first **paragraph** says…'],
+  ],
+  core: {
+    title: 'Matn bilan ishlash: 4 qadam', en: 'Reading strategy',
+    steps: [
+      ['Skim', 'Sarlavha + birinchi gaplar: matn nima haqida?'],
+      ["Savollarni o'qi", "Kalit so'zlarni belgilang"],
+      ['Scan', "Kalit so'zni (yoki sinonimini) matndan toping"],
+      ["Diqqat bilan o'qi", "Shu gap atrofini o'qib, javob bering"],
+    ],
+    note: "Eslatma: savoldagi so'z matnda ko'pincha sinonim bilan beriladi: big → large, start → begin.",
+  },
+  cases: {
+    title: 'True, False yoki Not Given?', en: 'Three answers',
+    intro: 'Matn: «Aziz works in a hospital. He starts work at 7 a.m.»',
+    items: [
+      { badge: '✅', t: 'True', en: 'matnda bor', rule: "bir xil ma'no", ex: 'Aziz begins work early.', res: 'begins = starts' },
+      { badge: '❌', t: 'False', en: 'matnga zid', rule: "teskari ma'no", ex: 'Aziz works in a school.', res: 'hospital ≠ school' },
+      { badge: '🤷', t: 'Not Given', en: "matnda yo'q", rule: "ma'lumot yo'q", ex: 'Aziz likes his job.', res: "bu haqda gap yo'q" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'asosiy fikr', strat: 'birinchi va oxirgi gapga qarang',
+      q: '«Many teenagers sleep less than 7 hours. Phones and homework keep them awake. Doctors say they need 8–10 hours.» What is the main idea?',
+      steps: [['1-gap: **sleep less**', 'mavzu'], ['oxirgi gap: **need 8–10 hours**', 'xulosa'], ["Teenagers **don't sleep enough**.", 'javob']],
+      check: '«Phones are bad» — bu detal, asosiy fikr emas.',
+    },
+    {
+      tag: 'scanning', strat: 'faqat kerakli raqamni qidiring',
+      q: '«The museum opens at 9 a.m. and closes at 6 p.m. Tickets cost 20,000 sum; students pay half.» How much does a student ticket cost?',
+      steps: [["Kalit so'z: **students**", ''], ['students pay **half**', '20,000 ÷ 2'], ['**10,000 sum**', 'javob']],
+      check: "Javob matnda to'g'ridan-to'g'ri yo'q — hisoblash kerak edi.",
+    },
+    {
+      tag: 'True / False / Not Given', strat: "sinonim — True, zid — False, yo'q — Not Given",
+      q: 'Text: «Lola has lived in London for two years. She studies medicine.» Statement: «Lola is a doctor.»',
+      steps: [['Matnda: **studies medicine**', "o'qiyapti"], ['doctor — hali emas', "lekin «emas» deyilmagan"], ['**Not Given**', 'javob']],
+      check: "Agar matnda «She isn't a doctor yet» bo'lsa — False bo'lardi.",
+    },
+  ],
+  trap: {
+    title: "O'z bilimingiz tuzog'i",
+    q: '«Bu menga mantiqan to\'g\'ri ko\'rinadi…»',
+    body: "Javobni faqat matnga tayanib bering, hayotiy bilimingizga emas. Matnda yozilmagan bo'lsa — Not Given.",
+  },
+  tip: {
+    short: 'vaqt', title: "Har bir so'zni tarjima qilmang",
+    q: "Notanish so'z — to'xtamang!",
+    body: "Avval butun gapni o'qing: ko'pincha ma'no kontekstdan tushunarli. Lug'atga faqat javob uchun zarur so'zni qarang.",
+  },
+  mistakes: [
+    "Matnni boshidan oxirigacha sekin o'qib, vaqtni tugatish.",
+    'False va Not Given ni adashtirish.',
+    "Savoldagi so'zni matndan aynan qidirish — sinonimni o'tkazib yuborish.",
+    'Detalni asosiy fikr deb tanlash.',
+  ],
+  practice: [
+    ['Skimming — nima uchun?', ''],
+    ['Scanning — nimani qidiramiz?', ''],
+    ['«The shop is closed on Sundays.» → «The shop is open on Sunday.»', 'T / F / NG'],
+    ["«Ali has a cat.» → «Ali's cat is black.»", 'T / F / NG'],
+  ],
+  answers: ['asosiy fikr uchun', 'raqam, ism, sana', 'False', 'Not Given'],
+  remember: [
+    "Skim — asosiy fikr; scan — aniq ma'lumot.",
+    "Savoldagi so'z matnda sinonim bilan bo'lishi mumkin.",
+    "True — mos, False — zid, Not Given — matnda yo'q.",
+  ],
+};

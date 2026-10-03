@@ -1,0 +1,96 @@
+module.exports = {
+  n: 31,
+  short: 'Phrasal_verbs',
+  en: 'Vocabulary: everyday phrasal verbs',
+  video: '12 min',
+  emoji: {
+    lesson: '🧩', strip: '🔍 🛑 🔦 ⏰ 📺 🧩',
+    goal: ['🧩', '✂️', '🔗'],
+    kw: ['🔍', '🏳️', '💡', '📺', '⏰', '⏸️', '🧥', '👶'],
+    core: ['🧩', '✂️', '👉', '🔗'],
+    ex: ['🧩', '✂️', '💬'], tip: '🧠',
+  },
+  hook: "Ingliz tilida so'zlashuvchilar «continue» o'rniga «go on», «discover» o'rniga «find out» deydi. Phrasal verbs — jonli nutqning kaliti. Bugun eng ko'p ishlatiladiganlarini o'rganamiz.",
+  goals: [
+    ["Ma'no", "fe'l + yuklama = yangi ma'no"],
+    ['Ajraladigan', 'turn it off ✓'],
+    ['Ajralmaydigan', 'look for it ✓, look it for ✗'],
+  ],
+  kw: [
+    ['look for', 'qidirmoq', "I'm **looking for** my keys."],
+    ['give up', "tashlamoq, voz kechmoq", "Don't **give up**!"],
+    ['find out', 'bilib olmoq', 'I **found out** the truth.'],
+    ['turn on / off', "yoqmoq / o'chirmoq", '**Turn off** the TV.'],
+    ['get up', "o'rnidan turmoq", 'I **get up** at 7.'],
+    ['put off', 'keyinga qoldirmoq', "Don't **put off** your homework."],
+    ['put on', 'kiymoq', '**Put on** your coat.'],
+    ['look after', "g'amxo'rlik qilmoq", 'She **looks after** her sister.'],
+  ],
+  core: {
+    title: 'Phrasal verbs: 4 qoida', en: 'How phrasal verbs work',
+    steps: [
+      ["Ma'no", 'turn + on = yoqmoq (turn — burmoq!)'],
+      ['Ajraladigan', 'turn **the TV** off ✓ = turn off **the TV** ✓'],
+      ["Olmosh o'rtada", 'turn **it** off ✓, turn off it ✗'],
+      ['Ajralmaydigan', 'look **after** her ✓, look her after ✗'],
+    ],
+    note: "Lug'atda: turn sth off — sth o'rtada turishi mumkin; look after sb — ajralmaydi.",
+  },
+  cases: {
+    title: "Bir fe'l — uch ma'no", en: 'Same verb, different particles',
+    intro: "look fe'li bilan:",
+    items: [
+      { badge: '🔍', t: 'look for', en: 'qidirmoq', rule: 'search', ex: "I'm looking for a job.", res: 'ajralmaydi' },
+      { badge: '👶', t: 'look after', en: "g'amxo'rlik", rule: 'take care of', ex: 'Can you look after my cat?', res: 'ajralmaydi' },
+      { badge: '📖', t: 'look up', en: "lug'atdan qidirish", rule: 'check', ex: 'Look it up in a dictionary.', res: 'ajraladi' },
+    ],
+  },
+  ex: [
+    {
+      tag: "ma'noni tanlash", strat: 'kontekstga qarang',
+      q: "Complete with give up, find out, put off: I'll ___ what time the film starts. Don't ___ — you're almost there! We had to ___ the meeting until Friday.",
+      steps: [['bilib olmoq', '→ **find out**'], ["voz kechmoq", '→ **give up**'], ['keyinga qoldirmoq', '→ **put off**'], ['**find out** … **give up** … **put off**', 'javob']],
+      check: "Ikki marta o'qib, ma'noni tekshiring ✓",
+    },
+    {
+      tag: "olmosh o'rni", strat: "olmosh — fe'l va yuklama o'rtasida",
+      q: 'Replace the noun with **it** / **them**: a) Turn off the light.  b) Put on your shoes.',
+      steps: [['a) the light → **it**', ''], ['Turn **it** off.', 'Turn off it ✗'], ['b) your shoes → **them**', ''], ['Put **them** on.', 'javob']],
+      check: "Bu qoida faqat ajraladigan fe'llar uchun ✓",
+    },
+    {
+      tag: "so'zlashuv uslubi", strat: "fe'lni phrasal verb bilan almashtiring",
+      q: 'Make it more natural: a) Please continue.  b) I discovered the answer.  c) We postponed the trip.',
+      steps: [['continue → **go on**', ''], ['discovered → **found out**', ''], ['postponed → **put off**', ''], ['Please **go on**. I **found out** the answer. We **put off** the trip.', 'javob']],
+      check: 'Rasmiy yozuvda — continue, discover; nutqda — phrasal verbs ✓',
+    },
+  ],
+  trap: {
+    title: "So'zma-so'z tarjima",
+    q: 'give up ≠ «yuqoriga bermoq»',
+    body: "Phrasal verb ma'nosi qismlarining yig'indisi emas. Har birini birikma va misol gap bilan yodlang.",
+  },
+  tip: {
+    short: 'yodlash', title: "Mavzu bo'yicha guruhlang",
+    q: 'Ertalab: wake up, get up, put on, turn on…',
+    body: "Kun tartibi, sayohat, ish kabi mavzular bo'yicha yodlang — hikoya qilib takrorlash oson.",
+  },
+  mistakes: [
+    "Olmoshni oxiriga qo'yish: Turn off it ✗.",
+    'Ajralmaydiganni ajratish: look it for ✗.',
+    "Yuklamani unutish: I'm looking my phone ✗ → looking **for** ✓.",
+    "Rasmiy matnda juda ko'p phrasal verbs ishlatish.",
+  ],
+  practice: [
+    ['I usually ___ up at 6:30.', ''],
+    ["It's cold. ___ on your jacket.", ''],
+    ['Who will ___ after the baby?', ''],
+    ['Replace with it: Turn on the radio.', ''],
+  ],
+  answers: ['get', 'Put', 'look', 'Turn it on.'],
+  remember: [
+    "Phrasal verb = fe'l + yuklama, ma'nosi yangi.",
+    "Ajraladigan: olmosh o'rtada — turn it off.",
+    'Ajralmaydigan: look for, look after — ajratmang.',
+  ],
+};

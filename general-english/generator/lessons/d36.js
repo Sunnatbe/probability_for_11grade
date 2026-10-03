@@ -1,0 +1,98 @@
+module.exports = {
+  n: 36,
+  short: 'Yakuniy_Mock3_va_tahlil',
+  en: 'Final mock test, assessment and results',
+  video: '11 min',
+  now: 'Mock 3 (60 savol, 70 min + Writing)',
+  next: 'Kurs yakuni — natijalar tahlili va sertifikat',
+  emoji: {
+    lesson: '🏆', strip: '🏆 📊 ✍️ 🗣️ 📈 🎓',
+    goal: ['📝', '📊', '🎓'],
+    kw: ['📊', '🏅', '💬', '🎯', '🗣️', '📈', '🧩', '🎓'],
+    core: ['📊', '🔍', '🎯', '📅'],
+    ex: ['📊', '✍️', '📈'], tip: '🚀',
+  },
+  hook: "Yakuniy dars! Bugun oxirgi mock testni ishlaysiz, Writing va Speaking qanday baholanishini bilib olasiz va natijangizni kursning birinchi kunidagi diagnostika bilan solishtirasiz.",
+  goals: [
+    ['Yakuniy mock', '60 savol + Writing — real sharoitda'],
+    ['Baholash mezonlari', 'Writing va Speaking qanday baholanadi'],
+    ['Keyingi qadam', "B1 dan keyin nima o'qish kerak"],
+  ],
+  kw: [
+    ['score report', 'natijalar hisoboti', 'Grammar 80%, Listening 65%'],
+    ['level', 'daraja', 'B1 level'],
+    ['feedback', 'fikr-mulohaza', "teacher's **feedback**"],
+    ['accuracy', 'aniqlik (xatosizlik)', 'grammar **accuracy**'],
+    ['fluency', 'ravonlik', 'speaking **fluency**'],
+    ['progress', "o'sish", 'from A2 to B1'],
+    ['range', "xilma-xillik (so'z, grammatika)", 'a wide **range** of vocabulary'],
+    ['certificate', 'sertifikat', 'course **certificate**'],
+  ],
+  core: {
+    title: 'Natijani tahlil qilish: 4 qadam', en: 'Analysing your results',
+    steps: [
+      ["Ko'nikma bo'yicha", 'Grammar, Vocabulary, Reading, Listening — foizlar'],
+      ['Xato turi', "Bilim, e'tiborsizlik yoki vaqt?"],
+      ['Zaif joy', "Eng past foizli ko'nikmadan boshlang"],
+      ['Reja', "Har kuni 20–30 daqiqa, bitta ko'nikma"],
+    ],
+    note: "Diagnostika (1-dars) → Mock 1 → Mock 2 → Mock 3: o'sish dinamikasi — eng yaxshi motivatsiya.",
+  },
+  cases: {
+    title: 'Writing qanday baholanadi?', en: 'Writing criteria',
+    intro: "Yozma ish 3 mezon bo'yicha baholanadi:",
+    items: [
+      { badge: '🎯', t: 'Topshiriq', en: 'task achievement', rule: 'barcha savollarga javob', ex: '3 ta savol — 3 xatboshi', res: "120–150 so'z" },
+      { badge: '🔗', t: "Bog'liqlik", en: 'organisation', rule: "tuzilma + bog'lovchilar", ex: 'First, … However, … Finally, …', res: 'mantiqiy tartib' },
+      { badge: '🧩', t: 'Til', en: 'language', rule: "grammatika + lug'at", ex: "turli zamonlar, aniq so'zlar", res: 'aniqlik + xilma-xillik' },
+    ],
+  },
+  ex: [
+    {
+      tag: "natijani o'qish", strat: 'eng past foiz — birinchi navbat',
+      q: 'Mock 3: Grammar 85%, Vocabulary 78%, Reading 72%, Listening 58%. Which skill should you focus on first?',
+      steps: [['Eng past: **Listening 58%**', ''], ['Reja: har kuni 15 min tinglash', 'podkast, video'], ['**Listening**', 'javob']],
+      check: "Hammasiga birdan emas — bitta ko'nikmaga e'tibor bering ✓",
+    },
+    {
+      tag: 'writingni yaxshilash', strat: "oddiy gaplar → bog'langan, aniq gap",
+      q: 'Improve: «The city is good. It is big. I like it.»',
+      steps: [["Bog'lovchi: **because / and**", ''], ['good → **lively**', 'aniqroq sifat'], ["I like the city **because** it's big **and** lively.", 'javob']],
+      check: 'Bitta gap — uchta fikr, ravonroq ✓',
+    },
+    {
+      tag: "o'sishni o'lchash", strat: 'yangi − eski',
+      q: 'Diagnostic test: 45%. Mock 1: 58%. Mock 3: 74%. How many percentage points did you improve in total?',
+      steps: [['Diagnostika → Mock 3', ''], ['74 − 45 = **29**', ''], ['**+29 foiz punkt**', 'javob']],
+      check: "O'sishni grafikka chizing va saqlab qo'ying ✓",
+    },
+  ],
+  trap: {
+    title: "«Kurs tugadi — o'qish tugadi»",
+    q: 'Sertifikat oldim, endi dam olaman…',
+    body: "Til mashqsiz tez unutiladi. Haftasiga kamida 3 marta: 1 ta maqola, 1 ta podkast, 10 ta yangi so'z — B2 sari yo'l.",
+  },
+  tip: {
+    short: 'keyingi qadam', title: 'B1 dan keyin',
+    q: "B2 kursi · IELTS / CEFR tayyorgarlik · kitob o'qish",
+    body: "Graded readers (B1–B2 darajali kitoblar), inglizcha subtitrli seriallar va haftalik speaking klub — eng samarali davom.",
+  },
+  mistakes: [
+    'Mock natijasini tahlilsiz qoldirish.',
+    "Faqat sevimli ko'nikmani mashq qilish.",
+    "Writingda topshiriqdagi savollardan birini o'tkazib yuborish.",
+    "Speakingda qisqa «Yes / No» javoblar.",
+  ],
+  practice: [
+    ['Writing: 3 mezonni sanang', ''],
+    ['Fluency nima?', ''],
+    ["Mock 1: 60%, Mock 3: 72%. O'sish?", ''],
+    ['Kursdan keyingi haftalik reja', '3 ta odat'],
+  ],
+  answers: ['topshiriq, tuzilma, til', 'ravonlik', '+12 foiz punkt', "maqola, podkast, 10 so'z"],
+  remember: [
+    "Natijani ko'nikmalar bo'yicha tahlil qiling — eng zaif joydan boshlang.",
+    'Writing: topshiriq + tuzilma + til; Speaking: ravonlik + aniqlik.',
+    "O'qishni to'xtatmang: har kuni 20–30 daqiqa.",
+  ],
+};

@@ -1,0 +1,96 @@
+module.exports = {
+  n: 23,
+  short: 'Gerund_va_infinitive',
+  en: 'Gerunds and infinitives: -ing or to?',
+  video: '12 min',
+  emoji: {
+    lesson: '🔀', strip: '🎮 🏃 📖 🎯 🛑 🔀',
+    goal: ['🎮', '🎯', '🔀'],
+    kw: ['😍', '🙅', '🎯', '🤔', '🛑', '🧠', '🙋', '⏩'],
+    core: ['😍', '🎯', '📍', '🔀'],
+    ex: ['🎯', '📍', '🛑'], tip: '📒',
+  },
+  hook: "«I enjoy to swim» yoki «I enjoy swimming»? Ba'zi fe'llardan keyin -ing, ba'zilaridan keyin to keladi. Bugun eng ko'p ishlatiladigan fe'llar ro'yxatini va ma'no o'zgaradigan holatlarni o'rganamiz.",
+  goals: [
+    ["fe'l + -ing", 'enjoy, avoid, finish, mind'],
+    ["fe'l + to", 'want, decide, hope, plan'],
+    ["Ma'no o'zgaradi", 'stop, remember, try'],
+  ],
+  kw: [
+    ['enjoy + -ing', 'yoqtirmoq', 'I **enjoy reading**.'],
+    ['avoid + -ing', 'qochmoq', '**avoid eating** sugar'],
+    ['want + to', 'xohlamoq', 'I **want to travel**.'],
+    ['decide + to', 'qaror qilmoq', 'She **decided to leave**.'],
+    ['stop + -ing', "to'xtatmoq, tashlamoq", 'He **stopped smoking**.'],
+    ['remember + to', 'esdan chiqarmaslik', '**Remember to call** me.'],
+    ['would like + to', 'xohlardim', "I**'d like to** order."],
+    ['look forward to + -ing', 'intiqlik bilan kutmoq', 'I **look forward to seeing** you.'],
+  ],
+  core: {
+    title: '-ing yoki to? 4 qoida', en: 'Gerunds and infinitives',
+    steps: [
+      ['Yoqtirish / qochish', 'enjoy, avoid, finish, mind + **-ing**'],
+      ['Reja / xohish', 'want, decide, hope, plan + **to**'],
+      ['Predlogdan keyin', 'interested **in learning**, good **at singing**'],
+      ["Ma'no o'zgaradi", 'stop, remember — ikkalasi ham, ma\'no boshqa'],
+    ],
+    note: "like, love, hate, start, begin — ikkalasi ham to'g'ri: I like swimming = I like to swim.",
+  },
+  cases: {
+    title: "stop va remember: ma'no o'zgaradi", en: 'Change of meaning',
+    intro: "Keyingi shakl ma'noni o'zgartiradi:",
+    items: [
+      { badge: '🛑', t: 'stop + -ing', en: 'odatni tashlash', rule: "harakatni to'xtatish", ex: 'I stopped eating meat.', res: 'endi yemayman' },
+      { badge: '⏸️', t: 'stop + to', en: "to'xtab nimadir qilish", rule: 'maqsad', ex: 'I stopped to eat a sandwich.', res: "ovqatlanish uchun to'xtadim" },
+      { badge: '🧠', t: 'remember', en: '-ing yoki to', rule: "-ing — o'tmish; to — vazifa", ex: 'Remember to lock the door!', res: 'I remember meeting him.' },
+    ],
+  },
+  ex: [
+    {
+      tag: '-ing yoki to', strat: "fe'lni ro'yxatdan toping",
+      q: "Complete: I've decided ___ (learn) Spanish. I really enjoy ___ (learn) languages, but I want to avoid ___ (make) mistakes.",
+      steps: [['decide', '→ **to learn**'], ['enjoy', '→ **learning**'], ['avoid', '→ **making**'], ['decided **to learn** … enjoy **learning** … avoid **making**', 'javob']],
+      check: 'want to avoid — want dan keyin to, avoid dan keyin -ing ✓',
+    },
+    {
+      tag: 'predlogdan keyin', strat: 'predlog + -ing',
+      q: "Complete: She is good at ___ (draw). I'm interested in ___ (become) a pilot. Thank you for ___ (help) me.",
+      steps: [['at + **drawing**', ''], ['in + **becoming**', ''], ['for + **helping**', ''], ['good at **drawing** … interested in **becoming** … for **helping**', 'javob']],
+      check: "Predlogdan keyin hech qachon to + fe'l kelmaydi ✓",
+    },
+    {
+      tag: 'stop + -ing / to', strat: "to'xtatish yoki maqsad?",
+      q: 'Explain the difference: a) He stopped talking to me.  b) He stopped to talk to me.',
+      steps: [['a) stop + **-ing**', 'gaplashishni tashladi'], ['b) stop + **to**', "gaplashish uchun to'xtadi"], ["a) urishib qolishdi; b) yo'lda to'xtab gaplashdi", 'javob']],
+      check: "Bitta so'z — butunlay boshqa ma'no ✓",
+    },
+  ],
+  trap: {
+    title: "«look forward to» tuzog'i",
+    q: 'I look forward to see you. ✗',
+    body: "Bu yerda to — predlog, shuning uchun -ing: I look forward to **seeing** you ✓. Rasmiy email oxirida juda ko'p ishlatiladi.",
+  },
+  tip: {
+    short: "ro'yxat", title: "Ro'yxatni ikki ustunda yozing",
+    q: '-ing: enjoy, avoid, finish, mind · to: want, decide, hope, plan',
+    body: "Lug'at daftaringizda alohida sahifa oching va har bir fe'lga o'zingiz haqingizda misol yozing.",
+  },
+  mistakes: [
+    'enjoy to ✗ → enjoy **-ing** ✓.',
+    'want + -ing ✗ → want **to** ✓.',
+    'Predlogdan keyin to: good at to sing ✗.',
+    'would like + -ing ✗ → would like **to** ✓.',
+  ],
+  practice: [
+    ['Do you mind ___ (open) the window?', ''],
+    ['They hope ___ (win) the match.', ''],
+    ["I'm tired of ___ (wait).", ''],
+    ["Don't forget ___ (buy) bread!", ''],
+  ],
+  answers: ['opening', 'to win', 'waiting', 'to buy'],
+  remember: [
+    'enjoy, avoid, finish, mind + -ing; want, decide, hope, plan + to.',
+    'Predlogdan keyin har doim -ing.',
+    "stop / remember: -ing va to — ma'no har xil.",
+  ],
+};

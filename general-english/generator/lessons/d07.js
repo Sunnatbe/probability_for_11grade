@@ -1,0 +1,96 @@
+module.exports = {
+  n: 7,
+  short: 'Artikllar_va_miqdor',
+  en: 'Articles, countable and uncountable nouns, quantifiers',
+  video: '13 min',
+  emoji: {
+    lesson: '🍎', strip: '🍎 🍞 💧 🧀 🥛 🛒',
+    goal: ['🔢', '🅰️', '⚖️'],
+    kw: ['🍎', '💧', '☝️', '🎯', '🛒', '❓', '🍚', '🍪'],
+    core: ['☝️', '🔤', '🎯', '🌍'],
+    ex: ['🅰️', '🛒', '⚖️'], tip: '💡',
+  },
+  hook: "a, an, the — o'zbek tilida yo'q, shuning uchun eng ko'p xato qilinadigan so'zlar. Bugun ularni sanaladigan va sanalmaydigan otlar bilan birga tartibga solamiz.",
+  goals: [
+    ['Sanaladigan / sanalmaydigan', 'an apple, two apples — lekin water, rice'],
+    ['a / an / the', "Birinchi marta — a, ma'lum narsa — the"],
+    ["Miqdor so'zlari", 'some / any, much / many, a lot of'],
+  ],
+  kw: [
+    ['countable', 'sanaladigan', 'an apple, two apples'],
+    ['uncountable', 'sanalmaydigan', 'water, rice, money'],
+    ['a / an', 'noaniq artikl (bitta)', '**a** book, **an** egg'],
+    ['the', "aniq artikl (o'sha)", '**the** book on the table'],
+    ['some', 'bir oz, bir nechta', 'I have **some** bread.'],
+    ['any', 'hech qanday / biror', 'Do you have **any** milk?'],
+    ['much', "ko'p (sanalmaydi)", 'not **much** time'],
+    ['many', "ko'p (sanaladi)", '**many** friends'],
+  ],
+  core: {
+    title: 'Artikllar: 4 qoida', en: 'Articles',
+    steps: [
+      ['a / an', 'Birlikdagi sanaladigan ot, birinchi marta: **a** cat'],
+      ['an', "Unli **tovush**dan oldin: **an** hour, **a** university"],
+      ['the', "Ma'lum, yagona yoki takroriy: **the** sun"],
+      ['Artiklsiz', "Umumiy ma'noda: I like **music**."],
+    ],
+    note: "Qoida: a / an — tovushga qarab: an hour (h o'qilmaydi), a uniform (/juː/ bilan boshlanadi).",
+  },
+  cases: {
+    title: "Miqdor so'zlari", en: 'Quantifiers',
+    intro: 'Ot sanaladimi yoki yo\'qmi — shunga qarab tanlang:',
+    items: [
+      { badge: '🍎', t: 'Sanaladigan', en: 'countable', rule: 'many / a few', ex: 'How **many** apples?', res: 'a few friends' },
+      { badge: '💧', t: 'Sanalmaydigan', en: 'uncountable', rule: 'much / a little', ex: 'How **much** water?', res: 'a little time' },
+      { badge: '✅', t: 'Ikkalasi', en: 'both', rule: 'some / any / a lot of', ex: '**a lot of** money / books', res: 'tasdiqda — some' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'a / an / the', strat: 'birinchi marta — a, ikkinchi marta — the',
+      q: 'Complete: I bought ___ shirt and ___ umbrella. ___ shirt is blue.',
+      steps: [['shirt — birinchi marta', '→ **a** shirt'], ['umbrella — unli tovush', '→ **an** umbrella'], ['shirt — ikkinchi marta', '→ **The** shirt'], ['I bought **a** shirt and **an** umbrella. **The** shirt is blue.', 'javob']],
+      check: "Endi tinglovchi qaysi ko'ylak ekanini biladi — shuning uchun the ✓",
+    },
+    {
+      tag: 'some / any', strat: "tasdiq — some, inkor va so'roq — any",
+      q: "Complete: We have ___ eggs, but we don't have ___ milk. Is there ___ bread?",
+      steps: [['tasdiq gap', '→ **some** eggs'], ['inkor gap', '→ **any** milk'], ["so'roq gap", '→ **any** bread'], ["We have **some** eggs, but we don't have **any** milk. Is there **any** bread?", 'javob']],
+      check: "Taklif va so'rovda some: Would you like **some** tea? ✓",
+    },
+    {
+      tag: 'much / many', strat: "sanaladimi? — many, yo'qmi — much",
+      q: "Choose: How ___ (much / many) money do you have? I don't have ___ (much / many) friends here.",
+      steps: [['money — sanalmaydi', '→ **much**'], ['friends — sanaladi', '→ **many**'], ["How **much** money…? I don't have **many** friends.", 'javob']],
+      check: 'Tasdiq gapda odatda a lot of: I have **a lot of** friends ✓',
+    },
+  ],
+  trap: {
+    title: "«an university» tuzog'i",
+    q: 'an university ✗   a hour ✗',
+    body: "Harfga emas, tovushga qarang: university /juː/ — undosh tovush → **a** university; hour — h o'qilmaydi → **an** hour.",
+  },
+  tip: {
+    short: 'sanalmaydigan otlar', title: "Sanalmaydigan otlar ro'yxati",
+    q: 'advice, information, news, furniture, homework, luggage',
+    body: "O'zbekchada sanaladi, inglizchada yo'q! an advice ✗ → **some advice** / **a piece of advice** ✓. News — birlikda: The news **is** good.",
+  },
+  mistakes: [
+    'Kasbdan oldin a ni tushirish: She is teacher ✗ → She is **a** teacher ✓.',
+    "Umumiy ma'noda the: The life is beautiful ✗ → Life is beautiful ✓.",
+    "Sanalmaydiganni ko'plikda: informations ✗, advices ✗.",
+    "Inkorda some: I don't have some money ✗ → **any** money ✓.",
+  ],
+  practice: [
+    ['She is ___ engineer.', ''],
+    ['How ___ sugar do you want?', 'much / many'],
+    ['Is there ___ juice in the fridge?', 'some / any'],
+    ['I can see ___ moon tonight.', ''],
+  ],
+  answers: ['an', 'much', 'any', 'the'],
+  remember: [
+    'a / an — birinchi marta, birlikda; tovushga qarang (an hour, a university).',
+    "the — ma'lum, yagona yoki takrorlangan narsa.",
+    "many / a few — sanaladi; much / a little — sanalmaydi; some — tasdiq, any — inkor va so'roq.",
+  ],
+};

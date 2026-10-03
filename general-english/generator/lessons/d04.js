@@ -1,0 +1,96 @@
+module.exports = {
+  n: 4,
+  short: 'Present_Continuous',
+  en: 'Present Continuous vs Present Simple',
+  video: '12 min',
+  emoji: {
+    lesson: '🎬', strip: '📸 ⏳ 🔁 🏃 💬 🎧',
+    goal: ['⏳', '⚖️', '🧠'],
+    kw: ['⏰', '⏳', '📍', '📆', '❤️', '🧠', '👀', '🔁'],
+    core: ['✅', '❌', '❓', '🚫'],
+    ex: ['📸', '⚖️', '🧠'],
+  },
+  hook: "«I work» va «I'm working» — ikkalasi ham «ishlayapman» deb tarjima qilinishi mumkin, lekin ma'nosi boshqa. Bugun bu ikki zamonni qachon ishlatishni aniq ajratamiz.",
+  goals: [
+    ['Present Continuous', "am / is / are + fe'l-ing"],
+    ['Farqi', "Hozirgi jarayon va odat"],
+    ["Holat fe'llari", "like, know, want — Continuous'da ishlatilmaydi"],
+  ],
+  kw: [
+    ['now', 'hozir', "I'm reading **now**."],
+    ['at the moment', 'ayni paytda', 'She is working **at the moment**.'],
+    ['currently', 'hozirgi vaqtda', 'He is **currently** living in Bukhara.'],
+    ['these days', 'shu kunlarda', "I'm learning English **these days**."],
+    ['state verb', "holat fe'li", 'like, love, know, want'],
+    ['know', 'bilmoq', 'I **know** the answer. (knowing ✗)'],
+    ['Look!', 'Qarang!', "**Look!** It's raining."],
+    ['usually', 'odatda', 'I **usually** walk to work.'],
+  ],
+  core: {
+    title: 'Present Continuous: 4 qoida', en: 'Form and use',
+    steps: [
+      ['Tasdiq', 'I **am** / he **is** / they **are** + work**ing**'],
+      ['Inkor', "**am not** / **isn't** / **aren't** + -ing"],
+      ["So'roq", '**Am / Is / Are** + ega + -ing?'],
+      ["Holat fe'llari", "like, know, want — Continuous'da emas"],
+    ],
+    note: "Yozilish: make → making (e tushadi), run → running (undosh ikkilanadi), lie → lying.",
+  },
+  cases: {
+    title: 'Simple yoki Continuous?', en: 'Choosing the tense',
+    intro: "Gapdagi vaqt belgisi va ma'noga qarang:",
+    items: [
+      { badge: '🔁', t: 'Odat', en: 'Present Simple', rule: 'every day, usually', ex: 'I **drink** tea every morning.', res: 'takrorlanadi' },
+      { badge: '📸', t: 'Hozirgi jarayon', en: 'Present Continuous', rule: 'now, at the moment', ex: "I'm **drinking** tea now.", res: 'ayni paytda' },
+      { badge: '🧠', t: 'Holat', en: 'state verbs', rule: 'like, know, need', ex: 'I **need** help now.', res: 'needing ✗' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'hozirgi jarayon', strat: '«now», «Look!» — Continuous',
+      q: 'Complete: Look! The children ___ (play) in the garden.',
+      steps: [['Signal: **Look!**', "hozir sodir bo'lyapti"], ['Ega: the children = **they**', '→ are'], ['play → **playing**', ''], ['The children **are playing** in the garden.', 'javob']],
+      check: "Tekshiruv: «Look!» — ko'z oldingizdagi jarayon ✓",
+    },
+    {
+      tag: 'odat va hozir', strat: 'ikki qism — ikki zamon',
+      q: 'Complete: I usually ___ (walk) to work, but today I ___ (take) a taxi.',
+      steps: [['1-qism: **usually**', 'odat → Simple'], ['I usually **walk** to work,', ''], ['2-qism: **today**', 'vaqtinchalik → Continuous'], ["but today I**'m taking** a taxi.", 'javob']],
+      check: "Bitta gapda ikki zamon bo'lishi mumkin ✓",
+    },
+    {
+      tag: "holat fe'li", strat: "fikr, his, egalik — Continuous emas",
+      q: 'Correct the mistakes: I am knowing the answer, and I am wanting to say it.',
+      steps: [["**know** — holat fe'li", 'bilish — jarayon emas'], ["**want** — holat fe'li", 'xohish'], ['I **know** the answer, and I **want** to say it.', 'javob']],
+      check: "Holat fe'llari: like, love, hate, know, understand, want, need, believe.",
+    },
+  ],
+  trap: {
+    title: "«I am agree» tuzog'i",
+    q: 'I am agree with you. ✗',
+    body: "agree — fe'l, unga am kerak emas: I **agree** with you ✓. Xuddi shunday: I am like it ✗ → I **like** it ✓.",
+  },
+  tip: {
+    short: 'talaffuz', title: '-ing talaffuzi: /ɪŋ/',
+    q: "working /ˈwɜːkɪŋ/ — oxirida «g» alohida eshitilmaydi",
+    body: "/ŋ/ — burun tovushi, n va g birga. «working-g» deb oxirgi g ni qattiq aytmang.",
+  },
+  mistakes: [
+    'am / is / are ni tushirib qoldirish: She working now ✗ → She **is** working now ✓.',
+    "Holat fe'lini Continuous'da ishlatish: I'm liking it ✗ → I **like** it ✓.",
+    "Odat uchun Continuous: I'm going to school every day ✗ → I **go** ✓.",
+    'Yozilish: writting ✗ → writing ✓, siting ✗ → sitting ✓.',
+  ],
+  practice: [
+    ['She ___ (cook) dinner right now.', ''],
+    ['He ___ (not / understand) the question.', "holat fe'li"],
+    ['___ you ___ (wait) for the bus?', "so'roq"],
+    ['My dad ___ (work) in a bank.', 'doimiy'],
+  ],
+  answers: ['is cooking', "doesn't understand", 'Are … waiting', 'works'],
+  remember: [
+    'am / is / are + -ing — hozir, ayni paytda, vaqtinchalik.',
+    'Odat va doimiy fakt — Present Simple.',
+    "Holat fe'llari (like, know, want, need) Continuous'da ishlatilmaydi.",
+  ],
+};

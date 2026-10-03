@@ -1,0 +1,97 @@
+module.exports = {
+  n: 1,
+  short: 'Kirish_va_diagnostika',
+  en: 'Course introduction and placement test',
+  video: '11 min',
+  now: 'diagnostik test (40 savol, 30 min)',
+  emoji: {
+    lesson: '🧭', strip: '🎧 📖 ✍️ 🗣️ 📊 🎯',
+    goal: ['📊', '🧩', '🗺️'],
+    kw: ['📶', '📝', '🌍', '🛠️', '📐', '🔤', '📈', '🎯'],
+    core: ['🎧', '📖', '✍️', '🗣️'],
+    ex: ['🔎', '📏', '🗺️'], tip: '🎯',
+  },
+  hook: "Kursni boshlashdan oldin hozirgi darajangizni aniqlab olamiz. Bu dars sizga qayerdan boshlashni va 12 hafta ichida qayerga yetishni ko'rsatadi.",
+  goals: [
+    ['CEFR darajalari', 'A1 dan C2 gacha — har biri nimani anglatadi'],
+    ["4 ko'nikma", 'Listening, Reading, Writing, Speaking'],
+    ['Shaxsiy reja', 'Diagnostika natijasidan zaif tomonlarni topish'],
+  ],
+  kw: [
+    ['level', 'daraja', 'My **level** is A2.'],
+    ['placement test', 'darajani aniqlash testi', 'Take a **placement test**.'],
+    ['CEFR', 'Yevropa til darajalari tizimi', 'A1, A2, B1, B2, C1, C2'],
+    ['skill', "ko'nikma", 'Speaking is a **skill**.'],
+    ['grammar', 'grammatika', 'tenses, articles, questions'],
+    ['vocabulary', "lug'at (so'z boyligi)", 'learn 10 new words a day'],
+    ['progress', "o'sish, rivojlanish", 'track your **progress**'],
+    ['goal', 'maqsad', 'My **goal** is B1.'],
+  ],
+  core: {
+    title: "4 ko'nikma", en: 'The four skills',
+    steps: [
+      ['Listening', "Eshitib tushunish: dialog, e'lon, intervyu"],
+      ['Reading', "O'qib tushunish: matn, xat, e'lon"],
+      ['Writing', 'Yozish: xabar, email, hikoya'],
+      ['Speaking', 'Gapirish: tanishuv, fikr, muhokama'],
+    ],
+    note: "Muhim: grammatika va lug'at — 4 ko'nikmaning poydevori; har darsda ikkalasi ham bor.",
+  },
+  cases: {
+    title: 'A2, B1, B2: farqi nimada?', en: 'CEFR levels',
+    intro: 'Kurs A2 dan B1 gacha olib boradi. Har bir darajada nima qila olasiz:',
+    items: [
+      { badge: 'A2', t: 'Elementary', en: 'basic user', rule: 'oddiy kundalik mavzular', ex: 'I live in Tashkent. I like football.', res: 'qisqa, oddiy gaplar' },
+      { badge: 'B1', t: 'Intermediate', en: 'independent user', rule: 'tajriba va rejalar', ex: 'I have been to Samarkand twice.', res: "bog'langan matn" },
+      { badge: 'B2', t: 'Upper-Int.', en: 'independent user', rule: 'murakkab mavzularda bahs', ex: "Although it's expensive, it's worth it.", res: 'erkin muloqot' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'grammatika savoli', strat: 'gapdagi vaqt belgisini toping',
+      q: 'Choose the correct answer: She ___ to school every day.  A) go  B) goes  C) going',
+      steps: [['Vaqt belgisi: **every day**', 'odat → Present Simple'], ['Ega: **she**', '3-shaxs birlik'], ['B) She **goes** to school every day.', 'javob']],
+      check: 'Bu savol A2 darajani tekshiradi ✓',
+    },
+    {
+      tag: "lug'at savoli", strat: "kontekstdagi kalit so'zga qarang",
+      q: "Choose the word: I'm very ___. Can I have a sandwich?  A) thirsty  B) hungry  C) tired",
+      steps: [['Kalit: **a sandwich**', 'ovqat'], ['ovqat → **hungry**', 'och'], ['B) hungry', 'javob']],
+      check: 'thirsty — chanqagan (ichimlik), tired — charchagan.',
+    },
+    {
+      tag: "natijani o'qish", strat: "ko'nikmalar bo'yicha foizni solishtiring",
+      q: 'Diagnostic result: Grammar 70%, Vocabulary 65%, Reading 60%, Listening 40%. Which skill needs the most work?',
+      steps: [['Eng past natija: **Listening 40%**', ''], ['Reja: har kuni 15 min tinglash', 'podkast, video'], ['**Listening**', 'javob']],
+      check: 'Natijani 34–36-darslardagi mock testlar bilan solishtiramiz.',
+    },
+  ],
+  trap: {
+    title: "«Tasodifiy javob» tuzog'i",
+    q: 'Diagnostikada past ball — bu yomon emas.',
+    body: "Test sizni baholamaydi, faqat boshlang'ich nuqtani ko'rsatadi. Tasodifan belgilangan javoblar natijani buzadi — bilganingizcha halol ishlang.",
+  },
+  tip: {
+    short: 'maqsad', title: "SMART maqsad qo'ying",
+    q: "«Ingliz tilini o'rganaman» emas, «12 haftada B1» deb yozing.",
+    body: "Aniq (B1), o'lchanadigan (test bali), muddatli (12 hafta). Maqsadni lug'at daftaringizning birinchi sahifasiga yozing.",
+  },
+  mistakes: [
+    "Diagnostik testda javoblarni tasodifan belgilash — natija noto'g'ri chiqadi.",
+    "Faqat grammatikaga e'tibor berib, listening va speakingni unutish.",
+    "Bir kunda ko'p o'qib, keyin bir hafta tanaffus qilish — har kuni oz-ozdan yaxshiroq.",
+    'Darajani juda baland tanlash: B1 kurs uchun avval A2 bazasi kerak.',
+  ],
+  practice: [
+    ['CEFR da nechta daraja bor?', ''],
+    ["4 ko'nikmani sanang", ''],
+    ['Choose: He ___ (like / likes) pizza.', ''],
+    ['Kurs oxirida qaysi darajaga yetamiz?', ''],
+  ],
+  answers: ['6 ta (A1–C2)', 'Listening, Reading, Writing, Speaking', 'likes', 'B1'],
+  remember: [
+    "CEFR: A1–A2 — boshlang'ich, B1–B2 — mustaqil, C1–C2 — erkin.",
+    "4 ko'nikma + grammatika va lug'at — har birini mashq qilamiz.",
+    "Diagnostika — boshlang'ich nuqta; o'sishni mock testlar bilan o'lchaymiz.",
+  ],
+};

@@ -1,0 +1,96 @@
+module.exports = {
+  n: 13,
+  short: 'Used_to_va_would',
+  en: 'Used to and would: past habits',
+  video: '12 min',
+  emoji: {
+    lesson: '🧸', strip: '🧸 🚲 📼 🏡 👴 🍬',
+    goal: ['🔙', '🔁', '⚠️'],
+    kw: ['🔙', '🚫', '🔁', '⏹️', '⛔', '🧒', '🏘️', '🧘'],
+    core: ['✅', '❌', '❓', '🔁'],
+    ex: ['🧸', '❓', '⚖️'],
+  },
+  hook: "Bolaligingizda nima qilardingiz? Qaysi odatingiz endi yo'q? Bugun o'tmishdagi odatlar haqida gapirish uchun used to va would ni o'rganamiz.",
+  goals: [
+    ['used to', "o'tmishda bor edi, hozir yo'q"],
+    ['would', "o'tmishdagi takroriy harakatlar"],
+    ['Tuzoq', "be used to — boshqa ma'no!"],
+  ],
+  kw: [
+    ['used to', '… edi (odat)', 'I **used to** play chess.'],
+    ["didn't use to", '… emas edi', "I **didn't use to** like fish."],
+    ['would', '… edi (takroriy)', 'We **would** go to the river.'],
+    ['any more', 'endi … emas', "I don't play **any more**."],
+    ['no longer', 'endi … emas', 'He **no longer** lives here.'],
+    ['childhood', 'bolalik', 'in my **childhood**'],
+    ['when I was young', 'yoshligimda', '**When I was young**, I used to…'],
+    ['be used to + -ing', "… ga o'rganib qolgan", "I'**m used to** getting up early."],
+  ],
+  core: {
+    title: 'used to: 4 qoida', en: 'Form and use',
+    steps: [
+      ['Tasdiq', 'used to + asl shakl: I **used to live** in a village.'],
+      ['Inkor', "**didn't use to** (d yo'q!)"],
+      ["So'roq", '**Did** you **use to**…?'],
+      ['would', 'faqat takroriy harakat: We **would** play outside.'],
+    ],
+    note: "Qoida: holat uchun faqat used to: I used to have long hair ✓, I would have long hair ✗.",
+  },
+  cases: {
+    title: 'used to, would yoki Past Simple?', en: 'Three options',
+    intro: "O'tmish haqida gapirganda:",
+    items: [
+      { badge: '🔁', t: 'used to', en: 'odat + holat', rule: "hozir yo'q", ex: 'I used to have a dog.', res: 'holat ✓' },
+      { badge: '🎈', t: 'would', en: 'faqat harakat', rule: 'takroriy', ex: 'Every summer we would swim.', res: 'holat ✗' },
+      { badge: '📅', t: 'Past Simple', en: 'bir martalik', rule: 'aniq vaqt', ex: 'I went to Paris in 2019.', res: 'used to ✗' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'used to', strat: "o'tmishda edi, endi yo'q",
+      q: "Rewrite with **used to**: When I was a child, I played in the street every day. I don't now.",
+      steps: [["o'tmishdagi odat, endi yo'q", '→ used to'], ['**used to** + asl shakl (play)', ''], ['When I was a child, I **used to play** in the street.', 'javob']],
+      check: 'Endi o\'ynamayman — used to buni o\'zi bildiradi ✓',
+    },
+    {
+      tag: "inkor va so'roq", strat: 'did bilan — use (d siz)',
+      q: 'Make negative and question: He used to drink coffee.',
+      steps: [["Inkor: **didn't use to**", 'd tushadi'], ["He **didn't use to** drink coffee.", ''], ["So'roq: **Did** he **use to**…?", ''], ['**Did** he **use to** drink coffee?', 'javob']],
+      check: "didn't used to ✗ — did dan keyin asl shakl ✓",
+    },
+    {
+      tag: 'would yoki used to?', strat: 'holat — faqat used to',
+      q: 'Which is correct? a) I would have a bike.  b) Every Sunday my grandma would bake bread.',
+      steps: [['a) **have** — holat (egalik)', 'would ✗'], ['I **used to have** a bike.', "to'g'risi"], ['b) **bake** — takroriy harakat', 'would ✓'], ["**b)** to'g'ri", 'javob']],
+      check: "Holat fe'llari: have, be, live, like, know — faqat used to bilan.",
+    },
+  ],
+  trap: {
+    title: "«be used to» tuzog'i",
+    q: "I used to get up early. ≠ I'm used to getting up early.",
+    body: "used to + fe'l — o'tmishdagi odat. be used to + -ing — «o'rganib qolganman» (hozir): I'm used to the cold ✓.",
+  },
+  tip: {
+    short: 'talaffuz', title: 'used to talaffuzi: /ˈjuːstə/',
+    q: '«yuzd tu» emas, «yusta»',
+    body: 'used to da s jarangsiz /s/ o\'qiladi va to qisqaradi: I /ˈjuːstə/ play. Tez nutqda aynan shu shakl eshitiladi.',
+  },
+  mistakes: [
+    'did bilan used: Did you used to? ✗ → Did you **use** to? ✓',
+    'Hozirgi odat uchun: I use to go ✗ → I usually go ✓.',
+    'would bilan holat: I would live in Fergana ✗.',
+    'be used to ni used to bilan adashtirish.',
+  ],
+  practice: [
+    ['I ___ (be) shy, but now I am confident.', 'used to'],
+    ['She ___ (not / like) vegetables.', 'used to'],
+    ['___ you ___ (live) in a village?', "so'roq"],
+    ['Every evening we ___ (watch) cartoons.', 'would'],
+  ],
+  answers: ['used to be', "didn't use to like", 'Did … use to live', 'would watch'],
+  remember: [
+    "used to + asl shakl — o'tmishdagi odat yoki holat (endi yo'q).",
+    "didn't use to / Did … use to? — d yo'q.",
+    'would — faqat takroriy harakat, holat uchun emas.',
+  ],
+};

@@ -1,0 +1,96 @@
+module.exports = {
+  n: 19,
+  short: 'Kelasi_zamon',
+  en: 'Future forms: will, be going to, Present Continuous',
+  video: '13 min',
+  emoji: {
+    lesson: '🔮', strip: '🔮 📅 ✈️ ☔ 🎯 🤝',
+    goal: ['🔮', '📋', '🤝'],
+    kw: ['🔮', '📋', '🤝', '💭', '🌦️', '🗓️', '📅', '🤞'],
+    core: ['🔮', '📋', '🤝', '⚡'],
+    ex: ['⚡', '🌦️', '🗓️'],
+  },
+  hook: "Kelasi zamon inglizchada bitta emas, kamida uchta: will, be going to va Present Continuous. Bugun ularni bashorat, reja va kelishuv bo'yicha ajratamiz.",
+  goals: [
+    ['will', "bashorat va to'satdan qaror"],
+    ['be going to', 'reja va dalilga asoslangan bashorat'],
+    ['Present Continuous', 'aniq kelishuv (vaqt, joy)'],
+  ],
+  kw: [
+    ['will', '… -adi (kelasi)', 'I think it **will** rain.'],
+    ['be going to', '… moqchi', "I**'m going to** study medicine."],
+    ["I'm meeting…", "uchrashaman (kelishilgan)", "I**'m meeting** Ali at 6."],
+    ['prediction', 'bashorat', 'People **will** live on Mars.'],
+    ['evidence', 'dalil', 'Look at the clouds!'],
+    ['arrangement', 'kelishuv', 'a dentist appointment at 5'],
+    ['tomorrow', 'ertaga', 'See you **tomorrow**!'],
+    ['probably', 'ehtimol', 'It will **probably** be sunny.'],
+  ],
+  core: {
+    title: 'Kelasi zamon: 4 holat', en: 'Future forms',
+    steps: [
+      ['Bashorat (fikr)', 'I think…, probably → **will**'],
+      ['Reja', 'Oldindan qaror → **be going to**'],
+      ['Kelishuv', 'Vaqt va joy belgilangan → **Present Continuous**'],
+      ["To'satdan qaror", "Hozir qaror qildim → **will**: I'll help you!"],
+    ],
+    note: "Dalilga asoslangan bashorat — going to: Look at those clouds! It's going to rain.",
+  },
+  cases: {
+    title: 'Bitta mavzu — uch shakl', en: 'Same topic, different meaning',
+    intro: 'Mavzu: shanba kuni.',
+    items: [
+      { badge: '🔮', t: 'will', en: 'fikr / bashorat', rule: 'I think …', ex: 'I think it will be sunny on Saturday.', res: 'aniq emas' },
+      { badge: '📋', t: 'going to', en: 'reja', rule: 'qaror qilingan', ex: "I'm going to clean my room.", res: 'niyat' },
+      { badge: '🤝', t: 'Pres. Cont.', en: 'kelishuv', rule: 'vaqt + joy', ex: "I'm meeting Aziz at 10.", res: 'kelishilgan' },
+    ],
+  },
+  ex: [
+    {
+      tag: "to'satdan qaror va kelishuv", strat: 'qaror qachon qilingan?',
+      q: "Complete: A: We've run out of milk. B: Oh, I ___ (get) some.  A: Why are you wearing a suit? B: I ___ (have) a job interview at 3.",
+      steps: [['B hozir qaror qildi', "→ **'ll get**"], ["Oh, I**'ll get** some.", ''], ['Suhbat vaqti belgilangan', '→ kelishuv'], ["I**'m having** a job interview at 3.", 'javob']],
+      check: "«I'm going to have» ham to'g'ri — reja ✓",
+    },
+    {
+      tag: 'bashorat', strat: "dalil — going to; fikr — will",
+      q: 'Choose: a) Look! That glass ___ (will / is going to) fall!  b) I think robots ___ (will / are going to) do most jobs in 2050.',
+      steps: [["a) ko'z oldida dalil", '→ **is going to**'], ['b) fikr, I think', '→ **will**'], ['a) **is going to** fall  b) **will** do', 'javob']],
+      check: "Dalil — hozir ko'rinib turgan belgi ✓",
+    },
+    {
+      tag: 'kelishuv', strat: "kundalikdagi yozuv — Present Continuous",
+      q: "Look at Malika's diary: «Mon 5 p.m. — dentist; Tue — fly to Dubai». Write two sentences.",
+      steps: [['Dushanba, soat 5', 'aniq vaqt'], ["She**'s seeing** the dentist on Monday at 5.", ''], ["She**'s flying** to Dubai on Tuesday.", 'javob']],
+      check: 'Kelishuvlar uchun will kamdan-kam ishlatiladi.',
+    },
+  ],
+  trap: {
+    title: "Rejalar uchun «will»",
+    q: "Next year I will study in Korea — I've already applied.",
+    body: "Oldindan qilingan qaror — going to tabiiyroq: I**'m going to** study in Korea ✓. will — hozir qilingan qaror yoki taxmin.",
+  },
+  tip: {
+    short: 'talaffuz', title: "gonna va I'll",
+    q: 'going to → /ˈɡʌnə/ · I will → /aɪl/',
+    body: "Tez nutqda going to «ganna», I will «ayl» bo'lib eshitiladi. Yozuvda gonna ishlatmang — faqat nutqda.",
+  },
+  mistakes: [
+    'will dan keyin to: I will to go ✗ → I will **go** ✓.',
+    "be ni tushirish: I going to ✗ → I**'m** going to ✓.",
+    'If-gapda will: If it will rain ✗ (28-darsda).',
+    'Har doim will ishlatib, reja va kelishuvni farqlamaslik.',
+  ],
+  practice: [
+    ["It's hot. I ___ (open) the window.", "to'satdan qaror"],
+    ["We ___ (visit) Grandma on Sunday — it's arranged.", ''],
+    ['Look at the sky! It ___ (snow).', ''],
+    ['I think she ___ (pass) the exam.', ''],
+  ],
+  answers: ["'ll open", 'are visiting', 'is going to snow', 'will pass'],
+  remember: [
+    "will — fikr, bashorat, to'satdan qaror.",
+    "be going to — reja va ko'rinib turgan dalil.",
+    'Present Continuous — vaqti belgilangan kelishuv.',
+  ],
+};

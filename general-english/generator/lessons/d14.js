@@ -1,0 +1,96 @@
+module.exports = {
+  n: 14,
+  short: 'Present_Perfect_tajriba',
+  en: 'Present Perfect: experience (ever, never, just, already, yet)',
+  video: '13 min',
+  emoji: {
+    lesson: '🌍', strip: '✈️ 🗻 🍣 🎢 🏆 🌍',
+    goal: ['🔧', '🌍', '⚡'],
+    kw: ['❓', '🚫', '⚡', '✅', '⏳', '🧳', '🏃', '🔧'],
+    core: ['✅', '❌', '❓', '🌍'],
+    ex: ['🌍', '⚡', '🧳'], tip: '🧠',
+  },
+  hook: "«Have you ever been to Samarkand?» — bu B1 suhbatining eng mashhur savoli. Bugun Present Perfect bilan hayotiy tajriba va yangi natijalar haqida gapirishni o'rganamiz.",
+  goals: [
+    ['Shakl', 'have / has + 3-shakl (V3)'],
+    ['Tajriba', 'ever, never — hayotda biror marta'],
+    ['Yangi natija', 'just, already, yet'],
+  ],
+  kw: [
+    ['ever', 'biror marta', 'Have you **ever** eaten sushi?'],
+    ['never', 'hech qachon', 'I have **never** flown.'],
+    ['just', 'hozirgina', 'She has **just** left.'],
+    ['already', 'allaqachon', "I've **already** finished."],
+    ['yet', "hali (inkor / so'roq)", 'Have you finished **yet**?'],
+    ['been', 'borib kelgan', 'He has **been** to London.'],
+    ['gone', 'ketgan (hali u yerda)', 'He has **gone** to London.'],
+    ['past participle', '3-shakl (V3)', 'see → seen, eat → eaten'],
+  ],
+  core: {
+    title: 'Present Perfect: 4 qoida', en: 'Form and use',
+    steps: [
+      ['Tasdiq', 'I / you / we / they **have** + V3; he / she / it **has** + V3'],
+      ['Inkor', "**haven't / hasn't** + V3"],
+      ["So'roq", '**Have / Has** + ega + V3?'],
+      ['Tajriba', "aniq vaqtsiz: I've **visited** Khiva."],
+    ],
+    note: "Qoida: aniq o'tgan vaqt (yesterday, in 2020) bilan Present Perfect ishlatilmaydi — bu 15-dars mavzusi.",
+  },
+  cases: {
+    title: 'just, already, yet', en: 'Recent results',
+    intro: "Bu uch so'zning gapdagi o'rni har xil:",
+    items: [
+      { badge: '⚡', t: 'just', en: 'hozirgina', rule: 'have + just + V3', ex: "I've **just** eaten.", res: "o'rtada" },
+      { badge: '✅', t: 'already', en: 'allaqachon', rule: 'have + already + V3', ex: "She's **already** left.", res: "o'rtada" },
+      { badge: '⏳', t: 'yet', en: 'hali', rule: "inkor / so'roq", ex: "I haven't finished **yet**.", res: 'gap oxirida' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'tajriba savoli', strat: "ever — so'roqda",
+      q: 'Make a question with **ever** and answer it: you / try / Uzbek plov?',
+      steps: [['**Have** + you + **ever** + V3', ''], ['try → **tried**', 'V3'], ['**Have** you **ever tried** Uzbek plov?', ''], ["Yes, I **have**. / No, I **haven't**.", 'javob']],
+      check: 'Agar «qachon?» deb so\'rasangiz — Past Simple: When did you try it?',
+    },
+    {
+      tag: 'just / already / yet', strat: "yet — inkor va so'roq oxirida",
+      q: "Complete with just / already / yet: The film has ___ started — sit down! I haven't seen it ___.",
+      steps: [['hozirgina boshlandi', '→ **just**'], ['inkor gap oxirida', '→ **yet**'], ["The film has **just** started. I haven't seen it **yet**.", 'javob']],
+      check: "already — kutilganidan oldin: I've already seen it ✓",
+    },
+    {
+      tag: 'been yoki gone?', strat: 'qaytib keldimi?',
+      q: "Choose: Dad isn't here. He has ___ to the shop. I have ___ to Tashkent three times.",
+      steps: [["Dadam hali do'konda", '→ **gone**'], ['Men borib qaytganman', '→ **been**'], ['He has **gone** to the shop. I have **been** to Tashkent three times.', 'javob']],
+      check: 'been — borib kelgan, gone — ketgan va hali qaytmagan ✓',
+    },
+  ],
+  trap: {
+    title: "Aniq vaqt tuzog'i",
+    q: 'I have seen him yesterday. ✗',
+    body: "yesterday — aniq o'tgan vaqt, demak Past Simple: I **saw** him yesterday ✓. Present Perfect — vaqt aytilmaganda.",
+  },
+  tip: {
+    short: 'V3 jadvali', title: "Noto'g'ri fe'llarni guruhlab yodlang",
+    q: 'AAA: cut–cut–cut · ABB: buy–bought–bought · ABC: see–saw–seen',
+    body: "Shakllari o'xshash fe'llarni birga yodlash osonroq. Har kuni 5 tadan — 10 kunda 50 ta.",
+  },
+  mistakes: [
+    'has o\'rniga have: She have visited ✗ → She **has** visited ✓.',
+    'V2 o\'rniga V3: I have went ✗ → I have **gone** ✓.',
+    'yet ni tasdiq gapda: I have finished yet ✗ → **already** ✓.',
+    'Aniq vaqt bilan: I have been there in 2019 ✗.',
+  ],
+  practice: [
+    ['She ___ (never / see) snow.', ''],
+    ['___ you ___ (finish) your homework yet?', ''],
+    ["I've ___ had lunch — I'm full.", 'just / yet'],
+    ["They ___ to Italy. They're there now.", 'been / gone'],
+  ],
+  answers: ['has never seen', 'Have … finished', 'just', 'have gone'],
+  remember: [
+    'have / has + V3 — tajriba va yangi natija (vaqt aytilmaydi).',
+    "ever / never — tajriba; just / already — o'rtada; yet — oxirida.",
+    'been — borib kelgan; gone — ketgan.',
+  ],
+};

@@ -1,0 +1,96 @@
+module.exports = {
+  n: 32,
+  short: 'Relative_clauses',
+  en: 'Relative clauses: who, which, that, where, whose',
+  video: '12 min',
+  emoji: {
+    lesson: '🔗', strip: '🧑‍🏫 🏠 📱 🐕 🔗 👆',
+    goal: ['🧑', '📍', '✂️'],
+    kw: ['🧑', '📦', '🔗', '📍', '👪', '⏰', '🎯', '🔤'],
+    core: ['🧑', '📦', '📍', '👪'],
+    ex: ['🔗', '📍', '✂️'], tip: '🎯',
+  },
+  hook: "«Bu men aytgan kitob», «Londonda yashaydigan do'stim» — o'zbekchada sifatdosh, inglizchada relative clause. Bugun ikki qisqa gapni bitta aniq gapga birlashtirishni o'rganamiz.",
+  goals: [
+    ['who / which / that', 'odam va narsa uchun'],
+    ['where / whose', 'joy va egalik'],
+    ['that ni tushirish', 'Qachon tushib qolishi mumkin'],
+  ],
+  kw: [
+    ['who', '… -gan (odam)', 'the man **who** called'],
+    ['which', '… -gan (narsa)', 'the book **which** I read'],
+    ['that', '… -gan (ikkalasi)', 'the film **that** we saw'],
+    ['where', '… -gan joy', 'the city **where** I was born'],
+    ['whose', '… ning', 'the girl **whose** dad is a pilot'],
+    ['when', '… -gan vaqt', 'the day **when** we met'],
+    ['defining clause', 'aniqlovchi ergash gap', 'Which man? → the man who…'],
+    ['relative pronoun', 'nisbiy olmosh', 'who, which, that'],
+  ],
+  core: {
+    title: 'Relative clauses: 4 qoida', en: 'Defining relative clauses',
+    steps: [
+      ['Odam', '**who** / that: the teacher **who** helped me'],
+      ['Narsa', '**which** / that: the phone **which** I bought'],
+      ['Joy', '**where**: the café **where** we met'],
+      ['Egalik', '**whose**: the boy **whose** bike was stolen'],
+    ],
+    note: "Olmosh takrorlanmaydi: the book which I read **it** ✗ → the book which I read ✓.",
+  },
+  cases: {
+    title: 'that ni qachon tushirish mumkin?', en: 'Omitting the pronoun',
+    intro: 'who / which / that dan keyin nima kelishiga qarang:',
+    items: [
+      { badge: '✂️', t: 'Tushadi', en: 'object', rule: 'keyin ega bor', ex: 'the film (that) **we** watched', res: 'that ixtiyoriy' },
+      { badge: '🔒', t: 'Tushmaydi', en: 'subject', rule: "keyin fe'l bor", ex: 'the man who **lives** next door', res: 'who shart' },
+      { badge: '📍', t: 'where', en: 'joy', rule: "where + ega + fe'l", ex: 'the hotel where we stayed', res: 'joy uchun' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'gaplarni birlashtirish', strat: 'ikkinchi gapdagi olmoshni who / which ga almashtiring',
+      q: 'Join: I have a friend. **She** speaks four languages.',
+      steps: [['She = **a friend** (odam)', '→ who'], ['She → **who**', 'olmosh tushadi'], ['I have a friend **who** speaks four languages.', 'javob']],
+      check: '…who she speaks ✗ — ikki marta ega.',
+    },
+    {
+      tag: 'where / whose', strat: 'joy — where; egalik — whose',
+      q: "Complete: That's the school ___ my mum works. He's the boy ___ sister is in my class.",
+      steps: [['school — **joy**', '→ where'], ['sister — **egalik** (uning singlisi)', '→ whose'], ["That's the school **where** my mum works. He's the boy **whose** sister…", 'javob']],
+      check: 'whose = his / her / their o\'rnida keladi ✓',
+    },
+    {
+      tag: 'that ni tushirish', strat: 'keyin ega bormi?',
+      q: 'Can you omit the pronoun? a) The cake **that** you made was delicious.  b) The woman **who** called you is my aunt.',
+      steps: [['a) that + **you** (ega)', '→ tushadi'], ['The cake you made was delicious.', ''], ["b) who + **called** (fe'l)", '→ tushmaydi'], ["a) ha  b) yo'q", 'javob']],
+      check: "So'zlashuvda tushirilgan shakl juda ko'p ishlatiladi ✓",
+    },
+  ],
+  trap: {
+    title: "«which» odam uchun",
+    q: 'the teacher which taught me ✗',
+    body: "Odam uchun — who yoki that: the teacher **who** taught me ✓. which — faqat narsa va hayvonlar uchun.",
+  },
+  tip: {
+    short: 'aniqlik', title: 'Aniqroq gapiring',
+    q: 'the man → the man who sells fruit at the market',
+    body: "Relative clause «qaysi biri?» savoliga javob beradi. Ta'rif berishda ham juda qulay: A dentist is a person who…",
+  },
+  mistakes: [
+    'Odam uchun which.',
+    'Olmoshni takrorlash: the house where I live in it ✗.',
+    "whose o'rniga who's: the boy who's bike ✗.",
+    "Ega vazifasidagi who ni tushirish: The man lives next door is… ✗.",
+  ],
+  practice: [
+    ['A chef is a person ___ cooks in a restaurant.', ''],
+    ["This is the park ___ we play football.", ''],
+    ['I lost the book ___ you gave me.', ''],
+    ["She's the singer ___ songs I love.", ''],
+  ],
+  answers: ['who / that', 'where', 'which / that', 'whose'],
+  remember: [
+    'who — odam; which — narsa; that — ikkalasi.',
+    'where — joy; whose — egalik.',
+    'Keyin ega kelsa, who / which / that tushishi mumkin.',
+  ],
+};

@@ -1,0 +1,96 @@
+module.exports = {
+  n: 11,
+  short: 'Past_Simple',
+  en: 'Past Simple: regular and irregular verbs',
+  video: '12 min',
+  emoji: {
+    lesson: '⏪', strip: '📅 🕰️ ✈️ 🏖️ 📷 🎂',
+    goal: ['✅', '❓', '🔊'],
+    kw: ['📅', '🗓️', '⏳', '🔙', '✅', '🔀', '❓', '🚫'],
+    core: ['✅', '🔀', '❌', '❓'],
+    ex: ['🔀', '❌', '❓'],
+  },
+  hook: "Kecha nima qildingiz? Dam olishda qayerda bo'ldingiz? O'tmish haqida gapirish uchun Past Simple kerak — bugun to'g'ri va noto'g'ri fe'llarni, inkor va so'roq gaplarni o'rganamiz.",
+  goals: [
+    ['Tasdiq gap', "to'g'ri fe'l + -ed, noto'g'ri fe'l — 2-shakl"],
+    ["Inkor va so'roq", "did / didn't + fe'lning asl shakli"],
+    ['-ed talaffuzi', '/t/, /d/, /ɪd/'],
+  ],
+  kw: [
+    ['yesterday', 'kecha', 'I called him **yesterday**.'],
+    ['last week', "o'tgan hafta", 'We met **last week**.'],
+    ['ago', '… oldin', 'two days **ago**'],
+    ['in 2020', '2020-yilda', 'She moved **in 2020**.'],
+    ['regular verb', "to'g'ri fe'l", 'work → work**ed**'],
+    ['irregular verb', "noto'g'ri fe'l", 'go → **went**, see → **saw**'],
+    ['did', "yordamchi fe'l (so'roq)", '**Did** you see it?'],
+    ["didn't", "yordamchi fe'l (inkor)", "I **didn't** go."],
+  ],
+  core: {
+    title: 'Past Simple: 4 qoida', en: 'Form',
+    steps: [
+      ["To'g'ri fe'l", 'work → work**ed**, study → stud**ied**'],
+      ["Noto'g'ri fe'l", 'go → **went**, have → **had**, see → **saw**'],
+      ['Inkor', "**didn't** + asl shakl: I didn't **go**"],
+      ["So'roq", '**Did** + ega + asl shakl? Did you **go**?'],
+    ],
+    note: "Qoida: barcha shaxslar uchun bir xil — he went, they went. 3-shaxs -s yo'q!",
+  },
+  cases: {
+    title: "-ed uch xil o'qiladi", en: 'Pronunciation of -ed',
+    intro: "Fe'l oxiridagi tovushga qarang:",
+    items: [
+      { badge: '/t/', t: '/t/', en: 'jarangsizdan keyin', rule: 'p, k, s, sh, ch, f', ex: 'worked, watched', res: '«uorkt»' },
+      { badge: '/d/', t: '/d/', en: 'jarangli va unlidan keyin', rule: 'l, n, v, g, unli', ex: 'played, lived', res: '«pleyd»' },
+      { badge: '/ɪd/', t: '/ɪd/', en: 't va d dan keyin', rule: 't, d', ex: 'wanted, needed', res: "qo'shimcha bo'g'in" },
+    ],
+  },
+  ex: [
+    {
+      tag: "noto'g'ri fe'llar", strat: "fe'lni 2-shaklga o'tkazing",
+      q: 'Complete: Last summer we ___ (go) to Bukhara. We ___ (see) old buildings and ___ (buy) souvenirs.',
+      steps: [['go → **went**', ''], ['see → **saw**', ''], ['buy → **bought**', ''], ['We **went** to Bukhara. We **saw** old buildings and **bought** souvenirs.', 'javob']],
+      check: 'Vaqt belgisi «last summer» — Past Simple ✓',
+    },
+    {
+      tag: 'inkor gap', strat: "didn't + asl shakl",
+      q: 'Make negative: She went to the party.',
+      steps: [["went — o'tgan zamon", ''], ["**didn't** + **go**", 'went → go'], ["She **didn't go** to the party.", 'javob']],
+      check: "She didn't went ✗ — o'tgan zamon did da ifodalangan.",
+    },
+    {
+      tag: "so'roq", strat: 'Did + ega + asl shakl',
+      q: "Ask about the highlighted part: They arrived **at 8 o'clock**.",
+      steps: [["at 8 o'clock → **What time**", ''], ['**did** + they + **arrive**', 'arrived → arrive'], ['**What time did** they **arrive**?', 'javob']],
+      check: "Javob: They arrived at 8 o'clock ✓",
+    },
+  ],
+  trap: {
+    title: "«did + went» tuzog'i",
+    q: "Did you went? ✗   I didn't saw. ✗",
+    body: "did / didn't bor joyda asosiy fe'l asl shaklda: Did you **go**? ✓, I didn't **see** ✓. O'tgan zamonni bitta so'z ko'rsatadi.",
+  },
+  tip: {
+    short: 'talaffuz', title: "/ɪd/ faqat t va d dan keyin",
+    q: "worked = /wɜːkt/ — bitta bo'g'in!",
+    body: "Ko'p o'quvchilar «uor-ked» deb aytadi — bu xato. Qo'shimcha bo'g'in faqat t va d dan keyin: wan-ted, nee-ded.",
+  },
+  mistakes: [
+    "Noto'g'ri fe'lga -ed: goed ✗, buyed ✗.",
+    "didn't dan keyin 2-shakl: didn't went ✗.",
+    'Yozilish: studyed ✗ → studied ✓, stoped ✗ → stopped ✓.',
+    '-ed ni har doim /ɪd/ deb o\'qish.',
+  ],
+  practice: [
+    ['I ___ (write) a letter yesterday.', ''],
+    ['He ___ (not / come) to school.', ''],
+    ['___ you ___ (enjoy) the film?', "so'roq"],
+    ['planned — qaysi tovush?', '/t/ /d/ /ɪd/'],
+  ],
+  answers: ['wrote', "didn't come", 'Did … enjoy', '/d/'],
+  remember: [
+    "To'g'ri fe'l + -ed; noto'g'ri fe'llarning 2-shakli yod olinadi.",
+    "Inkor va so'roq: did / didn't + fe'lning asl shakli.",
+    '-ed: /t/, /d/, /ɪd/ (faqat t, d dan keyin).',
+  ],
+};

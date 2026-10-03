@@ -1,0 +1,96 @@
+module.exports = {
+  n: 29,
+  short: 'Second_Conditional',
+  en: 'Second Conditional: imaginary situations',
+  video: '12 min',
+  emoji: {
+    lesson: '💭', strip: '💭 🏝️ 💰 🦸 🌍 ✨',
+    goal: ['💭', '💡', '⚖️'],
+    kw: ['💭', '💡', '✨', '💪', '🙏', '💰', '🎲', '🦸'],
+    core: ['🔧', '💭', '👤', '💡'],
+    ex: ['💰', '💡', '⚖️'], tip: '💡',
+  },
+  hook: "Agar millioner bo'lsangiz, nima qilardingiz? Bugun xayoliy vaziyatlar haqida gapirish uchun Second Conditional'ni va «If I were you» bilan maslahat berishni o'rganamiz.",
+  goals: [
+    ['Second conditional', 'If + Past Simple, would + V'],
+    ['If I were you', 'Maslahat berish'],
+    ['First yoki Second?', 'Real yoki xayoliy'],
+  ],
+  kw: [
+    ['would', '… -ardim', 'I **would** travel.'],
+    ['If I were you', "Men sizning o'rningizda bo'lsam", "**If I were you**, I'd rest."],
+    ['imaginary', 'xayoliy', 'an **imaginary** situation'],
+    ['could', '… -a olardim', 'If I had time, I **could** help.'],
+    ['wish', 'qani edi', 'I **wish** I had a car.'],
+    ['millionaire', 'millioner', 'If I were a **millionaire**…'],
+    ['unlikely', 'ehtimoldan yiroq', 'an **unlikely** situation'],
+    ['superpower', "g'ayritabiiy kuch", 'If you had a **superpower**…'],
+  ],
+  core: {
+    title: 'Second Conditional: 4 qoida', en: 'Form and use',
+    steps: [
+      ['Shakl', 'If + **Past Simple**, **would** + V'],
+      ["Ma'no", 'hozir yoki kelajak — lekin xayoliy, real emas'],
+      ['were', 'If I / he / she **were** … (testda shu shakl)'],
+      ['Maslahat', "**If I were you, I'd** …"],
+    ],
+    note: "Diqqat: shakli o'tgan zamon, lekin ma'nosi hozirgi: If I had a car (hozir mashinam yo'q).",
+  },
+  cases: {
+    title: 'First yoki Second?', en: 'Real or imaginary?',
+    intro: 'Vaziyat qanchalik real?',
+    items: [
+      { badge: '🔮', t: 'First', en: 'real', rule: 'If + Pres., will', ex: "If I pass the exam, I'll celebrate.", res: "bo'lishi mumkin" },
+      { badge: '💭', t: 'Second', en: 'imaginary', rule: 'If + Past, would', ex: "If I won the lottery, I'd buy a house.", res: 'ehtimoldan yiroq' },
+      { badge: '🙏', t: 'wish', en: 'afsus', rule: 'wish + Past', ex: 'I wish I spoke Chinese.', res: 'hozir gapirmayman' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'xayoliy vaziyat', strat: 'If + Past, would + V',
+      q: 'Complete: If I ___ (have) a million dollars, I ___ (travel) around the world.',
+      steps: [['If-gap: **Past Simple**', 'have → had'], ['Natija: **would** + V', ''], ['If I **had** a million dollars, I **would travel** around the world.', 'javob']],
+      check: "Hozir millionim yo'q — vaziyat xayoliy ✓",
+    },
+    {
+      tag: 'If I were you', strat: 'maslahat: were + would',
+      q: "Your friend: «I've had a headache all day.» Give advice with **If I were you**.",
+      steps: [['If I **were** you', 'was emas'], ["I**'d** (= I would) + V", ''], ["**If I were you, I'd** take a painkiller and rest.", 'javob']],
+      check: "You should take a painkiller — ham maslahat ✓",
+    },
+    {
+      tag: 'first yoki second?', strat: 'ehtimolni baholang',
+      q: "Choose: a) If I ___ (see) a lion in the street, I would run!  b) If it ___ (be) sunny tomorrow, we'll go to the beach.",
+      steps: [["a) ko'chada sher — **xayoliy**", '→ saw'], ['b) ertaga quyosh — **real**', '→ is'], ['a) **saw**  b) **is**', 'javob']],
+      check: 'Natija qismi ishora beradi: would — second, will — first ✓',
+    },
+  ],
+  trap: {
+    title: "«If I would have» tuzog'i",
+    q: 'If I would have money, I would buy it. ✗',
+    body: "would faqat natija qismida: If I **had** money, I **would** buy it ✓. If-gapda would yo'q!",
+  },
+  tip: {
+    short: 'qisqartma', title: "I'd = I would (yoki I had!)",
+    q: "I'd go · I'd like · I'd seen",
+    body: "Nutqda doim I'd deyiladi. Keyingi so'zga qarang: I'd + V = I would; I'd + V3 = I had.",
+  },
+  mistakes: [
+    'If-gapda would.',
+    "If I was you — so'zlashuvda bor, lekin testda **were** ✓.",
+    'Real vaziyat uchun second conditional.',
+    'would dan keyin -ed: I would travelled ✗.',
+  ],
+  practice: [
+    ['If I ___ (be) taller, I would play basketball.', ''],
+    ['What ___ you do if you ___ (find) a wallet?', ''],
+    ['If I were you, I ___ (not / buy) it.', ''],
+    ['I wish I ___ (have) more free time.', ''],
+  ],
+  answers: ['were', 'would … found', "wouldn't buy", 'had'],
+  remember: [
+    'If + Past Simple, would + V — xayoliy hozir / kelajak.',
+    "If I were you, I'd… — maslahat.",
+    'Real — first (will); xayoliy — second (would).',
+  ],
+};

@@ -1,0 +1,96 @@
+module.exports = {
+  n: 9,
+  short: 'Speaking_tanishuv',
+  en: 'Speaking: introductions and small talk',
+  video: '12 min',
+  emoji: {
+    lesson: '🤝', strip: '👋 🤝 😊 💬 ☕ 🎉',
+    goal: ['👋', '💬', '🔄'],
+    kw: ['👋', '💼', '🔄', '😮', '☀️', '🗺️', '➡️', '👋'],
+    core: ['👋', '🗺️', '💼', '🔄'],
+    ex: ['👋', '💬', '☀️'],
+  },
+  hook: "Birinchi taassurot birinchi 30 soniyada paydo bo'ladi. Bugun o'zingizni inglizcha tanishtirish va suhbatni davom ettirishni o'rganamiz — dialog uzilib qolmasligi uchun.",
+  goals: [
+    ['Tanishuv', 'Ism, qayerdan, nima ish qilasiz'],
+    ['Small talk', 'Ob-havo, dam olish, qiziqishlar'],
+    ['Suhbatni davom ettirish', "How about you? va qo'shimcha savollar"],
+  ],
+  kw: [
+    ['Nice to meet you', 'Tanishganimdan xursandman', '— Nice to meet you, too.'],
+    ['What do you do?', 'Kim bo\'lib ishlaysiz?', "I'm a student."],
+    ['How about you?', 'Sizchi?', "I'm from Tashkent. How about you?"],
+    ['Really?', 'Rostdanmi?', "Really? That's interesting!"],
+    ['small talk', 'yengil suhbat', 'about the weather, the weekend'],
+    ['Where are you from?', 'Qayerdansiz?', "I'm from Fergana."],
+    ['follow-up question', 'davom ettiruvchi savol', 'What do you study there?'],
+    ['See you later!', "Ko'rishguncha!", 'Bye! See you later!'],
+  ],
+  core: {
+    title: "O'zini tanishtirish: 4 qadam", en: 'Introducing yourself',
+    steps: [
+      ['Salom + ism', "Hi, I'm **Dilnoza**. Nice to meet you."],
+      ['Qayerdan', "I'm **from** Namangan, but I live in Tashkent."],
+      ['Nima ish', "I'm **a student**. I study IT."],
+      ['Savol bilan tugat', '**How about you?**'],
+    ],
+    note: "Qoida: javob berib, darhol savol qaytaring — suhbat «ping-pong» kabi davom etadi.",
+  },
+  cases: {
+    title: 'Rasmiy yoki norasmiy?', en: 'Formal vs informal',
+    intro: 'Vaziyatga qarab iborani tanlang:',
+    items: [
+      { badge: '🎩', t: 'Rasmiy', en: 'formal', rule: 'Good morning. Pleased to meet you.', ex: 'Good morning, Mr Karimov.', res: 'ish, imtihon' },
+      { badge: '🙂', t: 'Neytral', en: 'neutral', rule: 'Nice to meet you.', ex: "Hello, I'm Aziza.", res: 'yangi tanish' },
+      { badge: '😎', t: 'Norasmiy', en: 'informal', rule: "Hi! How's it going?", ex: "Hey, what's up?", res: "do'stlar" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'tanishuv dialogi', strat: 'javob + savol',
+      q: "Complete: A: Hi, I'm Tom. ___  B: I'm Aziz. Nice to meet you.  A: ___  B: I'm from Samarkand. ___",
+      steps: [["A: **What's your name?**", 'ism'], ['A: Nice to meet you, too. **Where are you from?**', ''], ["B: I'm from Samarkand. **How about you?**", 'javob']],
+      check: 'B savol qaytardi — suhbat davom etadi ✓',
+    },
+    {
+      tag: 'follow-up savol', strat: 'javobdagi detalga savol bering',
+      q: 'Your friend says: «I play in a band.» Ask two follow-up questions.',
+      steps: [['Detal: **band** (musiqa guruhi)', ''], ['**What do you play?**', "cholg'u"], ['**How often do you practise?**', 'javob']],
+      check: "Faqat «Oh, nice.» desangiz, suhbat to'xtaydi.",
+    },
+    {
+      tag: 'small talk', strat: 'umumiy mavzu: ob-havo, dam olish',
+      q: 'Start small talk with a classmate on Monday morning.',
+      steps: [['Salom: **Hi! How are you?**', ''], ['Mavzu: **How was your weekend?**', 'dam olish'], ['Reaksiya: **Really? That sounds fun!**', 'javob']],
+      check: "Small talk mavzulari: weather, weekend, hobbies, food. Shaxsiy savollar (yosh, maosh) — yo'q.",
+    },
+  ],
+  trap: {
+    title: "«How are you?» tuzog'i",
+    q: "— How are you?  — I'm fine, thank you, and you? (har doim)",
+    body: "Xato emas, lekin juda «darslik»dek eshitiladi. Muqobillar: Not bad, thanks! / Pretty good, how about you? / I'm great, thanks!",
+  },
+  tip: {
+    short: 'intonatsiya', title: 'Intonatsiya — samimiylik',
+    q: 'Nice to meet you ↗ (quvnoq ohang)',
+    body: "Bir xil ohangda gapirsangiz, zerikkan bo'lib eshitilasiz. Kalit so'zlarni urg'u bilan ayting: NICE to MEET you. Jilmayish ham ovozda eshitiladi!",
+  },
+  mistakes: [
+    '«What is your work?» ✗ → «What do you do?» ✓',
+    'Javobdan keyin savol qaytarmaslik — suhbat uziladi.',
+    "«I'm from Uzbekistan, Tashkent city» ✗ → «I'm from Tashkent, Uzbekistan» ✓",
+    "Juda qisqa javob: «Yes.» / «No.» — kamida bitta gap qo'shing.",
+  ],
+  practice: [
+    ['Introduce yourself in 3 sentences.', 'ism, qayerdan, ish'],
+    ['Reply to: «I love cooking.»', 'follow-up savol'],
+    ['Make it informal: Hello, how are you?', ''],
+    ['Respond to: «Nice to meet you.»', ''],
+  ],
+  answers: ["I'm …, I'm from …, I'm a …", 'What do you like to cook?', "Hi! How's it going?", 'Nice to meet you, too.'],
+  remember: [
+    'Tanishuv: ism → qayerdan → nima ish → How about you?',
+    'Har javobdan keyin follow-up savol bering.',
+    'Vaziyatga qarab rasmiy yoki norasmiy ibora tanlang.',
+  ],
+};

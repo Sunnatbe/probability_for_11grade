@@ -1,0 +1,97 @@
+module.exports = {
+  n: 10,
+  short: 'Writing_norasmiy_email',
+  en: 'Writing: an informal email',
+  video: '13 min',
+  moduleTest: 'M1 modul testi (30 savol)',
+  emoji: {
+    lesson: '✉️', strip: '✉️ 👋 📝 🔗 😊 📮',
+    goal: ['🏗️', '🔗', '😊'],
+    kw: ['👋', '🙏', '😃', '🤞', '➕', '↔️', '❓', '➡️'],
+    core: ['👋', '🙏', '📝', '🏁'],
+    ex: ['🏗️', '🔗', '✉️'], tip: '🔍',
+  },
+  hook: "Do'stga xat yozish — B1 imtihonlarining doimiy topshirig'i va hayotda eng ko'p ishlatiladigan yozma ko'nikma. Bugun norasmiy email tuzilmasi va bog'lovchilarni o'rganamiz, so'ng M1 modul testi.",
+  goals: [
+    ['Email tuzilmasi', 'Salom, kirish, asosiy qism, xayrlashuv'],
+    ["Bog'lovchilar", 'and, but, because, so'],
+    ['Norasmiy uslub', "Qisqartmalar va do'stona iboralar"],
+  ],
+  kw: [
+    ['Hi …,', 'Salom …,', 'Hi Sardor,'],
+    ['Thanks for …', '… uchun rahmat', 'Thanks for your email!'],
+    ['Guess what!', "Bilasanmi nima bo'ldi!", 'Guess what! I passed my exam.'],
+    ['Hope to hear from you', 'Javobingni kutaman', 'Hope to hear from you soon.'],
+    ['and', 'va', 'I like tea **and** coffee.'],
+    ['but', 'lekin', "I like tea, **but** I don't like coffee."],
+    ['because', 'chunki', "I'm tired **because** I worked a lot."],
+    ['so', 'shuning uchun', 'I was tired, **so** I went to bed.'],
+  ],
+  core: {
+    title: 'Norasmiy email: 4 qism', en: 'Informal email structure',
+    steps: [
+      ['Salomlashish', '**Hi Jasur,** / **Dear Anna,**'],
+      ['Kirish', '**Thanks for your email.** It was great to hear from you.'],
+      ['Asosiy qism', 'Har bir savolga — alohida xatboshi'],
+      ['Yakun', '**Hope to hear from you soon.** Best wishes, Aziz'],
+    ],
+    note: "Hajm: 80–120 so'z. Topshiriqdagi har bir savolga javob bering — aks holda ball kamayadi.",
+  },
+  cases: {
+    title: "Bog'lovchilar", en: 'Linking words',
+    intro: "Qisqa gaplarni bog'lab, matnni ravon qiling:",
+    items: [
+      { badge: '➕', t: 'and / but', en: "qo'shish / qarshilik", rule: 'and, but', ex: "It's small **but** cosy.", res: 'qarama-qarshi fikr' },
+      { badge: '❓', t: 'because', en: 'sabab', rule: 'because + sabab', ex: "I'm happy **because** it's Friday.", res: 'nima uchun?' },
+      { badge: '➡️', t: 'so', en: 'natija', rule: 'so + natija', ex: 'It was late, **so** I took a taxi.', res: "nima bo'ldi?" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'email tuzilmasi', strat: "4 qismni tartib bilan joylashtiring",
+      q: 'Put in order: a) Best wishes, Malika  b) Hi Anna,  c) Thanks for your email!  d) My new school is great because…',
+      steps: [['1 — **b)** Hi Anna,', 'salomlashish'], ['2 — **c)** Thanks for your email!', 'kirish'], ['3 — **d)** My new school is great…', 'asosiy qism'], ['4 — **a)** Best wishes, Malika', 'javob: b, c, d, a']],
+      check: 'Salom va xayrlashuv har doim alohida qatorda ✓',
+    },
+    {
+      tag: "bog'lovchilar", strat: 'sabab — because, natija — so',
+      q: 'Join the sentences: a) It was raining. I stayed at home.  b) I love this café. The coffee is great.',
+      steps: [['a) yomg\'ir → uyda qoldim', 'natija → **so**'], ['It was raining, **so** I stayed at home.', ''], ['b) yoqadi ← kofe zo\'r', 'sabab → **because**'], ['I love this café **because** the coffee is great.', 'javob']],
+      check: 'so oldidan vergul qo\'yiladi, because oldidan — odatda yo\'q ✓',
+    },
+    {
+      tag: 'javob email', strat: 'har bir savolga bitta xatboshi',
+      q: 'Your friend asks: «How is your new flat? What do you do at weekends?» Write the main part.',
+      steps: [['1-savol: **flat**', 'tasvir + fikr'], ['My new flat is small **but** really cosy.', ''], ['2-savol: **weekends**', 'odat → Present Simple'], ['At weekends I usually play football **and** visit my grandparents.', 'javob']],
+      check: "Ikkala savolga javob berildi, bog'lovchilar ishlatildi ✓",
+    },
+  ],
+  trap: {
+    title: "Rasmiy iboralar tuzog'i",
+    q: "Dear Sir, I am writing to inform you… (do'stga!)",
+    body: "Do'stga bunday yozilmaydi. Norasmiy emailda: Hi…, Thanks for…, I'm, don't (qisqartmalar), Best wishes / Love. Rasmiy email — 26-darsda.",
+  },
+  tip: {
+    short: 'tekshiruv', title: 'Yuborishdan oldin 3 savol',
+    q: "Barcha savollarga javob berdimmi? Bog'lovchilar bormi? 80–120 so'zmi?",
+    body: "Oxirida 1 daqiqa ajrating: zamonlar, he / she -s, artikllar va imloni tekshiring.",
+  },
+  mistakes: [
+    "Xatboshilarga bo'lmasdan bitta yaxlit matn yozish.",
+    'because bilan alohida gap: Because I was tired. ✗ (tugallanmagan gap)',
+    "Topshiriqdagi savollardan birini unutish.",
+    'Norasmiy emailda rasmiy yakun: Yours faithfully ✗',
+  ],
+  practice: [
+    ['Join with so: I was hungry. I made a sandwich.', ''],
+    ["Join with because: I can't come. I'm ill.", ''],
+    ['Informal ending: a) Yours faithfully  b) Best wishes', ''],
+    ['Start an email to your friend Ben.', ''],
+  ],
+  answers: ['I was hungry, so I made a sandwich.', "I can't come because I'm ill.", 'b) Best wishes', 'Hi Ben,'],
+  remember: [
+    'Tuzilma: salom → kirish → asosiy qism (xatboshilar) → yakun.',
+    "and, but, because, so — gaplarni bog'lang.",
+    "Norasmiy uslub: qisqartmalar, do'stona iboralar, 80–120 so'z.",
+  ],
+};

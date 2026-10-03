@@ -1,0 +1,96 @@
+module.exports = {
+  n: 2,
+  short: 'Lugat_talaffuz_takrorlash',
+  en: 'How to learn: vocabulary, pronunciation and review',
+  video: '12 min',
+  emoji: {
+    lesson: '📒', strip: '📒 🔁 🗣️ 🎧 ⏱️ 🧠',
+    goal: ['📒', '🗣️', '🔁'],
+    kw: ['📒', '🤝', '🎵', '🔣', '🔁', '🧠', '📇', '⏱️'],
+    core: ['✍️', '🔊', '🔗', '💬'],
+    ex: ['📒', '🎵', '📅'],
+  },
+  hook: "Ko'pchilik so'zni yodlaydi-yu, bir haftadan keyin unutadi. Bugun so'zlarni uzoq eslab qolish va to'g'ri talaffuz qilish usullarini o'rganamiz — ular butun kurs davomida kerak bo'ladi.",
+  goals: [
+    ["Lug'at daftari", "So'zni birikma va misol bilan yozish"],
+    ['Talaffuz', "IPA belgilari va so'z urg'usi"],
+    ['Takrorlash tizimi', "1–3–7–14 kun: so'zni unutmaslik"],
+  ],
+  kw: [
+    ['vocabulary notebook', "lug'at daftari", 'Write it in your notebook.'],
+    ['collocation', "so'z birikmasi", '**make** a mistake, **do** homework'],
+    ['word stress', "so'z urg'usi", 'TEAcher, comPUter'],
+    ['phonetic symbols', 'fonetik belgilar (IPA)', '/θ/ think, /ð/ this'],
+    ['review', 'takrorlamoq', '**Review** new words every day.'],
+    ['memorise', 'yodlamoq', '**memorise** 10 words'],
+    ['flashcard', 'kartochka', 'word on one side, meaning on the other'],
+    ['spaced repetition', 'interval takrorlash', 'day 1, 3, 7, 14'],
+  ],
+  core: {
+    title: "Yangi so'zni yozish: 4 qadam", en: 'Recording new words',
+    steps: [
+      ["So'z va tarjima", '**decision** — qaror'],
+      ['Talaffuz', "/dɪˈsɪʒn/ — urg'u 2-bo'g'inda"],
+      ['Birikma', '**make** a decision (do emas!)'],
+      ['Misol gap', 'I made a decision to study English.'],
+    ],
+    note: "Qoida: so'zni yolg'iz emas, birikma va gap ichida yozing — gapirganda aynan shu birikma esga tushadi.",
+  },
+  cases: {
+    title: 'Takrorlash jadvali', en: 'Spaced repetition',
+    intro: "Yangi so'zni unutmaslik uchun uni shu kunlarda takrorlang:",
+    items: [
+      { badge: '1', t: '1-kun', en: 'learn', rule: "10 ta yangi so'z", ex: 'kartochka + misol gap', res: "o'rganish" },
+      { badge: '3·7', t: '3- va 7-kun', en: 'review', rule: 'kartochkalarni tekshirish', ex: 'esdan chiqqanini ajrating', res: 'mustahkamlash' },
+      { badge: '14', t: '14-kun', en: 'use', rule: "so'zni gapda ishlatish", ex: '3 ta gap yozing', res: 'uzoq xotira' },
+    ],
+  },
+  ex: [
+    {
+      tag: "lug'at daftari", strat: "so'z + talaffuz + birikma + misol",
+      q: 'Record the new word **homework** in your notebook.',
+      steps: [['homework — uy vazifasi', 'tarjima'], ["/ˈhəʊmwɜːk/ — urg'u 1-bo'g'inda", 'talaffuz'], ['**do** homework (make emas!)', 'birikma'], ['I **do** my homework after dinner.', 'javob']],
+      check: 'Diqqat: homework sanalmaydi — a homework ✗, some homework ✓.',
+    },
+    {
+      tag: "so'z urg'usi", strat: "ˈ belgisidan keyingi bo'g'in urg'uli",
+      q: 'Where is the stress? **photograph** /ˈfəʊtəɡrɑːf/ and **photographer** /fəˈtɒɡrəfə/',
+      steps: [['photograph: **PHO**-to-graph', "ˈ 1-bo'g'in oldida"], ['photographer: pho-**TO**-gra-pher', "ˈ 2-bo'g'in oldida"], ["Urg'u so'z o'zgarganda ko'chishi mumkin", 'javob']],
+      check: "Lug'atda ˈ belgisi urg'uli bo'g'indan oldin turadi ✓",
+    },
+    {
+      tag: 'takrorlash rejasi', strat: '1–3–7–14 kun qoidasi',
+      q: 'You learned 10 new words on Monday (day 1). On which days should you review them?',
+      steps: [['1-kun: dushanba', "o'rgandik"], ['3-kun: chorshanba', '1-takrorlash'], ['7-kun: yakshanba', '2-takrorlash'], ['14-kun: keyingi yakshanba', 'javob']],
+      check: "Dushanba 1-kun bo'lsa: chorshanba — 3-kun, yakshanba — 7-kun, keyingi yakshanba — 14-kun ✓",
+    },
+  ],
+  trap: {
+    title: 'Faqat tarjima yozish',
+    q: 'decision — qaror. Tamom?',
+    body: "Yo'q! Tarjimaning o'zi gapda ishlatishga yordam bermaydi: «do a decision» deb xato qilasiz. Har doim birikmani yozing: **make** a decision.",
+  },
+  tip: {
+    short: 'talaffuz', title: 'Talaffuzni eshitib tekshiring',
+    q: "Onlayn lug'atda karnay belgisini bosing.",
+    body: "Cambridge yoki Oxford Learner's Dictionary — UK va US talaffuzi, IPA va misollar bor. So'zni 3 marta ovoz chiqarib takrorlang.",
+  },
+  mistakes: [
+    "So'zni faqat tarjimasi bilan yozish, birikmasiz.",
+    "Urg'uni noto'g'ri qo'yish: comPUter ✓, COMputer ✗.",
+    "Bir kunda 50 ta so'z yodlab, keyin takrorlamaslik.",
+    "Yozilishi bo'yicha o'qish: Wednesday — /ˈwenzdeɪ/, «wed-nes-day» emas.",
+  ],
+  practice: [
+    ['**make** or **do**? ___ a mistake', ''],
+    ['**make** or **do**? ___ the shopping', ''],
+    ["Urg'u qayerda? hotel /həʊˈtel/", ''],
+    ["Seshanba o'rgangan so'zlar: 3-kun qaysi kun?", ''],
+  ],
+  answers: ['make a mistake', 'do the shopping', "ho-TEL (2-bo'g'in)", 'payshanba'],
+  remember: [
+    "So'z + talaffuz + birikma + misol gap — to'rtalasini yozing.",
+    "ˈ belgisi urg'uli bo'g'indan oldin turadi.",
+    'Takrorlash: 1, 3, 7 va 14-kunlar.',
+  ],
+};

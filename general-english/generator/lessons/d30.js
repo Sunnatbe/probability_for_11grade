@@ -1,0 +1,96 @@
+module.exports = {
+  n: 30,
+  short: 'Passive_Voice',
+  en: 'Passive voice: Present and Past',
+  video: '12 min',
+  emoji: {
+    lesson: '🏭', strip: '🏭 📦 🏛️ 📱 🍫 🔍',
+    goal: ['🔄', '❓', '👤'],
+    kw: ['🔄', '➡️', '🏭', '🏛️', '👤', '💡', '🌱', '🚗'],
+    core: ['🔧', '▶️', '⏪', '👤'],
+    ex: ['🏭', '🏛️', '🔄'], tip: '📰',
+  },
+  hook: "«Bu bino 1920-yilda qurilgan», «Choy Xitoyda yetishtiriladi» — harakatni kim qilgani muhim bo'lmaganda majhul nisbat (Passive Voice) ishlatiladi. Bugun uning hozirgi va o'tgan zamon shakllarini o'rganamiz.",
+  goals: [
+    ['Shakl', 'be + V3 (3-shakl)'],
+    ['Qachon ishlatiladi', "Bajaruvchi noma'lum yoki muhim emas"],
+    ['by', "Bajaruvchini ko'rsatish"],
+  ],
+  kw: [
+    ['passive', 'majhul nisbat', 'The car **was stolen**.'],
+    ['active', 'aniq nisbat', 'Someone **stole** the car.'],
+    ['is made', '… qilinadi', 'Paper **is made** from wood.'],
+    ['was built', '… qurilgan', 'It **was built** in 1920.'],
+    ['by', '… tomonidan', 'written **by** Navoi'],
+    ['invented', 'ixtiro qilingan', 'The phone **was invented** in 1876.'],
+    ['grown', 'yetishtiriladi', 'Cotton **is grown** in Uzbekistan.'],
+    ['produced', 'ishlab chiqariladi', 'Cars **are produced** in Asaka.'],
+  ],
+  core: {
+    title: 'Passive: 4 qoida', en: 'Passive voice',
+    steps: [
+      ['Shakl', '**be** + V3'],
+      ['Present', 'is / are + V3: Cars **are made** here.'],
+      ['Past', 'was / were + V3: It **was built** in 1920.'],
+      ['by', "bajaruvchi muhim bo'lsa: **by** Leonardo"],
+    ],
+    note: "To'ldiruvchi ega bo'ladi: They built the bridge → The bridge **was built**.",
+  },
+  cases: {
+    title: 'Active → Passive: 3 qadam', en: 'Transforming sentences',
+    intro: 'Aniq nisbatdan majhul nisbatga:',
+    items: [
+      { badge: '1', t: "Obyekt → ega", en: 'object first', rule: 'the bridge → boshga', ex: 'The bridge …', res: 'nima haqida?' },
+      { badge: '2', t: 'be + V3', en: 'same tense', rule: 'built → was built', ex: 'The bridge was built', res: 'zamon saqlanadi' },
+      { badge: '3', t: 'by …', en: 'optional', rule: "kerak bo'lsa", ex: '… by Chinese engineers.', res: "ko'pincha tushadi" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'present passive', strat: 'is / are + V3',
+      q: 'Complete: Uzbek cotton ___ (export) to many countries. This phone ___ (make) in Korea.',
+      steps: [['cotton — birlik', '→ **is exported**'], ['phone — birlik', '→ **is made**'], ['Uzbek cotton **is exported** … This phone **is made** in Korea.', 'javob']],
+      check: 'Kim eksport qilishi muhim emas — shuning uchun passive ✓',
+    },
+    {
+      tag: 'past passive', strat: 'was / were + V3',
+      q: 'Complete: The Registan ___ (build) between the 15th and 17th centuries. The first photos ___ (take) in the 1820s.',
+      steps: [['Registan — birlik', '→ **was built**'], ["photos — ko'plik", '→ **were taken**'], ['The Registan **was built** … The first photos **were taken** in the 1820s.', 'javob']],
+      check: 'take — took — **taken** (V3!) ✓',
+    },
+    {
+      tag: 'active → passive', strat: 'obyekt → ega, be + V3',
+      q: 'Make passive: Someone stole my bike yesterday.',
+      steps: [['Obyekt: **my bike**', 'yangi ega'], ['stole → **was stolen**', "o'tgan zamon"], ['by someone — **keraksiz**', "noma'lum"], ['My bike **was stolen** yesterday.', 'javob']],
+      check: 'by someone, by people — odatda yozilmaydi ✓',
+    },
+  ],
+  trap: {
+    title: 'be ni unutish',
+    q: 'The bridge built in 1990. ✗',
+    body: "be kerak: The bridge **was** built in 1990 ✓. Aks holda «ko'prik qurdi» degan ma'no chiqadi!",
+  },
+  tip: {
+    short: 'uslub', title: 'Passive — rasmiy va ilmiy uslubda',
+    q: 'The results were analysed… · Students are required to…',
+    body: "Hisobot, yangilik va ilmiy matnlarda passive ko'p. Kundalik nutqda esa active tabiiyroq: We cleaned the room.",
+  },
+  mistakes: [
+    'be ni tushirish: It made in China ✗.',
+    "V2 yoki noto'g'ri V3: was builded ✗ / was took ✗.",
+    "Ko'plikda is: The cars is made ✗ → are made ✓.",
+    "Har bir gapni passive qilish — matn og'irlashadi.",
+  ],
+  practice: [
+    ['English ___ (speak) all over the world.', ''],
+    ['«Hamlet» ___ (write) by Shakespeare.', ''],
+    ['These cakes ___ (bake) this morning.', ''],
+    ['Passive: They clean the classroom every day.', ''],
+  ],
+  answers: ['is spoken', 'was written', 'were baked', 'The classroom is cleaned every day.'],
+  remember: [
+    "Passive = be + V3; zamon be da ko'rinadi.",
+    "Bajaruvchi noma'lum yoki muhim emas — passive.",
+    "by + bajaruvchi — faqat muhim bo'lsa.",
+  ],
+};

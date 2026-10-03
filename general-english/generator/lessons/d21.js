@@ -1,0 +1,96 @@
+module.exports = {
+  n: 21,
+  short: 'Can_could_be_able_to',
+  en: 'Modals of ability: can, could, be able to',
+  video: '12 min',
+  emoji: {
+    lesson: '💪', strip: '🏊 🎸 🚴 🗣️ 🧩 💪',
+    goal: ['💪', '🔙', '🔮'],
+    kw: ['💪', '🔙', '🔧', '🏁', '🔮', '🚫', '❓', '⭐'],
+    core: ['💪', '🔙', '🔮', '🏁'],
+    ex: ['🔙', '🏁', '🔮'], tip: '🙏',
+  },
+  hook: "Nima qila olasiz? Bolaligingizda nima qila olardingiz? Kelajakda nima qila olasiz? Bugun qobiliyat haqida uch zamonda gapirishni o'rganamiz.",
+  goals: [
+    ["can / can't", 'hozirgi qobiliyat'],
+    ['could / was able to', "o'tmishdagi qobiliyat"],
+    ['will be able to', 'kelajakdagi qobiliyat'],
+  ],
+  kw: [
+    ['can', '… a olaman', 'I **can** swim.'],
+    ['could', "… a olardim (o'tmish)", 'I **could** read at 5.'],
+    ['be able to', 'qila olish', 'I want to **be able to** drive.'],
+    ['manage to', 'uddalamoq', 'I **managed to** finish on time.'],
+    ['will be able to', '… a olaman (kelajak)', 'You **will be able to** speak fluently.'],
+    ["can't", '… a olmayman', "I **can't** cook."],
+    ['Can you…?', '… a olasizmi?', '**Can you** play chess?'],
+    ['fluently', 'ravon', 'speak English **fluently**'],
+  ],
+  core: {
+    title: 'Qobiliyat: 4 shakl', en: 'Ability in three tenses',
+    steps: [
+      ['Hozir', "**can / can't** + asl shakl"],
+      ["O'tmish (umumiy)", "**could / couldn't**: I could swim at 6."],
+      ['Kelajak', "**will be able to**: I'll be able to drive."],
+      ['Bir martalik muvaffaqiyat', '**was able to / managed to**'],
+    ],
+    note: "Qoida: can dan keyin to yo'q va -s yo'q: She can swim ✓, She cans to swim ✗.",
+  },
+  cases: {
+    title: 'could yoki was able to?', en: 'Past ability',
+    intro: "O'tmishdagi qobiliyat ikki xil:",
+    items: [
+      { badge: '🔁', t: 'Umumiy', en: 'general ability', rule: 'could', ex: 'I could run fast as a child.', res: 'doimiy qobiliyat' },
+      { badge: '🏁', t: 'Bir marta', en: 'specific success', rule: 'was able to / managed to', ex: 'The test was hard, but I was able to pass.', res: 'could ✗' },
+      { badge: '🚫', t: 'Inkor', en: 'negative', rule: "couldn't", ex: "I couldn't open the door.", res: 'ikkalasida ham ✓' },
+    ],
+  },
+  ex: [
+    {
+      tag: "o'tmish qobiliyati", strat: 'umumiy — could',
+      q: 'Complete: When I was five, I ___ (ride) a bike, but I ___ (not / swim).',
+      steps: [['umumiy qobiliyat', '→ **could ride**'], ['inkor', "→ **couldn't swim**"], ["I **could ride** a bike, but I **couldn't swim**.", 'javob']],
+      check: "could + asl shakl, to yo'q ✓",
+    },
+    {
+      tag: 'bir martalik muvaffaqiyat', strat: 'qiyin vaziyatda uddalash — managed to',
+      q: 'Choose: The exam was very hard, but I ___ pass it. (could / managed to)',
+      steps: [['Bitta aniq vaziyat', 'umumiy emas'], ['**managed to**', 'qiyinchilik bilan uddaladim'], ['…but I **managed to** pass it.', 'javob']],
+      check: 'I could pass it ✗ — bir martalik muvaffaqiyatda could ishlatilmaydi.',
+    },
+    {
+      tag: 'kelajak', strat: 'will can ✗ → will be able to',
+      q: 'Correct the mistake: After this course, I will can speak English fluently.',
+      steps: [['will + can ✗', "ikki modal birga bo'lmaydi"], ['can → **be able to**', ''], ['I **will be able to** speak English fluently.', 'javob']],
+      check: "Shuningdek: I'd like to be able to… ✓",
+    },
+  ],
+  trap: {
+    title: "Talaffuz: can / can't",
+    q: "I can swim /kən/ · I can't swim /kɑːnt/",
+    body: "Tasdiqda can kuchsiz /kən/, inkorda can't kuchli va cho'ziq. Agar can ni urg'u bilan aytsangiz, tinglovchi can't deb eshitishi mumkin!",
+  },
+  tip: {
+    short: 'muloyimlik', title: 'Can you…? va Could you…?',
+    q: 'Could you help me, please? — muloyimroq',
+    body: "So'rov uchun could — o'tmish emas, xushmuomalalik: Could you open the window? ✓ Javob: Sure! / Of course.",
+  },
+  mistakes: [
+    'can dan keyin to: I can to drive ✗.',
+    '3-shaxsda -s: He cans ✗ → He **can** ✓.',
+    'will can ✗ → will be able to ✓.',
+    'Bir martalik muvaffaqiyat uchun could ✗.',
+  ],
+  practice: [
+    ['My grandma ___ (not / use) a smartphone.', 'hozir'],
+    ['At 10, I ___ (speak) two languages.', "o'tmish"],
+    ['In a year you ___ (understand) films.', 'kelajak'],
+    ['The door was locked, but we ___ get in.', ''],
+  ],
+  answers: ["can't use", 'could speak', 'will be able to understand', 'managed to'],
+  remember: [
+    "can / can't — hozir; could / couldn't — o'tmish (umumiy).",
+    'will be able to — kelajak; managed to — bir martalik muvaffaqiyat.',
+    "Modaldan keyin to va -s yo'q.",
+  ],
+};

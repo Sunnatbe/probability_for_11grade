@@ -1,0 +1,96 @@
+module.exports = {
+  n: 6,
+  short: 'Savol_tuzish',
+  en: 'Questions and question words',
+  video: '12 min',
+  emoji: {
+    lesson: '❓', strip: '❓ 🤔 🗨️ 🔍 🕵️ 💬',
+    goal: ['🔤', '🎯', '💬'],
+    kw: ['🧑', '📦', '📍', '⏰', '🔁', '⏳', '🔧', '💬'],
+    core: ['❓', '🔧', '👤', '🔤'],
+    ex: ['🔧', '👤', '⏳'],
+  },
+  hook: "Yaxshi suhbatdosh — yaxshi savol beradigan odam. Bugun inglizcha savolning «formulasi»ni o'rganamiz: QASI — Question word, Auxiliary, Subject, Infinitive.",
+  goals: [
+    ['QASI tartibi', "So'roq so'z + yordamchi fe'l + ega + fe'l"],
+    ['Subject savollar', 'Who lives here? — do kerak emas'],
+    ['Qisqa javoblar', "Yes, I do. / No, she isn't."],
+  ],
+  kw: [
+    ['who', 'kim', '**Who** is your teacher?'],
+    ['what', 'nima', '**What** do you do?'],
+    ['where', 'qayerda / qayerga', '**Where** do you live?'],
+    ['when', 'qachon', '**When** does the lesson start?'],
+    ['how often', 'qanchalik tez-tez', '**How often** do you play tennis?'],
+    ['how long', 'qancha vaqt', '**How long** does it take?'],
+    ['auxiliary verb', "yordamchi fe'l", 'do, does, is, are, can'],
+    ['short answer', 'qisqa javob', "Yes, I do. / No, he can't."],
+  ],
+  core: {
+    title: 'Savol formulasi: QASI', en: 'Question word order',
+    steps: [
+      ['Q — Question word', 'Where / What / How often…'],
+      ['A — Auxiliary', 'do / does / is / are / can'],
+      ['S — Subject', 'you / she / your brother'],
+      ['I — Infinitive', "fe'lning asl shakli"],
+    ],
+    note: "Misol: Where (Q) does (A) your sister (S) work (I)? — tartibni almashtirmang.",
+  },
+  cases: {
+    title: "Yordamchi fe'lni tanlash", en: 'Choosing the auxiliary',
+    intro: "Gapda qaysi fe'l bor — shunga qarab yordamchi fe'l tanlanadi:",
+    items: [
+      { badge: 'be', t: "be fe'li", en: 'am / is / are', rule: 'is / are oldinga', ex: 'She is busy. → Is she busy?', res: 'do kerak emas' },
+      { badge: 'do', t: "Oddiy fe'l", en: 'do / does', rule: "Do / Does + ega + fe'l", ex: 'He plays. → Does he play?', res: "-s yo'qoladi" },
+      { badge: 'can', t: 'Modal', en: 'can / should', rule: 'modal oldinga', ex: 'You can swim. → Can you swim?', res: 'do kerak emas' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'QASI tartibi', strat: 'Q + A + S + I',
+      q: 'Ask about the highlighted part: My sister works **in a hospital**.',
+      steps: [['Q: in a hospital → **Where**', ''], ['A: sister = she → **does**', ''], ['S + I: **your sister work**', "-s yo'qoladi"], ['**Where does** your sister **work**?', 'javob']],
+      check: 'Javob: She works in a hospital ✓',
+    },
+    {
+      tag: 'subject savol', strat: '«kim?» — ega haqida, do kerak emas',
+      q: 'Ask about the highlighted part: **Aziz** lives next door.',
+      steps: [['Aziz — **ega**', 'kim?'], ["Who + fe'l-**s**", 'does kerak emas'], ['**Who lives** next door?', 'javob']],
+      check: "Who does live next door? ✗ — ega haqida so'raganda does ishlatilmaydi.",
+    },
+    {
+      tag: 'how often / how long', strat: 'chastota yoki davomiylik?',
+      q: 'Make questions: a) I go to the gym **three times a week**.  b) The film lasts **two hours**.',
+      steps: [['a) chastota → **How often**', ''], ['**How often** do you go to the gym?', ''], ['b) davomiylik → **How long**', ''], ['**How long** does the film last?', 'javob']],
+      check: 'How many times a week…? ham to\'g\'ri ✓',
+    },
+  ],
+  trap: {
+    title: "So'roqda tartib",
+    q: 'Where you live? ✗   Where you are from? ✗',
+    body: "Yordamchi fe'lni unutmang: Where **do** you live? ✓, Where **are** you from? ✓. O'zbek tilidagi tartib inglizchada ishlamaydi.",
+  },
+  tip: {
+    short: 'intonatsiya', title: 'Savol intonatsiyasi',
+    q: 'Wh- savol ↘, Yes/No savol ↗',
+    body: "Where do you live? — oxirida ovoz pasayadi. Do you live here? — oxirida ovoz ko'tariladi.",
+  },
+  mistakes: [
+    "Yordamchi fe'lni tushirish: What you want? ✗ → What **do** you want? ✓",
+    'does bilan -s: Does he likes? ✗ → Does he **like**? ✓',
+    'Subject savolda do: Who does know? ✗ → Who **knows**? ✓',
+    'be bilan do: Do you are tired? ✗ → **Are** you tired? ✓',
+  ],
+  practice: [
+    ['She is **from Andijan**. → Where…?', ''],
+    ['They play **football** on Sundays. → What…?', ''],
+    ['**Malika** speaks French. → Who…?', ''],
+    ['Short answer: Can you swim? (yes)', ''],
+  ],
+  answers: ['Where is she from?', 'What do they play on Sundays?', 'Who speaks French?', 'Yes, I can.'],
+  remember: [
+    'QASI: Question word + Auxiliary + Subject + Infinitive.',
+    "be va modallar o'zi oldinga chiqadi; boshqa fe'llar uchun do / does.",
+    "Ega haqida savol (Who…?) — yordamchi fe'lsiz.",
+  ],
+};

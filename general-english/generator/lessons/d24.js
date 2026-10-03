@@ -1,0 +1,96 @@
+module.exports = {
+  n: 24,
+  short: 'Reading_xulosa_va_kontekst',
+  en: 'Reading: inference and vocabulary in context',
+  video: '12 min',
+  emoji: {
+    lesson: '🕵️', strip: '🕵️ 📖 💭 🔍 🧩 💡',
+    goal: ['💭', '⚖️', '🧩'],
+    kw: ['💭', '🤫', '💬', '📊', '🔁', '🧩', '🎭', '📰'],
+    core: ['📖', '🔍', '🧩', '✅'],
+    ex: ['💭', '⚖️', '🧩'], tip: '🎭',
+  },
+  hook: "Ba'zi javoblar matnda to'g'ridan-to'g'ri yozilmagan — ularni xulosa qilish kerak. Bugun muallifning yashirin fikrini topish va notanish so'z ma'nosini kontekstdan aniqlashni o'rganamiz.",
+  goals: [
+    ['Inference', 'Yozilmagan, lekin nazarda tutilgan fikr'],
+    ['Fakt va fikr', 'Tekshiriladigan va shaxsiy fikrni ajratish'],
+    ['Kontekst', "Notanish so'z ma'nosini topish"],
+  ],
+  kw: [
+    ['infer', 'xulosa chiqarmoq', 'We can **infer** that…'],
+    ['imply', 'nazarda tutmoq', 'The writer **implies** that…'],
+    ['opinion', 'fikr', 'It is the best film ever.'],
+    ['fact', 'fakt', 'The film is 2 hours long.'],
+    ['synonym', 'sinonim', 'huge = very big'],
+    ['context clue', 'kontekst ishorasi', '…, which means…'],
+    ['tone', 'ohang', 'The tone is positive.'],
+    ['according to', '… ga ko\'ra', '**According to** the text, …'],
+  ],
+  core: {
+    title: 'Xulosa chiqarish: 4 qadam', en: 'Making inferences',
+    steps: [
+      ["Savolni o'qi", 'What can we infer…? / What does the writer imply?'],
+      ['Dalilni top', 'Matndagi kerakli gaplarni belgilang'],
+      ['Mantiqiy xulosa', "Dalildan to'g'ridan-to'g'ri kelib chiqadi"],
+      ['Tekshir', 'Variant juda keng yoki uydirma emasmi?'],
+    ],
+    note: 'Xulosa — taxmin emas: u matndagi dalilga tayanishi kerak.',
+  },
+  cases: {
+    title: "So'z ma'nosini topish", en: 'Context clues',
+    intro: "Notanish so'z atrofida ko'pincha yordamchi ishora bo'ladi:",
+    items: [
+      { badge: '🟰', t: "Ta'rif", en: 'definition', rule: ', which means… / , or …', ex: 'He was exhausted, or very tired.', res: 'exhausted = very tired' },
+      { badge: '🔄', t: 'Zid ma\'no', en: 'contrast', rule: 'but, however, unlike', ex: 'Unlike his noisy brother, Ali is quiet.', res: 'quiet ≠ noisy' },
+      { badge: '📋', t: 'Misol', en: 'example', rule: 'such as, for example', ex: 'citrus fruits such as lemons', res: 'citrus = limon turi' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'inference', strat: 'dalil → xulosa',
+      q: '«Kamola looked at her watch again and again. The bus was 20 minutes late, and her exam started at 9.» How does Kamola feel?',
+      steps: [['Dalil: **looked at her watch again and again**', ''], ['Dalil: **bus late + exam at 9**', ''], ['Kamola is **worried / nervous**.', 'javob']],
+      check: "Matnda «worried» so'zi yo'q, lekin dalillar shuni ko'rsatadi ✓",
+    },
+    {
+      tag: 'fakt yoki fikr', strat: 'tekshirish mumkinmi?',
+      q: 'Which is an opinion? a) The café opened in 2015.  b) It serves the best coffee in town.  c) It closes at 10 p.m.',
+      steps: [['a) sana — tekshiriladi', 'fakt'], ['c) vaqt — tekshiriladi', 'fakt'], ['b) **the best** — shaxsiy baho', 'javob: fikr']],
+      check: 'best, amazing, terrible, I think — fikr belgilari ✓',
+    },
+    {
+      tag: "kontekstdan ma'no", strat: 'zid ma\'no ishorasi: but',
+      q: '«The first test was easy, but the second one was really challenging.» What does **challenging** mean?',
+      steps: [['Ishora: **but**', "zid ma'no"], ['easy ↔ challenging', ''], ['challenging = **difficult**', 'javob']],
+      check: "but, however, although — zid ma'no ishoralari ✓",
+    },
+  ],
+  trap: {
+    title: "Juda «uzoq» xulosa",
+    q: 'Kamola is a bad student. ✗',
+    body: "Matnda bunga dalil yo'q! Xulosa dalildan faqat bir qadam uzoqlashadi. Ortiqcha taxmin qiladigan variantlar — tuzoq.",
+  },
+  tip: {
+    short: 'ohang', title: 'Ohangni aniqlash',
+    q: 'positive · negative · neutral · humorous',
+    body: 'Muallif tanlagan sifatlarga qarang: wonderful, disappointing, unfortunately… Ular ohangni ko\'rsatadi.',
+  },
+  mistakes: [
+    "Xulosani dalilsiz, o'z tajribasiga tayanib chiqarish.",
+    'Fikrni fakt deb qabul qilish.',
+    "Notanish so'zda to'xtab, butun gapni o'tkazib yuborish.",
+    "Matndagi so'zni aynan takrorlaydigan variantni o'ylamay tanlash.",
+  ],
+  practice: [
+    ['«He was starving, so he ate three plates of plov.» starving = ?', ''],
+    ['Fact or opinion: «Tashkent is the most beautiful city.»', ''],
+    ['«Sardor smiled when he saw his test result.» Infer.', ''],
+    ["Zid ma'no ishoralari?", '2 ta'],
+  ],
+  answers: ['very hungry', 'opinion', 'He got a good mark.', 'but, however'],
+  remember: [
+    'Xulosa = matndagi dalil + bir qadam mantiq.',
+    'Fakt — tekshiriladi; fikr — shaxsiy baho (best, I think).',
+    "Kontekst ishoralari: ta'rif, zid ma'no (but), misol (such as).",
+  ],
+};

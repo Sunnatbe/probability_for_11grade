@@ -1,0 +1,96 @@
+module.exports = {
+  n: 28,
+  short: 'Zero_va_First_Conditional',
+  en: 'Zero and First Conditional',
+  video: '12 min',
+  emoji: {
+    lesson: '🌡️', strip: '🌡️ ☔ 🔥 🧊 ⚽ 📚',
+    goal: ['🔬', '🔮', '🔀'],
+    kw: ['❓', '🚫', '⏱️', '⚡', '🔬', '🔮', '🧊', '📌'],
+    core: ['🔬', '🔮', '🚫', '✏️'],
+    ex: ['🔬', '🔮', '🔀'], tip: '✏️',
+  },
+  hook: "«Agar yomg'ir yog'sa, uyda qolaman» — bu real shart. Bugun umumiy haqiqatlar (zero) va real kelajak (first conditional) uchun shart gaplarni o'rganamiz.",
+  goals: [
+    ['Zero conditional', 'Umumiy haqiqat: If you heat ice, it melts.'],
+    ['First conditional', "Real kelajak: If it rains, I'll stay home."],
+    ['unless / when / as soon as', "Boshqa bog'lovchilar"],
+  ],
+  kw: [
+    ['if', 'agar', '**If** it rains, …'],
+    ['unless', 'agar … -masa', "**Unless** you hurry, you'll be late."],
+    ['when', '… -ganda', "**When** I get home, I'll call you."],
+    ['as soon as', '… bilanoq', "**As soon as** I arrive, I'll text you."],
+    ['general truth', 'umumiy haqiqat', 'Water boils at 100°C.'],
+    ['real situation', 'real vaziyat', "If I have time, I'll help."],
+    ['melt', 'erimoq', 'Ice **melts** in the sun.'],
+    ['condition', 'shart', 'on one **condition**'],
+  ],
+  core: {
+    title: 'Shart gaplar: 4 qoida', en: 'Zero and first conditional',
+    steps: [
+      ['Zero', 'If + Present Simple, **Present Simple**'],
+      ['First', 'If + Present Simple, **will** + V'],
+      ["If-gapda will yo'q", 'If it **will** rain ✗ → If it **rains** ✓'],
+      ['Vergul', "If-gap boshida — vergul; oxirida — vergulsiz"],
+    ],
+    note: "unless = if … not: Unless you study, you'll fail = If you don't study, you'll fail.",
+  },
+  cases: {
+    title: 'Zero, First yoki when?', en: 'Which structure?',
+    intro: "Natija har doim to'g'rimi yoki faqat shu vaziyatdami?",
+    items: [
+      { badge: '🔬', t: 'Zero', en: 'always true', rule: 'If + Pres., Pres.', ex: 'If you mix red and blue, you get purple.', res: 'har doim' },
+      { badge: '🔮', t: 'First', en: 'real future', rule: 'If + Pres., will', ex: "If I finish early, I'll call you.", res: 'bitta vaziyat' },
+      { badge: '⏱️', t: 'when', en: "aniq bo'ladi", rule: 'when + Pres., will', ex: "When I get home, I'll eat.", res: 'albatta' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'zero conditional', strat: "har doim to'g'ri — ikkala qism Present Simple",
+      q: 'Complete: If you ___ (heat) water to 100°C, it ___ (boil).',
+      steps: [['Ilmiy fakt — **har doim**', 'zero'], ['If + **heat**', ''], ['If you **heat** water to 100°C, it **boils**.', 'javob']],
+      check: 'Fakt uchun ikkala qism Present Simple ✓',
+    },
+    {
+      tag: 'first conditional', strat: 'If-gapda Present, natijada will',
+      q: 'Complete: If it ___ (rain) tomorrow, we ___ (not / go) to the park.',
+      steps: [['If-gap — **Present Simple**', "will yo'q!"], ['If it **rains** tomorrow,', ''], ["we **won't go** to the park.", 'javob']],
+      check: "If it will rain ✗ — eng ko'p uchraydigan xato.",
+    },
+    {
+      tag: 'unless', strat: 'unless = if … not',
+      q: "Rewrite with **unless**: If you don't hurry, you'll miss the bus.",
+      steps: [["if … don't → **unless**", ''], ["Unless + **tasdiq** fe'l", "inkor yo'q!"], ["**Unless** you hurry, you'll miss the bus.", 'javob']],
+      check: "Unless you don't hurry ✗ — ikki marta inkor.",
+    },
+  ],
+  trap: {
+    title: "«If + will» tuzog'i",
+    q: 'If I will see him, I will tell him. ✗',
+    body: "If-gapda will ishlatilmaydi: If I **see** him, I'll tell him ✓. Xuddi shunday: when, as soon as, before, after dan keyin.",
+  },
+  tip: {
+    short: 'vergul', title: 'Vergul qoidasi',
+    q: "If it rains, we'll stay. · We'll stay if it rains.",
+    body: "If-gap boshida bo'lsa — vergul qo'yiladi; ikkinchi qismda bo'lsa — vergul kerak emas.",
+  },
+  mistakes: [
+    'If-gapda will: If he will come ✗.',
+    "unless + inkor: unless you don't ✗.",
+    'Fakt uchun will: If you heat ice, it will melt — melts afzal.',
+    "Vergulni noto'g'ri qo'yish.",
+  ],
+  practice: [
+    ['If you ___ (press) this button, the machine starts.', ''],
+    ['If she ___ (study), she ___ (pass).', ''],
+    ["___ you leave now, you'll be late.", 'unless'],
+    ["I'll call you when I ___ (arrive).", ''],
+  ],
+  answers: ['press', 'studies … will pass', 'Unless', 'arrive'],
+  remember: [
+    'Zero: If + Present, Present — umumiy haqiqat.',
+    "First: If + Present, will + V — real kelajak; if-gapda will yo'q.",
+    'unless = if … not; when / as soon as — if kabi ishlaydi.',
+  ],
+};

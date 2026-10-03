@@ -1,0 +1,96 @@
+module.exports = {
+  n: 12,
+  short: 'Past_Continuous',
+  en: 'Past Continuous and Past Simple: telling a story',
+  video: '12 min',
+  emoji: {
+    lesson: '🎞️', strip: '🌧️ 🚶 📱 💥 🌙 🎞️',
+    goal: ['⏳', '⚡', '📖'],
+    kw: ['⏳', '⏸️', '⚡', '💥', '📍', '🕗', '✋', '🎨'],
+    core: ['✅', '❌', '❓', '⏳'],
+    ex: ['⚡', '🔗', '🕗'], tip: '📖',
+  },
+  hook: "Yaxshi hikoya «fon» va «voqea»dan iborat: «Yomg'ir yog'ayotgan edi, birdan telefon jiringladi». Bugun Past Continuous bilan fon yaratishni va uni Past Simple bilan birlashtirishni o'rganamiz.",
+  goals: [
+    ['Past Continuous', "was / were + fe'l-ing"],
+    ['Fon + voqea', 'when va while bilan gaplar'],
+    ['Hikoya', 'Voqeani jonli qilib aytib berish'],
+  ],
+  kw: [
+    ['was / were', 'edi (yordamchi)', 'I **was** sleeping.'],
+    ['while', '… paytida', '**While** I was cooking, …'],
+    ['when', '… -ganda', '… **when** the phone rang.'],
+    ['suddenly', 'birdan', '**Suddenly**, the lights went out.'],
+    ['at that moment', 'shu paytda', '**At that moment**, he arrived.'],
+    ['at 8 p.m. yesterday', 'kecha soat 8 da', 'What were you doing **at 8 p.m.**?'],
+    ['interrupt', "bo'lmoq, to'xtatmoq", 'The call **interrupted** my lesson.'],
+    ['background', 'fon (vaziyat)', 'It was snowing.'],
+  ],
+  core: {
+    title: 'Past Continuous: 4 qoida', en: 'Form and use',
+    steps: [
+      ['Tasdiq', 'I / he / she **was** + -ing; you / we / they **were** + -ing'],
+      ['Inkor', "**wasn't** / **weren't** + -ing"],
+      ["So'roq", '**Was / Were** + ega + -ing?'],
+      ['Ishlatilishi', "o'tmishdagi aniq paytda davom etayotgan jarayon"],
+    ],
+    note: "Qoida: uzun jarayon — Past Continuous, uni bo'lgan qisqa voqea — Past Simple.",
+  },
+  cases: {
+    title: 'when va while', en: 'Linking actions',
+    intro: "Ikki harakat qanday bog'langan — shunga qarab:",
+    items: [
+      { badge: '⚡', t: 'when', en: 'qisqa voqea', rule: 'when + Past Simple', ex: 'I was reading **when** she called.', res: "jarayon bo'lindi" },
+      { badge: '⏳', t: 'while', en: 'uzun jarayon', rule: 'while + Past Cont.', ex: '**While** I was reading, she called.', res: "xuddi shu ma'no" },
+      { badge: '🔀', t: 'Parallel', en: 'ikki jarayon', rule: 'while … , …', ex: 'I was cooking **while** he was cleaning.', res: 'bir vaqtda' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'fon + voqea', strat: 'uzun — Continuous, qisqa — Simple',
+      q: 'Complete: I ___ (walk) home when it ___ (start) to rain.',
+      steps: [['walk home — **uzun jarayon**', '→ was walking'], ['start to rain — **qisqa voqea**', '→ started'], ['I **was walking** home when it **started** to rain.', 'javob']],
+      check: "Yomg'ir yurishni «bo'ldi» ✓",
+    },
+    {
+      tag: 'while bilan', strat: 'while dan keyin — Continuous',
+      q: 'Join with **while**: She was watching TV. The lights went out.',
+      steps: [['**while** + uzun jarayon', ''], ['While she **was watching** TV,', ''], ['While she was watching TV, the lights **went** out.', 'javob']],
+      check: "While gap boshida kelsa — vergul qo'yiladi ✓",
+    },
+    {
+      tag: 'aniq payt', strat: '«at 9 o\'clock» — jarayon davom etayotgan edi',
+      q: "Answer: What were you doing at 9 o'clock last night? (watch a film)",
+      steps: [['Savol: **were you doing**', 'Past Continuous'], ['Ega: **I** → was', ''], ['I **was watching** a film.', 'javob']],
+      check: "I watched a film — film soat 9 da boshlangan degan ma'noni beradi.",
+    },
+  ],
+  trap: {
+    title: "Holat fe'llari yana!",
+    q: 'I was knowing the answer. ✗',
+    body: "Holat fe'llari (know, like, want) Past Continuous'da ham ishlatilmaydi: I **knew** the answer ✓.",
+  },
+  tip: {
+    short: 'hikoya', title: 'Hikoyani jonli boshlang',
+    q: '«It was a cold evening. The wind was blowing…»',
+    body: "1–2 ta Past Continuous gap bilan fon yarating, keyin «Suddenly…» bilan asosiy voqeani Past Simple'da ayting.",
+  },
+  mistakes: [
+    'was / were ni tushirish: I watching TV ✗ → I **was** watching ✓.',
+    'we / you / they bilan was: They was ✗ → They **were** ✓.',
+    'Ikkala harakatni ham Continuous\'da: …when it was starting ✗.',
+    'while + qisqa voqea: while the phone rang ✗ → **when** the phone rang ✓.',
+  ],
+  practice: [
+    ['They ___ (play) football when it ___ (begin) to snow.', ''],
+    ['___ you ___ (sleep) at midnight?', "so'roq"],
+    ['While I ___ (cook), I ___ (cut) my finger.', ''],
+    ['He ___ (not / listen) to the teacher.', ''],
+  ],
+  answers: ['were playing … began', 'Were … sleeping', 'was cooking … cut', "wasn't listening"],
+  remember: [
+    "was / were + -ing — o'tmishdagi davomli jarayon (fon).",
+    "Uzun jarayon — Continuous, uni bo'lgan qisqa voqea — Simple.",
+    'when + qisqa voqea; while + uzun jarayon.',
+  ],
+};

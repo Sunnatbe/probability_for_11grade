@@ -1,0 +1,97 @@
+module.exports = {
+  n: 33,
+  short: 'Speaking_fikr_bildirish',
+  en: 'Speaking: giving and supporting opinions',
+  video: '13 min',
+  moduleTest: 'M4 modul testi (30 savol)',
+  emoji: {
+    lesson: '🎤', strip: '🎤 💬 👍 👎 🤔 🗳️',
+    goal: ['💬', '🤝', '📌'],
+    kw: ['💬', '🧠', '👍', '🤚', '🤔', '📌', '➡️', '⚖️'],
+    core: ['💬', '❓', '📌', '🏁'],
+    ex: ['💬', '🤝', '⚖️'], tip: '⏳',
+  },
+  hook: "B1 darajasining asosiy belgisi — o'z fikringizni aytib, uni asoslay olish. Bugun fikr bildirish, rozi bo'lish va bo'lmaslik iboralarini o'rganamiz va M4 modul testini topshiramiz.",
+  goals: [
+    ['Fikr bildirish', 'In my opinion, I believe…'],
+    ['Rozilik / norozilik', 'I agree, I see your point, but…'],
+    ['Asoslash', 'because + misol'],
+  ],
+  kw: [
+    ['In my opinion,', 'Mening fikrimcha,', '**In my opinion**, uniforms are useful.'],
+    ['I believe…', 'Ishonamanki…', '**I believe** sport is important.'],
+    ['I agree.', 'Roziman.', '**I agree** with you.'],
+    ['I see your point, but…', 'Fikringizni tushunaman, lekin…', '…but it is expensive.'],
+    ["I'm not sure about that.", 'Bunga ishonchim komil emas.', 'muloyim norozilik'],
+    ['for example', 'masalan', '**For example**, many students…'],
+    ["That's why…", 'Shuning uchun…', "**That's why** I prefer the city."],
+    ['on the other hand', 'boshqa tomondan', "**On the other hand**, it's noisy."],
+  ],
+  core: {
+    title: 'Fikr bildirish: PREP usuli', en: 'Point, Reason, Example, Point',
+    steps: [
+      ['Point', '**In my opinion,** … (fikr)'],
+      ['Reason', '**because** … (sabab)'],
+      ['Example', '**For example,** … (misol)'],
+      ['Point', "**That's why** I think … (xulosa)"],
+    ],
+    note: "30–40 soniyalik javob uchun PREP yetarli — speaking testlarda aynan shu kutiladi.",
+  },
+  cases: {
+    title: 'Javob berish usullari', en: 'Agreeing and disagreeing',
+    intro: 'Fikr: «Students should not use phones at school.»',
+    items: [
+      { badge: '👍', t: 'Rozilik', en: 'agree', rule: 'I agree, because…', ex: 'Exactly! Phones are distracting.', res: 'asos bilan' },
+      { badge: '🤔', t: 'Qisman', en: 'partly agree', rule: 'I see your point, but…', ex: '…but phones can help with research.', res: 'muvozanatli' },
+      { badge: '👎', t: 'Norozilik', en: 'disagree politely', rule: "I'm afraid I disagree.", ex: 'Phones can be useful for learning.', res: 'muloyim' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'PREP javob', strat: 'fikr → sabab → misol → xulosa',
+      q: '«Is it better to live in a city or in the countryside?» Give a short answer using PREP.',
+      steps: [['P: **In my opinion**, city life is better', ''], ['R: **because** there are more jobs.', ''], ['E: **For example**, most IT companies are in Tashkent.', ''], ["P: **That's why** I'd prefer the city.", 'javob']],
+      check: "4 gap — 30 soniya; aniq va mantiqiy ✓",
+    },
+    {
+      tag: 'muloyim norozilik', strat: "tan olish + lekin + o'z fikringiz",
+      q: '«Video games are a waste of time.» Disagree politely.',
+      steps: [['Tan olish: **I see your point**,', ''], ['**but** some games develop thinking skills.', ''], ['**For example**, strategy games teach planning.', 'javob']],
+      check: "«You're wrong!» — qo'pol ✗",
+    },
+    {
+      tag: 'ikki tomonlama fikr', strat: 'on the other hand bilan muvozanat',
+      q: 'Talk about online learning: one advantage and one disadvantage.',
+      steps: [['**One advantage is that** you can study anywhere.', ''], ['**On the other hand**,', ''], ["it's harder to stay motivated.", ''], ["**Overall**, I think it's useful if you're organised.", 'javob']],
+      check: 'Overall bilan xulosa — yuqori ball ✓',
+    },
+  ],
+  trap: {
+    title: "«I am agree» yana!",
+    q: 'I am agree. ✗   I am not agree. ✗',
+    body: "agree — fe'l: I **agree** ✓, I **don't agree** ✓. Bu B1 speaking imtihonida eng ko'p eshitiladigan xato.",
+  },
+  tip: {
+    short: 'vaqt yutish', title: "O'ylash uchun vaqt yutish",
+    q: "That's an interesting question… / Let me think…",
+    body: "Jim turish o'rniga shu iboralardan birini ayting — 2–3 soniya o'ylash imkoni beradi va ravon eshitiladi.",
+  },
+  mistakes: [
+    "I am agree ✗ → I agree ✓.",
+    "Fikrni asoslamaslik: «I think yes.» — yetarli emas.",
+    'In my opinion I think… — takror.',
+    "Juda keskin: «No! You are wrong.»",
+  ],
+  practice: [
+    ['Start your opinion.', '2 ta ibora'],
+    ['Disagree politely.', ''],
+    ['Add an example.', 'ibora'],
+    ['Correct: «I am not agree with you.»', ''],
+  ],
+  answers: ['In my opinion / I believe', "I see your point, but…", 'For example, …', "I don't agree with you."],
+  remember: [
+    'PREP: fikr → sabab → misol → xulosa.',
+    "I agree / I don't agree (am yo'q!); I see your point, but…",
+    'on the other hand, overall — muvozanatli javob.',
+  ],
+};

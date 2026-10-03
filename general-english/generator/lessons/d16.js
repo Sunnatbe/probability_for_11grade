@@ -1,0 +1,96 @@
+module.exports = {
+  n: 16,
+  short: 'Sayohat_lugati',
+  en: 'Vocabulary: travel and holidays',
+  video: '12 min',
+  emoji: {
+    lesson: '✈️', strip: '✈️ 🧳 🏨 🗺️ 🎫 📸',
+    goal: ['🔗', '🛤️', '🏨'],
+    kw: ['🎫', '🛂', '🛤️', '🎒', '📸', '⏰', '🎁', '🏨'],
+    core: ['🗓️', '🛫', '🏨', '🗺️'],
+    ex: ['🧭', '🛫', '🏨'],
+  },
+  hook: "Sayohat — ingliz tili eng ko'p kerak bo'ladigan joy: aeroport, mehmonxona, shahar ko'chalari. Bugun sayohat lug'ati va eng ko'p adashtiriladigan uch so'z — travel, journey, trip — bilan ishlaymiz.",
+  goals: [
+    ['Kollokatsiyalar', 'book a ticket, check in, go sightseeing'],
+    ['travel / journey / trip', "Uch so'zning farqi"],
+    ['Amaliy iboralar', 'Aeroport va mehmonxonada'],
+  ],
+  kw: [
+    ['book a ticket', 'chipta band qilmoq', 'I **booked a ticket** online.'],
+    ['check in', "ro'yxatdan o'tmoq", '**Check in** two hours before the flight.'],
+    ['journey', "yo'l (A dan B ga)", 'The **journey** took 5 hours.'],
+    ['trip', 'qisqa safar', 'a business **trip**'],
+    ['go sightseeing', "diqqatga sazovor joylarni ko'rmoq", 'We **went sightseeing** in Samarkand.'],
+    ['delay', 'kechikish', 'a two-hour **delay**'],
+    ['souvenir', "esdalik sovg'a", 'I bought a **souvenir**.'],
+    ['accommodation', 'turar joy', 'cheap **accommodation**'],
+  ],
+  core: {
+    title: 'Sayohat bosqichlari', en: 'Travel stages',
+    steps: [
+      ['Rejalash', '**book** a ticket / a hotel, **pack** a suitcase'],
+      ['Aeroport', "**check in**, go through **security**, **board** the plane"],
+      ['Mehmonxona', '**check in** / **check out**, a single / double room'],
+      ['Sayohat', '**go sightseeing**, take photos, buy **souvenirs**'],
+    ],
+    note: "Kollokatsiya: go **on** a trip ✓, do a trip ✗; go **sightseeing** (to siz!).",
+  },
+  cases: {
+    title: 'travel, journey yoki trip?', en: 'Confusing words',
+    intro: "Uchalasi «sayohat» deb tarjima qilinadi, lekin ishlatilishi har xil:",
+    items: [
+      { badge: '🌍', t: 'travel', en: "fe'l / umumiy", rule: 'I love to travel.', ex: 'Travel is expensive.', res: 'a travel ✗' },
+      { badge: '🛤️', t: 'journey', en: "yo'l, harakat", rule: 'A dan B ga', ex: 'a long train journey', res: "yo'ldagi vaqt" },
+      { badge: '🎒', t: 'trip', en: 'qisqa safar', rule: 'borib qaytish', ex: 'a school trip to Khiva', res: 'go on a trip' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'travel / journey / trip', strat: "fe'lmi? yo'lmi? safarmi?",
+      q: 'Complete: I love ___. Last week we went on a school ___ to Bukhara. The bus ___ took six hours.',
+      steps: [["umumiy, fe'l", '→ **travelling**'], ['borib qaytish', '→ **trip**'], ["avtobusdagi yo'l", '→ **journey**'], ['I love **travelling**. … a school **trip** … The bus **journey** took six hours.', 'javob']],
+      check: 'a travel ✗ — travel sanalmaydi.',
+    },
+    {
+      tag: 'aeroportda', strat: 'harakatlar tartibi',
+      q: 'Put in order: board the plane / check in / go through security / land',
+      steps: [['1 — **check in**', "ro'yxatdan o'tish"], ['2 — **go through security**', 'xavfsizlik'], ['3 — **board the plane**', 'samolyotga chiqish'], ['4 — **land**', "javob: qo'nish"]],
+      check: 'Uchishdan oldin: «Your flight is boarding at gate 5.» ✓',
+    },
+    {
+      tag: 'mehmonxonada', strat: "muloyim so'rov: I'd like…",
+      q: 'You arrive at a hotel. Ask for a double room for two nights.',
+      steps: [['Salom: **Good evening.**', ''], ["So'rov: **I'd like** a double room", "I want ✗ — qo'pol"], ['**for two nights**, please.', ''], ["Good evening. **I'd like** a double room **for two nights**, please.", 'javob']],
+      check: 'Javob: «Can I see your passport, please?» ✓',
+    },
+  ],
+  trap: {
+    title: "«a travel» tuzog'i",
+    q: 'I had a wonderful travel. ✗',
+    body: "travel — asosan fe'l yoki sanalmaydigan ot: I had a wonderful **trip** ✓ yoki I love **travelling** ✓.",
+  },
+  tip: {
+    short: 'talaffuz', title: "Qiyin so'zlar talaffuzi",
+    q: 'souvenir /ˌsuːvəˈnɪə/ · receipt /rɪˈsiːt/ · suite /swiːt/',
+    body: "receipt dagi p o'qilmaydi! Mehmonxonadagi suite — «suit» emas, sweet bilan bir xil o'qiladi.",
+  },
+  mistakes: [
+    'a travel ✗ → a trip ✓.',
+    'go to sightseeing ✗ → go sightseeing ✓.',
+    'arrive to Tashkent ✗ → arrive **in** Tashkent ✓ (shahar).',
+    'luggages ✗ — luggage sanalmaydi.',
+  ],
+  practice: [
+    ['The flight had a long ___ because of fog.', ''],
+    ['We ___ in at the hotel at 3 p.m.', ''],
+    ['Did you go ___ in Samarkand?', ''],
+    ['We arrived ___ the airport late.', 'at / in'],
+  ],
+  answers: ['delay', 'checked', 'sightseeing', 'at'],
+  remember: [
+    "travel — fe'l / umumiy; journey — yo'l; trip — qisqa safar.",
+    'book, check in / out, board, go sightseeing — kollokatsiyalar.',
+    "Muloyim so'rov: I'd like…, please.",
+  ],
+};

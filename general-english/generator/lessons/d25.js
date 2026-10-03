@@ -1,0 +1,96 @@
+module.exports = {
+  n: 25,
+  short: 'Speaking_takliflar',
+  en: 'Speaking: suggestions and arrangements',
+  video: '12 min',
+  emoji: {
+    lesson: '🗓️', strip: '☕ 🎬 🍕 ⚽ 🗓️ 👍',
+    goal: ['💡', '👍', '📅'],
+    kw: ['🤝', '💡', '🙋', '🤔', '👍', '🙅', '⏰', '👋'],
+    core: ['🤝', '🚀', '💡', '🙋'],
+    ex: ['💡', '🙅', '📅'],
+  },
+  hook: "Do'stlar bilan dam olishni rejalashtirish — taklif berish, rozilik bildirish va muloyim rad etishdan iborat. Bugun shu iboralarni dialoglarda mashq qilamiz.",
+  goals: [
+    ['Taklif berish', "Shall we…? How about…? Why don't we…?"],
+    ['Javob berish', 'Rozilik va muloyim rad'],
+    ['Kelishish', 'Vaqt va joyni belgilash'],
+  ],
+  kw: [
+    ['Shall we…?', '…-aylikmi?', '**Shall we** go to the cinema?'],
+    ['How about…?', '… -sa-chi?', '**How about** going to a café?'],
+    ["Why don't we…?", "Nega … -maymiz?", "**Why don't we** meet at 6?"],
+    ["I'd rather…", "… ni afzal ko'raman", "**I'd rather** stay at home."],
+    ['That sounds good!', "Zo'r eshitiladi!", '— Pizza? — **That sounds good!**'],
+    ["I'm afraid I can't", 'Afsuski, qila olmayman', "**I'm afraid I can't** — I'm busy."],
+    ['What time…?', 'Soat nechada?', '**What time** shall we meet?'],
+    ['See you then!', "O'shanda ko'rishamiz!", 'Great, **see you then!**'],
+  ],
+  core: {
+    title: 'Taklif iboralari: grammatika', en: 'Suggestion structures',
+    steps: [
+      ['Shall we + V', '**Shall we** go out?'],
+      ["Let's + V", "**Let's** have lunch."],
+      ['How about + -ing', '**How about** play**ing** tennis?'],
+      ["Why don't we + V", "**Why don't we** watch a film?"],
+    ],
+    note: "Diqqat: How about dan keyin -ing: How about go ✗ → How about **going** ✓.",
+  },
+  cases: {
+    title: 'Taklifga javob', en: 'Responding to suggestions',
+    intro: 'Taklif: «How about going to the park on Saturday?»',
+    items: [
+      { badge: '👍', t: 'Rozilik', en: 'agree', rule: 'Great idea! / Sure!', ex: 'That sounds great!', res: 'ha' },
+      { badge: '🤔', t: 'Boshqa variant', en: 'suggest an alternative', rule: "I'd rather…", ex: "I'd rather go to the museum.", res: 'muqobil' },
+      { badge: '🙅', t: 'Muloyim rad', en: 'refuse politely', rule: "I'm afraid… + sabab", ex: "I'm afraid I can't — I have a lesson.", res: 'sabab bilan' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'taklif berish', strat: '4 ta shakldan birini tanlang',
+      q: 'Make suggestions: a) go bowling (Shall we)  b) order pizza (How about)',
+      steps: [['Shall we + asl shakl', ''], ['**Shall we** go bowling?', ''], ['How about + -ing', ''], ['**How about** order**ing** pizza?', 'javob']],
+      check: "Let's go bowling! — ham to'g'ri ✓",
+    },
+    {
+      tag: 'muloyim rad', strat: 'afsus + sabab + muqobil',
+      q: "Your friend: «Let's play football tomorrow at 8 a.m.» Refuse politely and suggest another time.",
+      steps: [["Afsus: **I'm afraid I can't**", ''], ['Sabab: **I have a lesson** in the morning.', ''], ['Muqobil: **How about** 5 p.m.?', ''], ["I'm afraid I can't — I have a lesson. **How about** 5 p.m.?", 'javob']],
+      check: "Faqat «No.» — qo'pol eshitiladi ✗",
+    },
+    {
+      tag: 'kelishish', strat: 'nima → qachon → qayerda',
+      q: 'Complete: A: ___ go to the cinema?  B: Good idea! ___ shall we meet?  A: At 6, outside the cinema.  B: ___!',
+      steps: [['A: **Shall we**', 'taklif'], ['B: **What time**', 'vaqt'], ['B: **See you then**!', 'javob']],
+      check: "Dialog to'liq: taklif → rozilik → vaqt va joy → xayr ✓",
+    },
+  ],
+  trap: {
+    title: "«Let's to go» tuzog'i",
+    q: "Let's to go. ✗   Shall we to go? ✗",
+    body: "Let's va Shall we dan keyin to yo'q: Let's **go** ✓, Shall we **go** ✓. Faqat How about + -ing.",
+  },
+  tip: {
+    short: 'intonatsiya', title: 'Ovoz ohangi — muloyimlik kaliti',
+    q: "I'm afraid I can't… (yumshoq, pasayuvchi ohang)",
+    body: 'Rad etayotganda sekinroq va yumshoqroq gapiring. Rozilikda — quvnoq, baland ohang: That sounds great! ↗',
+  },
+  mistakes: [
+    'How about + asl shakl ✗ → How about **going** ✓.',
+    "Let's to ✗ → Let's **go** ✓.",
+    "Sababsiz rad: «No, I can't.» — qo'pol eshitiladi.",
+    "I'd rather to stay ✗ → I'd rather **stay** ✓.",
+  ],
+  practice: [
+    ['___ about visiting the zoo?', ''],
+    ['Why ___ we have a picnic?', ''],
+    ["I'd rather ___ (stay) at home.", ''],
+    ['Refuse politely: «Shall we go out tonight?»', ''],
+  ],
+  answers: ['How', "don't", 'stay', "I'm afraid I can't — I'm busy."],
+  remember: [
+    "Shall we / Let's / Why don't we + asl shakl; How about + -ing.",
+    "Rad etish: I'm afraid… + sabab + muqobil.",
+    'Kelishish: nima → qachon → qayerda → See you then!',
+  ],
+};

@@ -1,0 +1,97 @@
+module.exports = {
+  n: 34,
+  short: 'Reported_speech_Mock1',
+  en: 'Reported speech and tense review',
+  video: '13 min',
+  now: 'Mock 1 (60 savol, 70 min + Writing)',
+  emoji: {
+    lesson: '🗣️', strip: '🗣️ 💬 📢 🔙 🗺️ 📝',
+    goal: ['💬', '🔙', '🗺️'],
+    kw: ['💬', '👉', '❓', '🔁', '💭', '📍', '📅', '🗺️'],
+    core: ['💬', '🔙', '⏩', '📍'],
+    ex: ['💬', '❓', '🗺️'], tip: '📝',
+  },
+  hook: "Kimdir aytgan gapni boshqaga yetkazish — reported speech. Bugun uning asoslarini o'rganamiz, kursda o'tilgan zamonlarni bitta xaritada takrorlaymiz va birinchi to'liq mock testni topshiramiz.",
+  goals: [
+    ['said / told', 'Kim aytdi va kimga aytdi'],
+    ['Zamon siljishi', 'is → was, will → would'],
+    ['Zamonlar xaritasi', "O'tilgan zamonlarni takrorlash"],
+  ],
+  kw: [
+    ['say', 'aytmoq (kimgaligi siz)', 'She **said** (that) she was tired.'],
+    ['tell', 'aytmoq (kimga)', 'She **told me** (that)…'],
+    ['ask', "so'ramoq", 'He **asked** if I was OK.'],
+    ['reported speech', "o'zlashtirma gap", 'She said she was tired.'],
+    ['direct speech', "ko'chirma gap", '"I\'m tired," she said.'],
+    ['here → there', 'bu yerda → u yerda', 'He said he lived there.'],
+    ['today → that day', "bugun → o'sha kuni", 'She said she was busy that day.'],
+    ['tense review', 'zamonlarni takrorlash', 'Present, Past, Perfect, Future'],
+  ],
+  core: {
+    title: 'Reported speech: 4 qoida', en: 'Reporting statements',
+    steps: [
+      ['say / tell', 'said (that)… / told **me** (that)…'],
+      ['Zamon orqaga', 'am / is → was; do → did'],
+      ['will → would', '"I\'ll help" → he said he **would** help'],
+      ['Olmosh va joy', 'I → she; here → there; today → that day'],
+    ],
+    note: "Qoida: tell dan keyin har doim kimga: She told **me** ✓, She told that ✗.",
+  },
+  cases: {
+    title: 'Zamonlar xaritasi', en: 'Tense map',
+    intro: "Kursda o'tilgan zamonlar uchta vaqt chizig'ida:",
+    items: [
+      { badge: '⏪', t: "O'tmish", en: 'Past', rule: 'V2 / was + -ing / used to', ex: 'I went · I was going', res: 'Past Simple / Cont.' },
+      { badge: '▶️', t: 'Hozir', en: 'Present', rule: 'V / am + -ing / have V3', ex: "I go · I'm going · I've gone", res: 'Simple / Cont. / Perfect' },
+      { badge: '⏩', t: 'Kelajak', en: 'Future', rule: 'will / going to', ex: "I'll go · I'm going to go", res: 'bashorat / reja' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'said / told', strat: 'kimga aytildi — told + kishi',
+      q: 'Report: Aziz says to you: «I am hungry.»',
+      steps: [['told **me**', 'kimga — menga'], ['I → **he**; am → **was**', ''], ['Aziz **told me** (that) he **was** hungry.', 'javob']],
+      check: "Aziz **said** (that) he was hungry — ham to'g'ri ✓",
+    },
+    {
+      tag: "so'roqni yetkazish", strat: "asked + if / so'roq so'z + to'g'ri tartib",
+      q: 'Report: Teacher: «Do you understand?» and «Where do you live?»',
+      steps: [['Yes / No savol → **asked if**', ''], ['She asked **if I understood**.', ''], ["Wh- savol → so'roq so'z + **ega + fe'l**", ''], ['She asked **where I lived**.', 'javob']],
+      check: "She asked where did I live ✗ — so'roq tartibi saqlanmaydi.",
+    },
+    {
+      tag: 'zamonni aniqlash', strat: 'shaklga qarang',
+      q: "Name the tense: a) I've just finished.  b) She was sleeping at 10.  c) We're going to move.",
+      steps: [['a) have + V3', '→ Present Perfect'], ['b) was + -ing', '→ Past Continuous'], ['c) be going to', '→ Future (reja)'], ['a) Present Perfect  b) Past Continuous  c) going to', 'javob']],
+      check: "Mock testning grammatika qismida zamonlarga oid savollar ko'p ✓",
+    },
+  ],
+  trap: {
+    title: "«said me» tuzog'i",
+    q: 'He said me that… ✗',
+    body: "say dan keyin to'g'ridan-to'g'ri kishi kelmaydi: He **told me** ✓, He **said to me** ✓ yoki He **said** that… ✓.",
+  },
+  tip: {
+    short: 'mock', title: 'Mock testga tayyorgarlik',
+    q: "60 savol · 70 min + Writing",
+    body: "Grammar & Vocabulary — 25 min, Reading — 20 min, Listening — 20 min, qolgan 5 min — tekshirish. Writing alohida: 120–150 so'z.",
+  },
+  mistakes: [
+    'said me ✗ → told me ✓.',
+    "Zamonni o'zgartirmaslik: He said he is tired → **was** ✓.",
+    "So'roq tartibini saqlash: asked where was the station ✗.",
+    "Mockda bir bo'limga ko'p vaqt sarflab, boshqasiga ulgurmaslik.",
+  ],
+  practice: [
+    ['Report: Lola: «I like jazz.»', ''],
+    ['Report: Tom to me: «I will call you.»', ''],
+    ['Report: «Are you busy?» he asked.', ''],
+    ['Tense: «I was walking when it started.»', 'nomlang'],
+  ],
+  answers: ['Lola said she liked jazz.', 'Tom told me he would call me.', 'He asked if I was busy.', 'Past Continuous + Past Simple'],
+  remember: [
+    'say (that)…; tell + kishi (that)…',
+    'Zamon bir qadam orqaga: is → was, will → would.',
+    "So'roq: asked if… / asked where + ega + fe'l.",
+  ],
+};

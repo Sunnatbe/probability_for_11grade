@@ -1,0 +1,97 @@
+module.exports = {
+  n: 26,
+  short: 'Writing_rasmiy_email',
+  en: 'Writing: a formal email and application',
+  video: '13 min',
+  moduleTest: 'M3 modul testi (30 savol)',
+  emoji: {
+    lesson: '📧', strip: '📧 🏢 🖊️ 📎 🤵 📬',
+    goal: ['🎩', '🏗️', '📝'],
+    kw: ['🎩', '🤵', '🎯', '🙏', '🔍', '📎', '📬', '✍️'],
+    core: ['🎩', '🎯', '📝', '🏁'],
+    ex: ['🎩', '🎯', '🏁'], tip: '📬',
+  },
+  hook: "Ish, o'qish yoki kursga ariza — rasmiy email talab qiladi. Bugun rasmiy uslub qoidalarini va tayyor iboralarni o'rganamiz, so'ng M3 modul testini topshiramiz.",
+  goals: [
+    ['Rasmiy uslub', 'Qisqartmasiz, muloyim iboralar'],
+    ['Tuzilma', 'Murojaat, maqsad, tafsilot, yakun'],
+    ['Ariza', 'Ish yoki kursga ariza yozish'],
+  ],
+  kw: [
+    ['Dear Sir or Madam,', 'Hurmatli janob / xonim,', "ism noma'lum bo'lsa"],
+    ['Dear Mr / Ms …,', 'Hurmatli …,', 'Dear Ms Smith,'],
+    ['I am writing to…', '… maqsadida yozyapman', '**I am writing to** apply for…'],
+    ['I would be grateful if…', "… bo'lsa minnatdor bo'lardim", '…if you could send me…'],
+    ['enquire about', "so'rab bilmoq", 'I am writing to **enquire about**…'],
+    ['Please find attached…', 'Ilovada …', '**Please find attached** my CV.'],
+    ['I look forward to hearing from you.', 'Javobingizni kutaman.', 'standart yakun'],
+    ['Yours faithfully / sincerely', 'Hurmat bilan', "faithfully — ism noma'lum"],
+  ],
+  core: {
+    title: 'Rasmiy email: 4 qism', en: 'Formal email structure',
+    steps: [
+      ['Murojaat', 'Dear Mr Karimov, / Dear Sir or Madam,'],
+      ['Maqsad', '**I am writing to** apply for / enquire about…'],
+      ['Tafsilot', 'Tajriba, savollar — har biri alohida xatboshi'],
+      ['Yakun', '**I look forward to hearing from you.** Yours sincerely,'],
+    ],
+    note: 'Qoida: Dear Sir or Madam → Yours faithfully; Dear Mr Karimov → Yours sincerely.',
+  },
+  cases: {
+    title: 'Norasmiy → rasmiy', en: 'Informal vs formal',
+    intro: 'Bir xil fikr — ikki uslubda:',
+    items: [
+      { badge: '👋', t: 'Murojaat', en: 'greeting', rule: 'Hi Tom! → Dear Mr Brown,', ex: 'Dear Sir or Madam,', res: 'familiya bilan' },
+      { badge: '❓', t: "So'rov", en: 'request', rule: 'Can you…? → Could you…?', ex: 'I would be grateful if you could…', res: 'muloyim' },
+      { badge: '✂️', t: 'Qisqartmalar', en: 'contractions', rule: "I'm → I am", ex: "I don't → I do not", res: 'qisqartmasiz' },
+    ],
+  },
+  ex: [
+    {
+      tag: "rasmiy uslubga o'tkazish", strat: 'qisqartmasiz va muloyim',
+      q: '«Hi! I want to know more about your English course. Can you send me the prices?» Make it formal.',
+      steps: [['Hi! → **Dear Sir or Madam,**', ''], ['I want to know → **I am writing to enquire**', ''], ['Can you…? → **I would be grateful if you could**…', ''], ['Yakun: **Yours faithfully**', "ism noma'lum"]],
+      check: "To'liq: «I am writing to enquire about your English course. I would be grateful if you could send me the prices.»",
+    },
+    {
+      tag: 'maqsad gapi', strat: "I am writing to + fe'l",
+      q: 'Write the opening of an application for the job of shop assistant (advertised on hh.uz).',
+      steps: [['Murojaat: **Dear Sir or Madam,**', ''], ['**I am writing to apply for** the position of shop assistant', ''], ['**advertised on** hh.uz.', 'javob']],
+      check: 'Birinchi gapdayoq maqsadni ayting ✓',
+    },
+    {
+      tag: 'yakun', strat: 'murojaatga mos yakun',
+      q: '«Dear Ms Rahimova, …» Choose the ending: a) Yours faithfully  b) Yours sincerely  c) Love',
+      steps: [['Murojaat: **ism bilan** (Ms Rahimova)', ''], ["ism ma'lum → **sincerely**", ''], ['**b) Yours sincerely**', 'javob']],
+      check: "Dear Sir or Madam bo'lganda — Yours faithfully ✓",
+    },
+  ],
+  trap: {
+    title: 'Rasmiy emailda qisqartmalar',
+    q: "I'm writing to apply… I can't start until June.",
+    body: "Rasmiy uslubda to'liq shakl: I **am** writing… I **cannot** start… Smaylik va «!!!» ham ishlatilmaydi.",
+  },
+  tip: {
+    short: 'mavzu qatori', title: "Mavzu qatorini to'ldiring",
+    q: 'Subject: Application for Shop Assistant position',
+    body: "Bo'sh mavzu qatori — email o'qilmasligi mumkin. Qisqa va aniq yozing: Application for…, Enquiry about…",
+  },
+  mistakes: [
+    'Rasmiy emailda Hi / Thanks a lot / Bye.',
+    'Dear Sir, … Yours sincerely — mos emas (faithfully kerak).',
+    'Maqsadni oxirgi xatboshiga yashirish.',
+    "Qisqartmalar va so'zlashuv iboralari: wanna, gonna.",
+  ],
+  practice: [
+    ['Formal: «I want to ask about…»', ''],
+    ['Ending for «Dear Mr Brown,»', ''],
+    ['Formal: «Thanks for your help.»', ''],
+    ['Formal: «Write back soon!»', ''],
+  ],
+  answers: ['I am writing to enquire about…', 'Yours sincerely', 'Thank you for your assistance.', 'I look forward to hearing from you.'],
+  remember: [
+    'Murojaat → maqsad (I am writing to…) → tafsilot → yakun.',
+    'Qisqartmasiz, muloyim iboralar: I would be grateful if…',
+    'Sir or Madam → faithfully; ism bilan → sincerely.',
+  ],
+};

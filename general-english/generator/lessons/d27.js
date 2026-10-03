@@ -1,0 +1,96 @@
+module.exports = {
+  n: 27,
+  short: 'Must_have_to_should',
+  en: 'Obligation and advice: must, have to, should',
+  video: '12 min',
+  emoji: {
+    lesson: '🚦', strip: '🚦 🚭 📵 🪖 📚 💡',
+    goal: ['📜', '🚫', '💡'],
+    kw: ['❗', '📋', '🆓', '🚫', '💡', '🤝', '✅', '📜'],
+    core: ['❗', '🚫', '🆓', '💡'],
+    ex: ['🚫', '🔙', '💡'],
+  },
+  hook: "Qoidalar, majburiyatlar va maslahatlar — har kuni ishlatamiz: «Darsga kechikmaslik kerak», «Shifokorga borishing kerak». Bugun must, have to va should ni farqlaymiz.",
+  goals: [
+    ['Majburiyat', 'must va have to'],
+    ['Taqiq va ixtiyoriylik', "mustn't ≠ don't have to"],
+    ['Maslahat', 'should / ought to'],
+  ],
+  kw: [
+    ['must', 'shart, kerak (ichki)', 'I **must** call my mum.'],
+    ['have to', 'kerak (tashqi qoida)', 'I **have to** wear a uniform.'],
+    ["don't have to", 'shart emas', "You **don't have to** come."],
+    ["mustn't", 'mumkin emas (taqiq)', "You **mustn't** smoke here."],
+    ['should', '… kerak (maslahat)', 'You **should** see a doctor.'],
+    ['ought to', '… lozim', 'You **ought to** apologise.'],
+    ['be allowed to', 'ruxsat etilgan', "We're **allowed to** use phones."],
+    ['rule', 'qoida', 'school **rules**'],
+  ],
+  core: {
+    title: "Modal fe'llar: 4 ma'no", en: 'Obligation and advice',
+    steps: [
+      ['Majburiyat', "**must** (o'zim his qilaman) / **have to** (qoida)"],
+      ['Taqiq', "**mustn't** — qilish mumkin emas"],
+      ['Ixtiyoriy', "**don't have to** — shart emas"],
+      ['Maslahat', "**should / shouldn't**"],
+    ],
+    note: "O'tmishda must yo'q: I **had to** work yesterday ✓, I musted ✗.",
+  },
+  cases: {
+    title: "mustn't ≠ don't have to", en: 'Key difference',
+    intro: 'Bu ikkisini adashtirish — eng katta xato:',
+    items: [
+      { badge: '🚫', t: "mustn't", en: 'taqiq', rule: 'qilmang!', ex: "You mustn't use phones in the exam.", res: 'qoida buziladi' },
+      { badge: '🆓', t: "don't have to", en: 'shart emas', rule: 'xohlasangiz', ex: "You don't have to wear a tie.", res: 'tanlov sizda' },
+      { badge: '💡', t: 'should', en: 'maslahat', rule: "yaxshi bo'lardi", ex: 'You should sleep 8 hours.', res: 'tavsiya' },
+    ],
+  },
+  ex: [
+    {
+      tag: "mustn't / don't have to", strat: 'taqiqmi yoki tanlovmi?',
+      q: "Complete: In the library you ___ talk loudly. It's free, so you ___ pay.",
+      steps: [['baland gapirish — **taqiq**', "→ mustn't"], ["pul to'lash — **shart emas**", "→ don't have to"], ["you **mustn't** talk loudly … you **don't have to** pay.", 'javob']],
+      check: "«You don't have to talk loudly» — «xohlasangiz gapiring» degan ma'no ✗",
+    },
+    {
+      tag: 'have to: zamonlar', strat: 'had to / will have to',
+      q: 'Complete: Yesterday I ___ (have to) get up at 5. Tomorrow I ___ (have to) work late.',
+      steps: [["o'tmish", '→ **had to**'], ['kelajak', '→ **will have to**'], ['Yesterday I **had to** get up at 5. Tomorrow I **will have to** work late.', 'javob']],
+      check: 'must — faqat hozirgi va kelasi; boshqa zamonlarda have to ✓',
+    },
+    {
+      tag: 'maslahat', strat: 'should + asl shakl',
+      q: 'Your friend: «I always feel tired.» Give two pieces of advice.',
+      steps: [['should + asl shakl', ''], ['You **should go** to bed earlier.', ''], ["You **shouldn't drink** so much coffee.", 'javob']],
+      check: "If I were you, I'd… — 29-darsda ✓",
+    },
+  ],
+  trap: {
+    title: "«must to» tuzog'i",
+    q: 'You must to study. ✗   You should to rest. ✗',
+    body: "must, should dan keyin to yo'q: You **must study** ✓. Lekin have to va ought to — to bilan.",
+  },
+  tip: {
+    short: 'talaffuz', title: 'have to talaffuzi: /ˈhæftə/',
+    q: '«hev tu» emas, «hafta»',
+    body: 'have to da v jarangsizlanib /f/ bo\'ladi: I /ˈhæftə/ go. has to — /ˈhæstə/.',
+  },
+  mistakes: [
+    'must to / should to ✗.',
+    "mustn't va don't have to ni adashtirish.",
+    "O'tmishda must: I must go yesterday ✗ → I **had to** go ✓.",
+    '3-shaxs: He have to ✗ → He **has to** ✓.',
+  ],
+  practice: [
+    ['You ___ wear a seatbelt in a car.', 'majburiyat'],
+    ["It's Sunday. I ___ get up early.", 'shart emas'],
+    ['You ___ eat so much sugar.', 'maslahat (inkor)'],
+    ['She ___ (have to) work last weekend.', ''],
+  ],
+  answers: ['must / have to', "don't have to", "shouldn't", 'had to'],
+  remember: [
+    "must / have to — majburiyat; o'tmishda — had to.",
+    "mustn't — taqiq; don't have to — shart emas.",
+    "should — maslahat; modaldan keyin to yo'q (have to, ought to bundan mustasno).",
+  ],
+};

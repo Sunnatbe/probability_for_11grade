@@ -1,0 +1,96 @@
+module.exports = {
+  n: 5,
+  short: 'Oila_va_tashqi_korinish',
+  en: 'Vocabulary: family, appearance and character',
+  video: '12 min',
+  emoji: {
+    lesson: '👨‍👩‍👧', strip: '👵 👴 👨‍👩‍👧‍👦 👶 🧔 👩‍🦱 😊',
+    goal: ['👪', '🧑‍🦰', '😊'],
+    kw: ['👪', '🧓', '📏', '👩‍🦱', '😊', '🎁', '🪞', '💬'],
+    core: ['👪', '📏', '😊', '🔗'],
+    ex: ['👪', '🧑‍🦰', '💬'], tip: '💡',
+  },
+  hook: "Odamni tasvirlash — kundalik suhbatning eng ko'p uchraydigan qismi: oila a'zolari, do'stlar, o'qituvchilar. Bugun buning uchun kerakli so'zlar va ikki muhim savolni o'rganamiz.",
+  goals: [
+    ["Oila a'zolari", 'relatives: aunt, cousin, nephew…'],
+    ["Tashqi ko'rinish", "bo'y, soch, ko'z — to'g'ri tartibda"],
+    ['Xarakter', '«What is she like?» va «What does she look like?»'],
+  ],
+  kw: [
+    ['relatives', 'qarindoshlar', 'I have many **relatives**.'],
+    ['grandparents', 'buvi va bobo', 'My **grandparents** live in Samarkand.'],
+    ['tall / short', "bo'yi baland / past", 'He is **tall** and thin.'],
+    ['curly hair', 'jingalak soch', 'She has long **curly** hair.'],
+    ['friendly', "do'stona, xushmuomala", 'Our teacher is very **friendly**.'],
+    ['generous', 'saxiy', 'My uncle is **generous**.'],
+    ['look like', "(tashqi) o'xshamoq", 'You **look like** your mother.'],
+    ['be like', '(xarakteri) qanday', 'What **is** your brother **like**?'],
+  ],
+  core: {
+    title: 'Odamni tasvirlash: 4 qadam', en: 'Describing people',
+    steps: [
+      ['Kim?', 'This is my **cousin**, Aziz.'],
+      ["Tashqi ko'rinish", 'He is **tall** and has **short dark** hair.'],
+      ['Xarakter', 'He is **funny** and **hard-working**.'],
+      ['Misol', 'He always helps me with my homework.'],
+    ],
+    note: "Tartib: has + uzunlik + rang + hair: long black hair ✓, black long hair ✗.",
+  },
+  cases: {
+    title: 'Uch savol — uch xil javob', en: 'look like vs be like',
+    intro: 'Bu savollar tez-tez adashtiriladi:',
+    items: [
+      { badge: '🪞', t: "Ko'rinishi", en: 'What does she look like?', rule: "tashqi ko'rinish", ex: 'She is tall with long hair.', res: "bo'y, soch, ko'z" },
+      { badge: '😊', t: 'Xarakteri', en: 'What is she like?', rule: 'xarakter', ex: 'She is kind and funny.', res: "fe'l-atvor" },
+      { badge: '👪', t: "O'xshashlik", en: 'Who do you look like?', rule: "kimga o'xshaysiz", ex: 'I look like my father.', res: "oila a'zosi" },
+    ],
+  },
+  ex: [
+    {
+      tag: "oila a'zolari", strat: '«kimning kimi» deb o\'ylang',
+      q: "Complete: My mother's sister is my ___. Her son is my ___.",
+      steps: [['onamning singlisi', '= **aunt** (xola)'], ["xolamning o'g'li", '= **cousin**'], ['My **aunt** … my **cousin**.', 'javob']],
+      check: "cousin — o'g'il ham, qiz ham bo'lishi mumkin ✓",
+    },
+    {
+      tag: "tashqi ko'rinish", strat: 'has + uzunlik + rang + hair',
+      q: 'Put the words in order: hair / has / black / she / long',
+      steps: [['Ega + fe\'l: **She has**', ''], ['uzunlik → rang: **long black**', 'tartib'], ['She has **long black** hair.', 'javob']],
+      check: "Ko'z uchun ham: She has big brown eyes ✓",
+    },
+    {
+      tag: 'look like / be like', strat: "ko'rinish yoki xarakter so'ralyaptimi?",
+      q: 'Answer the question: «What is your best friend like?»',
+      steps: [['**be like** = xarakter', "tashqi ko'rinish emas!"], ['Xarakter sifatlari', 'friendly, funny, honest'], ["He's **friendly** and **really funny**.", 'javob']],
+      check: "«He is tall» — bu «look like» savoliga javob.",
+    },
+  ],
+  trap: {
+    title: "«He is look like» tuzog'i",
+    q: 'He is look like his father. ✗',
+    body: "look like — fe'l, is kerak emas: He **looks like** his father ✓. Savol: What **does** he look like? ✓",
+  },
+  tip: {
+    short: 'sifatlar', title: 'Muloyim sifatlar',
+    q: 'fat → **a bit overweight**, ugly → **not very attractive**',
+    body: "Odamni tasvirlashda qo'pol so'zlardan qoching. Ijobiy sifatlar ko'p: kind, polite, hard-working, honest, cheerful.",
+  },
+  mistakes: [
+    'What is she look like? ✗ → What does she look like? ✓',
+    'Sochni sanash: She has long hairs ✗ → long hair ✓ (sanalmaydi).',
+    'Tartib: black long hair ✗ → long black hair ✓.',
+    "Xarakter savoliga tashqi ko'rinish bilan javob berish.",
+  ],
+  practice: [
+    ["My father's brother is my ___.", ''],
+    ['Order: eyes / he / blue / big / has', ''],
+    ['What does she look like? (tall, short brown hair)', 'javob bering'],
+    ['Ask about your teacher\'s character.', 'savol tuzing'],
+  ],
+  answers: ['uncle', 'He has big blue eyes.', 'She is tall with short brown hair.', 'What is your teacher like?'],
+  remember: [
+    "What does he look like? — ko'rinish; What is he like? — xarakter.",
+    'has + uzunlik + rang + hair; hair sanalmaydi.',
+    'Muloyim va ijobiy sifatlarni ishlating.',
+  ],
+};

@@ -1,0 +1,97 @@
+module.exports = {
+  n: 18,
+  short: 'Writing_hikoya',
+  en: 'Writing: a story (narrative)',
+  video: '13 min',
+  moduleTest: 'M2 modul testi (30 savol)',
+  emoji: {
+    lesson: '📜', strip: '📜 ✍️ 🌧️ ⚡ 😮 🏁',
+    goal: ['🏗️', '⏱️', '🎨'],
+    kw: ['🥇', '➡️', '⏭️', '⚡', '🏁', '🔚', '😨', '📖'],
+    core: ['🌅', '⚡', '🎢', '🏁'],
+    ex: ['⏱️', '🎨', '📜'], tip: '🗺️',
+  },
+  hook: "Hikoya yozish — o'tgan zamonlarni bir joyda ishlatish uchun eng yaxshi mashq. Bugun hikoya tuzilmasini va vaqt bog'lovchilarini o'rganamiz, so'ng M2 modul testini topshiramiz.",
+  goals: [
+    ['Tuzilma', 'Boshlanish, voqea, yakun'],
+    ["Vaqt bog'lovchilari", 'first, then, suddenly, finally'],
+    ['Jonli tafsilotlar', "Kuchli sifatlar va his-tuyg'ular"],
+  ],
+  kw: [
+    ['first', 'avval', '**First**, we packed our bags.'],
+    ['then', 'keyin', '**Then** we took a taxi.'],
+    ['after that', 'shundan keyin', '**After that**, we had lunch.'],
+    ['suddenly', 'birdan', '**Suddenly**, I heard a noise.'],
+    ['finally', 'nihoyat', '**Finally**, we arrived home.'],
+    ['in the end', 'oxir-oqibat', '**In the end**, everything was fine.'],
+    ['frightened', "qo'rqib ketgan", 'I was really **frightened**.'],
+    ['narrative', 'hikoya', 'a short **narrative**'],
+  ],
+  core: {
+    title: 'Hikoya: 4 qism', en: 'Story structure',
+    steps: [
+      ['Boshlanish', 'Kim? Qayerda? Qachon? (Past Continuous — fon)'],
+      ['Voqea', '**Suddenly**… — asosiy voqea (Past Simple)'],
+      ['Rivoj', "**Then / After that**… — nima bo'ldi?"],
+      ['Yakun', "**In the end**… + his-tuyg'u"],
+    ],
+    note: "Hajm: 80–120 so'z, 3–4 xatboshi. Har bir xatboshi — bitta qism.",
+  },
+  cases: {
+    title: 'Hikoyani jonlantirish', en: 'Making it interesting',
+    intro: 'Oddiy gapni qiziqarli qilishning 3 usuli:',
+    items: [
+      { badge: '🎨', t: 'Sifatlar', en: 'adjectives', rule: 'kuchli sifatlar', ex: 'a dark, freezing night', res: "a cold night o'rniga" },
+      { badge: '😮', t: "His-tuyg'u", en: 'feelings', rule: 'I felt / I was', ex: 'I was terrified.', res: "o'quvchi his qiladi" },
+      { badge: '💬', t: 'Nutq', en: 'direct speech', rule: '"…," she said.', ex: '"Help!" he shouted.', res: 'dinamika' },
+    ],
+  },
+  ex: [
+    {
+      tag: "vaqt bog'lovchilari", strat: 'first → then → after that → finally',
+      q: 'Put in order and add linkers: we got lost / we left the hotel / we found the museum / we asked a police officer',
+      steps: [['**First**, we left the hotel.', ''], ['**Then** we got lost.', ''], ['**After that**, we asked a police officer.', ''], ['**Finally**, we found the museum.', 'javob']],
+      check: "After that dan keyin vergul qo'yiladi; then dan keyin shart emas ✓",
+    },
+    {
+      tag: 'jonli gap', strat: "kuchli sifat + his-tuyg'u",
+      q: 'Make it more interesting: «It was a bad day. I was sad.»',
+      steps: [['bad → **terrible**', 'kuchli sifat'], ['sad → **really upset**', "his-tuyg'u"], ['It was a **terrible** day, and I felt **really upset**.', 'javob']],
+      check: "very bad o'rniga terrible, very good o'rniga amazing ✓",
+    },
+    {
+      tag: 'hikoya boshlanishi', strat: 'Past Continuous bilan fon, Past Simple bilan voqea',
+      q: 'Write the first two sentences of a story called «An unexpected guest».',
+      steps: [['Fon: **It was raining** heavily.', 'Past Continuous'], ['Men: **I was reading** at home', ''], ['Voqea: **when** someone **knocked**', 'Past Simple'], ['It was raining heavily. I was reading at home **when** someone **knocked** on the door.', 'javob']],
+      check: "O'quvchi darhol «kim keldi?» deb qiziqadi ✓",
+    },
+  ],
+  trap: {
+    title: 'Zamonlar aralashmasi',
+    q: 'Yesterday I go to the park and I see my friend. ✗',
+    body: "Hikoya o'tmishda — fe'llar ham o'tgan zamonda: I **went** to the park and **saw** my friend ✓. Yozib bo'lgach, har bir fe'lni tekshiring.",
+  },
+  tip: {
+    short: 'reja', title: 'Yozishdan oldin 2 daqiqa reja',
+    q: "Boshlanish — voqea — yakun: har biriga 1–2 so'z",
+    body: "Rejasiz yozilgan hikoya yarim yo'lda to'xtab qoladi. Reja bilan 80–120 so'z oson chiqadi.",
+  },
+  mistakes: [
+    'Hikoyani hozirgi zamonda yozish.',
+    "Faqat «and then… and then…» bilan bog'lash.",
+    "Yakunsiz tugatish — o'quvchi nima bo'lganini bilmaydi.",
+    "Juda uzun gaplar — 15–20 so'zdan oshmasin.",
+  ],
+  practice: [
+    ['___, the door opened.', 'birdan'],
+    ['Stronger adjective: very cold', ''],
+    ['Past form: I (feel) happy.', ''],
+    ['Linkers for the end', '2 ta'],
+  ],
+  answers: ['Suddenly', 'freezing', 'felt', 'Finally / In the end'],
+  remember: [
+    'Tuzilma: fon → voqea → rivoj → yakun.',
+    'first, then, after that, suddenly, finally, in the end.',
+    "Kuchli sifatlar va his-tuyg'ular hikoyani jonlantiradi.",
+  ],
+};

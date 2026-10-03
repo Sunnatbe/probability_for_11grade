@@ -1,0 +1,96 @@
+module.exports = {
+  n: 20,
+  short: 'Sifat_darajalari',
+  en: 'Comparatives and superlatives',
+  video: '12 min',
+  emoji: {
+    lesson: '🏆', strip: '🐘 🐭 🏔️ 🚀 🐢 🏆',
+    goal: ['📈', '🏆', '🟰'],
+    kw: ['⚖️', '📈', '🏆', '➕', '🟰', '🚫', '👍', '👎'],
+    core: ['📏', '✏️', '📐', '🔀'],
+    ex: ['📈', '🏆', '🟰'], tip: '💡',
+  },
+  hook: "Qaysi biri arzonroq? Kim eng tez yuguradi? Taqqoslash — kundalik nutqning ajralmas qismi. Bugun sifat darajalari va as … as tuzilmasini o'rganamiz.",
+  goals: [
+    ['Qiyosiy daraja', '-er than / more … than'],
+    ['Orttirma daraja', 'the -est / the most …'],
+    ['as … as', 'teng va teng emas'],
+  ],
+  kw: [
+    ['than', '… dan (ko\'ra)', 'taller **than** me'],
+    ['-er', '-roq', 'cheap → cheap**er**'],
+    ['the -est', 'eng', 'the tall**est** building'],
+    ['more / most', '-roq / eng (uzun sifatlar)', '**more** expensive, **the most** beautiful'],
+    ['as … as', '… dek', '**as** tall **as** his father'],
+    ['not as … as', '… dek emas', '**not as** fast **as**'],
+    ['better / best', 'yaxshiroq / eng yaxshi', 'good → **better** → **best**'],
+    ['worse / worst', 'yomonroq / eng yomon', 'bad → **worse** → **worst**'],
+  ],
+  core: {
+    title: 'Sifat darajalari: 4 qoida', en: 'Comparatives and superlatives',
+    steps: [
+      ["1 bo'g'inli", 'tall → tall**er** → the tall**est**'],
+      ['-y bilan', 'easy → eas**ier** → the eas**iest**'],
+      ["2+ bo'g'inli", '**more** famous → **the most** famous'],
+      ["Noto'g'ri", 'good / better / best · bad / worse / worst'],
+    ],
+    note: "Yozilish: big → bigger (undosh ikkilanadi), nice → nicer (faqat -r qo'shiladi).",
+  },
+  cases: {
+    title: 'Uch xil taqqoslash', en: 'Three structures',
+    intro: "Narxlar: choy — 5 000, kofe — 15 000, sharbat — 15 000 so'm.",
+    items: [
+      { badge: '📈', t: 'Qiyosiy', en: 'comparative', rule: '-er / more … than', ex: 'Coffee is more expensive than tea.', res: 'ikki narsa' },
+      { badge: '🏆', t: 'Orttirma', en: 'superlative', rule: 'the -est / the most', ex: 'Tea is the cheapest.', res: "uch va undan ko'p" },
+      { badge: '🟰', t: 'Teng', en: 'as … as', rule: 'as + sifat + as', ex: 'Juice is as expensive as coffee.', res: 'bir xil' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'qiyosiy daraja', strat: "bo'g'inlarni sanang",
+      q: 'Complete: A plane is ___ (fast) than a train. A plane ticket is ___ (expensive) than a train ticket.',
+      steps: [["fast — 1 bo'g'in", '→ **faster**'], ["expensive — 3 bo'g'in", '→ **more expensive**'], ['A plane is **faster** … A plane ticket is **more expensive**…', 'javob']],
+      check: 'more faster ✗ — ikkalasini birga ishlatmang.',
+    },
+    {
+      tag: 'orttirma daraja', strat: 'the + -est / the most; in + joy',
+      q: 'Complete: Everest is ___ (high) mountain ___ the world. This is ___ (good) day of my life.',
+      steps: [['high → **the highest**', ''], ['joy → **in** the world', 'in + joy / guruh'], ['good → **the best**', "noto'g'ri sifat"], ['Everest is **the highest** mountain **in** the world. This is **the best** day…', 'javob']],
+      check: 'the highest of the world ✗ → in the world ✓',
+    },
+    {
+      tag: 'as … as', strat: 'teng emas — not as … as',
+      q: 'Rewrite with **not as … as**: My brother is taller than me.',
+      steps: [["Mavzuni almashtiramiz: **I**", 'ega — men'], ['Men pastroqman', '→ not as tall as'], ['I am **not as tall as** my brother.', 'javob']],
+      check: 'not as … as — less … than dan tabiiyroq ✓',
+    },
+  ],
+  trap: {
+    title: "«more better» tuzog'i",
+    q: 'This phone is more better. ✗',
+    body: "better allaqachon qiyosiy: This phone is **better** ✓. more faqat uzun sifatlar bilan: more interesting ✓.",
+  },
+  tip: {
+    short: 'kuchaytirish', title: 'Farqni kuchaytiring: much / a bit',
+    q: 'much cheaper · a bit taller · far better',
+    body: 'Farq katta — much / far; kichik — a bit / slightly: Tashkent is **much bigger** than Nukus. very bigger ✗!',
+  },
+  mistakes: [
+    'than o\'rniga then: taller then me ✗ → **than** ✓.',
+    'Ikki marta daraja: more easier ✗, the most biggest ✗.',
+    'Orttirmada the ni tushirish: She is best student ✗.',
+    'very + qiyosiy: very cheaper ✗ → **much** cheaper ✓.',
+  ],
+  practice: [
+    ['Russian is ___ (difficult) than English for me.', ''],
+    ['This is ___ (bad) film I have ever seen.', ''],
+    ['My bag is ___ heavy ___ yours.', 'teng'],
+    ['Summer is ___ (hot) than spring.', ''],
+  ],
+  answers: ['more difficult', 'the worst', 'as … as', 'hotter'],
+  remember: [
+    'Qisqa sifat: -er / the -est; uzun: more / the most.',
+    'good – better – best, bad – worse – worst — yod oling.',
+    'as … as — teng; not as … as — teng emas; much / a bit — farq darajasi.',
+  ],
+};

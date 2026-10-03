@@ -1,0 +1,96 @@
+module.exports = {
+  n: 15,
+  short: 'Present_Perfect_yoki_Past_Simple',
+  en: 'Present Perfect or Past Simple? (for, since)',
+  video: '13 min',
+  emoji: {
+    lesson: '⏳', strip: '📅 ⏳ 🏠 💼 🎓 🕰️',
+    goal: ['⚖️', '⏳', '❓'],
+    kw: ['⏳', '📍', '❓', '📅', '🔙', '📊', '🏁', '🔄'],
+    core: ['📅', '⏳', '🔄', '❓'],
+    ex: ['⚖️', '⏳', '❓'], tip: '📏',
+  },
+  hook: "«Men bu yerda 3 yildan beri yashayman» — inglizchada Present Simple emas, Present Perfect! Bugun ikki zamonni farqlash va for / since ni to'g'ri ishlatishni o'rganamiz.",
+  goals: [
+    ['Farq', "Aniq o'tgan vaqt — Past Simple"],
+    ['for va since', 'davomiylik va boshlanish nuqtasi'],
+    ['How long…?', 'Davom etayotgan holat haqida savol'],
+  ],
+  kw: [
+    ['for', '… davomida', '**for** three years'],
+    ['since', '… dan beri', '**since** 2020'],
+    ['how long', 'qancha vaqtdan beri', '**How long** have you lived here?'],
+    ['last year', "o'tgan yili", 'I moved **last year**.'],
+    ['ago', '… oldin', 'three years **ago**'],
+    ['so far', 'hozirgacha', "I've read 3 books **so far**."],
+    ['finished time', 'tugagan vaqt', 'yesterday, in 2019'],
+    ['unfinished time', 'tugamagan vaqt', 'today, this week'],
+  ],
+  core: {
+    title: 'Qaysi zamon? 4 qoida', en: 'Present Perfect vs Past Simple',
+    steps: [
+      ["Aniq o'tgan vaqt", 'yesterday, ago, in 2020 → **Past Simple**'],
+      ['Hozirgacha davom', 'for / since → **Present Perfect**'],
+      ['Tugamagan vaqt', 'today, this week → **Present Perfect**'],
+      ['When…?', 'When…? savoliga — **Past Simple**'],
+    ],
+    note: "Suhbat odatda Present Perfect bilan boshlanib, tafsilotlarda Past Simple'ga o'tadi: I've been to Khiva. I went there last May.",
+  },
+  cases: {
+    title: 'for, since yoki ago?', en: 'Time expressions',
+    intro: 'Vaqt ifodasiga qarang:',
+    items: [
+      { badge: '⏳', t: 'for', en: 'davomiylik', rule: "for + vaqt oralig'i", ex: 'for 2 hours, for a week', res: 'qancha vaqt?' },
+      { badge: '📍', t: 'since', en: 'boshlanish nuqtasi', rule: 'since + vaqt nuqtasi', ex: 'since Monday, since 2018', res: 'qachondan beri?' },
+      { badge: '🔙', t: 'ago', en: "o'tgan payt", rule: '… ago + Past Simple', ex: 'two years ago', res: 'qachon?' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'qaysi zamon?', strat: 'aniq vaqt bormi?',
+      q: 'Complete: I ___ (visit) Khiva last summer. I ___ (be) there twice in my life.',
+      steps: [['**last summer** — aniq vaqt', '→ Past Simple'], ['I **visited** Khiva last summer.', ''], ['**in my life** — tajriba, vaqtsiz', '→ Present Perfect'], ["I**'ve been** there twice.", 'javob']],
+      check: "Bir matnda ikkala zamon — oddiy holat ✓",
+    },
+    {
+      tag: 'for / since', strat: 'oraliq — for, nuqta — since',
+      q: 'Complete: She has worked here ___ 2019. We have known each other ___ ten years.',
+      steps: [['2019 — **vaqt nuqtasi**', '→ since'], ['ten years — **oraliq**', '→ for'], ['She has worked here **since** 2019. We have known each other **for** ten years.', 'javob']],
+      check: 'Hali ham shu yerda ishlaydi — shuning uchun Present Perfect ✓',
+    },
+    {
+      tag: 'How long…?', strat: 'How long + have / has + V3',
+      q: 'Ask and answer: you / live / in this flat? (5 years)',
+      steps: [['**How long have** you **lived**…?', 'savol'], ['How long have you lived in this flat?', ''], ["I've lived here **for** five years.", 'javob']],
+      check: "How long do you live here? ✗ — o'zbekchadan so'zma-so'z tarjima xatosi.",
+    },
+  ],
+  trap: {
+    title: "«I live here since 2020» tuzog'i",
+    q: 'I live here since 2020. ✗',
+    body: "since / for bilan hozirgacha davom etayotgan holat — Present Perfect: I **have lived** here since 2020 ✓.",
+  },
+  tip: {
+    short: "vaqt chizig'i", title: "Vaqt chizig'ini chizing",
+    q: "o'tmish —— X —— hozir",
+    body: "Harakat o'tmishdagi nuqtada tugaganmi (Past Simple) yoki hozirgacha cho'zilganmi (Present Perfect)? Chiziq chizsangiz, javob ko'rinadi.",
+  },
+  mistakes: [
+    'since bilan oraliq: since 3 years ✗ → **for** 3 years ✓.',
+    'When bilan Present Perfect: When have you arrived? ✗ → When **did** you arrive? ✓',
+    "ago bilan Present Perfect: I've come two days ago ✗.",
+    'Davom etayotgan holat uchun Present Simple: I know him for years ✗.',
+  ],
+  practice: [
+    ['I have had this phone ___ two years.', 'for / since'],
+    ['He ___ (start) school in 2015.', ''],
+    ['We ___ (be) friends since childhood.', ''],
+    ['How long ___ you ___ (study) English?', ''],
+  ],
+  answers: ['for', 'started', 'have been', 'have … studied'],
+  remember: [
+    "Aniq o'tgan vaqt (yesterday, ago, in 2020, When?) — Past Simple.",
+    'Hozirgacha davom etayotgan holat — Present Perfect + for / since.',
+    'for + oraliq; since + boshlanish nuqtasi.',
+  ],
+};

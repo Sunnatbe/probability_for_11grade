@@ -1,0 +1,96 @@
+module.exports = {
+  n: 17,
+  short: 'Listening_aniq_malumot',
+  en: 'Listening: specific information',
+  video: '12 min',
+  emoji: {
+    lesson: '🎧', strip: '🎧 📢 🔢 📅 ✏️ 👂',
+    goal: ['🔮', '🔢', '🪤'],
+    kw: ['🔮', '🔑', '🔢', '📅', '🔤', '🪤', '📝', '🔁'],
+    core: ['👀', '🔮', '👂', '✅'],
+    ex: ['🔢', '🔤', '🪤'], tip: '🎧',
+  },
+  hook: "Tinglashda eng ko'p ball raqam, sana va ismlarda yo'qotiladi. Bugun tinglashdan oldin tayyorlanish, raqamlarni to'g'ri eshitish va chalg'ituvchi javoblarni ajratishni o'rganamiz.",
+  goals: [
+    ['Bashorat', 'Tinglashdan oldin javob turini taxmin qilish'],
+    ['Raqam va sana', '13 va 30, harflab aytilgan ismlar'],
+    ["Chalg'ituvchilar", "Gapiruvchi fikrini o'zgartirganda"],
+  ],
+  kw: [
+    ['predict', 'bashorat qilmoq', '**Predict** the type of answer.'],
+    ['key words', "kalit so'zlar", 'Underline the **key words**.'],
+    ['thirteen / thirty', '13 / 30', 'thirTEEN / THIRty'],
+    ['date', 'sana', 'the 21st of May'],
+    ['spell', 'harflab aytmoq', 'Can you **spell** that?'],
+    ['distractor', "chalg'ituvchi javob", "No, sorry, it's Tuesday."],
+    ['note down', 'qayd qilmoq', '**Note down** the time.'],
+    ['actually', 'aslida (tuzatish)', '**Actually**, it starts at 8.'],
+  ],
+  core: {
+    title: 'Tinglash strategiyasi: 4 qadam', en: 'Listening for specific information',
+    steps: [
+      ["Savollarni o'qi", 'Tinglashdan oldin 30 soniya'],
+      ['Bashorat qil', 'Raqam? Ism? Joy? — javob turini yozing'],
+      ['Tingla va yoz', 'Birinchi eshitganingizni qisqa yozing'],
+      ['Tekshir', 'Ikkinchi marta: imlo va raqamlar'],
+    ],
+    note: "Signal so'zlar: actually, sorry, no wait, I mean — ulardan keyin to'g'ri javob keladi!",
+  },
+  cases: {
+    title: 'Qiyin tovushlar', en: 'Tricky numbers and letters',
+    intro: "Bu juftliklar eng ko'p adashtiriladi:",
+    items: [
+      { badge: '13', t: '-teen / -ty', en: '13 yoki 30', rule: "urg'u oxirida — teen", ex: 'thirTEEN va THIRty', res: "urg'uga quloq soling" },
+      { badge: '🔤', t: 'Harflar', en: 'spelling', rule: 'A /eɪ/, E /iː/, I /aɪ/', ex: 'G /dʒiː/ va J /dʒeɪ/', res: 'A, E, I — eng xavfli' },
+      { badge: '📅', t: 'Sanalar', en: 'dates', rule: 'the + tartib son', ex: 'the 3rd of May', res: 'yozuvda: 3 May' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'raqamni eshitish', strat: "urg'u qayerda?",
+      q: 'You hear: «The bus leaves at ten fifteen, not ten fifty.» What time does the bus leave?',
+      steps: [["fifTEEN — 15", "urg'u oxirida"], ['FIFty — 50', 'bu inkor qilindi'], ['**10:15**', 'javob']],
+      check: "«not …» — chalg'ituvchi ✓",
+    },
+    {
+      tag: 'harflab aytilgan ism', strat: 'har bir harfni yozing',
+      q: 'You hear: «My surname is Karimova — K-A-R-I-M-O-V-A.» Write the surname.',
+      steps: [['K, A /eɪ/, R', ''], ['I /aɪ/, M, O, V, A', 'I va E ni adashtirmang'], ['**KARIMOVA**', 'javob']],
+      check: "Imlo to'g'ri bo'lmasa — javob qabul qilinmaydi.",
+    },
+    {
+      tag: "chalg'ituvchi", strat: '«actually», «no, sorry» dan keyingi javob',
+      q: "You hear: «Let's meet on Tuesday. Oh, actually, I'm busy then. How about Thursday?» When will they meet?",
+      steps: [["Tuesday — birinchi taklif", "chalg'ituvchi"], ['**actually** — fikr o\'zgardi', 'signal'], ['**Thursday**', 'javob']],
+      check: "Birinchi eshitgan so'zingizni darhol belgilamang ✓",
+    },
+  ],
+  trap: {
+    title: "Birinchi so'z tuzog'i",
+    q: '«It costs twenty pounds… sorry, twenty-five.»',
+    body: "Testlarda gapiruvchi ko'pincha o'zini tuzatadi. Signal so'zlarni (sorry, actually, no wait) eshitsangiz — javob keyin keladi: 25.",
+  },
+  tip: {
+    short: 'mashq', title: 'Har kuni 10 daqiqa tinglang',
+    q: 'BBC Learning English · podkastlar · subtitrli videolar',
+    body: "Avval subtitrsiz tinglang, keyin subtitr bilan tekshiring. Eshitmagan so'zlarni lug'at daftaringizga yozing.",
+  },
+  mistakes: [
+    '13 va 30 ni adashtirish.',
+    'Birinchi eshitilgan javobni yozib, tuzatishni o\'tkazib yuborish.',
+    "Bitta so'zni eshitmay qolib, keyingi savollarni ham o'tkazib yuborish.",
+    'Ismni imlo xatosi bilan yozish.',
+  ],
+  practice: [
+    ['You hear: «It costs sixteen dollars.»', 'raqam?'],
+    ['You hear: «J-O-H-N-S-O-N»', 'yozing'],
+    ['You hear: «On the 2nd… no, the 22nd of June.»', 'sana?'],
+    ["Tuzatishdan oldingi signal so'zlar?", '2 ta'],
+  ],
+  answers: ['16 dollar', 'JOHNSON', '22 June', 'actually, sorry'],
+  remember: [
+    "Tinglashdan oldin savollarni o'qing va javob turini bashorat qiling.",
+    "-teen — urg'u oxirida, -ty — boshida.",
+    "actually, sorry, no wait — keyin to'g'ri javob keladi.",
+  ],
+};
