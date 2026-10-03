@@ -26,11 +26,36 @@ function base(pptx, L) {
   });
 }
 
-const tx = (s, text, o) => s.addText(text, { margin: 0, fontFace: BODY, color: C.text, valign: 'top', ...o });
+// Emoji: alohida run va rangli emoji shrifti (Windows — Segoe UI Emoji; Mac/telefon o'zi almashtiradi)
+const EMOJI_FONT = 'Segoe UI Emoji';
+const EMOJI_RE = /(\p{Extended_Pictographic}(?:\uFE0F|\u20E3)?(?:\u200D\p{Extended_Pictographic}\uFE0F?)*)/u;
+const isEmoji = (t) => new RegExp(`^${EMOJI_RE.source}$`, 'u').test(String(t));
+function emojify(text) {
+  const runs = typeof text === 'string' ? [{ text, options: {} }] : text;
+  const out = [];
+  for (const r of runs) {
+    const parts = String(r.text).split(EMOJI_RE).filter((x) => x !== '');
+    parts.forEach((part, i) => {
+      const o = { ...(r.options || {}) };
+      if (i < parts.length - 1) delete o.breakLine;
+      if (isEmoji(part)) { o.fontFace = EMOJI_FONT; o.bold = false; o.italic = false; }
+      out.push({ text: part, options: o });
+    });
+  }
+  return out;
+}
+const tx = (s, text, o) => s.addText(emojify(text), { margin: 0, fontFace: BODY, color: C.text, valign: 'top', ...o });
+const DEFAULT_EMOJI = {
+  goals: '🎯', keywords: '📚', task: '📝', strategy: '💡', check: '✅', cases: '🧩',
+  tips: '🧠', trap: '⚠️', tip: '🔊', practice: '💪', pause: '✍️', summary: '🎉', answers: '🔑', next: '🚀',
+  core: [], goal: [], kw: [], ex: [],
+};
 const box = (s, o, fill, extra = {}) => s.addShape('roundRect', { ...o, fill: { color: fill }, line: { color: extra.line || fill, width: extra.lineW || 1 }, rectRadius: extra.r ?? 0.08, ...(extra.shadow ? { shadow: { type: 'outer', color: '000000', opacity: 0.12, blur: 4, offset: 1.5, angle: 90 } } : {}) });
 const badge = (s, x, y, d, label, fill, size, font = BODY) => {
-  s.addShape('ellipse', { x, y, w: d, h: d, fill: { color: fill }, line: { color: fill } });
-  tx(s, label, { x, y, w: d, h: d, align: 'center', valign: 'middle', bold: true, color: C.white, fontSize: size, fontFace: font });
+  const emo = isEmoji(label);
+  // emoji — oq doira ichida (rangli emoji yaxshi ko'rinsin), chegarasi modul rangida
+  s.addShape('ellipse', { x, y, w: d, h: d, fill: { color: emo ? C.white : fill }, line: { color: fill, width: emo ? 2 : 1 } });
+  tx(s, label, { x, y, w: d, h: d, align: 'center', valign: 'middle', bold: true, color: C.white, fontSize: emo ? size * 0.95 : size, fontFace: font });
 };
 const title = (s, t) => tx(s, P(t), { x: 0.5, y: 0.3, w: 9, h: 0.7, fontFace: HEAD, fontSize: fit(t, [[34, 28], [44, 24], [99, 21]]), bold: true, color: C.navy, valign: 'middle' });
 
@@ -45,16 +70,23 @@ function slideTitle(pptx, L) {
   s.addShape('ellipse', { x: 7.25, y: 1.3, w: 2.2, h: 2.2, fill: { color: C.indigo }, line: { color: C.indigo } });
   tx(s, 'DARS', { x: 7.25, y: 1.75, w: 2.2, h: 0.35, align: 'center', bold: true, fontSize: 11, color: C.lav2, charSpacing: 3 });
   tx(s, String(L.n), { x: 7.25, y: 2.05, w: 2.2, h: 1.1, align: 'center', valign: 'middle', bold: true, fontFace: HEAD, fontSize: 54, color: C.white });
+  const E = L.E;
+  if (E.lesson) {
+    s.addShape('ellipse', { x: 8.75, y: 1.05, w: 0.95, h: 0.95, fill: { color: C.white }, line: { color: C.amber, width: 2.5 } });
+    tx(s, E.lesson, { x: 8.75, y: 1.05, w: 0.95, h: 0.95, align: 'center', valign: 'middle', fontSize: 30 });
+  }
+  if (E.strip) tx(s, E.strip, { x: 0.6, y: 3.45, w: 6.4, h: 0.45, valign: 'middle', fontSize: 18, charSpacing: 4 });
   return s;
 }
 
 function slideGoals(pptx, L) {
   const s = pptx.addSlide({ masterName: 'CONTENT' });
-  title(s, 'Bu darsda');
+  title(s, `${L.E.goals} Bu darsda`);
   L.goals.forEach(([t, d], i) => {
     const x = 0.5 + i * 3.075;
     box(s, { x, y: 1.35, w: 2.85, h: 3.2 }, C.lav);
     badge(s, x + 0.3, 1.65, 0.7, String(i + 1), C.indigo, 20);
+    if (L.E.goal[i]) tx(s, L.E.goal[i], { x: x + 1.95, y: 1.6, w: 0.75, h: 0.75, align: 'center', valign: 'middle', fontSize: 32 });
     tx(s, P(t), { x: x + 0.3, y: 2.6, w: 2.3, h: 0.75, fontFace: HEAD, bold: true, fontSize: fit(t, [[22, 18], [32, 16], [99, 14]]), color: C.navy, valign: 'top' });
     tx(s, P(d), { x: x + 0.3, y: 3.4, w: 2.3, h: 1.1, fontSize: 11 });
   });
@@ -63,12 +95,12 @@ function slideGoals(pptx, L) {
 
 function slideKeywords(pptx, L) {
   const s = pptx.addSlide({ masterName: 'CONTENT' });
-  title(s, "Inglizcha kalit so'zlar");
+  title(s, `${L.E.keywords} Inglizcha kalit so'zlar`);
   L.kw.slice(0, 8).forEach(([en, uz, ex], i) => {
     const col = i % 2; const row = Math.floor(i / 2);
     const x = 0.5 + col * 4.6; const y = 1.2 + row * 0.95;
     box(s, { x, y, w: 4.4, h: 0.82 }, (row + col) % 2 === 0 ? C.lav : C.slate);
-    tx(s, P(en), { x: x + 0.2, y: y + 0.1, w: 2.4, h: 0.35, bold: true, fontSize: fit(en, [[24, 13], [32, 11.5], [99, 10]]), color: C.indigo, valign: 'middle' });
+    tx(s, (L.E.kw[i] ? `${L.E.kw[i]} ` : '') + P(en), { x: x + 0.2, y: y + 0.1, w: 2.4, h: 0.35, bold: true, fontSize: fit(en, [[24, 13], [32, 11.5], [99, 10]]), color: C.indigo, valign: 'middle' });
     tx(s, P(uz), { x: x + 2.6, y: y + 0.08, w: 1.65, h: 0.4, fontSize: fit(uz, [[22, 11], [36, 9.5], [99, 8.5]]), align: 'right', valign: 'middle' });
     tx(s, P(ex), { x: x + 0.2, y: y + 0.49, w: 4.0, h: 0.28, italic: true, fontSize: 9.5, color: C.grey, valign: 'middle' });
   });
@@ -77,13 +109,13 @@ function slideKeywords(pptx, L) {
 
 function slideCore(pptx, L) {
   const s = pptx.addSlide({ masterName: 'CONTENT' });
-  title(s, L.core.title);
+  title(s, `${L.E.coreTitle || '📌'} ${P(L.core.title)}`);
   const n = L.core.steps.length;
   const gap = 0.333; const w = (9 - gap * (n - 1)) / n;
   L.core.steps.forEach(([hd, bd], i) => {
     const x = 0.5 + i * (w + gap);
     box(s, { x, y: 1.3, w, h: 2.55 }, C.white, { line: 'E5E7EB', shadow: true });
-    badge(s, x + w / 2 - 0.35, 1.5, 0.7, String(i + 1), C.indigo, 20);
+    badge(s, x + w / 2 - 0.35, 1.5, 0.7, L.E.core[i] || String(i + 1), C.indigo, 20);
     tx(s, P(hd), { x: x + 0.12, y: 2.3, w: w - 0.24, h: 0.6, align: 'center', valign: 'middle', bold: true, fontSize: fit(hd, [[20, 13], [30, 12], [99, 11]]), color: C.navy });
     tx(s, P(bd), { x: x + 0.12, y: 2.95, w: w - 0.24, h: 0.85, align: 'center', fontSize: fit(bd, [[40, 10.5], [70, 9.5], [999, 8.5]]) });
     if (i < n - 1) tx(s, '→', { x: x + w, y: 2.25, w: gap, h: 0.5, align: 'center', valign: 'middle', bold: true, fontSize: 20, color: C.amber });
@@ -99,13 +131,13 @@ function slideCore(pptx, L) {
 function slideExample(pptx, L, k) {
   const e = L.ex[k];
   const s = pptx.addSlide({ masterName: 'CONTENT' });
-  title(s, `${k + 1}-misol: ${P(e.tag)}`);
+  title(s, `${L.E.ex[k] || '✏️'} ${k + 1}-misol: ${P(e.tag)}`);
   box(s, { x: 0.5, y: 1.25, w: 3.6, h: 3.65 }, C.navy);
-  tx(s, 'TOPSHIRIQ', { x: 0.75, y: 1.45, w: 3.1, h: 0.3, bold: true, fontSize: 9, color: C.amber, charSpacing: 1 });
+  tx(s, `${L.E.task} TOPSHIRIQ`, { x: 0.75, y: 1.45, w: 3.1, h: 0.3, bold: true, fontSize: 9, color: C.amber, charSpacing: 1 });
   tx(s, toRuns(e.q).map((r) => ({ text: r.text, options: { bold: r.bold, color: r.bold ? C.amber : C.white } })), { x: 0.75, y: 1.8, w: 3.1, h: 2.0, fontFace: HEAD, color: C.white, fontSize: fit(e.q, [[60, 16], [110, 14], [170, 12], [999, 11]]) });
   box(s, { x: 0.7, y: 3.85, w: 3.2, h: 0.85 }, C.navy2);
   tx(s, [
-    { text: 'STRATEGIYA', options: { bold: true, fontSize: 8, color: C.amber, breakLine: true } },
+    { text: `${L.E.strategy} STRATEGIYA`, options: { bold: true, fontSize: 8, color: C.amber, breakLine: true } },
     { text: P(e.strat).replace(/^./, (c) => c.toUpperCase()), options: { fontSize: fit(e.strat, [[60, 10], [999, 9]]), color: C.white } },
   ], { x: 0.85, y: 3.9, w: 2.95, h: 0.75, valign: 'middle' });
 
@@ -124,14 +156,14 @@ function slideExample(pptx, L, k) {
   });
   if (e.check) {
     box(s, { x: 4.4, y: 4.1, w: 5.1, h: 0.8 }, C.mint);
-    tx(s, P(e.check), { x: 4.6, y: 4.1, w: 4.75, h: 0.8, valign: 'middle', color: C.dgreen, fontSize: fit(e.check, [[70, 11], [120, 10], [999, 9]]) });
+    tx(s, `${L.E.check} ${P(e.check)}`, { x: 4.6, y: 4.1, w: 4.75, h: 0.8, valign: 'middle', color: C.dgreen, fontSize: fit(e.check, [[70, 11], [120, 10], [999, 9]]) });
   }
   return s;
 }
 
 function slideCases(pptx, L) {
   const s = pptx.addSlide({ masterName: 'CONTENT' });
-  title(s, L.cases.title);
+  title(s, `${L.E.cases} ${P(L.cases.title)}`);
   tx(s, P(L.cases.intro), { x: 0.5, y: 1.05, w: 9, h: 0.5, valign: 'middle', fontSize: fit(L.cases.intro, [[80, 15], [120, 13], [999, 11.5]]) });
   const fills = [C.mint, C.pink, C.lav]; const acc = [C.green, C.rose, C.indigo];
   L.cases.items.forEach((c, i) => {
@@ -152,11 +184,11 @@ function slideCases(pptx, L) {
 
 function slideTips(pptx, L) {
   const s = pptx.addSlide({ masterName: 'CONTENT' });
-  title(s, L.tipsTitle || `Tuzoq va ${P(L.tip.short || 'maslahat')}`);
-  [[L.trap, C.cream, C.amber, '!'], [L.tip, C.lav, C.indigo, L.tip.badge || 'D']].forEach(([t, fill, acc, b], i) => {
+  title(s, `${L.E.tips} ${L.tipsTitle || `Tuzoq va ${P(L.tip.short || 'maslahat')}`}`);
+  [[L.trap, C.cream, C.amber, L.E.trap], [L.tip, C.lav, C.indigo, L.E.tip || L.tip.badge || 'D']].forEach(([t, fill, acc, b], i) => {
     const x = 0.5 + i * 4.6;
     box(s, { x, y: 1.25, w: 4.4, h: 3.65 }, fill);
-    badge(s, x + 0.3, 1.5, 0.6, b, acc, b.length > 1 ? 12 : 18);
+    badge(s, x + 0.3, 1.5, 0.6, b, acc, isEmoji(b) ? 20 : b.length > 1 ? 12 : 18);
     tx(s, P(t.title), { x: x + 1.05, y: 1.5, w: 3.2, h: 0.6, bold: true, fontSize: fit(t.title, [[30, 15], [44, 13], [99, 12]]), color: C.navy, valign: 'middle' });
     if (t.q) tx(s, P(t.q), { x: x + 0.3, y: 2.3, w: 3.85, h: 0.9, italic: true, fontFace: HEAD, color: C.navy, fontSize: fit(t.q, [[60, 14], [110, 12.5], [999, 11]]) });
     tx(s, P(t.body), { x: x + 0.3, y: t.q ? 3.25 : 2.3, w: 3.85, h: t.q ? 1.55 : 2.5, fontSize: fit(t.body, [[130, 12], [200, 11], [999, 10]]) });
@@ -166,7 +198,7 @@ function slideTips(pptx, L) {
 
 function slidePractice(pptx, L) {
   const s = pptx.addSlide({ masterName: 'CONTENT' });
-  title(s, "O'zingiz sinab ko'ring");
+  title(s, `${L.E.practice} O'zingiz sinab ko'ring`);
   L.practice.forEach(([t, nt], i) => {
     const y = 1.25 + i * 0.92;
     box(s, { x: 0.5, y, w: 6.0, h: 0.78 }, C.white, { line: 'E5E7EB', shadow: true });
@@ -179,15 +211,15 @@ function slidePractice(pptx, L) {
   s.addShape('ellipse', { x: 7.6, y: 1.55, w: 1.1, h: 1.1, fill: { color: C.amber }, line: { color: C.amber } });
   s.addShape('rect', { x: 7.92, y: 1.82, w: 0.16, h: 0.56, fill: { color: C.navy }, line: { color: C.navy } });
   s.addShape('rect', { x: 8.22, y: 1.82, w: 0.16, h: 0.56, fill: { color: C.navy }, line: { color: C.navy } });
-  tx(s, "Videoni to'xtating va yeching", { x: 7.0, y: 2.85, w: 2.3, h: 0.8, align: 'center', valign: 'middle', bold: true, fontSize: 14, color: C.white });
+  tx(s, `Videoni to'xtating va yeching ${L.E.pause}`, { x: 7.0, y: 2.85, w: 2.3, h: 0.8, align: 'center', valign: 'middle', bold: true, fontSize: 14, color: C.white });
   tx(s, 'Javoblar keyingi slaydda', { x: 7.0, y: 3.85, w: 2.3, h: 0.6, align: 'center', valign: 'middle', fontSize: 10, color: C.lav2 });
   return s;
 }
 
 function slideSummary(pptx, L) {
   const s = pptx.addSlide({ masterName: 'DARK' });
-  tx(s, 'Xulosa', { x: 0.5, y: 0.3, w: 9, h: 0.7, fontFace: HEAD, fontSize: 28, bold: true, color: C.white, valign: 'middle' });
-  tx(s, 'JAVOBLAR', { x: 0.5, y: 1.1, w: 3, h: 0.3, bold: true, fontSize: 9, color: C.amber, charSpacing: 2 });
+  tx(s, `${L.E.summary} Xulosa`, { x: 0.5, y: 0.3, w: 9, h: 0.7, fontFace: HEAD, fontSize: 28, bold: true, color: C.white, valign: 'middle' });
+  tx(s, `${L.E.answers} JAVOBLAR`, { x: 0.5, y: 1.1, w: 3, h: 0.3, bold: true, fontSize: 9, color: C.amber, charSpacing: 2 });
   L.answers.forEach((a, i) => {
     const x = 0.5 + i * 2.3;
     box(s, { x, y: 1.45, w: 2.1, h: 0.62 }, C.navy2, { r: 0.05 });
@@ -201,7 +233,7 @@ function slideSummary(pptx, L) {
   box(s, { x: 0.5, y: 4.45, w: 9.0, h: 0.65 }, C.indigo, { r: 0.05 });
   const now = `Hozir: platformada ${L.nowText}`;
   tx(s, [
-    { text: 'Keyingi:  ', options: { bold: true, color: C.amber } },
+    { text: `${L.E.next} Keyingi:  `, options: { bold: true, color: C.amber } },
     { text: `${L.nextShort}   ·   ${now}`, options: { color: C.white } },
   ], { x: 0.75, y: 4.45, w: 8.5, h: 0.65, valign: 'middle', fontSize: (L.nextShort.length + now.length) > 105 ? 9.5 : 11 });
   return s;
@@ -214,6 +246,7 @@ async function buildOne(L, outFile) {
   pptx.company = 'Kholmurodov Academy';
   pptx.title = `General English · Dars ${L.n} — ${P(L.title)}`;
   pptx.theme = { headFontFace: HEAD, bodyFontFace: BODY };
+  L = { ...L, E: { ...DEFAULT_EMOJI, ...(L.emoji || {}) } };
   base(pptx, L);
   const slides = [
     slideTitle(pptx, L), slideGoals(pptx, L), slideKeywords(pptx, L), slideCore(pptx, L),

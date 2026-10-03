@@ -3,6 +3,15 @@ module.exports = {
   short: 'Present_Simple',
   en: 'Present Simple: daily routines and habits',
   video: '12 min',
+  emoji: {
+    lesson: '⏰',
+    strip: '☀️ 🪥 🍳 🚌 🏫 ⚽ 📺 😴',
+    goal: ['✍️', '🔤', '📅'],
+    kw: ['🔁', '🙂', '👍', '🤷', '🚫', '📅', '❓', '⏰'],
+    coreTitle: '📌',
+    core: ['✅', '❌', '❓', '📍'],
+    ex: ['✏️', '💬', '📍'],
+  },
   hook: "Present Simple — ingliz tilidagi eng ko'p ishlatiladigan zamon: kundalik hayot, odatlar va doimiy faktlar haqida aynan shu zamonda gapiramiz. Lekin o'zbek o'quvchilari eng ko'p xato qiladigan joy ham shu yerda: uchinchi shaxsdagi kichkina «-s».",
   goals: [
     ['3 xil gap', "Tasdiq, inkor va so'roq gap tuzish"],
