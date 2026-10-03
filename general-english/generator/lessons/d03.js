@@ -1,0 +1,89 @@
+module.exports = {
+  n: 3,
+  short: 'Present_Simple',
+  en: 'Present Simple: daily routines and habits',
+  video: '12 min',
+  hook: "Present Simple — ingliz tilidagi eng ko'p ishlatiladigan zamon: kundalik hayot, odatlar va doimiy faktlar haqida aynan shu zamonda gapiramiz. Lekin o'zbek o'quvchilari eng ko'p xato qiladigan joy ham shu yerda: uchinchi shaxsdagi kichkina «-s».",
+  goals: [
+    ['3 xil gap', "Tasdiq, inkor va so'roq gap tuzish"],
+    ['3-shaxs -s', 'he / she / it — fe\'lga -s, -es yoki -ies'],
+    ['Chastota ravishlari', "always, usually, never — gapdagi to'g'ri o'rni"],
+  ],
+  kw: [
+    ['always', 'doim, har doim', 'I **always** get up at 7.'],
+    ['usually', 'odatda', 'She **usually** walks to school.'],
+    ['often', "tez-tez, ko'pincha", 'We **often** play football.'],
+    ['sometimes', "ba'zan", 'He **sometimes** cooks dinner.'],
+    ['never', 'hech qachon', 'They **never** drink coffee.'],
+    ['every day', 'har kuni', 'I read **every day**.'],
+    ["does / doesn't", "yordamchi fe'l (3-shaxs)", "**Does** he work? He **doesn't**."],
+    ['daily routine', 'kun tartibi', 'my **daily routine**'],
+  ],
+  core: {
+    title: 'Present Simple: 4 qoida', en: 'Form and use',
+    steps: [
+      ['Tasdiq', 'I / you / we / they **work** — he / she / it **works**'],
+      ['Inkor', "**don't / doesn't** + fe'lning asl shakli"],
+      ["So'roq", "**Do / Does** + ega + fe'l?"],
+      ['Chastota ravishi', "Oddiy fe'ldan **oldin**, «be» dan **keyin**"],
+    ],
+    note: "Qoida: does va doesn't dan keyin fe'l -s olmaydi: She doesn't work ✓, She doesn't works ✗.",
+  },
+  cases: {
+    title: '3-shaxs: -s, -es yoki -ies?', en: 'Spelling rules',
+    intro: "he / she / it bilan fe'l oxiriga qo'shimcha qo'shiladi — qaysi biri, fe'lning oxiriga bog'liq:",
+    items: [
+      { badge: 's', t: '+ s', en: "ko'pchilik fe'llar", rule: 'work → works', ex: 'play → plays', res: 'unli + y: faqat -s' },
+      { badge: 'es', t: '+ es', en: '-s, -sh, -ch, -x, -o', rule: 'watch → watches', ex: 'go → goes', res: 'wash → washes' },
+      { badge: 'ies', t: 'y → ies', en: 'undosh + y', rule: 'study → studies', ex: 'fly → flies', res: 'carry → carries' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'tasdiq gap', strat: "egani toping → he / she / it bo'lsa, fe'lga -s",
+      q: 'Complete the sentence: My brother ___ (play) football every Saturday.',
+      steps: [['Ega: my brother = **he**', '3-shaxs birlik'], ['play → **plays**', 'unli + y: faqat -s'], ['My brother **plays** football every Saturday.', 'javob']],
+      check: "Tekshiruv: «every Saturday» — takrorlanadigan odat, demak Present Simple ✓",
+    },
+    {
+      tag: "so'roq va qisqa javob", strat: "Does + ega + fe'lning asl shakli",
+      q: 'Make a question: **she** / work / in a bank? Then give a short answer.',
+      steps: [["Ega: **she** → yordamchi fe'l **Does**", '3-shaxs'], ["works emas, **work**", "-s does ga «o'tdi»"], ['**Does** she **work** in a bank?', 'javob'], ["Yes, she **does**. / No, she **doesn't**.", 'qisqa javob']],
+      check: "Qisqa javobda asosiy fe'l takrorlanmaydi: Yes, she works ✗.",
+    },
+    {
+      tag: 'chastota ravishi', strat: "oddiy fe'ldan oldin, «be» dan keyin",
+      q: 'Put **always** in the correct place: a) He is late.  b) He drinks tea in the morning.',
+      steps: [["a) «be» fe'li: **is**", 'ravish undan keyin'], ['He is **always** late.', ''], ["b) oddiy fe'l: **drinks**", 'ravish undan oldin'], ['He **always** drinks tea in the morning.', 'javob']],
+      check: "Eslatma: sometimes va usually gap boshida ham kelishi mumkin: Sometimes I walk to school.",
+    },
+  ],
+  trap: {
+    title: "«doesn't + -s» tuzog'i",
+    q: "She doesn't likes coffee. ✗   Does he plays chess? ✗",
+    body: "Yordamchi fe'l (does / doesn't) -s ni o'ziga oladi, asosiy fe'l asl shaklda qoladi: She doesn't like coffee ✓, Does he play chess? ✓",
+  },
+  tip: {
+    badge: '/s/', short: 'talaffuz', title: "Talaffuz: -s uch xil o'qiladi",
+    q: '/s/ works · /z/ plays · /ɪz/ watches',
+    body: "Jarangsiz undoshdan keyin /s/ (works, likes); jarangli undosh va unlidan keyin /z/ (plays, goes); s, sh, ch, x dan keyin /ɪz/ (watches, washes).",
+  },
+  mistakes: [
+    "3-shaxsda -s ni unutish: He work every day ✗ → He works every day ✓.",
+    "Ravishni noto'g'ri joyga qo'yish: I go always to school ✗ → I always go to school ✓.",
+    "she / he bilan do ishlatish: Do she live here? ✗ → Does she live here? ✓",
+    "«be» bilan do ishlatish: Do you are a student? ✗ → Are you a student? ✓",
+  ],
+  practice: [
+    ['Tom ___ (watch) TV every evening.', ''],
+    ['I / not / like / fish', 'inkor gap'],
+    ['they / live / in Tashkent?', "so'roq gap"],
+    ['Put **never**: She eats meat.', ''],
+  ],
+  answers: ['watches', "I don't like fish.", 'Do they live in Tashkent?', 'She never eats meat.'],
+  remember: [
+    'I / you / we / they **work** — he / she / it **works** (-s, -es, -ies).',
+    "Inkor va so'roq: do / does + fe'lning asl shakli (-s siz).",
+    "Chastota ravishi oddiy fe'ldan oldin, «be» dan keyin turadi.",
+  ],
+};
