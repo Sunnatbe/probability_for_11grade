@@ -1,0 +1,90 @@
+module.exports = {
+  n: 35,
+  short: 'Qiyin_savollar_Mock2',
+  en: 'Hard-question strategies: plug in, backsolve, estimate',
+  video: '12 min',
+  now: 'Mock 2 (44 savol, 70 min)',
+  hook: "2-modulning qiyin versiyasiga tushsangiz — bu yaxshi belgi! Bugun qiyin savollar uchun uchta universal usulni o'rganamiz: son tanlash, javobdan orqaga yechish va baholash.",
+  goals: [
+    ['Son tanlash', "Harfli ifodalarga qulay son qo'yish"],
+    ['Backsolve', "Variantlarni savolga qo'yib tekshirish"],
+    ['Baholash', 'Chizma va kattaliklarni taxminlash'],
+  ],
+  kw: [
+    ['hard module', 'qiyin modul', 'Module 2 (harder)'],
+    ['plug in', "son qo'ymoq", 'let $x=2$'],
+    ['backsolve', 'javobdan orqaga yechish', 'try choice B'],
+    ['estimate', 'baholamoq', '≈ 8.66'],
+    ['in terms of', 'orqali ifodalash', '$a$ in terms of $c$'],
+    ['must be true', "albatta to'g'ri", 'which must be true?'],
+    ['could be true', "bo'lishi mumkin", 'which could be true?'],
+    ['approximately', 'taxminan', 'approximately equal to'],
+  ],
+  core: {
+    title: 'Son tanlash usuli: 4 qadam', en: 'Plugging in numbers',
+    steps: [
+      ['Qulay son tanla', "$x=2$ yoki $3$; 0 va 1 dan qoch"],
+      ['Savolni hisobla', 'Maqsad qiymatni top'],
+      ["Variantlarga qo'y", 'Har birini shu son bilan hisobla'],
+      ['Mosini tanla', "Ikkitasi mos kelsa — boshqa son bilan qayta"],
+    ],
+    note: "Backsolve: variantlar odatda o'sish tartibida — avval o'rtadagini (B yoki C) sinang, keyin yo'nalishni tanlang.",
+  },
+  cases: {
+    title: 'Qaysi usul qachon?', en: 'Choosing a strategy',
+    intro: "Savol ko'rinishiga qarab:",
+    items: [
+      { badge: 'x', t: 'Son tanlash', en: 'plug in', rule: 'variantlarda harf', ex: '«in terms of $k$»', res: "$k=2$ qo'ying" },
+      { badge: '↺', t: 'Backsolve', en: 'work backwards', rule: 'variantlarda son', ex: '«what is the value»', res: "B/C dan boshlang" },
+      { badge: '≈', t: 'Baholash', en: 'estimate', rule: 'chizma, kattalik', ex: '«approximately»', res: 'aniq hisob shart emas' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'son tanlash', strat: "harflarga qulay son qo'ying",
+      q: 'If $a=\\frac{3}{4}b$ and $b=\\frac{2}{3}c$, which expression is equal to $a$ in terms of $c$?',
+      steps: [['c=12', "4 va 3 ga bo'linadigan son"], ['b=8,\\ a=6', 'hisobladik'], ['a=\\frac{c}{2}', 'javob: $6=\\frac{12}{2}$']],
+      check: 'Algebraik: $a=\\frac{3}{4}\\cdot\\frac{2}{3}c=\\frac{1}{2}c$ ✓',
+    },
+    {
+      tag: 'backsolve', strat: "o'rtadagi variantdan boshlang",
+      q: 'A number is tripled and then decreased by 7. The result equals the number increased by 9. What is the number? A) 6 B) 8 C) 10 D) 12',
+      steps: [['\\text{C: } 3\\cdot 10-7=23', '$10+9=19$ ✗ — katta'], ['\\text{B: } 3\\cdot 8-7=17', '$8+9=17$ ✓'], ['n=8', 'javob']],
+      check: 'Algebraik: $3n-7=n+9\\Rightarrow 2n=16\\Rightarrow n=8$ ✓',
+    },
+    {
+      tag: '«must be true»', strat: 'ekstremal sonlarni sinang: manfiy, kasr, 0',
+      q: 'If $x^2>9$, which of the following must be true? I. $x>3$  II. $|x|>3$  III. $x^3>27$',
+      steps: [['x=-4:\\ (-4)^2=16>9', 'shart bajariladi'], ['\\text{I: } -4>3', '✗ — I shart emas'], ['\\text{III: } -64>27', '✗ — III ham'], ['\\text{faqat II}', 'javob']],
+      check: '$|x|>3$ — $x^2>9$ shartining aynan o\'zi ✓',
+    },
+  ],
+  trap: {
+    title: "0 va 1 tuzog'i",
+    q: "Son tanlashda $x=1$ qo'ydingiz…",
+    body: "$x^2=x$, $\\frac{1}{x}=x$ — ko'p variant bir xil chiqadi. 2, 3 yoki 5 kabi «oddiy bo'lmagan» son tanlang.",
+  },
+  tip: {
+    badge: 'D', short: 'Desmos', title: 'Desmos — qiyin savollar quroli',
+    q: 'Qiyin algebra savolini grafikka aylantiring.',
+    body: "Parametrli savolda slider, sistemada kesishish, tengsizlikda soha. Algebraik yo'l 3 minut olsa, Desmos 40 soniyada beradi.",
+  },
+  mistakes: [
+    'Qiyin savolni birinchi o\'qishdayoq tashlab ketish.',
+    "Son tanlashda bir nechta variant mos kelsa — tekshirmasdan tanlash.",
+    "Backsolve ni A dan boshlash (o'rtadan tezroq).",
+    "«Must be true» savolida faqat musbat sonlarni sinash.",
+  ],
+  practice: [
+    ['$p=2q$, $q=3r$. $p$ ni $r$ orqali', 'son tanlang'],
+    ["Son 5 ga ko'paytirilib 4 ayrilsa, 26. Variantlar: 4, 5, 6, 7", ''],
+    ['$x<0$. Qaysi biri doim musbat: $x^3$, $-x$, $x+1$?', ''],
+    ["$x=\\frac{1}{2}$ uchun $\\frac{1}{x}<x$ bajariladimi?", ''],
+  ],
+  answers: ['$p=6r$', '6', '$-x$', "yo'q: $2>\\frac{1}{2}$"],
+  remember: [
+    'Harfli variantlar — son tanlang (0 va 1 emas).',
+    "Sonli variantlar — backsolve, o'rtadagidan boshlang.",
+    '«Must be true» — manfiy, kasr va 0 bilan sinang.',
+  ],
+};

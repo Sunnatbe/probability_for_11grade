@@ -1,0 +1,90 @@
+module.exports = {
+  n: 33,
+  short: 'Aralash_geometriya',
+  en: 'Circles: inscribed angles, tangents and chords',
+  video: '12 min',
+  moduleTest: 'Geometry modul testi (20 savol)',
+  hook: "Bugun aylanaga oid uchta «hiyla» qoidani o'rganamiz: ichki chizilgan burchak, urinma va diametrga tiralgan burchak. Dars oxirida Geometry modul testi.",
+  goals: [
+    ['Ichki chizilgan burchak', 'Markaziy burchakning yarmi'],
+    ['Urinma', 'Urinish nuqtasida radius ⊥ urinma'],
+    ['Diametr va vatar', 'Diametrga tiralgan burchak — 90°'],
+  ],
+  kw: [
+    ['inscribed angle', 'ichki chizilgan burchak', '$\\angle ACB$'],
+    ['central angle', 'markaziy burchak', '$\\angle AOB$'],
+    ['tangent', 'urinma', 'touches at one point'],
+    ['chord', 'vatar', '$AB$'],
+    ['diameter', 'diametr', '$d=2r$'],
+    ['point of tangency', 'urinish nuqtasi', '$T$'],
+    ['perpendicular', 'perpendikulyar', '$OT\\perp PT$'],
+    ['semicircle', 'yarim aylana', '$180^\\circ$ yoy'],
+  ],
+  core: {
+    title: 'Aylana teoremalari', en: 'Circle theorems',
+    steps: [
+      ['Ichki burchak', '$=\\frac{1}{2}$ markaziy burchak (bir yoyga)'],
+      ['Diametrga tiralgan', 'Ichki burchak $=90^\\circ$'],
+      ['Urinma', 'Radius urinmaga perpendikulyar'],
+      ['Tashqi nuqtadan', 'Ikki urinma kesmasi teng'],
+    ],
+    note: "Urinma + radius ⇒ to'g'ri burchak ⇒ Pifagor! Bu kombinatsiya SAT da tez-tez uchraydi.",
+  },
+  cases: {
+    title: 'Burchak va yoy', en: 'Angles and arcs',
+    intro: 'Bir xil yoyga tiralgan burchaklar:',
+    items: [
+      { badge: 'O', t: 'Markaziy', en: 'central angle', rule: '$=$ yoy', ex: 'yoy $100^\\circ$', res: '$100^\\circ$' },
+      { badge: '∠', t: 'Ichki', en: 'inscribed angle', rule: '$=\\frac{1}{2}$ yoy', ex: 'yoy $100^\\circ$', res: '$50^\\circ$' },
+      { badge: '⌀', t: 'Diametr', en: 'angle in a semicircle', rule: '$=90^\\circ$', ex: 'yoy $180^\\circ$', res: '$90^\\circ$' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'ichki chizilgan burchak', strat: 'ichki = markaziyning yarmi',
+      q: 'Points $A$, $B$, and $C$ lie on a circle with center $O$. If $\\angle AOB=110^\\circ$, what is the measure of inscribed angle $ACB$, which intercepts the same arc $AB$?',
+      steps: [['\\angle ACB=\\frac{1}{2}\\angle AOB', 'bir xil yoy'], ['\\angle ACB=\\frac{110^\\circ}{2}', "qo'ydik"], ['\\angle ACB=55^\\circ', 'javob']],
+      check: "$C$ shu yoyning qarshi tomonida qayerda bo'lmasin, burchak $55^\\circ$.",
+    },
+    {
+      tag: 'urinma va Pifagor', strat: "radius ⊥ urinma ⇒ to'g'ri burchakli uchburchak",
+      q: 'A line is tangent to a circle with center $O$ and radius 5 at point $T$. Point $P$ lies on the tangent line, and $PT=12$. What is the length of $OP$?',
+      steps: [['OT\\perp PT', 'urinma xossasi'], ['OP^2=5^2+12^2=169', 'Pifagor'], ['OP=13', 'javob']],
+      check: '5-12-13 — Pifagor uchligi ✓',
+    },
+    {
+      tag: 'diametrga tiralgan burchak', strat: 'diametr ⇒ 90°',
+      q: '$AB$ is a diameter of a circle and $C$ is a point on the circle. If $AC=6$ and $BC=8$, what is the radius of the circle?',
+      steps: [['\\angle ACB=90^\\circ', 'diametrga tiralgan'], ['AB=\\sqrt{6^2+8^2}=10', 'Pifagor'], ['r=\\frac{10}{2}=5', 'javob']],
+      check: '6-8-10 = 2 × (3-4-5) ✓',
+    },
+  ],
+  trap: {
+    title: 'Ichki va markaziy',
+    q: 'Markaziy burchak $80^\\circ$. Ichki burchak?',
+    body: "$40^\\circ$, $160^\\circ$ emas. Bir xil yoy uchun ichki burchak har doim markaziyning yarmi.",
+  },
+  tip: {
+    badge: '✎', short: 'chizma', title: "Radiuslarni o'tkazing",
+    q: "Markazdan har bir nuqtaga radius o'tkazing.",
+    body: "Teng yonli uchburchaklar ($OA=OB=r$) va to'g'ri burchaklar (urinmada) paydo bo'ladi — yechim yo'li ko'rinadi.",
+  },
+  mistakes: [
+    'Ichki burchakni markaziy burchakka teng deb olish.',
+    "Urinmada to'g'ri burchakni ko'rmaslik.",
+    'Diametr va radiusni adashtirish.',
+    'Turli yoylarga tiralgan burchaklarni taqqoslash.',
+  ],
+  practice: [
+    ['Ichki burchak $35^\\circ$. Shu yoyga tiralgan markaziy?', ''],
+    ['Urinma kesmasi 8, radius 6. Markazgacha masofa?', ''],
+    ['Diametrga tiralgan uchburchak: katetlar 5 va 12. Radius?', ''],
+    ['Tashqi nuqtadan ikki urinma, biri 7. Ikkinchisi?', ''],
+  ],
+  answers: ['$70^\\circ$', '10', '6.5', '7'],
+  remember: [
+    'Ichki chizilgan burchak $=\\frac{1}{2}$ markaziy burchak.',
+    'Radius ⊥ urinma; diametrga tiralgan burchak $90^\\circ$.',
+    "Aylanada to'g'ri burchak paydo bo'ldi — Pifagorni qo'llang.",
+  ],
+};

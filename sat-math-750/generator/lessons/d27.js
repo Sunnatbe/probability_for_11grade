@@ -1,0 +1,90 @@
+module.exports = {
+  n: 27,
+  short: 'Statistik_davolar',
+  en: 'Evaluating statistical claims: observational studies and experiments',
+  video: '11 min',
+  moduleTest: 'PSDA modul testi (20 savol)',
+  hook: "«Qahva ichganlar uzoqroq yashaydi» — bu sabab-oqibatmi? SAT bunday da'volarni baholashni so'raydi. Bugun ikki savolni o'rganamiz: kimga umumlashtirsa bo'ladi va sabab haqida gapirsa bo'ladimi.",
+  goals: [
+    ['Kuzatuv va tajriba', 'Farqi: shartlar tasodifiy taqsimlanganmi'],
+    ['Sabab-oqibat', 'Faqat random assignment bilan'],
+    ['Umumlashtirish', 'Faqat random sample bilan'],
+  ],
+  kw: [
+    ['observational study', 'kuzatuv tadqiqoti', "odamlar o'zi tanlaydi"],
+    ['experiment', 'tajriba', 'researchers assign treatments'],
+    ['random assignment', 'tasodifiy taqsimlash', 'randomly assigned to groups'],
+    ['random selection', 'tasodifiy tanlash', 'selected at random'],
+    ['cause', "sabab bo'lmoq", 'X causes Y'],
+    ['generalize', 'umumlashtirmoq', 'to all adults'],
+    ['treatment group', 'tajriba guruhi', 'drinks green tea'],
+    ['control group', 'nazorat guruhi', 'drinks water'],
+  ],
+  core: {
+    title: "Da'voni baholash: 4 qadam", en: 'Evaluating a claim',
+    steps: [
+      ['Tadqiqot turi', 'Tajriba (shart beriladi) yoki kuzatuv'],
+      ['Tasodifiy taqsimlash?', 'Ha ⇒ sabab-oqibat xulosasi mumkin'],
+      ['Tasodifiy tanlash?', "Ha ⇒ to'plamga umumlashtirish mumkin"],
+      ['Xulosani chekla', "Faqat ruxsat etilgan da'voni tanla"],
+    ],
+    note: "Kalit: random assignment — «cause»; random sample — «generalize». Bu ikki alohida shart!",
+  },
+  cases: {
+    title: 'Xulosa kuchi', en: 'Strength of conclusions',
+    intro: "Xulosa kuchi tasodifiylik qayerda ishlatilganiga bog'liq:",
+    items: [
+      { badge: '✓✓', t: 'Ikkalasi', en: 'random sample + assignment', rule: 'sabab + umumlashtirish', ex: 'tasodifiy tanlab, tasodifiy guruhlangan', res: 'eng kuchli xulosa' },
+      { badge: '✓', t: 'Faqat taqsimlash', en: 'random assignment only', rule: 'sabab — ishtirokchilarda', ex: "ko'ngillilar guruhlangan", res: "umumlashtirib bo'lmaydi" },
+      { badge: '✗', t: 'Kuzatuv', en: 'observational study', rule: "sabab yo'q", ex: "odamlar o'zi tanlagan", res: "faqat bog'lanish" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'sabab-oqibat', strat: 'random assignment bormi?',
+      q: 'Researchers randomly assigned 100 volunteers to drink either green tea or water daily. The tea group had lower blood pressure. Which conclusion is best supported?',
+      steps: [['\\text{tajriba}', 'shart berilgan'], ['\\text{random assignment: ha}', 'sabab mumkin'], ['\\text{random sample: yo\'q}', "ko'ngillilar"], ['\\text{sabab — faqat shu ishtirokchilarda}', 'javob']],
+      check: "Barcha odamlarga umumlashtirib bo'lmaydi — tanlanma tasodifiy emas.",
+    },
+    {
+      tag: 'kuzatuv tadqiqoti', strat: "odamlar o'zi tanlagan bo'lsa — sabab yo'q",
+      q: 'A survey of randomly selected adults found that those who exercise more report better sleep. Can we conclude that exercise causes better sleep?',
+      steps: [['\\text{random sample: ha}', "umumlashtirsa bo'ladi"], ['\\text{random assignment: yo\'q}', 'kuzatuv'], ['\\text{faqat bog\'lanish}', 'javob']],
+      check: "Xulosa: kattalar orasida mashq va yaxshi uyqu o'rtasida bog'lanish bor — sabab emas.",
+    },
+    {
+      tag: 'umumlashtirish chegarasi', strat: "tanlanma qaysi to'plamdan olingan?",
+      q: 'A random sample of 300 students from one high school showed that 40% use a study app. To which group can the result be generalized?',
+      steps: [['\\text{manba: bitta maktab}', 'tanlanma qayerdan'], ['\\text{random: ha}', "umumlashtirsa bo'ladi"], ['\\text{shu maktab o\'quvchilari}', 'javob']],
+      check: "Butun mamlakat o'quvchilariga emas!",
+    },
+  ],
+  trap: {
+    title: '«Cause» so\'zi',
+    q: '«causes», «leads to», «results in» …',
+    body: "…bu so'zlar bo'lsa, random assignment borligini tekshiring. Yo'q bo'lsa — variant noto'g'ri, hatto bog'lanish kuchli bo'lsa ham.",
+  },
+  tip: {
+    badge: '2?', short: 'ikki savol', title: 'Ikki savol qoidasi',
+    q: '1) Tasodifiy tanlanganmi? 2) Tasodifiy taqsimlanganmi?',
+    body: "1 — ha: umumlashtirish mumkin; 2 — ha: sabab haqida gapirish mumkin. Variantlarni shu ikki savol bilan saralang.",
+  },
+  mistakes: [
+    'Kuzatuv tadqiqotidan sabab-oqibat xulosa chiqarish.',
+    'Random assignment ni random sample bilan adashtirish.',
+    "Ko'ngillilar natijasini butun aholiga umumlashtirish.",
+    "Kuchli bog'lanishni sabab deb o'ylash.",
+  ],
+  practice: [
+    ["Ko'ngillilar tasodifiy 2 guruhga bo'lindi. Sabab haqida xulosa mumkinmi?", ''],
+    ["Tasodifiy tanlangan odamlar so'raldi, guruhlanmadi. Xulosa turi?", ''],
+    ['Faqat bitta shahar aholisi tasodifiy tanlandi. Umumlashtirish?', ''],
+    ["Odamlar dietani o'zlari tanladi. Tadqiqot turi?", ''],
+  ],
+  answers: ['ha, ishtirokchilar uchun', "bog'lanish, sabab emas", 'faqat shu shahar', 'kuzatuv'],
+  remember: [
+    'Random assignment ⇒ sabab-oqibat; random sample ⇒ umumlashtirish.',
+    "Kuzatuv tadqiqoti — faqat bog'lanish.",
+    "Xulosa faqat tanlanma olingan to'plamga tegishli.",
+  ],
+};

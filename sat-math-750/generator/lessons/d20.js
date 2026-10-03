@@ -1,0 +1,90 @@
+module.exports = {
+  n: 20,
+  short: 'Funksiya_yozuvi_va_siljishlar',
+  en: 'Function notation, composition and transformations',
+  video: '13 min',
+  moduleTest: 'Advanced Math modul testi (20 savol)',
+  hook: "$f(x+2)$, $f(x)-3$, $f(g(x))$ — bular yangi funksiya emas, eski funksiyaning siljigan yoki birlashgan ko'rinishi. Bugun ularni o'qishni o'rganamiz va Advanced Math modulini test bilan yakunlaymiz.",
+  goals: [
+    ['$f(x)$ yozuvi', "Qiymat hisoblash va ifodani qo'yish"],
+    ['Kompozitsiya', "$f(g(x))$ — ichkaridan tashqariga"],
+    ['Siljishlar', "$f(x-h)+k$: o'ngga $h$, yuqoriga $k$"],
+  ],
+  kw: [
+    ['function notation', 'funksiya yozuvi', '$f(3)=11$'],
+    ['composition', 'kompozitsiya', '$f(g(x))$'],
+    ['shift', 'siljitmoq', 'shifted 3 units right'],
+    ['translate', "parallel ko'chirmoq", 'translated up 4'],
+    ['reflect', 'aks ettirmoq', '$-f(x)$'],
+    ['input', 'kirish qiymati', '$x$'],
+    ['output', 'chiqish qiymati', '$f(x)$'],
+    ['vertical stretch', "vertikal cho'zish", '$2f(x)$'],
+  ],
+  core: {
+    title: 'Kompozitsiya: 4 qadam', en: 'Evaluating $f(g(x))$',
+    steps: [
+      ['Ichkini top', 'Avval $g(a)$ ni hisobla'],
+      ["Tashqiga qo'y", "Natijani $f$ ga qo'y"],
+      ["Ifoda bo'lsa", "$f(x+2)$: har bir $x$ o'rniga $(x+2)$"],
+      ['Tartib muhim', 'Odatda $f(g(x))\\ne g(f(x))$'],
+    ],
+    note: "Jadvaldan: $f(g(2))$ — avval jadvaldan $g(2)$ ni toping, so'ng shu son uchun $f$ ni.",
+  },
+  cases: {
+    title: 'Grafik siljishlari', en: 'Transformations',
+    intro: '$y=f(x)$ grafigiga nisbatan:',
+    items: [
+      { badge: '↔', t: 'Gorizontal', en: 'horizontal shift', rule: '$f(x-h)$', ex: '$f(x-3)$', res: "3 birlik o'ngga" },
+      { badge: '↕', t: 'Vertikal', en: 'vertical shift', rule: '$f(x)+k$', ex: '$f(x)-4$', res: '4 birlik pastga' },
+      { badge: '⇅', t: 'Aks', en: 'reflection', rule: '$-f(x)$', ex: '$y=-x^2$', res: "$x$ o'qiga nisbatan" },
+    ],
+  },
+  ex: [
+    {
+      tag: 'kompozitsiya', strat: 'ichkaridan tashqariga',
+      q: 'If $f(x)=2x+3$ and $g(x)=x^2-1$, what is the value of $f(g(3))$?',
+      steps: [['g(3)=9-1=8', 'ichki'], ['f(8)=2\\cdot 8+3', 'tashqi'], ['f(g(3))=19', 'javob']],
+      check: 'Teskari tartib: $g(f(3))=g(9)=80$ — butunlay boshqa son!',
+    },
+    {
+      tag: "ifodani qo'yish", strat: "$x$ o'rniga butun qavsni qo'ying",
+      q: 'If $f(x)=x^2-3x$, which expression is equivalent to $f(x+1)$?',
+      steps: [['(x+1)^2-3(x+1)', "qo'ydik"], ['x^2+2x+1-3x-3', 'ochdik'], ['x^2-x-2', 'javob']],
+      check: 'Tekshiruv: $x=1$: $f(2)=4-6=-2$ va $1-1-2=-2$ ✓',
+    },
+    {
+      tag: 'siljish', strat: "$f(x-h)+k$: $h$ o'ngga, $k$ yuqoriga",
+      q: 'The graph of $y=f(x)$ has its vertex at $(2,\\ 5)$. What is the vertex of the graph of $y=f(x+3)-4$?',
+      steps: [['x+3', '3 birlik chapga'], ['-4', '4 birlik pastga'], ['(2-3,\\ 5-4)', 'hisobladik'], ['(-1,\\ 1)', 'javob']],
+      check: "Tuzoq: $f(x+3)$ — chapga siljiydi, o'ngga emas!",
+    },
+  ],
+  trap: {
+    title: "$f(x+3)$ yo'nalishi",
+    q: '$f(x+3)$ grafigi qayerga siljiydi?',
+    body: "3 birlik CHAPGA. Ichkaridagi o'zgarish teskari ishlaydi: $f(x-3)$ — o'ngga. Tashqaridagi $+k$ esa to'g'ridan-to'g'ri: yuqoriga.",
+  },
+  tip: {
+    badge: 'D', short: 'Desmos', title: 'Desmos bilan siljitish',
+    q: '$f(x)=x^2$ va $f(x+3)-4$ ni yozing.',
+    body: "Desmos $f$ ni eslab qoladi — ikkala grafikni solishtiring. $f(x-h)+k$ yozib, $h$ va $k$ slider larini suring.",
+  },
+  mistakes: [
+    "$f(x+3)$ ni o'ngga siljish deb o'ylash.",
+    '$f(x+1)$ ni $f(x)+1$ deb hisoblash.',
+    'Kompozitsiyada tartibni almashtirish.',
+    "$f(2x)$ da $x$ o'rniga $2x$ emas, $x+2$ qo'yish.",
+  ],
+  practice: [
+    ['$f(x)=3x-1$, $g(x)=x+4$. $g(f(2))$ = ?', ''],
+    ['$f(x)=x^2$. $f(x-2)$ = ?', ''],
+    ['$y=f(x)$ uchi $(1,\\ -3)$. $y=f(x-4)+2$ uchi?', ''],
+    ['$h(x)=2x+5$. $h(h(0))$ = ?', ''],
+  ],
+  answers: ['9', '$x^2-4x+4$', '$(5,\\ -1)$', '15'],
+  remember: [
+    '$f(g(x))$: ichkaridan tashqariga; tartib muhim.',
+    "$f(x-h)+k$: $h$ o'ngga, $k$ yuqoriga; $f(x+h)$ — chapga.",
+    "$f(\\text{ifoda})$: har bir $x$ o'rniga ifodani qavs bilan qo'ying.",
+  ],
+};

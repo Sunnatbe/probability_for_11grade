@@ -1,0 +1,91 @@
+module.exports = {
+  n: 36,
+  short: 'Yakuniy_Mock3_va_tahlil',
+  en: 'Final mock test and score analysis',
+  video: '11 min',
+  now: 'Mock 3 (44 savol, 70 min)',
+  next: 'Kurs yakuni — natijalar tahlili va sertifikat',
+  hook: "Yakuniy dars! Bugun oxirgi to'liq mock testni ishlaysiz, natijani mavzular xaritasi bo'yicha tahlil qilasiz va kirish diagnostikasi bilan solishtirasiz.",
+  goals: [
+    ['Yakuniy mock', '44 savol, 70 min — real sharoitda'],
+    ['Score report', "Domen va ko'nikmalar bo'yicha tahlil"],
+    ['Imtihongacha reja', 'Oxirgi haftalar uchun takrorlash rejasi'],
+  ],
+  kw: [
+    ['score report', 'natijalar hisoboti', 'by domain and skill'],
+    ['domain', 'domen', 'Algebra, Advanced Math, …'],
+    ['skill', "ko'nikma", 'Linear functions'],
+    ['raw score', 'xom ball', "to'g'ri javoblar soni"],
+    ['scaled score', 'shkala bali', '200–800'],
+    ['accuracy', 'aniqlik', '19/22 ≈ 86%'],
+    ['improvement', "o'sish", '560 → 700'],
+    ['test day', 'imtihon kuni', 'Bluebook, ID'],
+  ],
+  core: {
+    title: 'Natija tahlili: 4 qadam', en: 'Analyzing your score',
+    steps: [
+      ["Domen bo'yicha", "Har bir domenda to'g'ri javoblar ulushi"],
+      ['Xato turi', "E'tiborsizlik, bilim yoki vaqt"],
+      ['Eng katta foyda', "Ulushi katta va xatosi ko'p domen"],
+      ['Reja', 'Har kuni 1 mavzu + 10 savol'],
+    ],
+    note: "Taqqoslang: diagnostika (1-dars) → Mock 1 → Mock 2 → Mock 3. O'sish dinamikasi — eng yaxshi motivatsiya.",
+  },
+  cases: {
+    title: 'Ustuvorlikni tanlash', en: 'Where to focus',
+    intro: 'Domen ulushi va sizning aniqligingizga qarab:',
+    items: [
+      { badge: '1', t: 'Avval', en: 'katta ulush, past aniqlik', rule: 'Algebra / Adv. < 80%', ex: '≈30 savol', res: "eng katta o'sish" },
+      { badge: '2', t: 'Keyin', en: 'kichik ulush, past aniqlik', rule: 'PSDA / Geom. < 80%', ex: '≈14 savol', res: 'tez yopiladi' },
+      { badge: '3', t: 'Saqlash', en: 'yuqori aniqlik', rule: '≥ 90%', ex: 'haftada 1 mashq', res: 'darajani ushlash' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'domen aniqligi', strat: "to'g'ri ÷ jami",
+      q: 'On a mock test, you answered 26 of 30 Algebra and Advanced Math questions and 9 of 14 PSDA and Geometry questions correctly. What is your accuracy in each group?',
+      steps: [['\\frac{26}{30}\\approx 0.867', 'Algebra + Adv.'], ['\\frac{9}{14}\\approx 0.643', 'PSDA + Geom.'], ['87\\%\\ \\text{va}\\ 64\\%', 'javob']],
+      check: 'Xulosa: PSDA va Geometriya — ustuvor; 5 ta xato aynan shu yerda.',
+    },
+    {
+      tag: "o'sishni o'lchash", strat: "foiz o'zgarish — eskiga bo'lish",
+      q: 'Your diagnostic score was 560 and your final mock score is 700. By what percent did your score increase?',
+      steps: [['700-560=140', 'farq'], ['\\frac{140}{560}=0.25', "eskiga bo'ldik"], ['25\\%', 'javob']],
+      check: "22-darsdagi foiz o'zgarish formulasi kursning o'zida ham ishlaydi!",
+    },
+    {
+      tag: 'kerakli natija', strat: "o'rtacha × soni = yig'indi",
+      q: 'Your three mock scores are 640, 680, and 700. What score do you need on a fourth test to have an average of 690?',
+      steps: [['690\\cdot 4=2760', "kerakli yig'indi"], ['640+680+700=2020', 'mavjud'], ['2760-2020=740', 'javob']],
+      check: "23-darsdagi «yig'indi usuli» ✓",
+    },
+  ],
+  trap: {
+    title: 'Faqat umumiy ballga qarash',
+    q: '«700 — yaxshi» deb to\'xtash…',
+    body: "Umumiy ball qayerda yo'qotayotganingizni ko'rsatmaydi. Har bir xato — keyingi 10 ballga yo'l.",
+  },
+  tip: {
+    badge: '✓', short: 'imtihon kuni', title: "Imtihon kuni ro'yxati",
+    q: "Bluebook o'rnatilgan, qurilma quvvatlangan, ID tayyor.",
+    body: "Oldingi kuni yangi mavzu o'qimang — faqat xatolar daftarini ko'ring. Yaxshi uyqu — eng yaxshi tayyorgarlik.",
+  },
+  mistakes: [
+    'Mock natijasini tahlilsiz qoldirish.',
+    'Faqat sevimli mavzularni takrorlash.',
+    'Imtihon oldidan kechasi ko\'p yangi mashq ishlash.',
+    'Real testda Desmos va vaqt strategiyasini unutish.',
+  ],
+  practice: [
+    ["22 savoldan 19 tasi to'g'ri. Aniqlik?", ''],
+    ["Ball 600 → 690. Foiz o'sish?", ''],
+    ["Domen: 7 savoldan 4 tasi to'g'ri. Ustuvormi?", ''],
+    ["3 ta mock o'rtachasi 650. Yig'indi?", ''],
+  ],
+  answers: ['≈86%', '15%', 'ha (≈57%)', '1950'],
+  remember: [
+    "Natijani domenlar bo'yicha tahlil qiling: ustuvor — katta ulush + past aniqlik.",
+    'Xatolar daftari — imtihon oldidan eng qimmatli material.',
+    "Imtihon kuni: Desmos, vaqt rejasi, hech bir savol bo'sh emas.",
+  ],
+};

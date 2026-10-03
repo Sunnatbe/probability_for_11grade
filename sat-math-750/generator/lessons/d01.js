@@ -1,0 +1,90 @@
+module.exports = {
+  n: 1,
+  short: 'Digital_SAT_va_diagnostika',
+  en: 'Digital SAT Math: test format and diagnostic test',
+  video: '12 min',
+  now: 'diagnostik test (22 savol)',
+  hook: "Bugun yangi mavzu emas, balki imtihonning o'zi bilan tanishamiz: u qanday tuzilgan, qaysi savollar keladi va diagnostik test orqali qayerdan boshlashingizni aniqlaymiz.",
+  goals: [
+    ['SAT tuzilmasi', '44 savol, 2 modul × 35 min, adaptiv 2-modul'],
+    ['Savol turlari', "Test (A–D) va javobni o'zi yozadigan (SPR) savollar"],
+    ['Shaxsiy reja', 'Diagnostika natijasidan zaif mavzularni topish'],
+  ],
+  kw: [
+    ['module', "modul, bo'lim", 'Module 1: 22 questions'],
+    ['adaptive', 'moslashuvchan', "2-modul 1-modulga bog'liq"],
+    ['Bluebook', 'rasmiy test ilovasi', 'Bluebook app'],
+    ['multiple choice', 'test savoli (A–D)', 'Choose A, B, C, or D.'],
+    ['student-produced response', 'javobni o\'zi yozadigan', 'Enter your answer.'],
+    ['domain', "bo'lim, soha", 'Algebra, Advanced Math, …'],
+    ['reference sheet', "formulalar varag'i", '$A=\\pi r^2$'],
+    ['score', 'ball', '200–800'],
+  ],
+  core: {
+    title: 'SAT Math tuzilmasi: 4 fakt', en: 'Test format',
+    steps: [
+      ['44 savol', '2 modul × 22 savol'],
+      ['70 minut', 'Har modul 35 min: savolga ≈1,5 min'],
+      ['Adaptiv', "2-modul qiyinligi 1-modul natijasiga bog'liq"],
+      ['Kalkulyator', 'Desmos butun test davomida ochiq'],
+    ],
+    note: "Muhim: noto'g'ri javob uchun ball ayirilmaydi — hech bir savolni bo'sh qoldirmang.",
+  },
+  cases: {
+    title: 'Ballar qayerdan keladi?', en: 'Content domains',
+    intro: "SAT Math 4 domendan iborat — kursimiz ham shu ulushlar bo'yicha tuzilgan:",
+    items: [
+      { badge: 'A', t: 'Algebra', en: 'Algebra', rule: '≈35% · ~15 savol', ex: 'chiziqli tenglama, sistema', res: 'M1 · 8 dars' },
+      { badge: 'AM', t: 'Advanced Math', en: "ilg'or algebra", rule: '≈35% · ~15 savol', ex: 'kvadrat, eksponent', res: 'M2 · 10 dars' },
+      { badge: 'P+G', t: 'PSDA + Geom.', en: 'data, geometry, trig', rule: '≈15% + 15%', ex: 'foiz, statistika, aylana', res: 'M3–M4 · 13 dars' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'Algebra savoli', strat: 'har qadamda bitta amal',
+      q: 'If $2x+3=11$, what is the value of $x$?',
+      steps: [['2x=8', "3 ni o'ngga o'tkazdik"], ['x=4', 'javob']],
+      check: 'Tekshiruv: $2\\cdot 4+3=11$ ✓',
+    },
+    {
+      tag: 'SPR savoli', strat: "matnni bo'laklarga ajrating, birlik yozmang",
+      q: 'A notebook costs \\$3 and a pen costs \\$1.50. What is the total cost, in dollars, of 4 notebooks and 2 pens?',
+      steps: [['4\\cdot 3=12', 'daftarlar'], ['2\\cdot 1.5=3', 'ruchkalar'], ['12+3=15', 'javob']],
+      check: 'Katakka faqat 15 yoziladi — «\\$» belgisi yozilmaydi.',
+    },
+    {
+      tag: 'Desmos bilan', strat: "grafik chizing, $x$ o'qini kesishini o'qing",
+      q: 'What is the positive solution to $x^2-2x-15=0$?',
+      steps: [['y=x^2-2x-15', "Desmos'ga yozdik"], ['x=-3,\\ x=5', "$x$ o'qini kesish nuqtalari"], ['x=5', 'javob (musbat)']],
+      check: 'Tekshiruv: $25-10-15=0$ ✓',
+    },
+  ],
+  trap: {
+    title: "«Positive» so'zi",
+    q: 'What is the positive solution to …?',
+    body: "Savol bitta ildizni so'raydi: $-3$ ni belgilash — xato. Savol oxiridagi shartlarni (positive, integer, in dollars) tagiga chizing.",
+  },
+  tip: {
+    badge: 'B', short: 'Bluebook', title: 'Bluebook imkoniyatlari',
+    q: "Mark for Review, Annotate, formulalar varag'i.",
+    body: "Qiyin savolni belgilab o'ting, oxirida qayting. Reference sheet da doira, uchburchak va hajm formulalari bor.",
+  },
+  mistakes: [
+    "Bitta qiyin savolga 4–5 minut sarflab, oxiridagi oson savollarga ulgurmaslik.",
+    'SPR javobiga birlik yoki belgi yozish (\\$, %, sm) — faqat son kiritiladi.',
+    "Javobni bilmasa bo'sh qoldirish — jarima yo'q, taxmin qiling.",
+    "Desmos'dan foydalanmaslik: grafik ko'p savolni 20 soniyada yechadi.",
+  ],
+  practice: [
+    ['SAT Math da nechta savol va qancha vaqt?', ''],
+    ['If $3x-5=10$, what is the value of $x$?', ''],
+    ['$x^2=49$ ning musbat yechimi', 'SPR'],
+    ['1-modulda 22 dan 18 ta to\'g\'ri. 2-modul qanday?', ''],
+  ],
+  answers: ['44 savol, 70 min', '$x=5$', '7', 'qiyinroq modul'],
+  remember: [
+    '44 savol = 2 modul × 22; har modul 35 min; savolga ≈1,5 min.',
+    "Jarima yo'q — har bir savolga javob bering; SPR ga faqat son yozing.",
+    'Diagnostika natijasi — shaxsiy reja: zaif domenlardan boshlang.',
+  ],
+};

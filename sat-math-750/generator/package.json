@@ -1,0 +1,13 @@
+{
+  "name": "sat-math-750-darslar",
+  "version": "1.0.0",
+  "description": "Kholmurodov Academy SAT Math 750+: dars taqdimotlari (PPTX) va konspektlari (PDF) generatori",
+  "scripts": {
+    "build": "node build_all.js"
+  },
+  "dependencies": {
+    "katex": "^0.19.0",
+    "pptxgenjs": "^4.0.1"
+  },
+  "private": true
+}

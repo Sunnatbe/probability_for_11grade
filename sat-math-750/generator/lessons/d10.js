@@ -1,0 +1,90 @@
+module.exports = {
+  n: 10,
+  short: 'Chiziqli_tengsizliklar',
+  en: 'Linear inequalities in one or two variables',
+  video: '13 min',
+  moduleTest: 'Algebra modul testi (20 savol)',
+  hook: "Tengsizliklar «at most», «at least», «no more than» kabi so'zlar bilan keladi. Bugun ularni belgiga o'girish va yechimlar sohasini o'qishni o'rganamiz — va Algebra modulini test bilan yakunlaymiz.",
+  goals: [
+    ["So'z → belgi", 'at most ≤, at least ≥, more than >'],
+    ['Yechish', "Manfiy songa bo'lsangiz — belgi aylanadi"],
+    ['Yechimlar sohasi', "Ikki o'zgaruvchili tengsizlik va nuqta tekshirish"],
+  ],
+  kw: [
+    ['inequality', 'tengsizlik', '$2x+3<11$'],
+    ['at most', "ko'pi bilan", '$x\\le 50$'],
+    ['at least', 'kamida', '$x\\ge 18$'],
+    ['no more than', '… dan oshmaydi', '$\\le$'],
+    ['fewer than', '… dan kam', '$<$'],
+    ['maximum', "eng ko'p", 'maximum number of boxes'],
+    ['minimum', 'eng kam', 'minimum number of hours'],
+    ['region', 'soha', 'the shaded region'],
+  ],
+  core: {
+    title: 'Tengsizlikni yechish: 4 qadam', en: 'Solving inequalities',
+    steps: [
+      ["So'zni belgiga o'gir", 'at most ≤, at least ≥, fewer than <'],
+      ['Tenglamadek yech', "Qavs, o'tkazish, o'xshash hadlar"],
+      ["Manfiyga bo'lish", 'Belgi aylanadi: $-2x<6\\Rightarrow x>-3$'],
+      ['Kontekstga moslash', 'Butun son kerakmi? Eng katta yoki kichik?'],
+    ],
+    note: "Maksimum so'ralsa: yechimni topib, shartga mos eng katta butun sonni oling — yuqoriga yaxlitlamang!",
+  },
+  cases: {
+    title: "Belgilar lug'ati", en: 'Words to symbols',
+    intro: 'Inglizcha iboralar va ularning belgilari — chegara son kiradimi?',
+    items: [
+      { badge: '≤', t: 'At most', en: 'no more than', rule: '$x\\le 50$', ex: 'at most 50 kg', res: '50 ham mumkin' },
+      { badge: '≥', t: 'At least', en: 'no less than', rule: '$x\\ge 18$', ex: 'at least 18 years', res: '18 ham mumkin' },
+      { badge: '<', t: 'Less than', en: 'fewer than', rule: '$x<10$', ex: 'fewer than 10', res: '10 mumkin emas' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'maksimal son', strat: 'tengsizlik tuzing, yeching, pastga yaxlitlang',
+      q: 'An elevator can carry at most 1,200 kg. A worker weighing 80 kg rides with boxes that weigh 35 kg each. What is the maximum number of boxes?',
+      steps: [['80+35b\\le 1200', 'model'], ['35b\\le 1120', "80 ni o'ngga"], ['b\\le 32', "35 ga bo'ldik"], ['b=32', 'javob']],
+      check: '$80+35\\cdot 32=1200\\le 1200$ ✓; 33 ta quti — 1235 kg ✗',
+    },
+    {
+      tag: 'manfiy koeffitsiyent', strat: "manfiy songa bo'lganda belgini aylantiring",
+      q: 'Which of the following describes all solutions to $7-3x\\ge 19$?',
+      steps: [['-3x\\ge 12', "7 ni o'ngga"], ['\\frac{-3x}{-3}\\le\\frac{12}{-3}', 'belgi aylandi!'], ['x\\le -4', 'javob']],
+      check: 'Tekshiruv: $x=-5$: $7+15=22\\ge 19$ ✓',
+    },
+    {
+      tag: "ikki o'zgaruvchi", strat: "nuqtani qo'yib tekshiring",
+      q: 'Which point $(x,\\ y)$ is a solution to $y>2x-3$? A) $(2,\\ 0)$ B) $(3,\\ 3)$ C) $(1,\\ 0)$ D) $(4,\\ 4)$',
+      steps: [['A:\\ 0>1', '✗'], ['B:\\ 3>3', "✗ (qat'iy)"], ['C:\\ 0>-1', '✓'], ['\\text{C) } (1,\\ 0)', 'javob']],
+      check: 'D) $(4,\\ 4)$: $4>5$ ✗ — demak faqat C.',
+    },
+  ],
+  trap: {
+    title: "Qat'iy va qat'iy emas",
+    q: '«fewer than 10» va «at most 10»',
+    body: "Birinchisi $x<10$ (10 kirmaydi), ikkinchisi $x\\le 10$ (10 kiradi). Chegaradagi nuqta — eng ko'p xato qilinadigan joy.",
+  },
+  tip: {
+    badge: 'D', short: 'Desmos', title: 'Desmos: soha grafigi',
+    q: "$y>2x-3$ ni yozing — soha bo'yaladi.",
+    body: "Punktir chiziq — qat'iy ($<$, $>$), uzluksiz — qat'iy emas ($\\le$, $\\ge$). Nuqtani qo'shib, bo'yalgan sohada ekanini ko'ring.",
+  },
+  mistakes: [
+    "Manfiy songa ko'paytirish yoki bo'lishda belgini aylantirmaslik.",
+    '«At least» ni $>$ deb yozish (to\'g\'risi $\\ge$).',
+    'Maksimal sonni yuqoriga yaxlitlash: $b\\le 32.5\\Rightarrow 33$ ✗.',
+    "Chegaradagi nuqtani qat'iy tengsizlikda yechim deb hisoblash.",
+  ],
+  practice: [
+    ['$5x-4<3x+8$', ''],
+    ['$-2(x-1)\\ge 10$', ''],
+    ['\\$25 budget: \\$4 per notebook plus one \\$3 pen. Max notebooks?', ''],
+    ['Does $(0,\\ 0)$ satisfy $y\\le -x+2$?', ''],
+  ],
+  answers: ['$x<6$', '$x\\le -4$', '5 ta', 'ha: $0\\le 2$'],
+  remember: [
+    'at most / no more than — $\\le$; at least — $\\ge$; fewer / more than — $<$, $>$.',
+    "Manfiy songa ko'paytirish yoki bo'lish — belgi aylanadi.",
+    "Maksimum — pastga, minimum — yuqoriga yaxlitlang; nuqtani qo'yib tekshiring.",
+  ],
+};

@@ -1,0 +1,90 @@
+module.exports = {
+  n: 34,
+  short: 'Vaqt_va_xatolar_Mock1',
+  en: 'Time management and error analysis',
+  video: '12 min',
+  now: 'Mock 1 (44 savol, 70 min)',
+  hook: "Bilim — natijaning yarmi, ikkinchi yarmi — strategiya. Bugun 70 daqiqani qanday taqsimlash, qaysi savolni o'tkazib yuborish va xatolarni qanday tahlil qilishni o'rganamiz. Keyin birinchi to'liq mock test.",
+  goals: [
+    ['Vaqt rejasi', 'Savolga ≈1,5 min, nazorat nuqtalari'],
+    ["Belgilab o'tish", 'Flag & skip — qiyin savolga keyin qaytish'],
+    ['Xatolar daftari', 'Har bir xatoning sababini yozish'],
+  ],
+  kw: [
+    ['skip', "o'tkazib yubormoq", 'skip and come back'],
+    ['mark for review', 'belgilab qo\'ymoq', 'flag icon'],
+    ['review', "qayta ko'rib chiqmoq", 'Review page'],
+    ['time management', 'vaqtni boshqarish', '≈1.5 min per question'],
+    ['pacing', "sur'at", '11 questions in 17 min'],
+    ['careless error', "e'tiborsizlik xatosi", 'sign error'],
+    ['concept gap', "bilim bo'shlig'i", 'forgot the formula'],
+    ['guess', 'taxmin qilmoq', 'no penalty for guessing'],
+  ],
+  core: {
+    title: 'Modul uchun vaqt rejasi', en: 'Pacing plan (35 min)',
+    steps: [
+      ["1-o'tish: 25 min", 'Oson va o\'rta savollar; qiyinini belgila'],
+      ['Nazorat: 11-savol', '≈17-minutda 11-savolda bo\'ling'],
+      ["2-o'tish: 7 min", 'Belgilangan savollarga qayt'],
+      ['Oxirgi 3 min', "Bo'sh qolmasin — taxmin qil"],
+    ],
+    note: "Qoida: savolga 2 minutdan ko'p ketsa — belgilang, taxminiy javob bering va davom eting.",
+  },
+  cases: {
+    title: 'Xato turlari', en: 'Error log categories',
+    intro: 'Har bir xatoni uch turdan biriga ajrating — tuzatish usuli har xil:',
+    items: [
+      { badge: '!', t: "E'tiborsizlik", en: 'careless error', rule: "ishora, o'qish", ex: "«value of $2x$» ni o'tkazib yuborish", res: 'savolni tagiga chizish' },
+      { badge: '?', t: "Bilim bo'shlig'i", en: 'concept gap', rule: 'qoidani bilmaslik', ex: 'diskriminant esdan chiqqan', res: 'darsni takrorlash' },
+      { badge: 'T', t: 'Vaqt', en: 'time pressure', rule: 'ulgurmaslik', ex: "oxirgi 5 savol bo'sh", res: 'tempni mashq qilish' },
+    ],
+  },
+  ex: [
+    {
+      tag: 'vaqtni hisoblash', strat: '35 min ÷ 22 savol',
+      q: 'You have 35 minutes for 22 questions. If you spend 2.5 minutes on each of the first 8 questions, how much time per question is left for the remaining 14?',
+      steps: [['8\\cdot 2.5=20', 'sarflandi (min)'], ['35-20=15', 'qoldi (min)'], ['\\frac{15}{14}\\approx 1.07\\ \\text{min}', 'javob']],
+      check: "Xulosa: boshida sekinlashish oxiridagi oson savollarni xavf ostiga qo'yadi.",
+    },
+    {
+      tag: 'xatoni tahlil qilish', strat: "nima so'ralgan — oxirgi gapni qayta o'qing",
+      q: 'If $3x-6=21$, what is the value of $x-2$?',
+      steps: [['3(x-2)=21', "3 ni qavsdan chiqardik"], ['x-2=7', "3 ga bo'ldik"], ['7', 'javob']],
+      check: "Xato javob 9 ($x$ ning qiymati) — e'tiborsizlik xatosi. Daftarga: «so'ralgan ifodani tagiga chiz».",
+    },
+    {
+      tag: 'variantlarni sinash', strat: 'shartlarni bittalab tekshiring',
+      q: 'If $x^2<10$ and $x>2$, which could be the value of $x$? A) 1 B) 2.5 C) 3.5 D) 4',
+      steps: [['x>2', 'A tushib qoldi'], ['3.5^2=12.25>10', 'C tushib qoldi'], ['4^2=16>10', 'D tushib qoldi'], ['\\text{B) } 2.5', 'javob']],
+      check: "Tekshiruv: $2.5^2=6.25<10$ ✓ — variantlarni sinash ko'pincha tezroq.",
+    },
+  ],
+  trap: {
+    title: '«Yopishib qolish» tuzog\'i',
+    q: 'Bitta savolga 5 minut…',
+    body: "…bu 3–4 ta oson savolning vaqti. Barcha savollar bir xil ball beradi: belgilang va keyinroq qayting.",
+  },
+  tip: {
+    badge: 'B', short: 'Bluebook', title: 'Bluebook: Mark for Review',
+    q: 'Savol ustidagi bayroqcha belgisi.',
+    body: "Modul oxirida Review sahifasida belgilangan va javobsiz savollar ko'rinadi — to'g'ridan-to'g'ri o'shalarga o'ting.",
+  },
+  mistakes: [
+    'Birinchi savollarda shoshilib, oson savollarda xato qilish.',
+    'Belgilangan savolga qaytishni unutish.',
+    "Javobsiz savol qoldirish (jarima yo'q!).",
+    "Mock dan keyin xatolarni tahlil qilmaslik — eng katta yo'qotish.",
+  ],
+  practice: [
+    ['35 min, 22 savol: 11-savolgacha qancha vaqt?', ''],
+    ["Xato: $-(x-4)=-x-4$. Xato turi?", ''],
+    ['Variantlar 3, 5, 7, 9. Qaysi biri $x^2-8x+15=0$ ning ildizi?', ''],
+    ["Mock: 44 savol, 70 min. Savolga o'rtacha?", ''],
+  ],
+  answers: ['≈17.5 min', "e'tiborsizlik", '3 (yoki 5)', '≈1.6 min'],
+  remember: [
+    "Savolga ≈1,5 min; 2 minutdan oshsa — belgilab o'ting.",
+    "Hech bir savolni bo'sh qoldirmang — jarima yo'q.",
+    "Har bir xatoni daftarga yozing: e'tiborsizlik, bilim yoki vaqt.",
+  ],
+};
