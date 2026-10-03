@@ -1,0 +1,28 @@
+{
+  "name": "general-english-dars01-motion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "General English A2→B1 — 1-dars motion grafikalari (ENG-01-P1…P6), Remotion",
+  "scripts": {
+    "start": "remotion studio",
+    "render:p1": "remotion render ENG-01-P1 out/ENG-01-P1_Intro.mp4",
+    "render:p2": "remotion render ENG-01-P2 out/ENG-01-P2_4-konikma.mp4",
+    "render:p3": "remotion render ENG-01-P3 out/ENG-01-P3_1-misol.mp4",
+    "render:p4": "remotion render ENG-01-P4 out/ENG-01-P4_3-holat.mp4",
+    "render:p5": "remotion render ENG-01-P5 out/ENG-01-P5_Tuzoq.mp4",
+    "render:p6": "remotion render ENG-01-P6 out/ENG-01-P6_Xulosa.mp4",
+    "render:all": "npm run render:p1 && npm run render:p2 && npm run render:p3 && npm run render:p4 && npm run render:p5 && npm run render:p6",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@remotion/cli": "4.0.532",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "typescript": "^5.9.3"
+  }
+}
