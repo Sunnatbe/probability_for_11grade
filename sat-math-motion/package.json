@@ -1,0 +1,26 @@
+{
+  "name": "sat-math-dars01-motion",
+  "version": "1.0.0",
+  "description": "Remotion clips for SAT Math lesson 1 (Digital SAT va diagnostika)",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "./render.sh",
+    "still": "remotion still src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "^4.0.532",
+    "@remotion/google-fonts": "4.0.532",
+    "@remotion/layout-utils": "4.0.532",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.0",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  },
+  "private": true
+}
