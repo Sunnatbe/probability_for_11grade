@@ -6,6 +6,7 @@ const { execFileSync } = require('child_process');
 const { meta, loadLesson } = require('./lib/common');
 const pdf = require('./build_pdf');
 const ppt = require('./build_ppt');
+const script = require('./build_script');
 
 const MODULE_DIR = {
   M0: 'M0_Kirish',
@@ -28,6 +29,7 @@ function readme(lessons) {
     "  • DarsNN_<mavzu>.pptx — 11 slayd, 16:9, emojilar bilan; har bir slayd ostida video uchun spiker matni (Notes) va vaqt belgilari.",
     "    Slaydlar: muqova · Bu darsda · Inglizcha kalit so'zlar · Asosiy qoidalar · 1-misol · 2-misol · 3 holat ·",
     "    3-misol · Tuzoq va maslahat · O'zingiz sinab ko'ring · Xulosa (javoblar va keyingi dars).",
+    "  • DarsNN_ssenariy.pdf — video ssenariysi: 11 sahna, har birida vaqt, slayd, ekranda nima, ko'rsatma va gapiriladigan to'liq matn.",
     "  • DarsNN_konspekt.pdf — A4, 2 sahifa: kalit so'zlar jadvali, qoidalar, yechilgan mashqlar, tuzoqlar, mini-mashq, «Eslab qoling».",
     "Eslatma: Listening darslarida audio yo'q — tinglash matnlari (transcript) berilgan, audioni o'qituvchi yozib oladi.",
     '',
@@ -58,6 +60,7 @@ async function main() {
     fs.mkdirSync(dir, { recursive: true });
     await ppt.build([L.n], dir);
     await pdf.build([L.n], dir);
+    await script.build([L.n], dir);
   }
   fs.writeFileSync(path.join(root, '00_Mundarija.txt'), '﻿' + readme(lessons));
 

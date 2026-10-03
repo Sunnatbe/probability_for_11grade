@@ -3,6 +3,7 @@
 - `General_English_kurs_tuzilmasi.xlsx` — kurs rejasi (6 modul, 36 dars), `make_xlsx.py` orqali yaratilgan.
 - `General_English_darslar.zip` — 36 ta dars uchun materiallar:
   - `DarsNN_<mavzu>.pptx` — 11 slayd, emojilar bilan; har bir slaydda video uchun spiker matni (Notes);
+  - `DarsNN_ssenariy.pdf` — 4 sahifali video ssenariysi (11 sahna: vaqt, slayd, ekranda, ko'rsatma, gapiriladigan matn);
   - `DarsNN_konspekt.pdf` — 2 sahifali A4 konspekt.
 - `namuna/` — tasdiqlangan namuna (3-dars, Present Simple).
 

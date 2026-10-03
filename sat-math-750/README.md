@@ -4,6 +4,7 @@
 («SAT_Math_kurs_tuzilmasi.xlsx» → «Darslar» varag'i bo'yicha, 6 modul):
 
 - `DarsNN_<mavzu>.pptx` — 11 slaydli taqdimot (16:9), har bir slaydda video uchun spiker matni (Notes);
+- `DarsNN_ssenariy.pdf` — 4 sahifali video ssenariysi (11 sahna: vaqt, slayd, ekranda, ko'rsatma, gapiriladigan matn);
 - `DarsNN_konspekt.pdf` — 2 sahifali A4 konspekt (inglizcha kalit so'zlar, algoritm, yechilgan misollar, tuzoqlar, mini-mashq).
 
 Dizayn 3-dars namunasi (`Dars03_Chiziqli_tenglamalar.pptx`, `Dars03_konspekt.pdf`) asosida.
