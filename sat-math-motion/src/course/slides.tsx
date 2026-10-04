@@ -340,6 +340,10 @@ export const ExampleSlide: React.FC<SlideProps> = (p) => {
   const hl = prog(frame, sec(ansAt), sec(0.5));
   // Long answer choices get two columns instead of four.
   const wide = (s.choices ?? []).some((c) => c.replace(/\\[a-z]+|[{}$]/g, '').length > 20);
+  // Dense slides (long question + long choices + several steps) get smaller type.
+  const plainLen = (t: string) => t.replace(/\\[a-z]+|[{}$^_]/g, '').length;
+  const density = plainLen(s.question) + (s.choices ?? []).reduce((n, c) => n + plainLen(c), 0) * 0.7 + s.steps.length * 45;
+  const compact = density > 330;
   return (
     <Frame {...p} kicker={s.kicker} title={s.title ?? 'Misol'}>
       <div style={{position: 'absolute', left: 120, right: 120, top: 230, display: 'flex', flexDirection: 'column', gap: 26}}>
@@ -354,7 +358,7 @@ export const ExampleSlide: React.FC<SlideProps> = (p) => {
             }}
           >
             <Pill style={{fontSize: 22}}>{s.label ?? 'SAT SAVOLI'}</Pill>
-            <div style={{fontSize: 40, fontWeight: 500, marginTop: 16, lineHeight: 1.35}}>
+            <div style={{fontSize: compact ? 34 : 40, fontWeight: 500, marginTop: 16, lineHeight: 1.35}}>
               <Tx>{s.question}</Tx>
             </div>
             {s.choices ? (
@@ -369,8 +373,8 @@ export const ExampleSlide: React.FC<SlideProps> = (p) => {
                         alignItems: 'center',
                         gap: 14,
                         borderRadius: 14,
-                        padding: '10px 16px',
-                        fontSize: 32,
+                        padding: compact ? '6px 14px' : '10px 16px',
+                        fontSize: compact ? 27 : 32,
                         border: `3px solid ${sel ? interpolateColor(hl) : 'rgba(199,204,245,0.25)'}`,
                         background: sel ? `rgba(34,197,94,${0.18 * hl})` : 'transparent',
                       }}
@@ -386,12 +390,12 @@ export const ExampleSlide: React.FC<SlideProps> = (p) => {
         </Reveal>
 
         <div style={{display: 'flex', gap: 40, alignItems: 'flex-start'}}>
-          <div style={{flex: 1, display: 'flex', flexDirection: 'column', gap: 14}}>
+          <div style={{flex: 1, display: 'flex', flexDirection: 'column', gap: compact ? 8 : 14}}>
             {s.steps.map((st, i) => (
               <Reveal key={i} at={B(i + 1)} dx={-40} dy={0}>
                 <div style={{display: 'flex', alignItems: 'center', gap: 22}}>
                   <NumDot n={i + 1} size={46} color={C.indigo} />
-                  <MathBlock tex={st.m} style={{fontSize: 46, color: C.white}} />
+                  <MathBlock tex={st.m} style={{fontSize: compact ? 36 : 46, color: C.white}} />
                   {st.note ? (
                     <div style={{fontSize: 28, color: C.lavender, fontWeight: 500, marginLeft: 10}}>
                       <Tx>{st.note}</Tx>

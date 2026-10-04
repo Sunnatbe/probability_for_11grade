@@ -139,8 +139,8 @@ const lesson: Lesson = {
       question: r`100 volunteers were randomly assigned to take either a new vitamin or a placebo. The vitamin group had significantly fewer colds. Which conclusion is appropriate?`,
       choices: [r`The vitamin reduces colds for all people in the country`, r`The vitamin is likely to reduce colds for people similar to the volunteers`, r`There is no relationship between the vitamin and colds`, r`Volunteers who take vitamins are healthier in general`],
       steps: [
-        {m: r`\text{tasodifiy taqsimlash}\ \checkmark\Rightarrow\text{sabab-oqibat}`},
-        {m: r`\text{ko'ngillilar — tasodifiy tanlanma emas}\Rightarrow\text{umumlashtirish cheklangan}`},
+        {m: r`\text{taqsimlash tasodifiy}\Rightarrow\text{sabab}`},
+        {m: r`\text{tanlanma tasodifiy emas}\Rightarrow\text{umumlashtirish cheklangan}`},
       ],
       answer: r`B`,
       say: [
