@@ -17,5 +17,8 @@ import d16 from './d16';
 import d17 from './d17';
 import d18 from './d18';
 import d19 from './d19';
+import d20 from './d20';
+import d21 from './d21';
+import d22 from './d22';
 
-export const LESSONS: Lesson[] = [d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19];
+export const LESSONS: Lesson[] = [d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22];
