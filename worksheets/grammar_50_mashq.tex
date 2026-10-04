@@ -1,0 +1,282 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=1.8cm,top=1.6cm,bottom=1.8cm]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{array}
+
+\definecolor{navy}{HTML}{1B1F3B}
+\definecolor{indigo}{HTML}{4F46E5}
+\definecolor{amber}{HTML}{F59E0B}
+\definecolor{lav}{HTML}{EEF0FD}
+\definecolor{easy}{HTML}{16A34A}
+\definecolor{mid}{HTML}{2563EB}
+\definecolor{hard}{HTML}{D97706}
+\definecolor{expert}{HTML}{DC2626}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\small\color{gray}General English · A1--A2 · Grammar practice}
+\fancyfoot[R]{\small\color{gray}\thepage}
+
+\setlength{\parindent}{0pt}
+\usepackage{ragged2e}
+\AtBeginDocument{\RaggedRight}
+\setlength{\columnsep}{14pt}
+\setlist[enumerate]{itemsep=5pt,topsep=4pt}
+
+% answer blank
+\newcommand{\bl}[1][2.2cm]{\underline{\hspace{#1}}}
+% exercise instruction
+\newcommand{\task}[1]{\par\smallskip{\color{navy}\bfseries #1}\par\smallskip}
+
+\newcommand{\level}[3]{%
+  \par\medskip
+  \begin{tcolorbox}[colback=#1,colframe=#1,coltext=white,arc=3mm,boxrule=0pt,
+    left=8pt,right=8pt,top=5pt,bottom=5pt]
+    {\large\bfseries #2}\hfill{\bfseries #3}
+  \end{tcolorbox}}
+
+\begin{document}
+
+%================ HEADER =================
+\begin{tcolorbox}[colback=navy,colframe=navy,coltext=white,arc=4mm,boxrule=0pt,
+  left=12pt,right=12pt,top=10pt,bottom=10pt]
+  {\small\color{amber}\bfseries GENERAL ENGLISH · GRAMMAR PRACTICE}\par\smallskip
+  {\LARGE\bfseries a/an · Plurals · Personal pronouns · to be}\par\smallskip
+  {\normalsize 50 ta mashq — osondan qiyinga}
+\end{tcolorbox}
+
+\smallskip
+Ism-familiya: \bl[6.5cm] \hfill Sana: \bl[3cm] \hfill Ball: \bl[1.5cm]\,/\,50
+
+%================ RULES =================
+\begin{tcolorbox}[colback=lav,colframe=indigo,arc=3mm,boxrule=0.8pt,
+  title={\bfseries Qisqa qoidalar},coltitle=white,colbacktitle=indigo,
+  left=6pt,right=6pt,top=4pt,bottom=4pt]
+\small
+\begin{multicols}{2}
+\textbf{a / an}\\
+\textbf{a} — undosh \emph{tovush} oldidan: a book, a \textbf{u}niversity /ju:/\\
+\textbf{an} — unli \emph{tovush} oldidan: an apple, an \textbf{h}our /au/
+
+\smallskip
+\textbf{Plurals (ko'plik)}\\
++s: pen $\to$ pens \quad +es (s, x, sh, ch, o): box $\to$ boxes\\
+undosh+y $\to$ ies: baby $\to$ babies \quad f/fe $\to$ ves: knife $\to$ knives\\
+Noto'g'ri: man$\to$men, child$\to$children, mouse$\to$mice, person$\to$people, sheep$\to$sheep
+
+\columnbreak
+\textbf{Personal pronouns}\\
+\begin{tabular}{@{}ll@{\qquad}ll@{}}
+I & me & we & us\\
+you & you & you & you\\
+he / she / it & him / her / it & they & them
+\end{tabular}\\
+(1-ustun — ega, 2-ustun — to'ldiruvchi)
+
+\smallskip
+\textbf{to be (Present)}\\
+I \textbf{am} \quad he/she/it \textbf{is} \quad we/you/they \textbf{are}\\
+Inkor: I'm not, isn't, aren't \quad So'roq: \textbf{Is} he...? \textbf{Are} you...?
+\end{multicols}
+\end{tcolorbox}
+
+%================ LEVEL 1 =================
+\level{easy}{1-bosqich · Oson}{1--15}
+
+\task{A. \emph{a} yoki \emph{an} qo'ying.}
+\begin{multicols}{4}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \bl[1.2cm] apple
+  \item \bl[1.2cm] book
+  \item \bl[1.2cm] egg
+  \item \bl[1.2cm] cat
+\end{enumerate}
+\end{multicols}
+
+\task{B. Ko'plik shaklini yozing.}
+\begin{multicols}{3}
+\begin{enumerate}[label=\textbf{\arabic*.},start=5]
+  \item one pen $\to$ two \bl[1.3cm]
+  \item one bus $\to$ three \bl[1.3cm]
+  \item one box $\to$ many \bl[1.3cm]
+\end{enumerate}
+\end{multicols}
+
+\task{C. To'g'ri olmoshni yozing: \emph{he, she, it}.}
+\begin{enumerate}[label=\textbf{\arabic*.},start=8]
+  \item Ali is my brother. \bl[1.6cm] is ten.
+  \item Malika is a student. \bl[1.6cm] is from Bukhara.
+  \item This is my phone. \bl[1.6cm] is new.
+\end{enumerate}
+
+\task{D. \emph{am, is} yoki \emph{are} qo'ying.}
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\arabic*.},start=11]
+  \item I \bl[1.6cm] a teacher.
+  \item She \bl[1.6cm] happy.
+  \item They \bl[1.6cm] at school.
+  \item We \bl[1.6cm] friends.
+  \item It \bl[1.6cm] cold today.
+\end{enumerate}
+\end{multicols}
+
+%================ LEVEL 2 =================
+\level{mid}{2-bosqich · O'rta}{16--30}
+
+\task{E. \emph{a} yoki \emph{an}? Harfga emas, \emph{tovushga} qarang!}
+\begin{multicols}{4}
+\begin{enumerate}[label=\textbf{\arabic*.},start=16]
+  \item \bl[1.2cm] umbrella
+  \item \bl[1.2cm] university
+  \item \bl[1.2cm] hour
+  \item \bl[1.2cm] uniform
+\end{enumerate}
+\end{multicols}
+
+\task{F. Ko'plik shaklini yozing.}
+\begin{multicols}{4}
+\begin{enumerate}[label=\textbf{\arabic*.},start=20]
+  \item baby $\to$ \bl[1.3cm]
+  \item knife $\to$ \bl[1.3cm]
+  \item tomato $\to$ \bl[1.3cm]
+  \item day $\to$ \bl[1.3cm]
+\end{enumerate}
+\end{multicols}
+
+\task{G. To'g'ri variantni aylana ichiga oling.}
+\begin{enumerate}[label=\textbf{\arabic*.},start=24]
+  \item Please help \textbf{(I / me)}.
+  \item \textbf{(We / Us)} are hungry.
+  \item Look at \textbf{(they / them)}!
+\end{enumerate}
+
+\task{H. \emph{to be} ning inkor yoki so'roq shaklini yozing.}
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\arabic*.},start=27]
+  \item He \bl[2cm] (not) at home.
+  \item \bl[1.6cm] you tired?
+  \item I \bl[2cm] (not) late.
+  \item \bl[1.6cm] your parents doctors?
+\end{enumerate}
+\end{multicols}
+
+%================ LEVEL 3 =================
+\level{hard}{3-bosqich · Qiyin}{31--42}
+
+\task{I. Noto'g'ri (irregular) ko'plik shakllarini yozing.}
+\begin{multicols}{5}
+\begin{enumerate}[label=\textbf{\arabic*.},start=31]
+  \item man \\ \bl[1.8cm]
+  \item child \\ \bl[1.8cm]
+  \item mouse \\ \bl[1.8cm]
+  \item sheep \\ \bl[1.8cm]
+  \item person \\ \bl[1.8cm]
+\end{enumerate}
+\end{multicols}
+
+\task{J. \emph{a} yoki \emph{an} qo'ying (sifatga e'tibor bering).}
+\begin{enumerate}[label=\textbf{\arabic*.},start=36]
+  \item She is \bl[1.2cm] honest girl.
+  \item It is \bl[1.2cm] European car.
+  \item He is \bl[1.2cm] engineer, and his wife is \bl[1.2cm] doctor.
+\end{enumerate}
+
+\task{K. Ajratilgan so'zlarni olmosh bilan almashtirib, gapni qayta yozing.}
+\begin{enumerate}[label=\textbf{\arabic*.},start=39]
+  \item \underline{Aziz and I} are in the park. \\ $\to$ \bl[9cm]
+  \item \underline{The children} love \underline{the dog}. \\ $\to$ \bl[9cm]
+\end{enumerate}
+
+\task{L. \emph{is} yoki \emph{are}?}
+\begin{enumerate}[label=\textbf{\arabic*.},start=41]
+  \item My sister and her friend \bl[1.6cm] in the library.
+  \item Everybody \bl[1.6cm] ready for the test.
+\end{enumerate}
+
+%================ LEVEL 4 =================
+\level{expert}{4-bosqich · Juda qiyin (aralash)}{43--50}
+
+\task{M. Xatoni toping va gapni to'g'ri yozing.}
+\begin{enumerate}[label=\textbf{\arabic*.},start=43,itemsep=9pt]
+  \item She are a nurse. \\ $\to$ \bl[10cm]
+  \item I have two childs. \\ $\to$ \bl[10cm]
+  \item He is a honest man. \\ $\to$ \bl[10cm]
+  \item Me and Aziz is students. \\ $\to$ \bl[10cm]
+  \item There are three womans and a umbrella in the room. \\ $\to$ \bl[10cm]
+\end{enumerate}
+
+\task{N. Ingliz tiliga tarjima qiling.}
+\begin{enumerate}[label=\textbf{\arabic*.},start=48,itemsep=9pt]
+  \item Ular o'qituvchilar. Ular maktabda. \\ $\to$ \bl[10cm]
+  \item Men talaba emasman. Men muhandisman. \\ $\to$ \bl[10cm]
+\end{enumerate}
+
+\task{O. Matnni to'ldiring (6 ta bo'sh joy — hammasi to'g'ri bo'lsa, 1 ball).}
+\begin{enumerate}[label=\textbf{\arabic*.},start=50]
+  \item My name \bl[1.4cm] Dilnoza. I have \bl[1.4cm] uncle. \bl[1.4cm] is \bl[1.4cm] pilot.
+  His \bl[2cm] (child) \bl[1.4cm] very funny.
+\end{enumerate}
+
+%================ ANSWER KEY =================
+\newpage
+\begin{tcolorbox}[colback=navy,colframe=navy,coltext=white,arc=4mm,boxrule=0pt,
+  left=12pt,right=12pt,top=8pt,bottom=8pt]
+  {\Large\bfseries Javoblar kaliti}\hfill{\color{amber}\bfseries o'qituvchi uchun}
+\end{tcolorbox}
+
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{multicols}{2}
+\textbf{\color{easy}1-bosqich (1--15)}\\
+\mbox{1. an} \quad \mbox{2. a} \quad \mbox{3. an} \quad \mbox{4. a}\\
+\mbox{5. pens} \quad \mbox{6. buses} \quad \mbox{7. boxes}\\
+\mbox{8. He} \quad \mbox{9. She} \quad \mbox{10. It}\\
+\mbox{11. am} \quad \mbox{12. is} \quad \mbox{13. are} \quad \mbox{14. are} \quad \mbox{15. is}
+
+\medskip
+\textbf{\color{mid}2-bosqich (16--30)}\\
+\mbox{16. an} \quad \mbox{17. a \emph{(/ju:/)}} \quad \mbox{18. an \emph{(h o'qilmaydi)}} \quad \mbox{19. a \emph{(/ju:/)}}\\
+\mbox{20. babies} \quad \mbox{21. knives} \quad \mbox{22. tomatoes} \quad \mbox{23. days \emph{(unli+y $\to$ +s)}}\\
+\mbox{24. me} \quad \mbox{25. We} \quad \mbox{26. them}\\
+\mbox{27. isn't / is not} \quad \mbox{28. Are} \quad \mbox{29. am not / 'm not} \quad \mbox{30. Are}
+
+\medskip
+\textbf{\color{hard}3-bosqich (31--42)}\\
+\mbox{31. men} \quad \mbox{32. children} \quad \mbox{33. mice} \quad \mbox{34. sheep} \quad \mbox{35. people}\\
+\mbox{36. an \emph{(h o'qilmaydi)}} \quad \mbox{37. a \emph{(/ju:/)}} \quad \mbox{38. an, a}\\
+39. We are in the park.\\
+40. They love it.\\
+\mbox{41. are \emph{(ikki kishi)}} \quad \mbox{42. is \emph{(everybody — birlik)}}
+
+\columnbreak
+\textbf{\color{expert}4-bosqich (43--50)}\\
+43. She \textbf{is} a nurse.\\
+44. I have two \textbf{children}.\\
+45. He is \textbf{an} honest man.\\
+46. \textbf{Aziz and I are} students.\\
+47. There are three \textbf{women} and \textbf{an} umbrella in the room.\\
+48. They are teachers. They are at school.\\
+49. I am not a student. I am an engineer.\\
+\emph{(I'm not a student. I'm an engineer.)}\\
+50. is, an, He, a, children, are
+
+\medskip
+\textbf{Baholash}\\
+\begin{tabular}{@{}ll@{}}
+45--50 & A'lo — keyingi mavzuga o'ting\\
+35--44 & Yaxshi — xatolarni qayta ko'ring\\
+25--34 & O'rta — qoidalarni takrorlang\\
+0--24 & Qoidalarni qaytadan o'rganing
+\end{tabular}
+\end{multicols}
+
+\end{document}
