@@ -39,12 +39,24 @@ export const Reveal: React.FC<{
 export const SlideFrame: React.FC<{
   n: number;
   kicker: string;
-  title: string;
+  title: React.ReactNode;
   duration: number; // frames
   fadeIn?: boolean;
   fadeOut?: boolean;
+  footer?: string;
+  total?: number;
   children: React.ReactNode;
-}> = ({n, kicker, title, duration, fadeIn = true, fadeOut = true, children}) => {
+}> = ({
+  n,
+  kicker,
+  title,
+  duration,
+  fadeIn = true,
+  fadeOut = true,
+  footer = 'Kholmurodov Academy · SAT Math · Dars 1',
+  total = TOTAL_SLIDES,
+  children,
+}) => {
   const frame = useCurrentFrame();
   const inP = fadeIn ? prog(frame, 0, 12) : 1;
   const outP = fadeOut ? 1 - prog(frame, duration - 10, 10) : 1;
@@ -83,9 +95,9 @@ export const SlideFrame: React.FC<{
             color: 'rgba(199,204,245,0.55)',
           }}
         >
-          <span>Kholmurodov Academy · SAT Math · Dars 1</span>
+          <span>{footer}</span>
           <span>
-            {n} / {TOTAL_SLIDES}
+            {n} / {total}
           </span>
         </div>
       </AbsoluteFill>

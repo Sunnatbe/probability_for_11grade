@@ -8,6 +8,10 @@ import {P4Compare} from './scenes/P4Compare';
 import {P5Trap} from './scenes/P5Trap';
 import {P6Outro} from './scenes/P6Outro';
 import {Lesson01, LESSON01_SECONDS} from './lesson/Lesson01';
+import {CourseLesson} from './course/CourseLesson';
+import {LESSONS} from './course/lessons';
+import {buildTimeline} from './course/timing';
+import {nextLabel} from './course/catalog';
 
 /** Holds every frame until the bundled fonts are loaded. */
 const withFonts =
@@ -32,8 +36,19 @@ const SCENES = [
   {id: 'SAT-01-Dars-toliq', component: withFonts(Lesson01), seconds: LESSON01_SECONDS},
 ];
 
+const pad = (n: number) => n.toString().padStart(2, '0');
+
+const courseComps = LESSONS.map((lesson) => {
+  const next = nextLabel(lesson.n);
+  const Comp: React.FC = () => <CourseLesson lesson={lesson} next={next} />;
+  return {id: `SAT-Dars${pad(lesson.n)}`, component: withFonts(Comp), frames: Math.round(buildTimeline(lesson).total * FPS)};
+});
+
 export const RemotionRoot: React.FC = () => (
   <>
+    {courseComps.map(({id, component, frames}) => (
+      <Composition key={id} id={id} component={component} durationInFrames={frames} fps={FPS} width={W} height={H} />
+    ))}
     {SCENES.map(({id, component, seconds}) => (
       <Composition
         key={id}

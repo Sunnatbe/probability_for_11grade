@@ -1,4 +1,3 @@
-import './fonts/fonts.css';
 
 export const FONT = "'Inter', 'DejaVu Sans', sans-serif";
 export const MATH_FONT = "'Source Serif 4', 'DejaVu Serif', serif";
@@ -13,6 +12,11 @@ const FACES = [
   'italic 400 1em Inter',
   '400 1em "Source Serif 4"',
   'italic 400 1em "Source Serif 4"',
+  '400 1em KaTeX_Main',
+  '700 1em KaTeX_Main',
+  'italic 400 1em KaTeX_Math',
+  '400 1em KaTeX_Size1',
+  '400 1em KaTeX_Size2',
 ];
 export const waitForFonts = () =>
   Promise.all(
