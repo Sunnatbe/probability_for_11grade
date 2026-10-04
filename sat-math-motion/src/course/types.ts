@@ -30,6 +30,7 @@ export type GraphItem =
   | {kind: 'point'; x: number; y: number; label?: string; color?: string; note?: string}
   | {kind: 'circle'; h: number; k: number; r: number; color?: string; label?: string; note?: string}
   | {kind: 'segment'; from: [number, number]; to: [number, number]; color?: string; dashed?: boolean; label?: string; note?: string}
+  | {kind: 'region'; f: (x: number) => number; above: boolean; dashed?: boolean; color?: string; label?: string; note?: string}
   | {kind: 'note'; note: string};
 
 export type Slide =

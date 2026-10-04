@@ -338,6 +338,8 @@ export const ExampleSlide: React.FC<SlideProps> = (p) => {
   const ansAt = B(s.steps.length + 1);
   const chosen = s.choices ? 'ABCD'.indexOf(s.answer.trim()[0]) : -1;
   const hl = prog(frame, sec(ansAt), sec(0.5));
+  // Long answer choices get two columns instead of four.
+  const wide = (s.choices ?? []).some((c) => c.replace(/\\[a-z]+|[{}$]/g, '').length > 20);
   return (
     <Frame {...p} kicker={s.kicker} title={s.title ?? 'Misol'}>
       <div style={{position: 'absolute', left: 120, right: 120, top: 230, display: 'flex', flexDirection: 'column', gap: 26}}>
@@ -356,7 +358,7 @@ export const ExampleSlide: React.FC<SlideProps> = (p) => {
               <Tx>{s.question}</Tx>
             </div>
             {s.choices ? (
-              <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginTop: 20}}>
+              <div style={{display: 'grid', gridTemplateColumns: `repeat(${wide ? 2 : 4}, 1fr)`, gap: 14, marginTop: 18}}>
                 {s.choices.map((c, i) => {
                   const sel = i === chosen;
                   return (
@@ -592,7 +594,8 @@ export const GraphSlide: React.FC<SlideProps> = (p) => {
   const [y0, y1] = s.y;
   const X = (x: number) => ((x - x0) / (x1 - x0)) * GW;
   const Y = (y: number) => GH - ((y - y0) / (y1 - y0)) * GH;
-  const step = (span: number) => (span <= 12 ? 1 : span <= 24 ? 2 : span <= 60 ? 5 : 10);
+  // Pick a "nice" grid step giving at most ~12 grid lines.
+  const step = (span: number) => [0.5, 1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000].find((st) => span / st <= 12) ?? 1000;
   const xs = step(x1 - x0);
   const ys = step(y1 - y0);
   const ticksX: number[] = [];
@@ -625,6 +628,32 @@ export const GraphSlide: React.FC<SlideProps> = (p) => {
       return (
         <g key={i}>
           <path d={pts.join(' ')} fill="none" stroke={color} strokeWidth={6} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - pr} />
+        </g>
+      );
+    }
+    if (it.kind === 'region') {
+      const N = 160;
+      const pts: string[] = [];
+      for (let k = 0; k <= N; k++) {
+        const x = x0 + ((x1 - x0) * k) / N;
+        const y = Math.max(y0 - 1, Math.min(y1 + 1, it.f(x)));
+        pts.push(`${k ? 'L' : 'M'}${X(x).toFixed(1)} ${Y(y).toFixed(1)}`);
+      }
+      const edge = it.above ? -10 : GH + 10;
+      const area = `${pts.join(' ')} L${GW + 10} ${edge} L-10 ${edge} Z`;
+      const fo = prog(frame, at + 10, sec(0.8));
+      return (
+        <g key={i}>
+          <path d={area} fill={color} opacity={0.22 * fo} />
+          <path
+            d={pts.join(' ')}
+            fill="none"
+            stroke={color}
+            strokeWidth={5}
+            strokeDasharray={it.dashed ? '16 12' : undefined}
+            opacity={pr > 0 ? 1 : 0}
+            style={{clipPath: `inset(0 ${(1 - pr) * 100}% 0 0)`}}
+          />
         </g>
       );
     }
@@ -681,8 +710,8 @@ export const GraphSlide: React.FC<SlideProps> = (p) => {
     if (it.kind === 'point') {
       lx = X(it.x) + 18;
       ly = Y(it.y) - 52;
-    } else if (it.kind === 'fn') {
-      const [a, z] = it.domain ?? [x0, x1];
+    } else if (it.kind === 'fn' || it.kind === 'region') {
+      const [a, z] = it.kind === 'fn' && it.domain ? it.domain : [x0, x1];
       // place near the right end where the curve is still inside the plot
       let xl = z;
       for (let k = 0; k <= 60; k++) {

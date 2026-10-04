@@ -19,7 +19,7 @@ x = 4 yoki x = −3 (−3 ✗) → «Savol bitta ildizni so'raydi: −3 ni belgi
 
 `out/SAT-01-Dars01-toliq-12min.mp4` — 11 slayddan iborat 12:09 lik to'liq video (kompozitsiya `SAT-01-Dars-toliq`).
 Yuqoridagi 6 ta klip ssenariydagi joylariga qo'yilgan, oralig'ida esa dars matni bo'yicha slaydlar bor.
-Ovoz matni va vaqt belgilari: [`SAT_Math_Dars01_ovoz_ssenariy.md`](SAT_Math_Dars01_ovoz_ssenariy.md).
+Ovoz matni va vaqt belgilari: [`lesson01/Dars01_ovoz_ssenariy.md`](lesson01/Dars01_ovoz_ssenariy.md).
 Slaydlarning vaqti `src/lesson/Lesson01.tsx` dagi `PARTS` ro'yxatida, slaydlar `src/lesson/slides.tsx` da.
 
 ## Ishlatish
