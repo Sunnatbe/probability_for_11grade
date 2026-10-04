@@ -591,7 +591,14 @@ export const GraphSlide: React.FC<SlideProps> = (p) => {
   const B = b(p.t);
   const frame = useCurrentFrame();
   const [x0, x1] = s.x;
-  const [y0, y1] = s.y;
+  let [y0, y1] = s.y;
+  // Circles need equal units on both axes: stretch the y-range to the plot's aspect ratio.
+  if (s.items.some((it) => it.kind === 'circle')) {
+    const mid = (y0 + y1) / 2;
+    const half = ((x1 - x0) * GH) / GW / 2;
+    y0 = mid - half;
+    y1 = mid + half;
+  }
   const X = (x: number) => ((x - x0) / (x1 - x0)) * GW;
   const Y = (y: number) => GH - ((y - y0) / (y1 - y0)) * GH;
   // Pick a "nice" grid step giving at most ~12 grid lines.

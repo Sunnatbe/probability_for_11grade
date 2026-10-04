@@ -22,9 +22,10 @@ export const Tx: React.FC<{children: string; style?: React.CSSProperties}> = ({c
           return <span key={i} dangerouslySetInnerHTML={{__html: tex(p.slice(1, -1), false)}} />;
         }
         if (p.startsWith('**') && p.endsWith('**')) {
+          // Bold text may itself contain inline math.
           return (
             <b key={i} style={{fontWeight: 800}}>
-              {p.slice(2, -2)}
+              <Tx>{p.slice(2, -2)}</Tx>
             </b>
           );
         }
