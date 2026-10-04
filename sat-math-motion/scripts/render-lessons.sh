@@ -4,6 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export REMOTION_BROWSER="${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell}"
+npx tsx scripts/check.tsx >/dev/null || { npx tsx scripts/check.tsx; exit 1; }
 BUNDLE=out/.bundle
 npx remotion bundle src/index.ts --out-dir "$BUNDLE" --log=error >/dev/null
 for n in "$@"; do

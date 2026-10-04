@@ -166,3 +166,56 @@ export const SideNotes: React.FC<{items: {text: string; at: number}[]; left?: nu
     ))}
   </div>
 );
+
+/** Animated bar chart. `at` per bar in seconds. */
+export const BarChart: React.FC<{
+  data: {label: string; value: number; at: number; color?: string}[];
+  max: number;
+  step: number;
+  unit?: string;
+  left?: number;
+  top?: number;
+  width?: number;
+  height?: number;
+}> = ({data, max, step, unit = '', left = 150, top = 250, width = 880, height = 640}) => {
+  const frame = useCurrentFrame();
+  const gap = 28;
+  const bw = (width - gap * (data.length + 1)) / data.length;
+  const ticks: number[] = [];
+  for (let v = 0; v <= max; v += step) ticks.push(v);
+  return (
+    <div style={{position: 'absolute', left, top, width, height}}>
+      <svg width={width} height={height} style={{position: 'absolute', overflow: 'visible'}}>
+        <rect width={width} height={height} rx={18} fill="rgba(42,48,96,0.55)" />
+        {ticks.map((v) => {
+          const y = height - 60 - ((height - 100) * v) / max;
+          return (
+            <g key={v}>
+              <line x1={0} x2={width} y1={y} y2={y} stroke="rgba(199,204,245,0.1)" strokeWidth={2} />
+              <text x={-12} y={y + 8} fill={C.lavender} fontSize={22} textAnchor="end" fontFamily="Inter">
+                {v}
+              </text>
+            </g>
+          );
+        })}
+        {data.map((d, i) => {
+          const p = prog(frame, sec(d.at), sec(0.8), Easing.out(Easing.cubic));
+          const h = ((height - 100) * d.value * p) / max;
+          const x = gap + i * (bw + gap);
+          return (
+            <g key={d.label}>
+              <rect x={x} y={height - 60 - h} width={bw} height={h} rx={8} fill={d.color ?? C.indigoLight} />
+              <text x={x + bw / 2} y={height - 24} fill={C.lavender} fontSize={24} textAnchor="middle" fontFamily="Inter" fontWeight={600}>
+                {d.label}
+              </text>
+              <text x={x + bw / 2} y={height - 72 - h} fill={C.white} fontSize={26} textAnchor="middle" fontFamily="Inter" fontWeight={800} opacity={p}>
+                {d.value}
+                {unit}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+};

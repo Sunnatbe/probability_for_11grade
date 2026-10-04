@@ -657,6 +657,16 @@ export const GraphSlide: React.FC<SlideProps> = (p) => {
         </g>
       );
     }
+    if (it.kind === 'points') {
+      return (
+        <g key={i}>
+          {it.pts.map(([px, py], k) => {
+            const sc = prog(frame, at + k * 3, 10, Easing.out(Easing.back(2)));
+            return <circle key={k} cx={X(px)} cy={Y(py)} r={10 * sc} fill={color} stroke={C.navy} strokeWidth={3} />;
+          })}
+        </g>
+      );
+    }
     if (it.kind === 'point') {
       const sc = prog(frame, at, 12, Easing.out(Easing.back(2)));
       return (
