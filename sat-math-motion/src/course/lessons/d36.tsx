@@ -1,0 +1,225 @@
+import {meta} from '../catalog';
+import type {Lesson} from '../types';
+
+const r = String.raw;
+
+const lesson: Lesson = {
+  ...meta(36),
+  topics: ['Mock test', 'Xato jurnali', 'Domen tahlili', 'Oxirgi hafta', 'Imtihon kuni'],
+  cover: [
+    r`Assalomu alaykum! O'ttiz oltinchi — yakuniy darsga xush kelibsiz. Mavzu — mock test tahlili va imtihon kuni rejasi.`,
+    r`Mock testni to'g'ri topshirish va tahlil qilishni, xato jurnalini yuritishni, natijadan shaxsiy reja tuzishni, oxirgi haftani va imtihon kunini qanday o'tkazishni o'rganamiz.`,
+  ],
+  goals: [
+    r`Mock testni real sharoitda topshirish`,
+    r`Xato jurnali yuritish va xatolarni tasniflash`,
+    r`Domen natijalaridan haftalik reja tuzish`,
+    r`Imtihon kuni uchun aniq tekshiruv ro'yxati`,
+  ],
+  goalsSay: [
+    r`Darsning maqsadlari.`,
+    r`Birinchi: mock testni haqiqiy imtihon sharoitida topshirish.`,
+    r`Ikkinchi: xato jurnali yuritish va har bir xatoni turiga qarab tasniflash.`,
+    r`Uchinchi: domenlar bo'yicha natijadan aniq haftalik tayyorgarlik rejasi tuzish.`,
+    r`To'rtinchi: oxirgi hafta va imtihon kuni uchun tekshiruv ro'yxati.`,
+    r`Ball mock testlar sonidan emas, ularning tahlilidan oshadi.`,
+  ],
+  goalsResult: r`imtihonga aniq reja va xotirjamlik bilan kirish`,
+  slides: [
+    {
+      type: 'cards',
+      kicker: 'MOCK TEST',
+      title: 'Mock testni qanday topshirish kerak',
+      cards: [
+        {title: 'Rasmiy testlar', text: r`Bluebook ilovasidagi College Board amaliy testlari — eng aniq`, icon: 'laptop'},
+        {title: 'Real sharoit', text: r`Taymer, Desmos, tanaffus — xuddi imtihondagidek`, icon: 'timer'},
+        {title: 'Telefon yo\'q', text: r`Bir o'tirishda, chalg'imasdan`, icon: 'target'},
+        {title: 'Belgilang', text: r`Taxmin qilgan savollarni ham belgilab qo'ying — ularni ham tahlil qilasiz`, icon: 'flag'},
+      ],
+      say: [
+        r`Mock testni qanday topshirish kerak?`,
+        r`Bluebook ilovasidagi College Board rasmiy amaliy testlaridan foydalaning — ular haqiqiy imtihonga eng yaqin.`,
+        r`Haqiqiy sharoit yarating: taymer, Desmos, tanaffus — hammasi imtihondagidek.`,
+        r`Telefonni chetga qo'ying va testni bir o'tirishda, chalg'imasdan topshiring.`,
+        r`Taxmin qilib javob bergan savollaringizni belgilab qo'ying — to'g'ri chiqqan bo'lsa ham, ularni tahlil qilish kerak.`,
+      ],
+    },
+    {
+      type: 'compare',
+      kicker: 'XATO TURLARI',
+      title: 'Har bir xatoni tasniflang',
+      cards: [
+        {title: 'Bilim', rule: r`Mavzuni bilmadim`, example: r`Darsni qayta ko'ring + 10 ta savol`},
+        {title: 'Diqqat', rule: r`Bilardim, lekin xato o'qidim/hisobladim`, example: r`Savol oxirini o'qish, tekshirish odati`},
+        {title: 'Vaqt', rule: r`Vaqt yetmadi yoki shoshildim`, example: r`2 daqiqa qoidasi, tezkor usullar`},
+      ],
+      banner: r`Diqqat xatolari — eng "arzon" ballar: ularni tuzatish eng tez natija beradi`,
+      say: [
+        r`Har bir xatoni uch turdan biriga ajrating.`,
+        r`Bilim xatosi — mavzuni bilmadingiz. Davosi: tegishli darsni qayta ko'rish va o'nta savol yechish.`,
+        r`Diqqat xatosi — bilardingiz, lekin savolni noto'g'ri o'qidingiz yoki hisobda adashdingiz. Davosi: savol oxirini o'qish va tekshirish odati.`,
+        r`Vaqt xatosi — vaqt yetmadi yoki shoshildingiz. Davosi: ikki daqiqa qoidasi va tezkor usullar.`,
+        r`Diqqat xatolari — eng arzon ballar: ularni tuzatish eng tez natija beradi.`,
+      ],
+    },
+    {
+      type: 'table',
+      kicker: 'XATO JURNALI',
+      title: 'Xato jurnali namunasi',
+      head: ['Savol', 'Domen', 'Xato turi', "To'g'ri usul"],
+      rows: [
+        [r`M1-14`, r`Advanced`, r`Bilim`, r`Diskriminant: $D=0$ — 1 yechim`],
+        [r`M2-9`, r`Algebra`, r`Diqqat`, r`$x$ emas, $x+2$ so'ralgan`],
+        [r`M2-18`, r`Geometriya`, r`Vaqt`, r`To'liq kvadrat, keyin $r$`],
+        [r`M2-21`, r`PSDA`, r`Bilim`, r`Shartli ehtimollik — maxraj`],
+      ],
+      banner: r`Bir haftadan keyin jurnaldagi savollarni **qayta** yeching — to'g'ri chiqqanini o'chiring`,
+      say: [
+        r`Xato jurnali — bu sizning eng qimmatli o'quv materialingiz. Har bir xato uchun to'rt ustun: savol raqami, domen, xato turi va to'g'ri usul.`,
+        r`Birinchi modulning o'n to'rtinchi savoli: Advanced Math, bilim xatosi — diskriminant nol bo'lsa, bitta yechim.`,
+        r`Ikkinchi modulning to'qqizinchi savoli: Algebra, diqqat xatosi — x emas, x plyus ikki so'ralgan edi.`,
+        r`O'n sakkizinchi savol: geometriya, vaqt — aylana tenglamasida to'liq kvadratga keltirish kerak edi.`,
+        r`Yigirma birinchi: PSDA, bilim — shartli ehtimollikda maxraj.`,
+        r`Bir haftadan keyin jurnaldagi savollarni qayta yeching. To'g'ri chiqsa — o'chiring, xato bo'lsa — yana qoldiring.`,
+      ],
+    },
+    {
+      type: 'table',
+      kicker: 'DOMEN TAHLILI',
+      title: 'Natijadan rejaga',
+      head: ['Domen', 'Natija', 'Foiz', 'Ustuvorlik'],
+      rows: [
+        [r`Algebra`, r`$13/15$`, r`$87\%$`, r`ushlab turish`],
+        [r`Advanced Math`, r`$10/15$`, r`$67\%$`, r`**1-o'rin**`],
+        [r`PSDA`, r`$6/7$`, r`$86\%$`, r`ushlab turish`],
+        [r`Geometriya`, r`$4/7$`, r`$57\%$`, r`**2-o'rin**`],
+      ],
+      banner: r`Eng ko'p ball yo'qotilgan va eng katta domen — birinchi navbatda: bu yerda Advanced Math`,
+      say: [
+        r`Mock test natijasidan reja tuzish. Domenlar bo'yicha to'g'ri javoblarni sanaymiz.`,
+        r`Algebra: o'n beshdan o'n uch — sakson yetti foiz. Yaxshi, faqat ushlab turish kerak.`,
+        r`Advanced Math: o'n beshdan o'n — oltmish yetti foiz. Bu domen katta va besh ball yo'qotilgan — birinchi o'rin.`,
+        r`PSDA: yettidan olti — yaxshi.`,
+        r`Geometriya: yettidan to'rt — foiz bo'yicha eng past, lekin domen kichikroq — ikkinchi o'rin.`,
+        r`Qoida: eng ko'p ball yo'qotilgan katta domendan boshlang. Bu misolda — Advanced Math darslarini qayta ko'rish va har kuni o'sha mavzular bo'yicha savollar.`,
+      ],
+    },
+    {
+      type: 'cards',
+      kicker: 'HAFTALIK SIKL',
+      title: 'Haftalik tayyorgarlik sikli',
+      cards: [
+        {title: '1-kun', text: r`To'liq mock test (real sharoitda)`},
+        {title: '2–3-kun', text: r`Chuqur tahlil: har bir xato va taxmin — jurnalga`},
+        {title: '4–6-kun', text: r`Zaif domen: dars + 15–20 savol kuniga`},
+        {title: '7-kun', text: r`Jurnaldagi savollarni qayta yechish, dam olish`},
+      ],
+      say: [
+        r`Imtihongacha haftalik sikl.`,
+        r`Birinchi kun — to'liq mock test, real sharoitda.`,
+        r`Ikkinchi va uchinchi kun — chuqur tahlil: har bir xato va taxmin qilingan savol jurnalga yoziladi.`,
+        r`To'rtinchidan oltinchi kungacha — zaif domen: tegishli darsni qayta ko'rish va kuniga o'n beshdan yigirmatagacha savol.`,
+        r`Yettinchi kun — jurnaldagi savollarni qayta yechish va dam olish.`,
+      ],
+    },
+    {
+      type: 'trap',
+      title: "Ko'p test, kam tahlil",
+      question: r`Aziz har kuni yangi mock test topshiradi, lekin natijalarini ko'rib chiqmaydi. Uning bali uch haftadan beri 680 da turibdi. Nima o'zgartirish kerak?`,
+      wrong: r`Yanada ko'proq test`,
+      why: r`Tahlilsiz test — bir xil xatolarni takrorlash. Ball xatolarni tuzatishdan oshadi, test sonidan emas.`,
+      right: r`Haftada **1 ta** test + **chuqur tahlil** + zaif domen ustida ishlash. Xato jurnali — majburiy.`,
+      say: [
+        r`Tuzoq — bu safar strategik. Aziz har kuni yangi mock test topshiradi, lekin natijalarini ko'rib chiqmaydi. Bali uch haftadan beri olti yuz saksonda. Nima o'zgartirish kerak?`,
+        r`"Yanada ko'proq test" — noto'g'ri javob. Tahlilsiz test faqat bir xil xatolarni takrorlaydi.`,
+        r`To'g'risi: haftada bitta test, chuqur tahlil va zaif domen ustida maqsadli ish. Xato jurnali majburiy.`,
+      ],
+    },
+    {
+      type: 'cards',
+      kicker: 'OXIRGI HAFTA',
+      title: 'Imtihondan oldingi hafta',
+      cards: [
+        {title: 'Yangi mavzu yo\'q', text: r`Faqat takrorlash va xato jurnali`},
+        {title: '1–2 ta mock', text: r`Imtihon vaqtida — ertalab, aynan shu soatda`},
+        {title: 'Bluebook', text: r`Ilovani yangilang, qurilmani tekshiring, oldindan "check-in"`},
+        {title: 'Uyqu', text: r`Oxirgi 3 kecha — kamida 8 soat uyqu`},
+      ],
+      say: [
+        r`Imtihondan oldingi hafta.`,
+        r`Yangi mavzu o'rganmang — faqat takrorlash va xato jurnali.`,
+        r`Bir yoki ikki mock test topshiring — imtihon vaqtida, ya'ni ertalab, aynan o'sha soatlarda. Miyangiz shu vaqtga moslashadi.`,
+        r`Bluebook ilovasini yangilang, qurilmangizni tekshiring va imkon bo'lsa oldindan ro'yxatdan o'ting.`,
+        r`Oxirgi uch kechada kamida sakkiz soat uxlang. Uyqu — eng arzon ball manbai.`,
+      ],
+    },
+    {
+      type: 'cards',
+      kicker: 'IMTIHON KUNI',
+      title: 'Imtihon kuni tekshiruv ro\'yxati',
+      cards: [
+        {title: 'Hujjatlar', text: r`Admission ticket va shaxsni tasdiqlovchi hujjat (ID)`, icon: 'book'},
+        {title: 'Qurilma', text: r`To'liq zaryadlangan, Bluebook yangilangan; zaryadlovchi`, icon: 'laptop'},
+        {title: 'Kalkulyator', text: r`Ruxsat etilgan kalkulyator (ixtiyoriy) — Desmos ilovada bor`, icon: 'calc'},
+        {title: 'Tanaffus uchun', text: r`Suv va yengil gazak; vaqtdan oldin yetib boring`, icon: 'clock'},
+      ],
+      say: [
+        r`Imtihon kuni tekshiruv ro'yxati.`,
+        r`Hujjatlar: admission ticket va shaxsni tasdiqlovchi hujjat.`,
+        r`Qurilma: to'liq zaryadlangan, Bluebook yangilangan, zaryadlovchi ham yoningizda.`,
+        r`Kalkulyator — ixtiyoriy, chunki Desmos ilova ichida bor. Lekin o'zingiznikini olsangiz, ruxsat etilganiga ishonch hosil qiling.`,
+        r`Tanaffus uchun suv va yengil gazak. Va imtihon joyiga vaqtdan oldin yetib boring.`,
+      ],
+    },
+    {
+      type: 'cards',
+      kicker: 'TEST DAVOMIDA',
+      title: 'Test davomida eslab qoling',
+      cards: [
+        {title: '1-modul', text: r`Shoshilmang — oddiy xatolar 2-modul qiyinligini kamaytiradi`},
+        {title: 'Belgilang va o\'ting', text: r`Bitta savolga 2 daqiqadan ko'p emas`},
+        {title: 'Desmos bilan tekshiring', text: r`Ayniqsa tenglama va sistema javoblarini`},
+        {title: "Bo'sh qoldirmang", text: r`Oxirgi daqiqada hamma bo'sh savollarni belgilang`},
+      ],
+      say: [
+        r`Test davomida to'rtta qoida.`,
+        r`Birinchi modulda shoshilmang: oddiy xatolar ikkinchi modulni osonroq qiladi va maksimal ballni cheklaydi.`,
+        r`Bitta savolga ikki daqiqadan ko'p sarflamang — belgilang va o'ting.`,
+        r`Vaqtingiz qolsa, Desmos bilan javoblarni tekshiring.`,
+        r`Va hech qachon bo'sh savol qoldirmang.`,
+      ],
+    },
+    {
+      type: 'cards',
+      kicker: 'YAKUN',
+      title: 'Kurs yakuni',
+      cards: [
+        {title: '36 dars', text: r`Format, Algebra, Advanced Math, PSDA, Geometriya va strategiya`, icon: 'check'},
+        {title: 'Asosiy qurollar', text: r`Desmos, son qo'yish, variantdan yechish, tuzilma`, icon: 'bolt'},
+        {title: 'Maqsad', text: r`750+ — tizimli tahlil va izchil mashq bilan`, icon: 'target'},
+      ],
+      say: [
+        r`Va nihoyat, kursimiz yakuniga yetdi.`,
+        r`O'ttiz olti dars davomida test formatini, Algebra, Advanced Math, PSDA, Geometriya domenlarini va strategiyani o'rgandik.`,
+        r`Sizda endi asosiy qurollar bor: Desmos, son qo'yish, variantdan yechish va tuzilmani ko'rish.`,
+        r`Yetti yuz ellik plyus — tizimli tahlil va izchil mashq bilan erishiladigan natija. Sizga ishonaman!`,
+      ],
+    },
+  ],
+  recap: [
+    r`Mock test — real sharoitda; xatolarni jurnalga yozing`,
+    r`Xato turi: bilim / diqqat / vaqt; eng zaif katta domendan boshlang`,
+    r`Oxirgi hafta — takrorlash, uyqu; imtihon kuni — ro'yxat bo'yicha`,
+  ],
+  homework: r`xato jurnalini boshlang va haftalik siklni rejalashtiring`,
+  recapSay: [
+    r`Yakuniy xulosa.`,
+    r`Mock testni real sharoitda topshiring va har bir xatoni jurnalga yozing.`,
+    r`Xatolarni bilim, diqqat va vaqt turlariga ajrating va eng ko'p ball yo'qotilgan katta domendan boshlang.`,
+    r`Oxirgi haftada yangi mavzu emas — takrorlash va uyqu. Imtihon kuni — tekshiruv ro'yxati bo'yicha.`,
+    r`Hozir xato jurnalingizni boshlang va birinchi haftalik siklni rejalashtiring. Imtihonda omad tilayman!`,
+    r`Kholmurodov Academy bilan birga bo'lganingiz uchun rahmat. Ko'rishguncha!`,
+  ],
+};
+
+export default lesson;
