@@ -8,5 +8,14 @@ import d07 from './d07';
 import d08 from './d08';
 import d09 from './d09';
 import d10 from './d10';
+import d11 from './d11';
+import d12 from './d12';
+import d13 from './d13';
+import d14 from './d14';
+import d15 from './d15';
+import d16 from './d16';
+import d17 from './d17';
+import d18 from './d18';
+import d19 from './d19';
 
-export const LESSONS: Lesson[] = [d02, d03, d04, d05, d06, d07, d08, d09, d10];
+export const LESSONS: Lesson[] = [d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19];
