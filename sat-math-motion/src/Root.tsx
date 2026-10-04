@@ -7,6 +7,7 @@ import {P3Solution} from './scenes/P3Solution';
 import {P4Compare} from './scenes/P4Compare';
 import {P5Trap} from './scenes/P5Trap';
 import {P6Outro} from './scenes/P6Outro';
+import {Lesson01, LESSON01_SECONDS} from './lesson/Lesson01';
 
 /** Holds every frame until the bundled fonts are loaded. */
 const withFonts =
@@ -27,6 +28,8 @@ const SCENES = [
   {id: 'SAT-01-P4-Domenlar', component: withFonts(P4Compare), seconds: 10},
   {id: 'SAT-01-P5-Tuzoq', component: withFonts(P5Trap), seconds: 8},
   {id: 'SAT-01-P6-Xulosa', component: withFonts(P6Outro), seconds: 8},
+  // Full narrated-lesson video (voice-over added later)
+  {id: 'SAT-01-Dars-toliq', component: withFonts(Lesson01), seconds: LESSON01_SECONDS},
 ];
 
 export const RemotionRoot: React.FC = () => (

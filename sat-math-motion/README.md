@@ -15,6 +15,13 @@ Tayyor videolar: `out/` (1920×1080, 30 fps, H.264, ovozsiz).
 P5 da misol to'liq qilib berildi: *What is the positive solution to x² − x − 12 = 0?* →
 x = 4 yoki x = −3 (−3 ✗) → «Savol bitta ildizni so'raydi: −3 ni belgilash — xato.» + «Javob: 4».
 
+## To'liq dars videosi (ovozlashtirish uchun)
+
+`out/SAT-01-Dars01-toliq-12min.mp4` — 11 slayddan iborat 12:09 lik to'liq video (kompozitsiya `SAT-01-Dars-toliq`).
+Yuqoridagi 6 ta klip ssenariydagi joylariga qo'yilgan, oralig'ida esa dars matni bo'yicha slaydlar bor.
+Ovoz matni va vaqt belgilari: [`SAT_Math_Dars01_ovoz_ssenariy.md`](SAT_Math_Dars01_ovoz_ssenariy.md).
+Slaydlarning vaqti `src/lesson/Lesson01.tsx` dagi `PARTS` ro'yxatida, slaydlar `src/lesson/slides.tsx` da.
+
 ## Ishlatish
 
 ```bash
