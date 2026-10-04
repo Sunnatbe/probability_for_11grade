@@ -219,3 +219,59 @@ export const BarChart: React.FC<{
     </div>
   );
 };
+
+/** Two parallel lines cut by a transversal, with labelled angles appearing in turn. */
+export const ParallelLines: React.FC<{
+  left?: number;
+  top?: number;
+  appear: number;
+  angles: {at: number; pos: 'tl1' | 'tr1' | 'bl1' | 'br1' | 'tl2' | 'tr2' | 'bl2' | 'br2'; text: string; color?: string}[];
+}> = ({left = 150, top = 260, appear, angles}) => {
+  const frame = useCurrentFrame();
+  const p = prog(frame, sec(appear), sec(1), Easing.inOut(Easing.quad));
+  const W = 860;
+  const H = 620;
+  const y1 = 180;
+  const y2 = 440;
+  // transversal from (250, 0) to (610, H)
+  const tx = (y: number) => 250 + ((610 - 250) * y) / H;
+  const ix1 = tx(y1);
+  const ix2 = tx(y2);
+  const off: Record<string, [number, number]> = {
+    tl1: [ix1 - 70, y1 - 40],
+    tr1: [ix1 + 55, y1 - 40],
+    bl1: [ix1 - 55, y1 + 45],
+    br1: [ix1 + 70, y1 + 45],
+    tl2: [ix2 - 70, y2 - 40],
+    tr2: [ix2 + 55, y2 - 40],
+    bl2: [ix2 - 55, y2 + 45],
+    br2: [ix2 + 70, y2 + 45],
+  };
+  return (
+    <div style={{position: 'absolute', left, top, width: W, height: H}}>
+      <svg width={W} height={H} style={{position: 'absolute', overflow: 'visible'}}>
+        <rect width={W} height={H} rx={18} fill="rgba(42,48,96,0.45)" />
+        {[y1, y2].map((y) => (
+          <g key={y}>
+            <line x1={30} x2={30 + (W - 60) * p} y1={y} y2={y} stroke={C.lavender} strokeWidth={5} />
+            <path d={`M${W - 40} ${y - 10} l14 10 l-14 10`} fill="none" stroke={C.lavender} strokeWidth={4} opacity={p} />
+          </g>
+        ))}
+        <line x1={250} y1={0} x2={250 + (610 - 250) * p} y2={H * p} stroke={C.amber} strokeWidth={5} />
+        <text x={W - 60} y={y1 - 16} fill={C.lavender} fontSize={28} fontFamily="Inter" fontWeight={700} opacity={p}>
+          ℓ
+        </text>
+        <text x={W - 60} y={y2 - 16} fill={C.lavender} fontSize={28} fontFamily="Inter" fontWeight={700} opacity={p}>
+          m
+        </text>
+      </svg>
+      {angles.map((a, i) => (
+        <Reveal key={i} at={a.at} pop style={{position: 'absolute', left: off[a.pos][0], top: off[a.pos][1], transform: 'translate(-50%, -50%)'}}>
+          <div style={{fontSize: 32, fontWeight: 800, color: a.color ?? C.white, background: 'rgba(27,31,59,0.85)', borderRadius: 10, padding: '2px 10px', whiteSpace: 'nowrap'}}>
+            <Tx>{a.text}</Tx>
+          </div>
+        </Reveal>
+      ))}
+    </div>
+  );
+};
