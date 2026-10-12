@@ -1,0 +1,6 @@
+{
+  "name": "ehtimollik-ustoz",
+  "version": "0.1.0",
+  "description": "11-sinf ehtimollik nazariyasi o'qituvchisi uchun: o'qituvchi rejimi, formulalar va mavzular paneli",
+  "types": "./types/index.d.ts"
+}
