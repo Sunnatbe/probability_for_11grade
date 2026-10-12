@@ -62,6 +62,8 @@ Masofa manfiy bo'lmaydi, shuning uchun modul hech qachon manfiy emas.
 2. **Ishoralar har xil.** Katta moduldan kichigini ayiramiz va moduli katta bo'lgan sonning ishorasini qo'yamiz: $-9 + 4 = -5$, lekin $9 + (-4) = 5$.
 3. **Ayirish — bu qarama-qarshi sonni qo'shish:** $a - b = a + (-b)$. Masalan, $7 - (-3) = 7 + 3 = 10$.
 
+Ayirish son o'qidagi masofani topishda ham kerak: ikki son orasidagi masofa — kattasidan kichigini ayirish. Masalan, $-2$ va $5$ orasidagi masofa $5 - (-2) = 7$ birlik (rasmda sanab tekshiring).
+
 Son o'qida tasavvur qiling: musbat son qo'shsak o'ngga, manfiy son qo'shsak chapga yuramiz.
 
 ::: {.misol}
@@ -109,6 +111,8 @@ Bir nechta amaldan iborat yozuv *sonli ifoda (numerical expression)* deyiladi. U
 4. **Qo'shish va ayirish** — yana chapdan o'ngga.
 
 Inglizchada bu tartibni **PEMDAS** so'zi bilan eslab qolishadi: **P**arentheses, **E**xponents, **M**ultiplication va **D**ivision, **A**ddition va **S**ubtraction. Diqqat: M harfi D dan oldin turgani ko'paytirish har doim birinchi bajariladi degani emas. Ko'paytirish va bo'lish teng huquqli, ular chapdan o'ngga bajariladi. Qo'shish va ayirish ham xuddi shunday.
+
+Yana bir yozuv: son bilan qavs orasida hech qanday belgi bo'lmasa, ko'paytirish nazarda tutiladi. Masalan, $3(4 - 9)$ yozuvi $3 \cdot (4 - 9)$ degani. SAT'da ko'paytirish ko'pincha shunday yoziladi.
 
 ::: {.misol}
 $18 - 3 \cdot (4 - 9) + 2^2$ ni hisoblang.
@@ -237,7 +241,7 @@ $36 \div 6 \cdot 2$ ni hisoblang.
 :::
 
 ::: {.mashq #m1-12 daraja="B" javob="11"}
-$-2 \cdot (7 - 10) + 5$ ni hisoblang.
+$-2(7 - 10) + 5$ ni hisoblang.
 :::
 
 ::: {.mashq #m1-13 daraja="B" javob="7"}

@@ -69,7 +69,7 @@ $$2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47.$$
 
 E'tibor bering: $1$ na tub, na murakkab (uning bitta bo'luvchisi bor). $2$ esa yagona juft tub son.
 
-Har bir murakkab sonni tub sonlarning ko'paytmasi shaklida yozish mumkin. Bu *tub ko'paytuvchilarga ajratish (prime factorization)* deyiladi. Bir xil ko'paytuvchilarni daraja bilan qisqa yozamiz: $2 \cdot 2 \cdot 2 = 2^3$ ("ikkining kubi"). 1-bobda kvadratni ko'rgan edik; bu ham xuddi shunday yozuv.
+Har bir murakkab sonni tub sonlarning ko'paytmasi shaklida yozish mumkin. Bu *tub ko'paytuvchilarga ajratish (prime factorization)* deyiladi. Bir xil ko'paytuvchilarni daraja bilan qisqa yozamiz: $2 \cdot 2 \cdot 2 = 2^3$ ("ikkining kubi"). 1-bobda kvadratni ko'rgan edik; bu ham xuddi shunday yozuv. Darajalar haqida 7-bobda batafsil gaplashamiz.
 
 ::: {.misol}
 $360$ ni tub ko'paytuvchilarga ajrating.
@@ -91,6 +91,8 @@ Ikki sonning ikkalasini ham bo'ladigan eng katta son ularning *EKUB* i deyiladi 
 2. ikkalasida ham bor tub ko'paytuvchilarni olamiz;
 3. har biridan kichikroq darajasini olib, ko'paytiramiz.
 
+Uch yoki undan ko'p sonning EKUB i ham xuddi shunday topiladi: hamma sonlarda bor tub ko'paytuvchilarni olamiz.
+
 EKUB i 1 ga teng sonlar *o'zaro tub sonlar (relatively prime numbers)* deyiladi, masalan $8$ va $15$.
 
 ::: {.misol}
@@ -102,7 +104,7 @@ EKUB$(48, 72)$ ni toping.
 
 2-qadam: umumiy tub ko'paytuvchilar — $2$ va $3$.
 
-3-qadam: kichik darajalar: $2^3$ va $3^1$. EKUB$(48, 72) = 2^3 \cdot 3 = 8 \cdot 3 = 24$.
+3-qadam: kichik darajalar: $2^3$ va $3^1$ ($3^1 = 3$). EKUB$(48, 72) = 2^3 \cdot 3 = 8 \cdot 3 = 24$.
 
 *Tekshirish:* $48 \div 24 = 2$, $72 \div 24 = 3$; $2$ va $3$ ning umumiy bo'luvchisi faqat $1$, demak kattaroq umumiy bo'luvchi yo'q.
 
@@ -116,6 +118,8 @@ Ikki sonning ikkalasiga ham bo'linadigan eng kichik musbat son ularning *EKUK* i
 1. har bir sonni tub ko'paytuvchilarga ajratamiz;
 2. hech bo'lmaganda bittasida uchragan barcha tub ko'paytuvchilarni olamiz;
 3. har biridan kattaroq darajasini olib, ko'paytiramiz.
+
+Uch yoki undan ko'p sonning EKUK i ham xuddi shunday topiladi.
 
 Kichik sonlar uchun boshqa yo'l ham bor: kattaroq sonning karralilarini sanab chiqamiz va birinchi bo'lib kichik songa bo'linganini olamiz.
 
@@ -205,7 +209,7 @@ Tub ko'paytuvchilarga ajratganda javobni daraja bilan yozing, masalan $2^3 \cdot
 ### A daraja
 
 ::: {.mashq #m2-1 daraja="A" javob="5"}
-47 ni 6 ga bo'lganda qoldiq nechaga teng?
+53 ni 6 ga bo'lganda qoldiq nechaga teng?
 :::
 
 ::: {.mashq #m2-2 daraja="A" javob="8"}
@@ -272,8 +276,8 @@ EKUK$(4, 6, 10)$ ni toping.
 
 ### C daraja
 
-::: {.mashq #m2-17 daraja="C" javob="24"}
-Gul do'konida 48 ta qizil va 72 ta oq atirgul bor. Sotuvchi ulardan bir xil guldastalar yasamoqchi: har bir guldastada qizil atirgullar soni bir xil, oq atirgullar soni ham bir xil bo'lsin va birorta gul ortib qolmasin. Eng ko'pi bilan nechta guldasta yasash mumkin?
+::: {.mashq #m2-17 daraja="C" javob="12"}
+Gul do'konida 60 ta qizil va 84 ta oq atirgul bor. Sotuvchi ulardan bir xil guldastalar yasamoqchi: har bir guldastada qizil atirgullar soni bir xil, oq atirgullar soni ham bir xil bo'lsin va birorta gul ortib qolmasin. Eng ko'pi bilan nechta guldasta yasash mumkin?
 :::
 
 ::: {.mashq #m2-18 daraja="C" javob="12 kundan keyin, shanba"}

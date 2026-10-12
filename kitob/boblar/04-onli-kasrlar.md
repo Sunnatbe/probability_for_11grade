@@ -47,9 +47,9 @@ Demak, $3.582 = 3 + \frac{5}{10} + \frac{8}{100} + \frac{2}{1000} = \frac{3582}{
 
 ### O'nli kasr va oddiy kasr
 
-**O'nli kasrdan oddiy kasrga:** nuqtadan keyin nechta raqam bo'lsa, maxrajga $1$ va shuncha nol yozamiz, keyin qisqartiramiz (3-bob).
+**O'nli kasrdan oddiy kasrga:** suratga sonni nuqtasiz yozamiz, maxrajga esa $1$ va nuqtadan keyingi raqamlar soniga teng nol yozamiz, keyin qisqartiramiz (3-bob). Masalan, $2.5 = \frac{25}{10} = \frac{5}{2}$.
 
-**Oddiy kasrdan o'nli kasrga:** suratni maxrajga bo'lamiz: $\frac{3}{8} = 3 \div 8 = 0.375$. Agar maxrajni $10$, $100$ yoki $1000$ ga keltirish oson bo'lsa, shunday qilamiz: $\frac{7}{20} = \frac{35}{100} = 0.35$.
+**Oddiy kasrdan o'nli kasrga:** suratni maxrajga bo'lamiz: $\frac{3}{8} = 3 \div 8 = 0.375$. Agar maxrajni $10$, $100$ yoki $1000$ ga keltirish oson bo'lsa, shunday qilamiz: $\frac{3}{25} = \frac{12}{100} = 0.12$.
 
 Ba'zi kasrlarda bo'lish hech qachon tugamaydi va raqamlar takrorlanaveradi: $\frac{1}{3} = 0.333\ldots$, $\frac{2}{3} = 0.666\ldots$ Bunday son *davriy o'nli kasr (repeating decimal)* deyiladi va takrorlanuvchi qism ustiga chiziq qo'yiladi: $\frac{2}{3} = 0.\overline{6}$. Eslab qoling: $0.\overline{3} = \frac{1}{3}$ va $0.\overline{6} = \frac{2}{3}$.
 
@@ -136,6 +136,8 @@ $7.2 \div 0.08$ ni hisoblang.
 2. undan **keyingi bitta** raqamga qaraymiz;
 3. bu raqam $0, 1, 2, 3, 4$ bo'lsa, xonadagi raqam o'zgarmaydi; $5, 6, 7, 8, 9$ bo'lsa, xonadagi raqamga $1$ qo'shiladi;
 4. keyingi raqamlar tashlab yuboriladi (butun qismda esa nolga aylanadi).
+
+Agar oshirilayotgan raqam $9$ bo'lsa, u $0$ ga aylanadi va $1$ chapdagi xonaga o'tadi. Masalan, $2.97$ ni o'ndan birgacha yaxlitlaymiz: keyingi raqam $7$, shuning uchun $9$ ni oshiramiz va $2.97 \approx 3.0$ hosil bo'ladi. Oxiridagi nolni tashlamang: u son o'ndan birgacha yaxlitlanganini ko'rsatadi.
 
 Masalan, $3.14159$ ni yaxlitlaymiz:
 

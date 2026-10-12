@@ -11,7 +11,7 @@ Ko'p o'quvchilar uchun kasrlar matematikadagi birinchi "qo'rqinchli" mavzu bo'la
 - kasrlarni taqqoslash, qo'shish, ayirish, ko'paytirish va bo'lishni;
 - sonning qismini topish va qismiga ko'ra sonni topish masalalarini yechishni o'rganamiz.
 
-**SAT'da qayerda kerak?** Problem-Solving and Data Analysis bo'limida qism, ulush va retsept masalalari kasrlar bilan yechiladi. Algebra bo'limida esa tenglamalarning ko'p koeffitsiyentlari va javoblari kasr bo'ladi: SAT'da javobni o'zingiz yozadigan savollarga $\frac{7}{12}$ kabi javob kiritish odatiy hol.
+**SAT'da qayerda kerak?** Problem-Solving and Data Analysis bo'limida qism, ulush va retsept masalalari kasrlar bilan yechiladi. Algebra bo'limida esa tenglamalarning ko'p koeffitsiyentlari va javoblari kasr bo'ladi: SAT'da javobni o'zingiz yozadigan savollarga $\frac{11}{6}$ kabi javob kiritish odatiy hol.
 
 ## Yangi so'zlar
 
@@ -194,7 +194,7 @@ Azizning 120\ 000 so'm cho'ntak puli bor edi. U bu pulning $\frac{1}{3}$ qismini
 
 ## Mashqlar
 
-Javobni qisqarmas kasr ko'rinishida yozing. Kitob oxiridagi javoblar noto'g'ri kasr ko'rinishida berilgan (masalan, $\frac{49}{12}$); aralash son ko'rinishidagi javobingiz ham to'g'ri hisoblanadi.
+Javobni qisqarmas kasr ko'rinishida yozing. Kitob oxiridagi javoblar noto'g'ri kasr ko'rinishida berilgan (masalan, $\frac{11}{6}$); aralash son ko'rinishidagi javobingiz ham to'g'ri hisoblanadi.
 
 ### A daraja
 
@@ -287,7 +287,7 @@ Stadion yo'lagining bir aylanasi $\frac{2}{5}$ km. Sardor $7\frac{1}{2}$ aylana 
 :::
 
 ::: {.mashq #m3-22 daraja="C" javob="144"}
-Jasur kitobning birinchi kuni $\frac{1}{4}$ qismini, ikkinchi kuni $\frac{1}{3}$ qismini o'qidi. Shundan keyin o'qilmagan 60 bet qoldi. Kitob necha betdan iborat?
+Jasur kitobning birinchi kuni $\frac{1}{4}$ qismini, ikkinchi kuni butun kitobning $\frac{1}{3}$ qismini o'qidi. Shundan keyin o'qilmagan 60 bet qoldi. Kitob necha betdan iborat?
 :::
 
 ::: {.mashq #m3-23 daraja="C" javob="36"}
@@ -304,7 +304,7 @@ $\frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} + \frac{1}{4 \cdot 5}$ ni hisoblang.
 
 ## SAT ko'prigi
 
-Quyidagi savollar SAT uslubida, inglizcha yozilgan. Javobni o'zingiz yozadigan savolda kasr javobni $7/12$ ko'rinishida kiritish mumkin. Javoblar kitob oxirida.
+Quyidagi savollar SAT uslubida, inglizcha yozilgan. Javobni o'zingiz yozadigan savolda kasr javobni $11/6$ ko'rinishida kiritish mumkin. Javoblar kitob oxirida.
 
 ::: {.sat #s3-1 javob="C"}
 Which of the following is equal to $\frac{5}{6} - \frac{3}{8}$?

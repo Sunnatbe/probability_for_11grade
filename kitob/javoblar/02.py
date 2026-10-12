@@ -65,7 +65,7 @@ assert len(s4) == 1
 
 JAVOBLAR = {
     # A
-    "m2-1": 47 % 6,
+    "m2-1": 53 % 6,
     "m2-2": len(bo_luvchilar(30)),
     "m2-3": ", ".join(str(n) for n in [21, 23, 27, 29, 33, 37] if tubmi(n)),
     "m2-4": sum(1 for n in range(1, 21) if tubmi(n)),
@@ -83,7 +83,7 @@ JAVOBLAR = {
     "m2-15": lcm(4, 6, 10),
     "m2-16": m16[0],
     # C
-    "m2-17": gcd(48, 72),
+    "m2-17": gcd(60, 84),
     "m2-18": f"{lcm(4, 6)} kundan keyin, {KUNLAR[(0 + lcm(4, 6)) % 7]}",
     "m2-19": m19,
     "m2-20": m20[0],
