@@ -5,7 +5,6 @@ Python hisobi bilan solishtiriladi. Solishtirish kanonik matn (`fmt`) bo'yicha.
 """
 from __future__ import annotations
 
-import importlib.util
 import math
 import re
 from collections import namedtuple
@@ -53,18 +52,25 @@ def fmt(qiymat) -> str:
 
 # ---------------------------------------------------------------- mashqlar
 
-_DIV_BOSHI = re.compile(r"^:{3,}\s*\{([^}\n]*)\}\s*$", re.MULTILINE)
+# `::: {...}`: atributlar qiymatida `{` va `}` bo'lishi mumkin (javob="\frac{3}{4}"),
+# shuning uchun qatordagi oxirgi `}` gacha olinadi.
+_DIV_BOSHI = re.compile(r"^:{3,}\s*\{(.*)\}\s*$", re.MULTILINE)
 _ID = re.compile(r"(?:^|\s)#([\w-]+)")
 _SINF = re.compile(r"(?:^|\s)\.([\w-]+)")
 _DARAJA = re.compile(r'daraja="([^"]*)"')
 _JAVOB = re.compile(r'javob="((?:[^"\\]|\\.)*)"')
 
 
+def _qiymatsiz(atr: str) -> str:
+    """Qo'shtirnoqdagi qiymatlarni bo'shatadi (ichidagi `#x`, `.y` id/sinf bo'lib qolmasin)."""
+    return re.sub(r'"(?:[^"\\]|\\.)*"', '""', atr)
+
+
 def _div_atributlari(md_text: str):
     """Har bir `::: {...}` qatori uchun (sinflar, atribut matni) qaytaradi."""
-    for m in _DIV_BOSHI.finditer(md_text):
+    for m in _DIV_BOSHI.finditer(kod_qismlarsiz(md_text)):
         atr = m.group(1)
-        yield set(_SINF.findall(atr)), atr
+        yield set(_SINF.findall(_qiymatsiz(atr))), atr
 
 
 def mashqlar(md_text: str) -> list[Mashq]:
@@ -81,7 +87,7 @@ def mashqlar(md_text: str) -> list[Mashq]:
             tur = "sat"
         else:
             continue
-        id_ = _ID.search(atr)
+        id_ = _ID.search(_qiymatsiz(atr))
         daraja = _DARAJA.search(atr)
         javob = _JAVOB.search(atr)
         natija.append(Mashq(
@@ -100,12 +106,12 @@ def _bob_raqami(fayl: Path) -> str:
 
 
 def _javoblarni_yukla(fayl: Path) -> dict:
-    spec = importlib.util.spec_from_file_location(f"_javoblar_{fayl.stem}", fayl)
-    modul = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(modul)
-    if not hasattr(modul, "JAVOBLAR"):
+    # import o'rniga exec: .pyc keshi (bir soniyada qayta yozilgan fayl) eskirgan natija bermasin
+    nom_maydoni = {"__name__": f"_javoblar_{fayl.stem}", "__file__": str(fayl)}
+    exec(compile(fayl.read_text(encoding="utf-8"), str(fayl), "exec"), nom_maydoni)
+    if "JAVOBLAR" not in nom_maydoni:
         raise AttributeError("JAVOBLAR lug'ati yo'q")
-    return modul.JAVOBLAR
+    return nom_maydoni["JAVOBLAR"]
 
 
 def javoblarni_tekshir(boblar_dir: Path, javoblar_dir: Path) -> list[str]:
@@ -172,8 +178,8 @@ def javoblarni_tekshir(boblar_dir: Path, javoblar_dir: Path) -> list[str]:
 # --------------------------------------------------------------- tuzilish
 
 def kod_qismlarsiz(md_text: str) -> str:
-    """``` bloklarini olib tashlaydi (ulardagi `#` sarlavha emas)."""
-    return re.sub(r"^```.*?^```[ \t]*$", "", md_text, flags=re.MULTILINE | re.DOTALL)
+    """``` va ~~~ bloklarini olib tashlaydi (ulardagi `#` sarlavha emas)."""
+    return re.sub(r"^(```|~~~).*?^\1[ \t]*$", "", md_text, flags=re.MULTILINE | re.DOTALL)
 
 
 def tuzilishni_tekshir(md_text: str, fayl: str) -> list[str]:
@@ -236,3 +242,31 @@ def tuzilishni_tekshir(md_text: str, fayl: str) -> list[str]:
     if not 3 <= sat_soni <= 5:
         xatolar.append(f"{nom}: SAT ko'prigi savoli {sat_soni} ta, 3–5 ta kerak")
     return xatolar
+
+
+def barchasini_tekshir(ildiz: Path) -> list[str]:
+    """Javoblar va tuzilishni `ildiz/boblar` va `ildiz/javoblar` bo'yicha tekshiradi."""
+    ildiz = Path(ildiz)
+    xatolar = javoblarni_tekshir(ildiz / "boblar", ildiz / "javoblar")
+    boblar = sorted((ildiz / "boblar").glob("*.md")) if (ildiz / "boblar").is_dir() else []
+    for f in boblar:
+        xatolar += tuzilishni_tekshir(f.read_text(encoding="utf-8"), f.name)
+    return xatolar
+
+
+def main(argv: list[str] | None = None) -> int:
+    import sys
+    argv = sys.argv[1:] if argv is None else argv
+    ildiz = Path(argv[0]) if argv else Path(__file__).resolve().parent
+    xatolar = barchasini_tekshir(ildiz)
+    if xatolar:
+        print(f"Tekshiruvdan o'tmadi ({len(xatolar)} ta xato):", file=sys.stderr)
+        for x in xatolar:
+            print(f"  - {x}", file=sys.stderr)
+        return 1
+    print("OK: javoblar va tuzilish tekshiruvdan o'tdi")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

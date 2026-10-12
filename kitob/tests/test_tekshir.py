@@ -205,3 +205,61 @@ def test_javoblar_fayli_ortiqcha(tmp_path):
     (j / "07.py").write_text("JAVOBLAR = {}\n", encoding="utf-8")
     xatolar = tekshir.javoblarni_tekshir(b, j)
     assert len(xatolar) == 1 and "07.py" in xatolar[0] and "mos bob fayli yo'q" in xatolar[0]
+
+
+def test_javobda_figurali_qavs(tmp_path):
+    """R9: javob="\\frac{3}{4}" va javob="x^{2}+1" div ochilishini buzmaydi."""
+    md = (
+        '::: {.mashq #m3-1 daraja="A" javob="\\frac{3}{4}"}\nsavol\n:::\n\n'
+        '::: {.mashq #m3-2 daraja="B" javob="x^{2}+1"}\nsavol\n:::\n'
+    )
+    assert tekshir.mashqlar(md) == [
+        ("m3-1", "mashq", "A", "\\frac{3}{4}"),
+        ("m3-2", "mashq", "B", "x^{2}+1"),
+    ]
+    b, j = yoz(tmp_path, md, "JAVOBLAR = {'m3-1': '\\\\frac{3}{4}', 'm3-2': 'x^{2}+1'}\n")
+    assert tekshir.javoblarni_tekshir(b, j) == []
+    # noto'g'ri javob hamon aniqlanadi
+    (j / "03.py").write_text("JAVOBLAR = {'m3-1': '\\\\frac{1}{4}', 'm3-2': 'x^{2}+1'}\n", encoding="utf-8")
+    xatolar = tekshir.javoblarni_tekshir(b, j)
+    assert len(xatolar) == 1 and "m3-1" in xatolar[0] and "frac{1}{4}" in xatolar[0]
+
+
+def test_javob_ichidagi_id_va_sinf_belgisi():
+    md = '::: {.mashq #m3-1 daraja="A" javob="a #x .sat"}\nsavol\n:::\n'
+    assert tekshir.mashqlar(md) == [("m3-1", "mashq", "A", "a #x .sat")]
+
+
+def test_kod_blokidagi_div_hisobga_olinmaydi(tmp_path):
+    md = MASHQ_1 + '\n```\n::: {.mashq #m3-9 daraja="A" javob="9"}\n:::\n```\n'
+    assert [m.id for m in tekshir.mashqlar(md)] == ["m3-1"]
+    b, j = yoz(tmp_path, md, "JAVOBLAR = {'m3-1': 1}\n")
+    assert tekshir.javoblarni_tekshir(b, j) == []
+
+
+def _cli(*args):
+    import subprocess
+    return subprocess.run([sys.executable, str(Path(tekshir.__file__)), *map(str, args)],
+                          capture_output=True, text=True)
+
+
+def test_cli(tmp_path):
+    (tmp_path / "boblar").mkdir()
+    (tmp_path / "javoblar").mkdir()
+    (tmp_path / "boblar" / "03-bob.md").write_text(to_liq_bob(), encoding="utf-8")
+    javoblar = {f"m3-{i}": 1 for i in range(1, 22)} | {f"s3-{i}": "A" for i in range(1, 4)}
+    (tmp_path / "javoblar" / "03.py").write_text(f"JAVOBLAR = {javoblar!r}\n", encoding="utf-8")
+    r = _cli(tmp_path)
+    assert r.returncode == 0 and "OK" in r.stdout
+
+    # javob mos kelmasa: chiqish kodi 1 va xato matni stderr'da
+    (tmp_path / "javoblar" / "03.py").write_text(
+        f"JAVOBLAR = {javoblar | {'m3-5': 2}!r}\n", encoding="utf-8")
+    r = _cli(tmp_path)
+    assert r.returncode == 1 and "m3-5" in r.stderr and "OK" not in r.stdout
+
+    # tuzilish buzilsa ham
+    (tmp_path / "javoblar" / "03.py").write_text(f"JAVOBLAR = {javoblar!r}\n", encoding="utf-8")
+    (tmp_path / "boblar" / "03-bob.md").write_text(to_liq_bob(misol=1), encoding="utf-8")
+    r = _cli(tmp_path)
+    assert r.returncode == 1 and "misol" in r.stderr

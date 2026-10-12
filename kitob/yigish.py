@@ -117,9 +117,12 @@ def lugat_markdown(boblar: list[Path]) -> str:
 # ----------------------------------------------------------------- javoblar
 
 def _javob_matni(javob: str) -> str:
-    """Javob oddiy matn: markdown belgilari qochiriladi ($ bo'lsa formula sifatida o'tadi)."""
+    """Javob matni: `$` bo'lsa o'zi o'tadi; `\\frac`, `x^{2}` kabi LaTeX bo'lsa `$...$` ichiga
+    olinadi (Word tenglamasi); aks holda oddiy matn (markdown belgilari qochiriladi)."""
     if "$" in javob:
         return javob
+    if re.search(r"\\[A-Za-z]+|[\^_]\{|[{}]", javob):
+        return f"${javob}$"
     return re.sub(r"([\\`*_{}\[\]<>#|~^])", r"\\\1", javob)
 
 

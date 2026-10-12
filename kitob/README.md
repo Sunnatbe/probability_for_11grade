@@ -17,6 +17,7 @@ Python paketlari: `pip install pytest matplotlib python-docx`. LibreOffice'ning 
 
 ```
 python3 kitob/yigish.py            # kitob/chiqish/matematika-poydevori.docx va .pdf
+python3 kitob/tekshir.py           # faqat javoblar va tuzilish tekshiruvi (xato bo'lsa chiqish kodi 1)
 python3 -m pytest kitob/tests -q   # testlar
 ```
 
@@ -39,6 +40,7 @@ Javoblar `javoblar/NN.py` bilan mos kelmasa yoki bob tuzilishi buzilgan bo'lsa, 
   Matnda `3.12.` (bob.raqam) bo'ladi. Kirish va yakuniy testda `#d-1`, `#y-1` ishlatiladi (matnda `1.`).
 - SAT savoli (3-5 ta, faqat inglizcha): `::: {.sat #s3-2 javob="C"}`; matnda `S3.2.` bo'ladi. Variantlar bo'sh qatordan keyin `A) ...` ro'yxati, har biri alohida qatorda, qatorlar orasida bo'sh qator. Grid-in savolda `javob` qiymatning o'zi.
 - `javob` va `daraja` o'quvchiga ko'rinmaydi; javob faqat kitob oxiridagi `Javoblar` bo'limida chiqadi.
+- `javob` qiymatida `{`/`}` bo'lishi mumkin (`javob="\frac{3}{4}"`, `javob="x^{2}+1"`); `\...` yoki `^{`/`_{` bo'lgan javob Javoblar bo'limida formula sifatida chiqadi.
 - `javob` qiymati `javoblar/NN.py` dagi hisob natijasining kanonik matni bilan bir xil bo'lishi kerak (`tekshir.fmt`): `7`, `7/12`, `-3/4` (oddiy minus), `2.5`, `C`. `javoblar/NN.py`: `JAVOBLAR = {"m3-12": F(1, 3) + F(1, 4), "s3-2": "C"}`.
 - Faqat eng yuqori darajadagi div'lar qayta ishlanadi: `.mashq`, `.sat`, `.misol` ni boshqa div yoki ro'yxat ichiga joylamang.
 - Lug'at: `## Yangi so'zlar` ostida sarlavhasi aynan `| O'zbekcha | English |` bo'lgan jadval:

@@ -203,3 +203,30 @@ def test_sat_yorligi_S_bilan(chiqish):
     assert not any(t.startswith("1.1. A notebook") for t in tana)
     assert any(re.search(r"SAT ko'prigi:\s*S1\.1\.\s*C", t) for t in javoblar)
     assert any(re.search(r"Mashqlar:\s*1\.1\.\s*7/12;\s*1\.2\.\s*5/8", t) for t in javoblar)
+
+
+def test_javobda_figurali_qavs_javoblarda_tenglama(tmp_path):
+    """R9: \\frac{3}{4} va x^{2}+1 javoblari Javoblar bo'limida tenglama bo'lib chiqadi."""
+    shutil.copytree(NAMUNA, tmp_path, dirs_exist_ok=True)
+    f = tmp_path / "boblar" / "01-namuna.md"
+    f.write_text(f.read_text(encoding="utf-8").replace(
+        "## SAT ko'prigi",
+        '::: {.mashq #m1-3 daraja="C" javob="\\frac{3}{4}"}\nBirinchi kasrni yozing.\n:::\n\n'
+        '::: {.mashq #m1-4 daraja="C" javob="x^{2}+1"}\nIkkinchi ifodani yozing.\n:::\n\n'
+        "## SAT ko'prigi"), encoding="utf-8")
+    g = tmp_path / "javoblar" / "01.py"
+    g.write_text(g.read_text(encoding="utf-8") +
+                 'JAVOBLAR["m1-3"] = "\\\\frac{3}{4}"\nJAVOBLAR["m1-4"] = "x^{2}+1"\n', encoding="utf-8")
+    d, _ = y.yigish(tmp_path, tuzilish=False)
+    _, hujjat = matn_royxati(d)
+    bosh = next(p._p for p in hujjat.paragraphs
+                if p.text.strip() == "Javoblar" and p.style.name == "Heading 1")
+    keyin, korildi, oldin = [], False, []
+    for el in hujjat.element.body.iterchildren():
+        korildi = korildi or el is bosh
+        (keyin if korildi else oldin).append(el)
+    tenglamalar = sum(len(list(el.iter(f"{M}oMath"))) for el in keyin)
+    assert tenglamalar >= 2
+    matn = "".join(t.text or "" for el in keyin for t in el.iter(f"{W}t", f"{M}t"))
+    assert "\\frac" not in matn and "$" not in matn
+    assert "x" in matn and "+1" in matn.replace(" ", "")
