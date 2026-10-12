@@ -35,11 +35,11 @@ Sonlar qanday "qurilganini" bilsangiz, kasrlar, ifodalar va tenglamalar ancha os
 
 ### Bo'luvchi, karrali va qoldiq
 
-Agar $a$ sonni $b$ songa qoldiqsiz bo'lish mumkin bo'lsa, $a$ soni $b$ ga *bo'linadi (is divisible by)* deymiz. Bunda $b$ soni $a$ ning *bo'luvchisi (factor, divisor)*, $a$ esa $b$ ning *karralisi (multiple)* bo'ladi.
+Agar $a$ sonini $b$ soniga qoldiqsiz bo'lish mumkin bo'lsa, $a$ soni $b$ ga *bo'linadi (is divisible by)* deymiz. Bunda $b$ soni $a$ ning *bo'luvchisi (factor, divisor)*, $a$ esa $b$ ning *karralisi (multiple)* bo'ladi.
 
 Masalan, $12 = 3 \cdot 4$. Demak, $3$ va $4$ — $12$ ning bo'luvchilari, $12$ esa $3$ ning ham, $4$ ning ham karralisi. $12$ ning barcha bo'luvchilari: $1, 2, 3, 4, 6, 12$. $3$ ning karralilari esa cheksiz ko'p: $3, 6, 9, 12, 15, \ldots$
 
-Bo'linmasa, *qoldiq (remainder)* qoladi. Masalan, 47 ta yong'oqni 6 kishiga teng bo'lsak, har kim 7 tadan oladi va 5 ta ortib qoladi:
+Agar son bo'linmasa, *qoldiq (remainder)* qoladi. Masalan, 47 ta yong'oqni 6 kishiga teng bo'lsak, har kim 7 tadan oladi va 5 ta ortib qoladi:
 
 $$47 = 6 \cdot 7 + 5.$$
 
@@ -56,7 +56,7 @@ Katta sonni bo'lib ko'rmasdan ham bo'linishini tekshirish mumkin. Mana eng ko'p 
 - **4 ga:** oxirgi ikki raqamidan tuzilgan son 4 ga bo'linadi. $1\,316$: $16$ soni 4 ga bo'linadi.
 - **5 ga:** oxirgi raqami $0$ yoki $5$.
 - **6 ga:** son ham 2 ga, ham 3 ga bo'linadi.
-- **9 ga:** raqamlari yig'indisi 9 ga bo'linadi. $5\,832$: $5 + 8 + 3 + 2 = 18$.
+- **9 ga:** raqamlari yig'indisi 9 ga bo'linadi. $7\,236$: $7 + 2 + 3 + 6 = 18$.
 - **10 ga:** oxirgi raqami $0$.
 
 ### Tub va murakkab sonlar
@@ -161,7 +161,7 @@ O'qituvchida 36 ta qalam va 48 ta daftar bor. U ularni o'quvchilarga shunday bo'
 ::: {.misol}
 Bekatdan ikkita avtobus qatnaydi: birinchisi har 12 minutda, ikkinchisi har 20 minutda jo'naydi. Soat 8:00 da ikkalasi birga jo'nadi. Ular keyingi safar soat nechada birga jo'naydi?
 
-*Yechish.* Birga jo'nash vaqti 12 ga ham, 20 ga ham karrali bo'lishi kerak, eng yaqini esa EKUK.
+*Yechish.* Soat 8:00 dan keyin o'tgan minutlar soni 12 ga ham, 20 ga ham karrali bo'lishi kerak. Bunday sonlarning eng kichigi — EKUK.
 
 1-qadam: $12 = 2^2 \cdot 3$, $20 = 2^2 \cdot 5$.
 

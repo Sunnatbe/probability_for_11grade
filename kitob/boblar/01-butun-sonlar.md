@@ -108,7 +108,7 @@ Bir nechta amaldan iborat yozuv *sonli ifoda (numerical expression)* deyiladi. U
 3. **Ko'paytirish va bo'lish** — chapdan o'ngga, qaysi biri oldin kelsa, o'sha bajariladi.
 4. **Qo'shish va ayirish** — yana chapdan o'ngga.
 
-Inglizchada bu tartibni **PEMDAS** so'zi bilan eslab qolishadi: **P**arentheses, **E**xponents, **M**ultiplication va **D**ivision, **A**ddition va **S**ubtraction. Diqqat: M ning D dan oldin yozilgani ko'paytirish har doim birinchi degani emas. Ular teng huquqli va chapdan o'ngga bajariladi.
+Inglizchada bu tartibni **PEMDAS** so'zi bilan eslab qolishadi: **P**arentheses, **E**xponents, **M**ultiplication va **D**ivision, **A**ddition va **S**ubtraction. Diqqat: M harfi D dan oldin turgani ko'paytirish har doim birinchi bajariladi degani emas. Ko'paytirish va bo'lish teng huquqli, ular chapdan o'ngga bajariladi. Qo'shish va ayirish ham xuddi shunday.
 
 ::: {.misol}
 $18 - 3 \cdot (4 - 9) + 2^2$ ni hisoblang.
@@ -170,7 +170,7 @@ $$-4 + 9 - 6.$$
 
 *Noto'g'ri:* $-3^2 = 9$.
 
-*To'g'ri:* daraja minusdan oldin bajariladi, ya'ni $-3^2 = -(3 \cdot 3) = -9$. Agar butun son kvadratga ko'tarilishi kerak bo'lsa, qavs yoziladi: $(-3)^2 = (-3) \cdot (-3) = 9$.
+*To'g'ri:* daraja minusdan oldin bajariladi, ya'ni $-3^2 = -(3 \cdot 3) = -9$. Agar sonni minusi bilan birga kvadratga ko'tarish kerak bo'lsa, qavs yoziladi: $(-3)^2 = (-3) \cdot (-3) = 9$.
 
 **3. Manfiy sonni ayirishda ishorani yo'qotish.**
 

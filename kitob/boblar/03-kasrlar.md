@@ -69,7 +69,7 @@ Butun son va to'g'ri kasrdan tuzilgan son *aralash son (mixed number)* deyiladi:
 - **Aralash sondan noto'g'ri kasrga:** butun qismni maxrajga ko'paytirib, suratni qo'shamiz: $2\frac{3}{5} = \frac{2 \cdot 5 + 3}{5} = \frac{13}{5}$.
 - **Noto'g'ri kasrdan aralash songa:** suratni maxrajga qoldiqli bo'lamiz (2-bob): $17 = 4 \cdot 4 + 1$, demak $\frac{17}{4} = 4\frac{1}{4}$.
 
-Hisoblashda noto'g'ri kasr qulayroq. Aralash son esa kundalik hayotda tushunarliroq: "ikki yarim kilogramm" deymiz, "besh ikkidan" demaymiz.
+Hisoblashda noto'g'ri kasr qulayroq. Aralash son esa kundalik hayotda tushunarliroq: "ikki yarim kilogramm" deymiz, "ikkidan besh kilogramm" demaymiz.
 
 ### Taqqoslash
 
