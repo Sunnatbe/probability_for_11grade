@@ -50,9 +50,7 @@ Rasmga qarang: $-4 < 3$, chunki $-4$ chaproqda turadi. Xuddi shunday $-10 < -2$.
 
 Noldan bir xil masofada, lekin turli tomonda turgan ikki son *qarama-qarshi sonlar (opposites)* deyiladi: $5$ va $-5$, $12$ va $-12$.
 
-Sonning noldan masofasi uning *moduli (absolute value)* deyiladi va $|a|$ deb yoziladi:
-
-$$|-4| = 4, \qquad |3| = 3, \qquad |0| = 0.$$
+Sonning noldan masofasi uning *moduli (absolute value)* deyiladi va $|a|$ deb yoziladi. Masalan, $|-4| = 4$, $|3| = 3$ va $|0| = 0$.
 
 Masofa manfiy bo'lmaydi, shuning uchun modul hech qachon manfiy emas.
 
