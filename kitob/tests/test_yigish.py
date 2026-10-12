@@ -188,3 +188,18 @@ def test_bosh_ildiz_yigiladi(tmp_path):
     docx_yoli, pdf_yoli = y.yigish(tmp_path)
     assert docx_yoli.exists() and pdf_yoli.exists()
     assert "Sunnatulla Xolmurodov" in pdf_matn(pdf_yoli, 1)
+
+
+def test_sat_yorligi_S_bilan(chiqish):
+    """R6: SAT 'S1.1.', mashq '1.1.' (matn va Javoblarda)."""
+    _, d, _ = chiqish
+    _, hujjat = matn_royxati(d)
+    paragraflar = [p.text for p in hujjat.paragraphs]
+    j = next(i for i, p in enumerate(hujjat.paragraphs)
+             if p.text.strip() == "Javoblar" and p.style.name == "Heading 1")
+    tana, javoblar = paragraflar[:j], paragraflar[j:]
+    assert any(t.startswith("S1.1. A notebook costs") for t in tana)
+    assert any(t.startswith("1.1.") and "hisoblang" in t for t in tana)
+    assert not any(t.startswith("1.1. A notebook") for t in tana)
+    assert any(re.search(r"SAT ko'prigi:\s*S1\.1\.\s*C", t) for t in javoblar)
+    assert any(re.search(r"Mashqlar:\s*1\.1\.\s*7/12;\s*1\.2\.\s*5/8", t) for t in javoblar)

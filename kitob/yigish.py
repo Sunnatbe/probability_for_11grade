@@ -124,10 +124,10 @@ def _javob_matni(javob: str) -> str:
 
 
 def _yorliq(id_: str) -> str:
-    """R4: m/s -> '<bob>.<n>', d/y -> '<n>'."""
-    m = re.fullmatch(r"[ms](\d+)-(\d+)", id_)
+    """R4/R6: m -> '<bob>.<n>', s -> 'S<bob>.<n>', d/y -> '<n>'."""
+    m = re.fullmatch(r"([ms])(\d+)-(\d+)", id_)
     if m:
-        return f"{m.group(1)}.{m.group(2)}"
+        return f"{'S' if m.group(1) == 's' else ''}{m.group(2)}.{m.group(3)}"
     m = re.fullmatch(r"[dy]-(\d+)", id_)
     return m.group(1) if m else id_
 

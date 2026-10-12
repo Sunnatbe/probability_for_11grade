@@ -10,10 +10,12 @@ local PAGE_BREAK = pandoc.RawBlock('openxml',
 
 local STYLES = { mashq = "Mashq", sat = "SAT savol", misol = "Misol" }
 
--- m3-12 / s3-2 -> "3.12"; d-1 / y-1 -> "1"
+-- m3-12 -> "3.12"; s3-2 -> "S3.2" (R6); d-1 / y-1 -> "1"
 local function label_from_id(id)
-  local bob, n = id:match("^[ms](%d+)%-(%d+)$")
+  local bob, n = id:match("^m(%d+)%-(%d+)$")
   if bob then return bob .. "." .. n end
+  bob, n = id:match("^s(%d+)%-(%d+)$")
+  if bob then return "S" .. bob .. "." .. n end
   n = id:match("^[dy]%-(%d+)$")
   if n then return n end
   return nil

@@ -138,3 +138,70 @@ def test_tuzilish_boshqa_xatolar():
 def test_tuzilish_00_99_otkaziladi():
     assert tekshir.tuzilishni_tekshir("# Kirish\n\nhech narsa", "00-kirish.md") == []
     assert tekshir.tuzilishni_tekshir("# Yakuniy\n", "99-yakuniy-test.md") == []
+
+
+def yoz(tmp_path, bob_matni, javob_matni, nom="03"):
+    b, j = tmp_path / "boblar", tmp_path / "javoblar"
+    b.mkdir(exist_ok=True)
+    j.mkdir(exist_ok=True)
+    (b / f"{nom}-bob.md").write_text(bob_matni, encoding="utf-8")
+    if javob_matni is not None:
+        (j / f"{nom}.py").write_text(javob_matni, encoding="utf-8")
+    return b, j
+
+
+MASHQ_1 = '::: {.mashq #m3-1 daraja="A" javob="1"}\nsavol\n:::\n'
+
+
+def test_fmt_bool_rad_etiladi():
+    import pytest
+    with pytest.raises(TypeError):
+        tekshir.fmt(True)
+
+
+def test_qollab_quvvatlanmaydigan_tur_xato_royxatida(tmp_path):
+    for qiymat in ("(1, 2)", "[1]", "1+2j", "True", "float('inf')", "float('nan')"):
+        b, j = yoz(tmp_path, MASHQ_1, f"JAVOBLAR = {{'m3-1': {qiymat}}}\n")
+        xatolar = tekshir.javoblarni_tekshir(b, j)
+        assert len(xatolar) == 1 and "m3-1" in xatolar[0] and "03.py" in xatolar[0], (qiymat, xatolar)
+
+
+def test_javoblar_fayli_sintaksis_xatosi(tmp_path):
+    b, j = yoz(tmp_path, MASHQ_1, "JAVOBLAR = {\n")
+    xatolar = tekshir.javoblarni_tekshir(b, j)
+    assert len(xatolar) == 1 and "03.py" in xatolar[0] and "yuklanmadi" in xatolar[0]
+
+
+def test_javoblar_lugati_yoq(tmp_path):
+    b, j = yoz(tmp_path, MASHQ_1, "X = 1\n")
+    xatolar = tekshir.javoblarni_tekshir(b, j)
+    assert len(xatolar) == 1 and "JAVOBLAR" in xatolar[0]
+
+
+def test_javoblar_fayli_topilmadi(tmp_path):
+    b, j = yoz(tmp_path, MASHQ_1, None)
+    xatolar = tekshir.javoblarni_tekshir(b, j)
+    assert len(xatolar) == 1 and "03.py" in xatolar[0] and "topilmadi" in xatolar[0]
+
+
+def test_javobsiz_mashq(tmp_path):
+    b, j = yoz(tmp_path, '::: {.mashq #m3-1 daraja="A"}\nsavol\n:::\n', "JAVOBLAR = {'m3-1': 1}\n")
+    xatolar = tekshir.javoblarni_tekshir(b, j)
+    assert len(xatolar) == 1 and "m3-1" in xatolar[0] and "javob" in xatolar[0]
+    t = tekshir.tuzilishni_tekshir(to_liq_bob().replace('javob="1"', "", 1), "03-bob.md")
+    assert any("m3-1" in x and "javob" in x for x in t)
+
+
+def test_notogri_id_formati(tmp_path):
+    md = '::: {.mashq #m3-x daraja="A" javob="1"}\nsavol\n:::\n'
+    b, j = yoz(tmp_path, md, "JAVOBLAR = {'m3-x': 1}\n")
+    assert tekshir.javoblarni_tekshir(b, j) == []  # javob mos; id formatini tuzilish tekshiradi
+    t = tekshir.tuzilishni_tekshir(to_liq_bob().replace("#m3-1 ", "#m3-x ", 1), "03-bob.md")
+    assert any("m3-x" in x and "id formati" in x for x in t)
+
+
+def test_javoblar_fayli_ortiqcha(tmp_path):
+    b, j = yoz(tmp_path, MASHQ_1, "JAVOBLAR = {'m3-1': 1}\n")
+    (j / "07.py").write_text("JAVOBLAR = {}\n", encoding="utf-8")
+    xatolar = tekshir.javoblarni_tekshir(b, j)
+    assert len(xatolar) == 1 and "07.py" in xatolar[0] and "mos bob fayli yo'q" in xatolar[0]

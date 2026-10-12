@@ -30,6 +30,8 @@ def fmt(qiymat) -> str:
     """Qiymatni kitobda yoziladigan kanonik matnga aylantiradi."""
     if isinstance(qiymat, str):
         return qiymat
+    if isinstance(qiymat, bool):
+        raise TypeError("bool javob bo'la olmaydi (son yoki satr kerak)")
     if isinstance(qiymat, Fraction):
         if qiymat.denominator == 1:
             return str(qiymat.numerator)
@@ -145,7 +147,15 @@ def javoblarni_tekshir(boblar_dir: Path, javoblar_dir: Path) -> list[str]:
             if m.id not in hisob:
                 xatolar.append(f"{m.id}: hisobda yo'q (javoblar/{raqam}.py)")
                 continue
-            kutilgan = fmt(hisob[m.id])
+            if not m.javob.strip():
+                xatolar.append(f"{m.id}: javob atributi yo'q yoki bo'sh")
+                continue
+            try:
+                kutilgan = fmt(hisob[m.id])
+            except (TypeError, ValueError) as e:
+                xatolar.append(
+                    f"{m.id}: javob turi qo'llab-quvvatlanmaydi (javoblar/{raqam}.py): {e}")
+                continue
             if m.javob.strip() != kutilgan:
                 xatolar.append(f'{m.id}: kitobda "{m.javob}", hisobda "{kutilgan}"')
         for id_ in hisob:
