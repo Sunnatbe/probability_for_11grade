@@ -18,7 +18,7 @@ def harf(variantlar, togri):
 class Ifoda:
     """Ko'phad: {monom: koeffitsiyent}, monom = (("x", 2), ("y", 1)) kabi tartiblangan juftlar.
 
-    Kanonik matn (`matn`): daraja kamayishi bo'yicha, bir xil darajada harflar alifbosi
+    Kanonik matn (`matn`): daraja kamayishi bo'yicha, bir xil darajada harflar alifbosi (katta-kichik harf farqsiz)
     bo'yicha, ozod had oxirida; koeffitsiyent 1 yozilmaydi, kasr koeffitsiyent \\frac bilan.
     """
 
@@ -57,7 +57,7 @@ class Ifoda:
                 d = dict(m1)
                 for v, e in m2:
                     d[v] = d.get(v, 0) + e
-                m = tuple(sorted(d.items()))
+                m = tuple(sorted(d.items(), key=lambda p: (p[0].lower(), p[0])))
                 h[m] = h.get(m, 0) + k1 * k2
         return Ifoda(h)
 
@@ -104,10 +104,10 @@ class Ifoda:
             d = dict(m)
             e = d.pop(nom, 0)
             assert e in (0, 1), "harf birinchi darajada emas"
-            (a if e == 1 else b)[tuple(sorted(d.items()))] = k
+            (a if e == 1 else b)[tuple(sorted(d.items(), key=lambda p: (p[0].lower(), p[0])))] = k
         return Ifoda(a), Ifoda(b)
 
-    def matn(self, tartib=None, ozod_oldin=False):
+    def matn(self, tartib=None):
         if not self.h:
             return "0"
         tartib = tartib or self.harflar()
@@ -115,7 +115,7 @@ class Ifoda:
         def kalit(m):
             d = dict(m)
             if not m:
-                return (0 if ozod_oldin else 2, 0, ())
+                return (2, 0, ())
             return (1, -sum(d.values()), tuple(-d.get(v, 0) for v in tartib))
 
         qismlar = []
@@ -149,6 +149,8 @@ def kasr_matn(ifoda, **kw):
         maxraj = maxraj * k.denominator // gcd(maxraj, k.denominator)
     if maxraj == 1:
         return ifoda.matn(**kw)
+    if len(ifoda.h) == 1 and next(iter(ifoda.h.values())) < 0:
+        return "-" + kasr_matn(-ifoda, **kw)  # bitta hadli manfiy kasr: -\\frac{x}{2}
     return f"\\frac{{{(ifoda * maxraj).matn(**kw)}}}{{{maxraj}}}"
 
 
@@ -206,7 +208,7 @@ m11 = butun(yech(n + (n + 1) + (n + 2) + (n + 3), -18, "n"))
 m12 = butun(yech((x + 26) + 4, 3 * (x + 4)))     # qiz x, ona x + 26
 c13 = butun(yech(25000 * x + 40000 * (9 - x), 300000))   # x — bolalar
 assert 0 <= c13 <= 9
-m14 = onli(yech(14 * t + 18 * t, 80, "t"))
+m14 = onli(yech(14 * t + 18 * t, 112, "t"))
 m15 = yech(2 * (w + 3 * w), 64, "w")
 m16 = yech(F(80, 100) * x, 248000)
 x17 = butun(yech(x + (x + 5) + 2 * x, 85))
@@ -221,8 +223,8 @@ m19 = 2 * b19
 t20 = yech(90 * t, 60 * (t + 1), "t")           # avtomobil t soat yuradi
 m20 = 90 * t20
 assert m20 == 60 * (t20 + 1)
-tuz21 = F(15, 100) * 300
-m21 = yech(tuz21, F(9, 100) * (300 + w), "w")
+tuz21 = F(15, 100) * 400
+m21 = yech(tuz21, F(6, 100) * (400 + w), "w")
 m22 = yech(18000 * (12 - b) + 30000 * b, 26000 * 12, "b")
 j23 = yech(2 * x + x + (x - 120000), 1080000)
 m23 = 2 * j23                                   # Bobur
@@ -237,7 +239,7 @@ m26 = n26 + (n26 + 2) + (n26 + 4)
 s1 = harf([7 - 3 * n, 3 * n - 7, 3 * (n - 7), 3 * (7 - n)], 3 * n - 7)
 n2 = butun(yech(n + (n + 1) + (n + 2), 141, "n"))
 s2 = n2 + 2
-s3 = butun(yech(12 * a + 8 * (150 - a), 1560, "a"))
+s3 = butun(yech(12 * a + 8 * (80 - a), 840, "a"))
 s4 = harf([b + (2 * b + 4), b + 2 * (b + 4), 2 * b + 4, b + 4 * b + 2], b + (2 * b + 4))
 s5 = yech(70 * t + 50 * t, 360, "t")
 

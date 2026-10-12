@@ -4,7 +4,7 @@
 
 ## Bu bobda
 
-7-bobda darajalar qoidalarini harflar bilan yozgan edik: $a^m \cdot a^n = a^{m+n}$. O'shanda "harfli ifodalar haqida 8-bobda batafsil" degan edik. Mana shu bob, va u bilan kitobning ikkinchi qismi, algebra boshlanadi. Bu bobda:
+7-bobda darajalar qoidalarini harflar bilan yozgan edik: $a^m \cdot a^n = a^{m+n}$. O'shanda "harfli ifodalar haqida 8-bobda batafsil" degan edik. Mana shu bob. Shu bob bilan kitobning ikkinchi qismi — algebra boshlanadi. Bu bobda:
 
 - o'zgaruvchi va algebraik ifoda nima ekanini va ularni yozish qoidalarini;
 - o'zgaruvchi o'rniga son qo'yib, ifodaning qiymatini hisoblashni;
@@ -12,7 +12,7 @@
 - taqsimot xossasi yordamida qavslarni ochishni;
 - ifodalarni soddalashtirishni va umumiy ko'paytuvchini qavsdan chiqarishni o'rganamiz.
 
-**SAT'da qayerda kerak?** Algebra SAT Math'ning eng katta bo'limi, va uning deyarli har bir savoli ifoda bilan ishlashdan boshlanadi. "Which of the following is equivalent to $2(x - 3) + 5x$?" kabi savollar to'g'ridan-to'g'ri shu bobga tayanadi. Keyingi boblardagi tenglama (9-bob), tengsizlik (10-bob) va tenglamalar sistemasi (13-bob) ham avval ikkala tomonni soddalashtirishni talab qiladi.
+**SAT'da qayerda kerak?** Algebra SAT Math'ning eng katta ikki bo'limidan biri, va uning deyarli har bir savoli ifoda bilan ishlashdan boshlanadi. "Which of the following is equivalent to $2(x - 3) + 5x$?" kabi savollar to'g'ridan-to'g'ri shu bobga tayanadi. Keyingi boblardagi tenglama (9-bob), tengsizlik (10-bob) va tenglamalar sistemasi (13-bob) ham avval ikkala tomonni soddalashtirishni talab qiladi.
 
 ## Yangi so'zlar
 
@@ -90,7 +90,7 @@ Harfsiz had (bu yerda $7$) *ozod had (constant term)* deyiladi.
 
 Harfli qismi bir xil bo'lgan hadlar *o'xshash hadlar (like terms)* deyiladi. "Bir xil" degani: harflar ham, ularning darajalari ham bir xil.
 
-- O'xshash: $4x$ va $-9x$; $3x^2$ va $x^2$; $2ab$ va $ab$ (chunki $ba = ab$); $6$ va $-1$ (ikkalasi ham ozod had).
+- O'xshash: $4x$ va $-9x$; $3x^2$ va $x^2$; $2ab$ va $ba$ (chunki $ba = ab$); $6$ va $-1$ (ikkalasi ham ozod had).
 - O'xshash emas: $3x$ va $3x^2$ (darajasi har xil); $2x$ va $2y$ (harfi har xil); $5$ va $5x$.
 
 **O'xshash hadlarni birlashtirish:** koeffitsiyentlar qo'shiladi, harfli qism o'zgarmaydi. $4x + 7x = 11x$, xuddi $4$ ta olma va $7$ ta olma $11$ ta olma bo'lgani kabi. 7-bobdagi $5\sqrt{2} + 3\sqrt{2} = 8\sqrt{2}$ ham aynan shu qoida edi. O'xshash bo'lmagan hadlarni birlashtirib bo'lmaydi: $3x + 2$ ifodasini bundan soddaroq yozib bo'lmaydi.
@@ -150,7 +150,7 @@ O'zgaruvchining **har qanday** qiymatida bir xil qiymat beradigan ifodalar *teng
 
 Tekshirishning tez usuli yuqoridagi misolda ko'rsatildi: ikkala ifodaga bir xil son qo'yib ko'ring. Qiymatlar har xil chiqsa, soddalashtirishda xato bor. (Bitta sonda mos kelishi hali kafolat emas, lekin xatoni tez ushlaydi.)
 
-Ikkala ifoda soddalashtirilgan ko'rinishda bo'lsa, ular teng kuchli bo'lishi uchun $x$ li hadlarning koeffitsiyentlari ham, ozod hadlari ham teng bo'lishi kerak. Masalan, $a$ — biror o'zgarmas son va $2x + 3a$ ifodasi $2x + 12$ ga teng kuchli bo'lsa, ozod hadlar teng: $3a = 12$. Qaysi sonni $3$ ga ko'paytirsak $12$ chiqadi? $a = 4$.
+Ikkala ifoda soddalashtirilgan ko'rinishda bo'lsa, ular teng kuchli bo'lishi uchun $x$ li hadlarning koeffitsiyentlari ham, ozod hadlari ham teng bo'lishi kerak. Masalan, $k$ — biror *o'zgarmas son (constant)* va $2x + 3k$ ifodasi $2x + 12$ ga teng kuchli bo'lsa, ozod hadlar teng: $3k = 12$. Qaysi sonni $3$ ga ko'paytirsak $12$ chiqadi? $k = 4$.
 
 ### Umumiy ko'paytuvchini qavsdan chiqarish
 
@@ -183,9 +183,9 @@ Avval soddalashtiring, keyin $x = -\frac{1}{2}$ bo'lganda ifodaning qiymatini to
 
 **1. Minus oldidagi qavsda faqat birinchi hadning ishorasini almashtirish.**
 
-*Noto'g'ri:* $7 - (2x - 5) = 7 - 2x - 5 = 2 - 2x$.
+*Noto'g'ri:* $7 - (2x - 5) = 7 - 2x - 5 = -2x + 2$.
 
-*To'g'ri:* qavs ichidagi **har bir** hadning ishorasi almashadi: $7 - (2x - 5) = 7 - 2x + 5 = 12 - 2x$.
+*To'g'ri:* qavs ichidagi **har bir** hadning ishorasi almashadi: $7 - (2x - 5) = 7 - 2x + 5 = -2x + 12$.
 
 **2. Qavs oldidagi sonni faqat birinchi hadga ko'paytirish.**
 
@@ -225,8 +225,8 @@ $x = 6$ bo'lsa, $4x - 9$ ifodaning qiymatini toping.
 $a = -3$ bo'lsa, $5 - 2a$ ifodaning qiymatini toping.
 :::
 
-::: {.mashq #m8-3 daraja="A" javob="4"}
-$y = -4$ bo'lsa, $y^2 + 3y$ ifodaning qiymatini toping.
+::: {.mashq #m8-3 daraja="A" javob="10"}
+$y = -5$ bo'lsa, $y^2 + 3y$ ifodaning qiymatini toping.
 :::
 
 ::: {.mashq #m8-4 daraja="A" javob="$6x$"}
@@ -305,8 +305,8 @@ Soddalashtiring: $2x(3x - 1) - 3(x^2 - 2x + 4)$.
 Avval soddalashtiring, keyin $x = -3$ bo'lganda qiymatini toping: $4(2x - 5) - 3(2x - 7) + x$.
 :::
 
-::: {.mashq #m8-22 daraja="C" javob="36000"}
-Taksida yo'l haqi $6000 + 2500k$ so'm, bu yerda $k$ — bosib o'tilgan kilometrlar soni. $12$ km yo'l uchun necha so'm to'lanadi?
+::: {.mashq #m8-22 daraja="C" javob="12500"}
+Taksida yo'l haqi $6000 + 2500k$ so'm, bu yerda $k$ — bosib o'tilgan kilometrlar soni. Ali taksida uyidan maktabgacha $7$ km, Vali esa uyidan maktabgacha $12$ km yo'l yurdi. Vali Alidan necha so'm ko'p to'ladi?
 :::
 
 ::: {.mashq #m8-23 daraja="C" javob="$6x + 6$"}
@@ -352,7 +352,7 @@ A) $3x(2x + 3)$
 
 B) $3x(2x + 9)$
 
-C) $3(2x^{2} + 9x)$
+C) $6x(x + 3)$
 
 D) $6x(x + 9)$
 :::

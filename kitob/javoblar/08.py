@@ -17,7 +17,7 @@ def harf(variantlar, togri):
 class Ifoda:
     """Ko'phad: {monom: koeffitsiyent}, monom = (("x", 2), ("y", 1)) kabi tartiblangan juftlar.
 
-    Kanonik matn (`matn`): daraja kamayishi bo'yicha, bir xil darajada harflar alifbosi
+    Kanonik matn (`matn`): daraja kamayishi bo'yicha, bir xil darajada harflar alifbosi (katta-kichik harf farqsiz)
     bo'yicha, ozod had oxirida; koeffitsiyent 1 yozilmaydi, kasr koeffitsiyent \\frac bilan.
     """
 
@@ -56,7 +56,7 @@ class Ifoda:
                 d = dict(m1)
                 for v, e in m2:
                     d[v] = d.get(v, 0) + e
-                m = tuple(sorted(d.items()))
+                m = tuple(sorted(d.items(), key=lambda p: (p[0].lower(), p[0])))
                 h[m] = h.get(m, 0) + k1 * k2
         return Ifoda(h)
 
@@ -103,10 +103,10 @@ class Ifoda:
             d = dict(m)
             e = d.pop(nom, 0)
             assert e in (0, 1), "harf birinchi darajada emas"
-            (a if e == 1 else b)[tuple(sorted(d.items()))] = k
+            (a if e == 1 else b)[tuple(sorted(d.items(), key=lambda p: (p[0].lower(), p[0])))] = k
         return Ifoda(a), Ifoda(b)
 
-    def matn(self, tartib=None, ozod_oldin=False):
+    def matn(self, tartib=None):
         if not self.h:
             return "0"
         tartib = tartib or self.harflar()
@@ -114,7 +114,7 @@ class Ifoda:
         def kalit(m):
             d = dict(m)
             if not m:
-                return (0 if ozod_oldin else 2, 0, ())
+                return (2, 0, ())
             return (1, -sum(d.values()), tuple(-d.get(v, 0) for v in tartib))
 
         qismlar = []
@@ -148,6 +148,8 @@ def kasr_matn(ifoda, **kw):
         maxraj = maxraj * k.denominator // gcd(maxraj, k.denominator)
     if maxraj == 1:
         return ifoda.matn(**kw)
+    if len(ifoda.h) == 1 and next(iter(ifoda.h.values())) < 0:
+        return "-" + kasr_matn(-ifoda, **kw)  # bitta hadli manfiy kasr: -\\frac{x}{2}
     return f"\\frac{{{(ifoda * maxraj).matn(**kw)}}}{{{maxraj}}}"
 
 
@@ -194,8 +196,9 @@ ifoda21 = solishtir(4 * (2 * x - 5) - 3 * (2 * x - 7) + x,
                     lambda x: 4 * (2 * x - 5) - 3 * (2 * x - 7) + x)
 m21 = ifoda21.qiymat(x=-3)
 
-# m8-22: taksi 6000 + 2500k, k = 12 km
-m22 = (6000 + 2500 * Ifoda.harf("k")).qiymat(k=12)
+# m8-22: taksi 6000 + 2500k; Vali 12 km, Ali 7 km -> farq
+narx22 = 6000 + 2500 * Ifoda.harf("k")
+m22 = narx22.qiymat(k=12) - narx22.qiymat(k=7)
 
 # m8-23: eni x, bo'yi 2x + 3; perimetr = to'rt tomon yig'indisi
 m23 = solishtir(x + (2 * x + 3) + x + (2 * x + 3), lambda x: 2 * (x + 2 * x + 3))
@@ -218,7 +221,7 @@ s1_variant = [7 * x - 14, 7 * x - 2, 7 * x + 4, 17 * x - 14]
 s1 = harf(s1_variant, s1_togri)
 
 # s8-3: 6x^2 + 9x ga teng kuchli
-s3_variant = [3 * x * (2 * x + 3), 3 * x * (2 * x + 9), 3 * (2 * x**2 + 9 * x), 6 * x * (x + 9)]
+s3_variant = [3 * x * (2 * x + 3), 3 * x * (2 * x + 9), 6 * x * (x + 3), 6 * x * (x + 9)]
 s3 = harf(s3_variant, 6 * x**2 + 9 * x)
 
 # s8-4: 3(x + 2k) - 2x = x + 18 -> 6k = 18
@@ -230,7 +233,7 @@ JAVOBLAR = {
     # A
     "m8-1": (4 * x - 9).qiymat(x=6),
     "m8-2": (5 - 2 * a).qiymat(a=-3),
-    "m8-3": (y**2 + 3 * y).qiymat(y=-4),
+    "m8-3": (y**2 + 3 * y).qiymat(y=-5),
     "m8-4": d(solishtir(7 * x + 3 * x - 4 * x, lambda x: 7 * x + 3 * x - 4 * x).matn()),
     "m8-5": d(solishtir(9 * a - 4 + 2 * a + 10, lambda a: 9 * a - 4 + 2 * a + 10).matn()),
     "m8-6": d(solishtir(6 * (2 * x - 5), lambda x: 6 * (2 * x - 5)).matn()),

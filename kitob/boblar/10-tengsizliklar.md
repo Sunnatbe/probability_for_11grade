@@ -46,7 +46,7 @@ Ikki son yoki ifoda orasidagi "katta" yoki "kichik" munosabati *tengsizlik (ineq
 
 Eslab qolish oson: belgining **ochiq (keng) tomoni katta songa** qaragan, uchi esa kichik songa. $3 < 8$ va $8 > 3$ bir xil ma'noni bildiradi, faqat o'qish tartibi boshqa.
 
-$\leq$ belgisi "kichik **yoki** teng" degani, shuning uchun $5 \leq 5$ to'g'ri tengsizlik, $5 < 5$ esa noto'g'ri. Xuddi shunday, $7 \geq 7$ to'g'ri. "Kichik" va "katta" belgilari *qat'iy* tengsizlik belgilari deyiladi: ular tenglikka yo'l qo'ymaydi.
+$\leq$ belgisi "kichik **yoki** teng" degani, shuning uchun $5 \leq 5$ to'g'ri tengsizlik, $5 < 5$ esa noto'g'ri. Xuddi shunday, $7 \geq 7$ to'g'ri. "Kichik" va "katta" belgilari *qat'iy (strict)* tengsizlik belgilari deyiladi: ular tenglikka yo'l qo'ymaydi.
 
 1-bobdagi qoidani eslang: son o'qida o'ngdagi son har doim katta. Shuning uchun $-10 < -2$: $-10$ chaproqda turadi.
 
@@ -58,7 +58,7 @@ Yechimlar to'plamini son o'qida tasvirlaymiz:
 
 - chegaradagi son yechimga **kirmasa** (qat'iy belgi: $x < c$ yoki $x > c$), unga *bo'sh doiracha (open circle)* qo'yamiz;
 - chegaradagi son yechimga **kirsa** ($x \leq c$ yoki $x \geq c$), *bo'yalgan doiracha (closed circle)* qo'yamiz;
-- yechimlar qaysi tomonda bo'lsa, o'sha tomonga qalin chiziq va strelka chizamiz: "katta" bo'lsa o'ngga, "kichik" bo'lsa chapga.
+- yechimlar qaysi tomonda bo'lsa, o'sha tomonga qalin chiziq va strelka chizamiz: $x$ chap tomonda turganda "katta" bo'lsa o'ngga, "kichik" bo'lsa chapga.
 
 ![Son o'qida tengsizliklar: $x > 2$, $x \leq -1$ va $-2 < x \leq 3$](rasmlar/chiqish/10_tengsizlik.png){width=85%}
 
@@ -135,11 +135,11 @@ b) $-2x \geq 7$. $-2$ ga bo'lamiz, belgi almashadi: $x \leq -\frac{7}{2} = -3.5$
 
 ### Qo'sh tengsizlik
 
-$-2 < x \leq 3$ yozuvi ikki shartni birdan aytadi: $x > -2$ **va** $x \leq 3$. Bunday yozuv *qo'sh tengsizlik (compound inequality)* deyiladi. Son o'qida u ikki doiracha orasidagi kesma bo'ladi (yuqoridagi rasmning uchinchi qatori).
+$-2 < x \leq 3$ yozuvi ikki shartni birdan aytadi: $x > -2$ **va** $x \leq 3$. Bunday yozuv *qo'sh tengsizlik (compound inequality)* deyiladi. Son o'qida u ikki doiracha orasidagi *kesma (segment)* bo'ladi (yuqoridagi rasmning uchinchi qatori).
 
 Qo'sh tengsizlikni yechishda amalni uchala qismga **bir vaqtda** qo'llaymiz. Manfiy songa bo'lsak, ikkala belgi ham almashadi; shundan keyin javobni kichik sondan katta songa qarab qayta yozamiz.
 
-Ba'zan ikki shart "yoki" bilan bog'lanadi: "$x < -1$ yoki $x > 4$". Bunday yozuvni qo'sh tengsizlik shaklida yozib bo'lmaydi; son o'qida u qarama-qarshi tomonga ketgan ikki nur bo'ladi.
+Ba'zan ikki shart "yoki" bilan bog'lanadi: "$x < -1$ yoki $x > 4$". Bunday yozuvni qo'sh tengsizlik shaklida yozib bo'lmaydi; son o'qida u qarama-qarshi tomonga ketgan ikki *nur (ray)* bo'ladi.
 
 ::: {.misol}
 Yeching: a) $-1 \leq 2x + 3 < 9$; shu tengsizlikning nechta butun yechimi bor? b) $-7 < 5 - 3x \leq 11$.
@@ -239,8 +239,8 @@ Yeching: $\frac{x}{3} > -2$.
 Yeching: $-\frac{x}{2} < 4$.
 :::
 
-::: {.mashq #m10-7 daraja="A" javob="$x > -3$"}
-Son o'qida $-3$ nuqtada bo'sh doiracha turibdi va undan o'ngga qalin chiziq strelka bilan chizilgan. Bu qaysi tengsizlikning yechimlar to'plami?
+::: {.mashq #m10-7 daraja="A" javob="$x < 1$"}
+Son o'qida $1$ nuqtada bo'sh doiracha turibdi va undan chapga qalin chiziq strelka bilan chizilgan. Bu qaysi tengsizlikning yechimlar to'plami?
 :::
 
 ::: {.mashq #m10-8 daraja="A" javob="-3"}

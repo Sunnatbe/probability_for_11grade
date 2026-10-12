@@ -100,7 +100,7 @@ b) 1-qadam (qavslar): chap tomon $6x - 15 + 4 = 6x - 11$, o'ng tomon $2x + 14 - 
 
 ### Kasrli tenglamalar va proporsiyalar
 
-Tenglamada kasrlar bo'lsa, ikkala tomonni maxrajlarning EKUKiga (2-bob) ko'paytiramiz. Shunda kasrlar yo'qoladi. Diqqat: **har bir** had ko'paytiriladi, kasrsiz hadlar ham. Kasrning surati ko'phad bo'lsa, uni qavsga olamiz, chunki kasr chizig'i qavs vazifasini bajaradi.
+Tenglamada kasrlar bo'lsa, ikkala tomonni maxrajlarning EKUKiga (2-bob) ko'paytiramiz. Shunda kasrlar yo'qoladi. Diqqat: **har bir** had ko'paytiriladi, kasrsiz hadlar ham. Kasrning surati bir necha haddan iborat bo'lsa, uni qavsga olamiz, chunki kasr chizig'i qavs vazifasini bajaradi.
 
 Tenglama $\frac{a}{b} = \frac{c}{d}$ ko'rinishidagi proporsiya bo'lsa, 5-bobdagi ayqash ko'paytirishdan foydalanamiz: $a \cdot d = b \cdot c$.
 
@@ -168,13 +168,13 @@ b) $d = vt$ formulani $t$ ga nisbatan yeching va $d = 270$ km, $v = 90$ km/soat 
 
 a) $2a$ ni chap tomonga o'tkazamiz: $P - 2a = 2b$. Ikkala tomonni $2$ ga bo'lamiz:
 
-$$b = \frac{P - 2a}{2}.$$
+$$b = \frac{-2a + P}{2}.$$
 
 $P = 30$, $a = 9$ da: $b = \frac{30 - 18}{2} = 6$.
 
 b) Ikkala tomonni $v$ ga bo'lamiz ($v \neq 0$): $t = \frac{d}{v}$. Bundan $t = \frac{270}{90} = 3$ soat.
 
-*Javob:* a) $b = \frac{P - 2a}{2}$, $b = 6$; b) $t = \frac{d}{v}$, $t = 3$ soat.
+*Javob:* a) $b = \frac{-2a + P}{2}$, $b = 6$; b) $t = \frac{d}{v}$, $t = 3$ soat.
 :::
 
 ## Ko'p uchraydigan xatolar
@@ -211,7 +211,7 @@ b) Ikkala tomonni $v$ ga bo'lamiz ($v \neq 0$): $t = \frac{d}{v}$. Bundan $t = \
 
 ## Mashqlar
 
-Tenglamalarni yeching. Kasr javobni qisqarmas kasr ko'rinishida yozing. Tenglamaning yechimi bo'lmasa, javobga "yechimi yo'q", cheksiz ko'p yechimi bo'lsa, "cheksiz ko'p yechim" deb yozing. Formulani yechganda javobni bitta kasr ko'rinishida yozing (masalan, $a = \frac{c - 5b}{3}$).
+Tenglamalarni yeching. Kasr javobni qisqarmas kasr ko'rinishida yozing. Tenglamaning yechimi bo'lmasa, javobga "yechimi yo'q", cheksiz ko'p yechimi bo'lsa, "cheksiz ko'p yechim" deb yozing. Formulani yechganda javobni bitta kasr ko'rinishida yozing (masalan, $a = \frac{-5b + c}{3}$; hadlar daraja va alifbo tartibida, ozod had oxirida).
 
 ### A daraja
 
@@ -319,7 +319,7 @@ Mobil aloqa tarifida oylik to'lov $25\,000$ so'm, bundan tashqari har bir gigaba
 "Chempion" sport zalida a'zolik badali $120\,000$ so'm va har bir mashg'ulot $15\,000$ so'm. "Sog'lom" zalida a'zolik badali yo'q, lekin har bir mashg'ulot $25\,000$ so'm. Nechta mashg'ulotda ikkala zalda jami to'lov bir xil bo'ladi?
 :::
 
-::: {.mashq #m9-26 daraja="C" javob="$y = \frac{18 - 2x}{3}$"}
+::: {.mashq #m9-26 daraja="C" javob="$y = \frac{-2x + 18}{3}$"}
 $2x + 3y = 18$ tenglikdan $y$ ni $x$ orqali ifodalang.
 :::
 

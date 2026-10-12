@@ -18,7 +18,7 @@ def harf(variantlar, togri):
 class Ifoda:
     """Ko'phad: {monom: koeffitsiyent}, monom = (("x", 2), ("y", 1)) kabi tartiblangan juftlar.
 
-    Kanonik matn (`matn`): daraja kamayishi bo'yicha, bir xil darajada harflar alifbosi
+    Kanonik matn (`matn`): daraja kamayishi bo'yicha, bir xil darajada harflar alifbosi (katta-kichik harf farqsiz)
     bo'yicha, ozod had oxirida; koeffitsiyent 1 yozilmaydi, kasr koeffitsiyent \\frac bilan.
     """
 
@@ -57,7 +57,7 @@ class Ifoda:
                 d = dict(m1)
                 for v, e in m2:
                     d[v] = d.get(v, 0) + e
-                m = tuple(sorted(d.items()))
+                m = tuple(sorted(d.items(), key=lambda p: (p[0].lower(), p[0])))
                 h[m] = h.get(m, 0) + k1 * k2
         return Ifoda(h)
 
@@ -104,10 +104,10 @@ class Ifoda:
             d = dict(m)
             e = d.pop(nom, 0)
             assert e in (0, 1), "harf birinchi darajada emas"
-            (a if e == 1 else b)[tuple(sorted(d.items()))] = k
+            (a if e == 1 else b)[tuple(sorted(d.items(), key=lambda p: (p[0].lower(), p[0])))] = k
         return Ifoda(a), Ifoda(b)
 
-    def matn(self, tartib=None, ozod_oldin=False):
+    def matn(self, tartib=None):
         if not self.h:
             return "0"
         tartib = tartib or self.harflar()
@@ -115,7 +115,7 @@ class Ifoda:
         def kalit(m):
             d = dict(m)
             if not m:
-                return (0 if ozod_oldin else 2, 0, ())
+                return (2, 0, ())
             return (1, -sum(d.values()), tuple(-d.get(v, 0) for v in tartib))
 
         qismlar = []
@@ -149,6 +149,8 @@ def kasr_matn(ifoda, **kw):
         maxraj = maxraj * k.denominator // gcd(maxraj, k.denominator)
     if maxraj == 1:
         return ifoda.matn(**kw)
+    if len(ifoda.h) == 1 and next(iter(ifoda.h.values())) < 0:
+        return "-" + kasr_matn(-ifoda, **kw)  # bitta hadli manfiy kasr: -\\frac{x}{2}
     return f"\\frac{{{(ifoda * maxraj).matn(**kw)}}}{{{maxraj}}}"
 
 
@@ -230,7 +232,7 @@ n = Ifoda.harf("n")
 m25 = yech(120000 + 15000 * n, 25000 * n, "n")
 
 # m9-26: 2x + 3y = 18 ni y ga nisbatan
-m26 = d("y = " + kasr_matn(harfli_yech(2 * x + 3 * y, Ifoda({(): 18}), "y"), ozod_oldin=True))
+m26 = d("y = " + kasr_matn(harfli_yech(2 * x + 3 * y, Ifoda({(): 18}), "y")))
 
 # s9-3: qaysi tenglamaning yechimi yo'q
 s3_variant = [

@@ -53,7 +53,7 @@
 Ikki narsaga alohida e'tibor bering.
 
 - **Tartib.** "$x$ dan $3$ ga kam" — bu $x - 3$, $3 - x$ emas. Inglizchada ham "$3$ less than $x$" — $x - 3$: so'zlar tartibi teskari, ehtiyot bo'ling.
-- **Qavs.** "Yig'indining ikki baravari" — $2(x + y)$, "ikki baravarining yig'indisi" esa boshqa narsa. "$x$ ning ikki baravaridan $5$ ga kam" — $2x - 5$, "$x$ dan $5$ ga kam sonning ikki baravari" esa $2(x - 5)$.
+- **Qavs.** "Yig'indining ikki baravari" — $2(x + y)$, "$x$ ning ikki baravari va $y$ ning yig'indisi" esa $2x + y$. "$x$ ning ikki baravaridan $5$ ga kam" — $2x - 5$, "$x$ dan $5$ ga kam sonning ikki baravari" esa $2(x - 5)$.
 
 Shubha bo'lsa, $x$ o'rniga aniq son qo'yib tekshiring: "$10$ dan $3$ ga kam" — $7$, ya'ni $10 - 3$. Demak, "$x$ dan $3$ ga kam" — $x - 3$.
 
@@ -61,7 +61,7 @@ Shubha bo'lsa, $x$ o'rniga aniq son qo'yib tekshiring: "$10$ dan $3$ ga kam" —
 
 1. **Belgilang.** Masalani oxirigacha o'qing: nima so'ralmoqda? Noma'lum miqdorni harf bilan belgilang va buni yozib qo'ying: "$x$ — kichik o'g'ilning yoshi". Odatda qolgan miqdorlar u orqali oson ifodalanadigan miqdorni tanlang (ko'pincha eng kichigini).
 2. **Ifodalang.** Masaladagi boshqa miqdorlarni shu harf orqali yozing.
-3. **Tenglama tuzing.** Matnda ikki xil yo'l bilan aytilgan bitta miqdorni toping ("jami 85 ta", "yoshlari teng bo'ladi") va ikkalasini tenglang.
+3. **Tenglama tuzing.** Matnda ikki xil yo'l bilan aytilgan bitta miqdorni toping ("jami 27 ta", "yoshlari teng bo'ladi") va ikkalasini tenglang.
 4. **Yeching va tekshiring.** Tenglamani yeching (9-bob). Javobni **matn shartiga** qo'yib tekshiring (tenglamaga emas: tenglama noto'g'ri tuzilgan bo'lishi mumkin). Savol aynan nimani so'raganiga qarang: $x$ ni emas, boshqa miqdorni so'ragan bo'lishi mumkin.
 
 ::: {.misol}
@@ -149,7 +149,7 @@ Qavsni ochamiz: $10\,000x + 140\,000 - 5000x = 195\,000$, ya'ni $5000x = 55\,000
 
 ### Tezlik, masofa, vaqt
 
-5-bobdan bilamiz: *masofa (distance)* tezlik bilan *vaqt (time)* ko'paytmasiga teng, $d = vt$. Ikki jism harakatlanadigan masalalarda:
+5- va 9-boblardan bilamiz: *masofa (distance)* tezlik bilan *vaqt (time)* ko'paytmasiga teng, $d = vt$. Ikki jism harakatlanadigan masalalarda:
 
 - bir-biriga qarab (yoki qarama-qarshi tomonga) harakatlansa, ular orasidagi masofa har soatda tezliklar **yig'indisi** qadar o'zgaradi;
 - bir tomonga harakatlanib, biri ikkinchisini quvib yetsa, ular orasidagi masofa har soatda tezliklar **ayirmasi** qadar qisqaradi.
@@ -272,8 +272,8 @@ Ona qizidan $26$ yosh katta. $4$ yildan keyin ona qizidan $3$ marta katta bo'lad
 Konsertga kattalar chiptasi $40\,000$ so'm, bolalar chiptasi $25\,000$ so'm turadi. $9$ kishilik oila hammasi uchun $300\,000$ so'm to'ladi. Oilada nechta bola bor?
 :::
 
-::: {.mashq #m11-14 daraja="B" javob="2.5"}
-Ikki velosipedchi bir joydan bir vaqtda qarama-qarshi tomonlarga yo'lga chiqdi. Birinchisining tezligi soatiga $14$ km, ikkinchisiniki soatiga $18$ km. Necha soatdan keyin ular orasidagi masofa $80$ km bo'ladi?
+::: {.mashq #m11-14 daraja="B" javob="3.5"}
+Ikki velosipedchi bir joydan bir vaqtda qarama-qarshi tomonlarga yo'lga chiqdi. Birinchisining tezligi soatiga $14$ km, ikkinchisiniki soatiga $18$ km. Necha soatdan keyin ular orasidagi masofa $112$ km bo'ladi?
 :::
 
 ::: {.mashq #m11-15 daraja="B" javob="8"}
@@ -302,8 +302,8 @@ Hozir Akmal ukasidan $2$ marta katta. $6$ yil oldin esa Akmal ukasidan $3$ marta
 Soat 9:00 da shahardan avtobus soatiga $60$ km tezlikda yo'lga chiqdi. Soat 10:00 da xuddi shu joydan, xuddi shu yo'l bo'ylab avtomobil soatiga $90$ km tezlikda yo'lga chiqdi. Avtomobil avtobusni shahardan necha kilometr uzoqlikda quvib yetadi?
 :::
 
-::: {.mashq #m11-21 daraja="C" javob="200"}
-$300$ g $15\%$ li tuzli eritmaga necha gramm toza suv qo'shilsa, $9\%$ li eritma hosil bo'ladi?
+::: {.mashq #m11-21 daraja="C" javob="600"}
+$400$ g $15\%$ li tuzli eritmaga necha gramm toza suv qo'shilsa, $6\%$ li eritma hosil bo'ladi?
 :::
 
 ::: {.mashq #m11-22 daraja="C" javob="8"}
@@ -328,7 +328,7 @@ Uchta ketma-ket juft son berilgan. Birinchi va uchinchi sonlarning yig'indisi o'
 
 ## SAT ko'prigi
 
-Quyidagi savollar SAT uslubida, inglizcha yozilgan. *Represents* — "ifodalaydi", *ticket* — chipta, *apart* — bir-biridan uzoqda. Javoblar kitob oxirida.
+Quyidagi savollar SAT uslubida, inglizcha yozilgan. *Represents* — "ifodalaydi", *ticket* — chipta, *apart* — bir-biridan uzoqda, *mile* — mil (uzunlik birligi, taxminan $1.6$ km). Javoblar kitob oxirida.
 
 ::: {.sat #s11-1 javob="B"}
 Which expression represents $7$ less than $3$ times a number $n$?
@@ -346,8 +346,8 @@ D) $3(7 - n)$
 The sum of three consecutive integers is $141$. What is the greatest of the three integers?
 :::
 
-::: {.sat #s11-3 javob="90"}
-A theater sold $150$ tickets for a total of \$1,560. Adult tickets cost \$12 each, and student tickets cost \$8 each. How many adult tickets did the theater sell?
+::: {.sat #s11-3 javob="50"}
+A theater sold $80$ tickets for a total of \$840. Adult tickets cost \$12 each, and student tickets cost \$8 each. How many adult tickets did the theater sell?
 :::
 
 ::: {.sat #s11-4 javob="A"}
