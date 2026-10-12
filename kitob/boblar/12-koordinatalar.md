@@ -31,6 +31,7 @@
 | funksiya | function |
 | chiziqli funksiya | linear function |
 | burchak koeffitsiyenti | slope |
+| aniqlanmagan | undefined |
 | y o'qi bilan kesishish nuqtasi | y-intercept |
 | x o'qi bilan kesishish nuqtasi | x-intercept |
 | parallel to'g'ri chiziqlar | parallel lines |
@@ -69,7 +70,7 @@ Rasmdagi $A$, $B$, $C$, $D$ va $E$ nuqtalarning koordinatalarini yozing. Har bir
 - $B$: $4$ birlik chapda, $1$ birlik yuqorida, demak $B(-4, 1)$. II chorak.
 - $C$: $2$ birlik chapda, $3$ birlik pastda, demak $C(-2, -3)$. III chorak.
 - $D$: $4$ birlik o'ngda, $2$ birlik pastda, demak $D(4, -2)$. IV chorak.
-- $E$: $5$ birlik chapda va $x$ o'qining ustida, demak $E(-5, 0)$. U hech qaysi chorakda emas, $x$ o'qida yotadi.
+- $E$: $5$ birlik chapda, $x$ o'qida yotadi, demak $E(-5, 0)$. U hech qaysi chorakda emas.
 
 *Javob:* $A(3, 2)$ — I; $B(-4, 1)$ — II; $C(-2, -3)$ — III; $D(4, -2)$ — IV; $E(-5, 0)$ — $x$ o'qida.
 :::
@@ -82,7 +83,7 @@ $y = 2x - 1$ tenglamasini olaylik. $x$ ga bir nechta qiymat berib, $y$ ni hisobl
 |---|---|---|---|---|
 | $y$ | $-3$ | $-1$ | $1$ | $3$ |
 
-Har bir ustun bitta nuqta beradi: $(-1, -3)$, $(0, -1)$, $(1, 1)$, $(2, 3)$. Bu nuqtalarni koordinatalar tekisligida belgilasak, ular bitta *to'g'ri chiziq (line)* ustida yotadi. Tenglamani to'g'ri tenglikka aylantiradigan barcha $(x, y)$ nuqtalar to'plami tenglamaning *grafigi (graph)* deyiladi. $y = mx + b$ ko'rinishidagi har bir tenglamaning grafigi to'g'ri chiziq; 9-bobda chiziqli tenglama deb nom qo'yganimizning sababi ham shu.
+Har bir ustun bitta nuqta beradi: $(-1, -3)$, $(0, -1)$, $(1, 1)$, $(2, 3)$. Bu nuqtalarni koordinatalar tekisligida belgilasak, ular bitta *to'g'ri chiziq (line)* ustida yotadi. Tenglamani to'g'ri tenglikka aylantiradigan barcha $(x, y)$ nuqtalar to'plami tenglamaning *grafigi (graph)* deyiladi. $y = mx + b$ ko'rinishidagi (bu yerda $m$ va $b$ — biror sonlar) har bir tenglamaning grafigi to'g'ri chiziq; 9-bobda chiziqli tenglama deb nom qo'yganimizning sababi ham shu.
 
 Demak, nuqta to'g'ri chiziqda yotishini tekshirish uchun uning koordinatalarini tenglamaga qo'yamiz: tenglik to'g'ri chiqsa, nuqta chiziqda yotadi.
 
@@ -122,8 +123,9 @@ Burchak koeffitsiyentining ishorasi chiziq qayoqqa ketishini aytadi (chapdan o'n
 
 - $m$ musbat — chiziq ko'tariladi;
 - $m$ manfiy — chiziq tushadi;
-- $m = 0$ — chiziq gorizontal, masalan $y = 4$ (hamma nuqtalarida $y$ bir xil);
-- vertikal chiziqda, masalan $x = -3$, hamma nuqtalarda $x$ bir xil, maxrajda $0$ chiqadi va burchak koeffitsiyenti *aniqlanmagan (undefined)*. Vertikal chiziqni $y = mx + b$ ko'rinishida yozib bo'lmaydi.
+- $m = 0$ — chiziq gorizontal, masalan $y = 4$ (hamma nuqtalarida $y$ bir xil).
+
+**Alohida holat: vertikal chiziq.** Vertikal chiziqda, masalan $x = -3$, hamma nuqtalarda $x$ bir xil, formulaning maxrajida $0$ chiqadi. Shuning uchun vertikal chiziqning burchak koeffitsiyenti *aniqlanmagan (undefined)*: u yo'q. Vertikal chiziqni $y = mx + b$ ko'rinishida yozib bo'lmaydi.
 
 ::: {.misol}
 $(-1, 4)$ va $(3, -2)$ nuqtalardan o'tuvchi to'g'ri chiziqning burchak koeffitsiyentini toping. Chiziq ko'tariladimi yoki tushadimi?
@@ -154,9 +156,9 @@ To'g'ri chiziq tenglamasini yozish uchun $m$ va $b$ kerak:
 2. Chiziqdagi bitta nuqtaning koordinatalarini $y = mx + b$ ga qo'yamiz va $b$ ni topamiz.
 3. Ikkinchi nuqta bilan tekshiramiz.
 
-Tenglama $ax + by = c$ ko'rinishida berilsa (masalan, $3x + 2y = 8$), 9-bobdagidek uni $y$ ga nisbatan yechamiz va $m$ ni o'qiymiz.
+Tenglama $Ax + By = C$ ko'rinishida berilsa (bu yerda $A$, $B$, $C$ — sonlar; masalan, $3x + 2y = 8$), 9-bobdagidek uni $y$ ga nisbatan yechamiz va $m$ ni o'qiymiz.
 
-**Parallel to'g'ri chiziqlar.** Hech qachon kesishmaydigan to'g'ri chiziqlar *parallel to'g'ri chiziqlar (parallel lines)* deyiladi. Ikki chiziq parallel bo'lishi uchun ularning burchak koeffitsiyentlari teng, $b$ lari esa har xil bo'lishi kerak. Masalan, $y = 3x - 2$ va $y = 3x + 5$ parallel. $m$ ham, $b$ ham bir xil bo'lsa, bu bitta chiziqning o'zi.
+**Parallel to'g'ri chiziqlar.** Hech qachon kesishmaydigan to'g'ri chiziqlar *parallel to'g'ri chiziqlar (parallel lines)* deyiladi. Ikki chiziq (vertikal bo'lmagan chiziqlar uchun) parallel bo'lishi uchun ularning burchak koeffitsiyentlari teng, $b$ lari esa har xil bo'lishi kerak. Masalan, $y = 3x - 2$ va $y = 3x + 5$ parallel. $m$ ham, $b$ ham bir xil bo'lsa, bu bitta chiziqning o'zi.
 
 ::: {.misol}
 a) Rasmdagi to'g'ri chiziqning tenglamasini yozing.
@@ -229,7 +231,7 @@ c) $-12t + 95 = 23$, $-12t = -72$, $t = 6$.
 
 *To'g'ri:* suratda ikkinchi nuqtadan birinchisi ayirilgan bo'lsa, maxrajda ham shunday: $m = \frac{10 - 1}{5 - 2} = \frac{9}{3} = 3$.
 
-**3. $ax + by = c$ dan burchak koeffitsiyentini to'g'ridan-to'g'ri o'qish.**
+**3. $Ax + By = C$ dan burchak koeffitsiyentini to'g'ridan-to'g'ri o'qish.**
 
 *Noto'g'ri:* $2x + 3y = 6$ ning burchak koeffitsiyenti $2$.
 
@@ -249,7 +251,7 @@ c) $-12t + 95 = 23$, $-12t = -72$, $t = 6$.
 
 ## Mashqlar
 
-Nuqtani $(a, b)$ ko'rinishida yozing (masalan, $(-6, 11)$). Burchak koeffitsiyentini butun son yoki qisqarmas kasr ko'rinishida yozing. To'g'ri chiziq tenglamasini $y = mx + b$ ko'rinishida yozing (masalan, $y = -\frac{5}{4}x + 7$).
+Nuqtani $(a, b)$ ko'rinishida yozing (masalan, $(-6, 11)$). Burchak koeffitsiyentini butun son yoki qisqarmas kasr ko'rinishida yozing (masalan, $-\frac{7}{5}$). To'g'ri chiziq tenglamasini $y = mx + b$ ko'rinishida yozing (masalan, $y = -\frac{5}{4}x + 7$).
 
 ### A daraja
 
@@ -342,7 +344,7 @@ Taksi narxi o'tirish narxi va har bir kilometr uchun bir xil haqdan iborat, ya'n
 :::
 
 ::: {.mashq #m12-22 daraja="C" javob="16"}
-Uzunligi $24$ sm bo'lgan sham yoqildi. $t$ soatdan keyin shamning uzunligi $h = 24 - 1.5t$ santimetr bo'ladi. Sham necha soatda butunlay yonib bo'ladi?
+Uzunligi $24$ sm bo'lgan sham yoqildi. Sham bir tekis yonadi, ya'ni uning uzunligi vaqtning chiziqli funksiyasi. $2$ soatdan keyin shamning uzunligi $21$ sm bo'ldi. Sham yoqilganidan necha soat o'tib butunlay yonib bo'ladi?
 :::
 
 ::: {.mashq #m12-23 daraja="C" javob="50"}
@@ -350,7 +352,7 @@ Sayohatda avtomobil bir xil tezlikda yurdi, shuning uchun bakdagi benzin miqdori
 :::
 
 ::: {.mashq #m12-24 daraja="C" javob="15"}
-Dilnoza noutbuk olish uchun pul yig'moqda. $h$ haftadan keyin uning jamg'armasi $J = 40\,000h + 150\,000$ so'm bo'ladi. Necha haftadan keyin jamg'armasi $750\,000$ so'mga yetadi?
+Dilnoza noutbuk olish uchun pul yig'moqda. Boshida uning $150\,000$ so'mi bor edi, keyin u har hafta bir xil miqdorda pul qo'shib bordi. $3$ haftadan keyin jamg'armasi $270\,000$ so'm bo'ldi. Boshidan hisoblaganda necha haftadan keyin jamg'armasi $750\,000$ so'mga yetadi?
 :::
 
 ::: {.mashq #m12-25 daraja="C" javob="$(0, 3)$"}
@@ -359,14 +361,14 @@ To'g'ri chiziq $(-4, 9)$ nuqtadan o'tadi va $x$ o'qini $(2, 0)$ nuqtada kesib o'
 
 ## SAT ko'prigi
 
-Quyidagi savollar SAT uslubida, inglizcha yozilgan. *xy-plane* — koordinatalar tekisligi, *intersects* — kesib o'tadi, *constant* — o'zgarmas son, *fixed fee* — qat'iy (o'zgarmas) to'lov, *best interpretation* — eng to'g'ri izoh. Javoblar kitob oxirida.
+Quyidagi savollar SAT uslubida, inglizcha yozilgan. *xy-plane* — koordinatalar tekisligi, *intersects* — kesib o'tadi, *constant* — o'zgarmas son, *plumber* — santexnik, *charges* — haq oladi, *fixed fee* — qat'iy (o'zgarmas) to'lov, *best interpretation* — eng to'g'ri izoh. Javoblar kitob oxirida.
 
 ::: {.sat #s12-1 javob="-4/3"}
 In the xy-plane, a line passes through the points $(-2, 7)$ and $(4, -1)$. What is the slope of the line?
 :::
 
-::: {.sat #s12-2 javob="3"}
-The graph of $y = 4x - 12$ in the xy-plane intersects the x-axis at the point $(a, 0)$. What is the value of $a$?
+::: {.sat #s12-2 javob="9"}
+The graph of $y = 4x - 36$ in the xy-plane intersects the x-axis at the point $(a, 0)$. What is the value of $a$?
 :::
 
 ::: {.sat #s12-3 javob="C"}
@@ -393,6 +395,6 @@ C) The total charge for a visit with $1$ hour of work, in dollars
 D) The number of hours of work for each visit
 :::
 
-::: {.sat #s12-5 javob="-12"}
-The function $f$ is defined by $f(x) = ax - 7$, where $a$ is a constant. If $f(3) = 8$, what is the value of $f(-1)$?
+::: {.sat #s12-5 javob="-17"}
+The function $f$ is defined by $f(x) = ax - 7$, where $a$ is a constant. If $f(3) = 8$, what is the value of $f(-2)$?
 :::

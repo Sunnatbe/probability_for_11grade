@@ -42,7 +42,7 @@ Bu yerda $a \neq 0$. Bu yozuv kvadrat tenglamaning standart ko'rinishi (14-bob):
 - $x^2 - 9 = 0$: $a = 1$, $b = 0$, $c = -9$;
 - $x^2 + x = 12$ hali standart ko'rinishda emas: $12$ ni chapga o'tkazamiz, $x^2 + x - 12 = 0$.
 
-Kvadrat tenglamaning yechimlari uning *ildizlari (roots)* deb ham ataladi. Chiziqli tenglamaning bitta yechimi bo'lsa, kvadrat tenglamaning ikkita, bitta ildizi bo'lishi yoki birorta ham ildizi bo'lmasligi mumkin.
+Kvadrat tenglamaning yechimlari uning *ildizlari (roots)* deb ham ataladi. Chiziqli tenglamaning odatda bitta yechimi bo'ladi; kvadrat tenglamaning esa ikkita, bitta ildizi bo'lishi yoki birorta ham ildizi bo'lmasligi mumkin.
 
 ### $x^2 = k$ ko'rinishidagi tenglamalar
 
@@ -176,7 +176,7 @@ Parabolaning asosiy xossalari:
 - $a$ musbat bo'lsa, parabolaning shoxlari yuqoriga qaragan; $a$ manfiy bo'lsa, pastga qaragan.
 - Parabolaning eng pastki (shoxlari pastga qaragan bo'lsa, eng yuqori) nuqtasi *parabolaning uchi (vertex)* deyiladi. Uchining $x$ koordinatasi $x = \frac{-b}{2a}$ formula bilan topiladi, $y$ koordinatasini esa shu $x$ ni funksiyaga qo'yib topamiz.
 - Uchidan o'tuvchi vertikal to'g'ri chiziq *simmetriya o'qi (axis of symmetry)* deyiladi: parabolaning chap va o'ng yarmi unga nisbatan oynadagi aksdek bir xil.
-- $x$ o'qi bilan kesishish nuqtalarida $y = 0$, ya'ni ularning $x$ koordinatalari $ax^2 + bx + c = 0$ tenglamasining ildizlari. Ildiz nechta bo'lsa, kesishish nuqtasi shuncha: $D$ manfiy bo'lsa, parabola $x$ o'qini umuman kesmaydi.
+- $x$ o'qi bilan kesishish nuqtalarida $y = 0$, ya'ni ularning $x$ koordinatalari $ax^2 + bx + c = 0$ tenglamasining ildizlari. Ildiz nechta bo'lsa, kesishish nuqtasi shuncha: $D = 0$ bo'lsa, parabola $x$ o'qiga bitta nuqtada (uchida) tegadi; $D$ manfiy bo'lsa, parabola $x$ o'qini umuman kesmaydi.
 - $y$ o'qi bilan kesishish nuqtasi $(0, c)$, chunki $x = 0$ da $y = c$.
 
 ::: {.misol}
@@ -227,7 +227,7 @@ c) $a = 1$, $b = -2$: $x = \frac{-(-2)}{2 \cdot 1} = 1$. $y = 1^2 - 2 \cdot 1 - 
 
 ## Mashqlar
 
-Boshqa savol berilmagan bo'lsa, tenglamani yeching. Ildizlarni o'sish tartibida, nuqtali vergul bilan ajratib yozing (masalan, $x = -9$; $x = 2$). Ildiz bitta bo'lsa, faqat uni yozing; ildiz bo'lmasa, "yechimi yo'q" deb yozing. Diskriminant to'liq kvadrat bo'lmasa, ildizlarni Misol 3 ning a) bandidagidek soddalashtirilgan ildiz bilan yozing. Nuqtani $(a, b)$ ko'rinishida yozing (masalan, $(-7, 12)$); bir nechta nuqtani $x$ koordinatasi o'sish tartibida yozing.
+Boshqa savol berilmagan bo'lsa, tenglamani yeching. Ildizlarni o'sish tartibida, nuqtali vergul bilan ajratib yozing (masalan, $x = -9$; $x = 2$). Ildiz bitta bo'lsa, faqat uni yozing; ildiz bo'lmasa, "yechimi yo'q" deb yozing. Diskriminant to'liq kvadrat bo'lmasa, ildizlarni Misol 3 ning a) bandidagidek soddalashtirilgan ildiz bilan yozing; kasr qolsa, uni bitta kasr ko'rinishida yozing (masalan, $x = \frac{1 - \sqrt{13}}{6}$; $x = \frac{1 + \sqrt{13}}{6}$). Nuqtani $(a, b)$ ko'rinishida yozing (masalan, $(-7, 12)$); bir nechta nuqtani $x$ koordinatasi o'sish tartibida yozing.
 
 ### A daraja
 

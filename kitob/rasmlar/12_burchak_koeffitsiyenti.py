@@ -33,7 +33,7 @@ for k in range(XMIN, XMAX + 1):
         ax.text(k, -0.4, f"${k}$", ha="center", va="center", fontsize=8.5)
 for k in range(YMIN, YMAX + 1):
     if k:
-        ax.text(-0.25, k, f"${k}$", ha="right", va="center", fontsize=8.5)
+        ax.text(-0.4 if k == 1 else -0.25, k, f"${k}$", ha="right", va="center", fontsize=8.5)
 ax.text(-0.3, -0.4, "$O$", fontsize=11, ha="center", va="center")
 
 # to'g'ri chiziq y = 2x/3 + 1

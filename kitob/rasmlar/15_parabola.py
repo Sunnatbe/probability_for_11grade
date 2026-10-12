@@ -30,7 +30,7 @@ ax.text(XMAX + 0.6, -0.45, "$x$", fontsize=13, ha="center", va="center")
 ax.text(0.4, YMAX + 0.6, "$y$", fontsize=13, ha="center", va="center")
 for k in range(XMIN, XMAX + 1):
     if k not in (0, -1, 3):
-        ax.text(k, -0.42, f"${k}$", ha="center", va="center", fontsize=8.5)
+        ax.text(k + (0.2 if k == 1 else 0), -0.42, f"${k}$", ha="center", va="center", fontsize=8.5)
 for k in range(YMIN, YMAX + 1):
     if k not in (0, -3):
         ax.text(-0.25, k, f"${k}$", ha="right", va="center", fontsize=8.5)

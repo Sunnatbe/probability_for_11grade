@@ -139,7 +139,7 @@ Qaysi usulni tanlash kerak? Biror noma'lumning koeffitsiyenti $1$ yoki $-1$ bo'l
 Ikki to'g'ri chiziq uch xil joylashishi mumkin. Har birini $y = mx + b$ ko'rinishiga keltirib, burchak koeffitsiyentlarini (12-bob) solishtiramiz:
 
 - burchak koeffitsiyentlari har xil — chiziqlar bitta nuqtada kesishadi, sistemaning **bitta** yechimi bor;
-- burchak koeffitsiyentlari teng, $b$ lari har xil — chiziqlar parallel, umumiy nuqtasi yo'q, sistemaning **yechimi yo'q**;
+- burchak koeffitsiyentlari teng, $b$ lari (ya'ni $y$ o'qi bilan kesishish nuqtalari) har xil — chiziqlar parallel, umumiy nuqtasi yo'q, sistemaning **yechimi yo'q**;
 - burchak koeffitsiyentlari ham, $b$ lari ham teng — ikkala tenglama aslida bitta chiziq, uning har bir nuqtasi yechim, ya'ni yechim **cheksiz ko'p**.
 
 Algebraik usulda buni shunday ko'ramiz: ikkala noma'lum ham yo'qolib qoladi. $5 = 2$ kabi noto'g'ri tenglik chiqsa, yechim yo'q; $0 = 0$ kabi har doim to'g'ri tenglik chiqsa, yechim cheksiz ko'p (9-bobdagi kabi).

@@ -248,7 +248,7 @@ m22 = solishtir((x + 3)**2 - (x - 3)**2, lambda x: (x + 3)**2 - (x - 3)**2)
 m23 = solishtir((2 * x - 1) * (x + 4) - 2 * (x**2 - 3), lambda x: (2 * x - 1) * (x + 4) - 2 * (x**2 - 3))
 m24 = (52 - 48) * (52 + 48)
 assert m24 == 52**2 - 48**2
-m25 = solishtir((x + 7) * (x - 2), lambda x: (x + 7) * (x - 2))          # bog' yuzi
+m25 = solishtir((x + 6) * (x - 3), lambda x: (x + 6) * (x - 3))          # bog' yuzi
 m26 = solishtir((x + 3)**2 - x**2, lambda x: (x + 3)**2 - x**2)          # yuz qanchaga oshdi
 m27 = F(48, 12)                                                          # x^2 - y^2 = (x - y)(x + y)
 assert ((x - y) * (x + y)) == x**2 - y**2
@@ -293,7 +293,7 @@ MATNDAGI = {
     kopaytma(2 * x**2 + 7 * x + 3, 1, [2 * x + 1, x + 3]),               # Misol 5 a)
     kopaytma(2 * x**3 - 8 * x**2 - 10 * x, 2 * x, [x - 5, x + 1]),       # Misol 5 b)
     D((x + 4)**2), D((4 * x**2 + x) - (x**2 - 3 * x)),                   # xatolar
-    kopaytma(x**2 - 5 * x - 14, 1, [x - 7, x + 2]),
+    kopaytma(x**2 - 5 * x - 14, 1, [x - 7, x + 2]), D((x - 2) * (x + 7)),  # xato 4 va uning noto'g'ri ko'paytmasi
     kopaytma(2 * x**2 - 18, 2, [x - 3, x + 3]),
     kopaytma(2 * x**3 - 32 * x, 2 * x, [x - 4, x + 4]),                  # format namunasi
     D(3 * x**3 - x**2 + 8),
@@ -301,4 +301,4 @@ MATNDAGI = {
 }
 for _id, _q in JAVOBLAR.items():
     _s = _q if isinstance(_q, str) else str(_q)
-    assert _id.startswith("s") or _s not in MATNDAGI, (_id, _s)
+    assert _s not in MATNDAGI, (_id, _s)

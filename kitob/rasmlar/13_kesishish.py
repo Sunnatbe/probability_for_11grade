@@ -37,7 +37,7 @@ ax.text(-0.3, -0.42, "$O$", fontsize=11, ha="center", va="center")
 
 # 1-chiziq: y = x + 1 (tutash), 2-chiziq: y = -2x + 7 (punktir) — oq-qorada ham farqlanadi
 ax.plot([XMIN, 6], [XMIN + 1, 7], color=KOK, lw=2.4, zorder=2)
-ax.plot([-0.5, 5], [8, -3], color=QIZIL, lw=2.4, ls="--", zorder=2)
+ax.plot([0, 5], [7, -3], color=QIZIL, lw=2.4, ls="--", zorder=2)
 ax.text(4.6, 6.3, "$y = x + 1$", fontsize=12, color=KOK, ha="right", va="center",
         bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none"))
 ax.text(4.1, -1.6, "$y = -2x + 7$", fontsize=12, color=QIZIL, ha="left", va="center",

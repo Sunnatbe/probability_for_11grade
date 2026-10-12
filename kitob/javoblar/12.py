@@ -244,26 +244,30 @@ m20 = yagona(range(-50, 51), lambda k: ogish((2, -1), (5, k)) == k20)
 k21 = ogish((3, 14000), (8, 29000))
 m21 = chiziq(k21, (3, 14000))
 assert k21 * 8 + m21 == 29000
-# sham: h = 24 - 1.5t = 0
-m22 = F(24) / F("1.5")
+# sham: (0, 24) va (2, 21) -> h = kt + 24, h = 0 bo'lganda t
+k22 = ogish((0, 24), (2, 21))
+m22 = -F(24) / k22
+assert k22 * m22 + 24 == 0
 # benzin: (2, 38), (5, 20); boshlang'ich miqdor = b
 m23 = chiziq(ogish((2, 38), (5, 20)), (2, 38))
-# jamg'arma: 40 000h + 150 000 = 750 000
-m24 = F(750000 - 150000, 40000)
+# jamg'arma: (0, 150 000) va (3, 270 000) -> 750 000 ga yetish
+k24 = ogish((0, 150000), (3, 270000))
+m24 = (750000 - F(150000)) / k24
+assert k24 * m24 + 150000 == 750000
 # (-4, 9) va (2, 0) dan o'tadi -> y o'qi bilan kesishish
 k25 = ogish((-4, 9), (2, 0))
 m25 = nuqta(0, chiziq(k25, (2, 0)))
 
 # --- SAT
 s1 = ogish((-2, 7), (4, -1))
-s2 = F(12, 4)
-assert (4 * x - 12).qiymat(x=s2) == 0
+s2 = F(36, 4)
+assert (4 * x - 36).qiymat(x=s2) == 0
 s3_variant = [(2, -2), (-2, 9), (-2, 10), (F(1, 2), F(5, 2))]  # (m, b)
 s3 = harf([m == -2 and m * 3 + b == 4 for m, b in s3_variant], True)
 s4_variant = ["fixed fee", "charge per hour", "charge for one hour", "number of hours"]
 s4 = harf(s4_variant, "charge per hour")  # C = 45h + 60: 45 — soatbay haq
 a5 = yagona(range(-20, 21), lambda a: a * 3 - 7 == 8)
-s5 = a5 * (-1) - 7
+s5 = a5 * (-2) - 7
 
 JAVOBLAR = {
     # A
@@ -287,8 +291,8 @@ MATNDAGI = {
     tenglama(F(2, 3), 1), tenglama(-2, 5), nuqta(F(5, 2), 0), nuqta(0, 5), tenglama(-4, 5),  # Misol 4
     "-12", "95", "6",  # Misol 5
     "3", "-2/3", nuqta(2, 0),  # xatolar
-    nuqta(-6, 11), tenglama(F(-5, 4), 7),  # format namunasi
+    nuqta(-6, 11), tenglama(F(-5, 4), 7), "-7/5",  # format namunasi
 }
 for _id, _q in JAVOBLAR.items():
     _s = _q if isinstance(_q, str) else str(_q)
-    assert _id.startswith("s") or _s not in MATNDAGI, (_id, _s)
+    assert _s not in MATNDAGI, (_id, _s)

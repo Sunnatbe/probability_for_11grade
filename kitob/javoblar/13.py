@@ -284,4 +284,4 @@ assert yagona(range(-20, 21), lambda k: sistema((k, 3, 6), (2, 1, 5)) == YOQ) ==
 assert sistema((1, 1, 150), (20000, 12000, 2200000)) == (50, 100)  # Misol 5
 for _id, _q in JAVOBLAR.items():
     _s = _q if isinstance(_q, str) else str(_q)
-    assert _id.startswith("s") or _s not in MATNDAGI, (_id, _s)
+    assert _s not in MATNDAGI, (_id, _s)

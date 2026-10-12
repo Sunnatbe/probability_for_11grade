@@ -12,7 +12,7 @@
 - ko'phadni ko'paytuvchilarga ajratishni: umumiy ko'paytuvchi, $x^2 + bx + c$ uchhadi, sodda $ax^2 + bx + c$ uchhadi, kvadratlar ayirmasi;
 - javobni qayta ko'paytirib tekshirishni o'rganamiz.
 
-**SAT'da qayerda kerak?** SAT'ning Advanced Math bo'limida "Which of the following is equivalent to $(3x + 2)(x - 5)$?", "Which of the following is a factor of ...?" kabi savollar juda ko'p. 15-bobda kvadrat tenglamalarni aynan ko'paytuvchilarga ajratib yechamiz, shuning uchun bu bob keyingi bobning poydevori.
+**SAT'da qayerda kerak?** SAT'ning Advanced Math bo'limida "Which of the following is equivalent to $(4x - 1)(x + 2)$?", "Which of the following is a factor of ...?" kabi savollar juda ko'p. 15-bobda kvadrat tenglamalarni aynan ko'paytuvchilarga ajratib yechamiz, shuning uchun bu bob keyingi bobning poydevori.
 
 ## Yangi so'zlar
 
@@ -136,7 +136,7 @@ Ko'phadni bir nechta ko'phadning ko'paytmasi shaklida yozish *ko'paytuvchilarga 
 **2. $x^2 + bx + c$ uchhadi.** $(x + p)(x + q) = x^2 + (p + q)x + pq$. Demak, ko'paytmasi $c$ ga, yig'indisi $b$ ga teng bo'lgan ikki son $p$ va $q$ ni topamiz. Ishoralar bo'yicha maslahat:
 
 - $c$ musbat bo'lsa, $p$ va $q$ bir xil ishorali — ikkalasi ham $b$ ning ishorasida;
-- $c$ manfiy bo'lsa, $p$ va $q$ har xil ishorali, va moduli kattasi $b$ ning ishorasida.
+- $c$ manfiy bo'lsa, $p$ va $q$ har xil ishorali va moduli kattasi $b$ ning ishorasida.
 
 **3. Kvadratlar ayirmasi.** $a^2 - b^2 = (a - b)(a + b)$. Masalan, $x^2 - 81 = (x - 9)(x + 9)$. Kvadratlar **yig'indisi** esa, masalan $x^2 + 9$, bu kitobdagi sonlar bilan ko'paytuvchilarga ajralmaydi.
 
@@ -220,7 +220,7 @@ b) Umumiy ko'paytuvchi $2x$: $2x^3 - 8x^2 - 10x = 2x(x^2 - 4x - 5)$. Qavs ichida
 
 ## Mashqlar
 
-Ko'phad javobni standart ko'rinishda yozing (masalan, $3x^3 - x^2 + 8$). Ko'paytuvchilarga oxirigacha ajrating va javobni bunday yozing: avval son yoki birhad ko'paytuvchi, keyin qavslar, ozod hadi kichik qavs oldinroq; bir xil qavslar kvadrat ko'rinishida yoziladi (masalan, $2x(x - 4)(x + 4)$ yoki $(x - 6)^2$).
+Ko'phad javobni standart ko'rinishda yozing (masalan, $3x^3 - x^2 + 8$). Ko'paytuvchilarga oxirigacha ajrating va javobni bunday yozing: avval son yoki birhad ko'paytuvchi, keyin qavslar (ozod hadi kichikroq qavs oldin); bir xil qavslar kvadrat ko'rinishida yoziladi (masalan, $2x(x - 4)(x + 4)$ yoki $(x - 6)^2$).
 
 ### A daraja
 
@@ -324,8 +324,8 @@ Soddalashtiring: $(2x - 1)(x + 4) - 2(x^2 - 3)$.
 Kalkulyatorsiz hisoblang: $52^2 - 48^2$.
 :::
 
-::: {.mashq #m14-25 daraja="C" javob="$x^{2} + 5x - 14$"}
-To'g'ri to'rtburchak shaklidagi bog'ning bo'yi $(x + 7)$ metr, eni $(x - 2)$ metr. Bog'ning yuzi bo'yi va enining ko'paytmasiga teng. Yuzni standart ko'rinishdagi ko'phad sifatida yozing.
+::: {.mashq #m14-25 daraja="C" javob="$x^{2} + 3x - 18$"}
+To'g'ri to'rtburchak shaklidagi bog'ning bo'yi $(x + 6)$ metr, eni $(x - 3)$ metr. Bog'ning yuzi bo'yi va enining ko'paytmasiga teng. Yuzni standart ko'rinishdagi ko'phad sifatida yozing.
 :::
 
 ::: {.mashq #m14-26 daraja="C" javob="$6x + 9$"}

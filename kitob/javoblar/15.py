@@ -325,11 +325,11 @@ MATNDAGI = {
     nuqta(0, -3),
     yech(1, 0, -36), yech(*koef(x**2 - 4 * x)), yech(*koef((x - 2) * (x + 1) - 4)),   # xatolar
     yech(1, -5, 2),
-    "$x = -9$; $x = 2$", nuqta(-7, 12),                                     # format namunasi
+    "$x = -9$; $x = 2$", nuqta(-7, 12), yech(3, -1, -1),                    # format namunalari
 }
 assert yech(1, 0, 4) == YOQ                                                # Misol 1 d): x^2 + 5 = 1
 assert [ildizlar_soni(1, -6, 9), ildizlar_soni(2, 1, 3)] == [1, 0]         # Misol 4 a), b)
 assert yagona(range(-50, 51), lambda c: ildizlar_soni(1, 8, c) == 1) == 16
 for _id, _q in JAVOBLAR.items():
     _s = _q if isinstance(_q, str) else str(_q)
-    assert _id.startswith("s") or _s not in MATNDAGI, (_id, _s)
+    assert _s not in MATNDAGI, (_id, _s)

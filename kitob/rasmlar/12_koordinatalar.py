@@ -50,7 +50,8 @@ for matn, (cx, cy) in {"I chorak": (4.2, 5.2), "II chorak": (-4.2, 5.2),
 for nom, (px, py) in NUQTALAR.items():
     ax.plot([px], [py], "o", color=KOK, markersize=8, markeredgecolor="black", zorder=3)
     dx = 0.35 if px >= 0 else -0.35
-    ax.text(px + dx, py + 0.4, f"${nom}$", ha="center", va="center", fontsize=13,
+    dy = 0.6 if py == 0 else 0.4
+    ax.text(px + dx, py + dy, f"${nom}$", ha="center", va="center", fontsize=13,
             fontweight="bold",
             bbox=dict(boxstyle="round,pad=0.1", fc="white", ec="none", alpha=0.85))
 
