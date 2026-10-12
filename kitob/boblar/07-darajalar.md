@@ -38,7 +38,7 @@ Bir xil sonlarning ko'paytmasini qisqa yozish uchun *daraja (power)* ishlatiladi
 
 $$2^5 = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 32.$$
 
-Bu yerda $2$ — *daraja asosi (base)*, ya'ni ko'paytirilayotgan son; $5$ — *daraja ko'rsatkichi (exponent)*, ya'ni asos necha marta ko'paytuvchi bo'lib kelishi. $2^5$ "ikkining beshinchi darajasi" deb o'qiladi. Inglizcha matnlarda ko'rsatkichni ham, darajaning o'zini ham ko'pincha *exponent* deb atashadi (1-bobda shunday degan edik).
+Bu yerda $2$ — *daraja asosi (base)*, ya'ni ko'paytirilayotgan son; $5$ — *daraja ko'rsatkichi (exponent)*, ya'ni asos necha marta ko'paytuvchi bo'lib kelishi. $2^5$ "ikkining beshinchi darajasi" deb o'qiladi. Inglizchada $2^5$ "two to the fifth power" deb o'qiladi: darajaning o'zi *power*, ko'rsatkich esa *exponent*.
 
 Umumiy holda, $n$ natural son bo'lsa:
 
@@ -78,7 +78,7 @@ $$a^m \cdot a^n = a^{m+n}.$$
 
 Masalan, $2^3 \cdot 2^2 = (2 \cdot 2 \cdot 2) \cdot (2 \cdot 2) = 2^5$. Jami $3 + 2 = 5$ ta ikkilik.
 
-**2. Asoslari bir xil darajalarni bo'lish:** ko'rsatkichlar ayiriladi ($a \neq 0$).
+**2. Asoslari bir xil darajalarni bo'lish:** ko'rsatkichlar ayiriladi ($a \neq 0$; $\neq$ belgisi "teng emas" deb o'qiladi, ya'ni $a$ nolga teng emas, chunki nolga bo'lib bo'lmaydi).
 
 $$\frac{a^m}{a^n} = a^{m-n}.$$
 
@@ -153,18 +153,19 @@ c) $7^0 = 1$, $10^{-2} = 0.01$, demak $1 + 0.01 = 1.01$.
 
 ### Kvadrat ildiz
 
-$a$ sonining *kvadrat ildizi (square root)* — kvadrati $a$ ga teng bo'lgan **manfiy bo'lmagan** son. U $\sqrt{a}$ deb yoziladi; bundagi belgi *ildiz belgisi (radical sign)* deyiladi. Masalan, $\sqrt{49} = 7$, chunki $7^2 = 49$ va $7 \geq 0$.
+$a$ sonining *kvadrat ildizi (square root)* — kvadrati $a$ ga teng bo'lgan **manfiy bo'lmagan** son. U $\sqrt{a}$ deb yoziladi; bundagi belgi *ildiz belgisi (radical sign)* deyiladi. Masalan, $\sqrt{49} = 7$, chunki $7^2 = 49$ va $7 \geq 0$. ($\geq$ belgisi "katta yoki teng" deb o'qiladi: $a \geq 0$ yozuvi "$a$ noldan katta yoki nolga teng", ya'ni "$a$ manfiy emas" degani. Tengsizliklar haqida 10-bobda batafsil.)
 
-E'tibor bering: $(-7)^2 = 49$ ham to'g'ri, lekin $\sqrt{49}$ belgisi faqat musbat javobni, ya'ni $7$ ni bildiradi. Manfiy sondan kvadrat ildiz olinmaydi, chunki hech bir sonning kvadrati manfiy emas.
+E'tibor bering: $(-7)^2 = 49$ ham to'g'ri, lekin $\sqrt{49}$ belgisi faqat manfiy bo'lmagan javobni, ya'ni $7$ ni bildiradi. Manfiy sondan kvadrat ildiz olinmaydi, chunki hech bir sonning kvadrati manfiy emas.
 
 Butun sonning kvadrati bo'lgan son *to'liq kvadrat (perfect square)* deyiladi. Birinchi to'liq kvadratlarni bilib olish foydali:
 
 $$1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144.$$
 
-Ildizning xossalari ($a \geq 0$, $b \geq 0$):
+Istalgan $a$ son uchun $\sqrt{a^2}$ manfiy emas va $a$ ning moduliga (1-bob) teng: $\sqrt{a^2} = |a|$. Masalan, $\sqrt{(-5)^2} = \sqrt{25} = 5$, $-5$ emas.
+
+Manfiy bo'lmagan $a$ va $b$ sonlar uchun ($a \geq 0$, $b \geq 0$) yana uchta xossa bor:
 
 - $\left(\sqrt{a}\right)^2 = a$, masalan $\left(\sqrt{7}\right)^2 = 7$;
-- $\sqrt{a^2}$ har doim manfiy emas: $\sqrt{(-5)^2} = \sqrt{25} = 5$. Ya'ni $\sqrt{a^2}$ son $a$ ning moduliga (1-bob) teng;
 - $\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}$, masalan $\sqrt{4 \cdot 25} = 2 \cdot 5 = 10$;
 - $\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$ ($b \neq 0$).
 

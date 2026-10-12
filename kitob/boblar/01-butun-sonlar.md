@@ -106,7 +106,7 @@ $(-6) \cdot 4 \div (-3)$ ni hisoblang.
 Bir nechta amaldan iborat yozuv *sonli ifoda (numerical expression)* deyiladi. Uning qiymatini hamma bir xil topishi uchun matematikada *amallar tartibi (order of operations)* kelishilgan:
 
 1. **Qavs ichidagi amallar.** Oddiy *qavs (parentheses)* $( \ )$, kvadrat qavs $[ \ ]$ (*brackets*) va modul belgisi $| \ |$ ichidagi amallar birinchi bajariladi. Qavs ichida qavs bo'lsa, ichkaridan boshlaymiz.
-2. **Daraja (exponent).** Masalan, $5^2 = 5 \cdot 5 = 25$; bu son $5$ ning *kvadrati (square)* deyiladi. Darajalar haqida 7-bobda batafsil gaplashamiz.
+2. **Daraja (power).** Masalan, $5^2 = 5 \cdot 5 = 25$; bu son $5$ ning *kvadrati (square)* deyiladi. Darajalar haqida 7-bobda batafsil gaplashamiz.
 3. **Ko'paytirish va bo'lish** — chapdan o'ngga, qaysi biri oldin kelsa, o'sha bajariladi.
 4. **Qo'shish va ayirish** — yana chapdan o'ngga.
 

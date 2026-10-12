@@ -52,9 +52,9 @@ m9 = F(252, 3 + 4) * 4
 m10 = nomalum_had(6, 9, 14)
 assert F(9) / m10 == F(6, 14)
 
-# m5-11, m5-12: km/soat <-> m/s
+# m5-11, m5-12: km/soat <-> m/s (54 km/soat, 25 m/s)
 m11 = F(54 * 1000, 3600)
-m12 = F(5 * 3600, 1000)
+m12 = F(25 * 3600, 1000)
 
 # m5-13: 3 stakan un : 2 stakan sut; 7.5 stakan un
 m13 = nomalum_had(3, 2, D("7.5"))
@@ -84,7 +84,7 @@ m19 = 4 * uzum + 3 * (uzum - 6000)
 # m5-20: 300 km, 80 km/soat, 7:30 da yo'lga chiqdi
 yol_minut = F(300, 80) * 60
 yetib = 7 * 60 + 30 + butun(yol_minut)
-m20 = f"{yetib // 60}:{yetib % 60:02d}"
+m20 = f"soat {yetib // 60}:{yetib % 60:02d}"
 
 # m5-21: 2 soat 15 minutda 27 km
 m21 = F(27) / (2 + F(15, 60))

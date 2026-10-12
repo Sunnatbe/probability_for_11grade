@@ -88,7 +88,7 @@ Ikki nisbatning tengligi *proporsiya (proportion)* deyiladi: $\frac{2}{3} = \fra
 
 **Proporsiyaning asosiy xossasi.** $\frac{a}{b} = \frac{c}{d}$ bo'lsa, $a \cdot d = b \cdot c$. Ya'ni "ayqash" turgan sonlarning ko'paytmalari teng. Shuning uchun bu usul *ayqash ko'paytirish (cross-multiplication)* deyiladi. Tekshiramiz: $\frac{2}{3} = \frac{8}{12}$ da $2 \cdot 12 = 24$ va $3 \cdot 8 = 24$.
 
-Bu xossa proporsiyaning bitta noma'lum hadini topishga yordam beradi. Noma'lum hadni $x$ harfi bilan belgilaymiz. Masalan, $\frac{4}{10} = \frac{x}{25}$ bo'lsa, ayqash ko'paytmalar teng: $10 \cdot x = 4 \cdot 25 = 100$. Qaysi sonni $10$ ga ko'paytirsak $100$ chiqadi? $x = 100 \div 10 = 10$. Qisqa qoida: **noma'lum had ayqash turgan ikki son ko'paytmasini qolgan uchinchi songa bo'lganiga teng.** Bu yerda $x = \frac{4 \cdot 25}{10} = 10$. (Harfli tenglamalarni 9-bobda batafsil yechamiz.)
+Bu xossa proporsiyaning bitta noma'lum hadini topishga yordam beradi. Noma'lum hadni $x$ harfi bilan belgilaymiz. Masalan, $\frac{4}{10} = \frac{x}{25}$ bo'lsa, ayqash ko'paytmalar teng: $10 \cdot x = 4 \cdot 25 = 100$. Qaysi sonni $10$ ga ko'paytirsak $100$ chiqadi? $x = 100 \div 10 = 10$. Qisqa qoida: **noma'lum had $x$ bilan bir diagonalda turmagan ikki son ko'paytmasini qolgan uchinchi songa bo'lganiga teng.** Bu yerda $x = \frac{4 \cdot 25}{10} = 10$. (Harfli tenglamalarni 9-bobda batafsil yechamiz.)
 
 Noma'lum maxrajda tursa ham qoida ishlaydi: $\frac{3}{x} = \frac{12}{20}$ bo'lsa, $x = \frac{3 \cdot 20}{12} = 5$.
 
@@ -256,8 +256,8 @@ Proporsiyaning noma'lum hadini toping: $\frac{9}{x} = \frac{6}{14}$.
 $54$ km/soat tezlikni m/s da ifodalang.
 :::
 
-::: {.mashq #m5-12 daraja="B" javob="18"}
-$5$ m/s tezlikni km/soat da ifodalang.
+::: {.mashq #m5-12 daraja="B" javob="90"}
+$25$ m/s tezlikni km/soat da ifodalang.
 :::
 
 ::: {.mashq #m5-13 daraja="B" javob="5"}
@@ -290,8 +290,8 @@ Sinfda o'g'il bolalar sonining qizlar soniga nisbati $4 : 5$. Qizlar o'g'il bola
 Bozorda $2.5$ kg uzum $45\,000$ so'm turadi. Bir kilogramm olma bir kilogramm uzumdan $6\,000$ so'm arzon. Bahodir 4 kg uzum va 3 kg olma sotib oldi. U jami necha so'm to'ladi?
 :::
 
-::: {.mashq #m5-20 daraja="C" javob="11:15"}
-Toshkentdan Samarqandgacha taxminan 300 km. Avtobus soat 7:30 da yo'lga chiqdi va yo'l davomida soatiga 80 km o'zgarmas tezlikda yurdi. U Samarqandga soat nechada yetib keladi?
+::: {.mashq #m5-20 daraja="C" javob="soat 11:15"}
+Toshkentdan Samarqandgacha avtobus yo'li 300 km. Avtobus soat 7:30 da yo'lga chiqdi va yo'l davomida soatiga 80 km o'zgarmas tezlikda yurdi. U Samarqandga soat nechada yetib keladi?
 :::
 
 ::: {.mashq #m5-21 daraja="C" javob="12"}
@@ -303,7 +303,7 @@ Uch do'st ustozlariga $1\,200\,000$ so'mlik sovg'a olish uchun pulni $2 : 3 : 5$
 :::
 
 ::: {.mashq #m5-23 daraja="C" javob="15"}
-Maktab kutubxonasida ikkita printer bor. Birinchisi minutiga 18 bet, ikkinchisi minutiga 12 bet chop etadi. Ikkala printer birga ishlasa, 450 betlik to'plamni necha minutda chop etadi?
+Maktab kutubxonasida ikkita printer bor. Birinchisi minutiga 18 bet, ikkinchisi minutiga 12 bet chop etadi. Ikkala printer birga ishlaganda ularning bir minutda chop etadigan betlari qo'shiladi. Ikkalasi birga 450 betlik to'plamni necha minutda chop etadi?
 :::
 
 ::: {.mashq #m5-24 daraja="C" javob="15"}
