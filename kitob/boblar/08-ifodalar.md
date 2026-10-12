@@ -113,7 +113,9 @@ Javobni odatda darajasi katta haddan boshlab yozamiz: avval $x^2$ li had, keyin 
 
 Sonlar bilan tekshirib ko'raylik: $3 \cdot (10 + 2) = 3 \cdot 12 = 36$, boshqa tomondan $3 \cdot 10 + 3 \cdot 2 = 30 + 6 = 36$. Natija bir xil. Bu *taqsimot xossasi (distributive property)*:
 
-$$a(b + c) = ab + ac, \qquad a(b - c) = ab - ac.$$
+$$a(b + c) = ab + ac,$$
+
+$$a(b - c) = ab - ac.$$
 
 Qavs oldidagi ko'paytuvchi qavs ichidagi **har bir** hadga ko'paytiriladi. Bu ish *qavslarni ochish (expanding)* deyiladi. 1-bobda ko'rganimizdek, qavs oldidagi son ko'paytirishni bildiradi: $3(x + 4) = 3 \cdot (x + 4)$.
 
@@ -147,6 +149,8 @@ $$2x^2 + 8x - x^2 + 3x = x^2 + 11x.$$
 O'zgaruvchining **har qanday** qiymatida bir xil qiymat beradigan ifodalar *teng kuchli ifodalar (equivalent expressions)* deyiladi. Masalan, $5(2x - 3) - 4(x - 2)$ va $6x - 7$ teng kuchli. Qavslarni ochish va o'xshash hadlarni birlashtirish ifodani teng kuchli, lekin soddaroq ifodaga aylantiradi. Bu *ifodani soddalashtirish (simplifying an expression)* deyiladi.
 
 Tekshirishning tez usuli yuqoridagi misolda ko'rsatildi: ikkala ifodaga bir xil son qo'yib ko'ring. Qiymatlar har xil chiqsa, soddalashtirishda xato bor. (Bitta sonda mos kelishi hali kafolat emas, lekin xatoni tez ushlaydi.)
+
+Ikkala ifoda soddalashtirilgan ko'rinishda bo'lsa, ular teng kuchli bo'lishi uchun $x$ li hadlarning koeffitsiyentlari ham, ozod hadlari ham teng bo'lishi kerak. Masalan, $a$ — biror o'zgarmas son va $2x + 3a$ ifodasi $2x + 12$ ga teng kuchli bo'lsa, ozod hadlar teng: $3a = 12$. Qaysi sonni $3$ ga ko'paytirsak $12$ chiqadi? $a = 4$.
 
 ### Umumiy ko'paytuvchini qavsdan chiqarish
 

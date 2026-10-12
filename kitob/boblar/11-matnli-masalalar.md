@@ -93,7 +93,9 @@ Uchta ketma-ket toq sonning yig'indisi $51$ ga teng. Ularning eng kattasini topi
 
 *Yechish.* $n$ — eng kichik son. Unda sonlar $n$, $n + 2$, $n + 4$. Yig'indisi:
 
-$$n + (n + 2) + (n + 4) = 51, \qquad 3n + 6 = 51, \qquad 3n = 45, \qquad n = 15.$$
+$$n + (n + 2) + (n + 4) = 51.$$
+
+Bundan $3n + 6 = 51$, $3n = 45$, $n = 15$.
 
 Sonlar: $15$, $17$, $19$. Savol eng kattasini so'rayapti: $19$.
 
@@ -104,7 +106,7 @@ Sonlar: $15$, $17$, $19$. Savol eng kattasini so'rayapti: $19$.
 
 ### Yosh masalalari
 
-Yosh masalalarida vaqt o'tishini jadval bilan kuzatish qulay. Asosiy qoida: $k$ yildan keyin **har bir** odamning yoshiga $k$ qo'shiladi, $k$ yil oldin esa har biridan $k$ ayiriladi. Ikki odamning yoshlari farqi esa hech qachon o'zgarmaydi.
+*Yosh (age)* masalalarida vaqt o'tishini jadval bilan kuzatish qulay. Asosiy qoida: $k$ yildan keyin **har bir** odamning yoshiga $k$ qo'shiladi, $k$ yil oldin esa har biridan $k$ ayiriladi. Ikki odamning yoshlari farqi esa hech qachon o'zgarmaydi.
 
 ::: {.misol}
 Ota hozir o'g'lidan $3$ marta katta. $12$ yildan keyin ota o'g'lidan $2$ marta katta bo'ladi. O'g'il hozir necha yoshda?
@@ -118,7 +120,9 @@ Ota hozir o'g'lidan $3$ marta katta. $12$ yildan keyin ota o'g'lidan $2$ marta k
 
 $12$ yildan keyin otaning yoshi o'g'linikidan $2$ marta katta:
 
-$$3x + 12 = 2(x + 12), \qquad 3x + 12 = 2x + 24, \qquad x = 12.$$
+$$3x + 12 = 2(x + 12).$$
+
+Qavsni ochamiz: $3x + 12 = 2x + 24$, bundan $x = 12$.
 
 *Tekshirish:* hozir o'g'il $12$ yoshda, ota $36$ yoshda ($3$ marta katta). $12$ yildan keyin: $24$ va $48$, ya'ni $2$ marta katta. To'g'ri.
 
@@ -155,7 +159,9 @@ Ikki shahar orasidagi masofa $350$ km. Bir vaqtda bir shahardan avtomobil soatig
 
 *Yechish.* $t$ — uchrashguncha o'tgan vaqt (soat). Shu vaqtda avtomobil $80t$ km, avtobus $60t$ km yuradi. Uchrashganda ular birgalikda butun yo'lni bosib o'tgan bo'ladi:
 
-$$80t + 60t = 350, \qquad 140t = 350, \qquad t = 2.5.$$
+$$80t + 60t = 350.$$
+
+Bundan $140t = 350$, $t = 2.5$.
 
 *Tekshirish:* $2.5$ soatda avtomobil $200$ km, avtobus $150$ km yuradi; $200 + 150 = 350$. To'g'ri.
 
@@ -168,7 +174,9 @@ $$80t + 60t = 350, \qquad 140t = 350, \qquad t = 2.5.$$
 
 Shu eritmaga necha gramm suv qo'shsak, $8\%$ li eritma chiqadi? $w$ — qo'shiladigan suv (g). Yangi massa $200 + w$, tuz esa o'sha $40$ g:
 
-$$0.08(200 + w) = 40, \qquad 200 + w = 500, \qquad w = 300.$$
+$$0.08(200 + w) = 40.$$
+
+Ikkala tomonni $0.08$ ga bo'lamiz: $200 + w = 500$, demak $w = 300$ g.
 
 Narxlari har xil mahsulotlar aralashmasida ham xuddi shunday: aralashmaning umumiy narxi qismlar narxlarining yig'indisiga teng.
 
