@@ -10,7 +10,8 @@ Sinfning test natijalari, bir haftalik havo harorati, do'kondagi kunlik savdo �
 - o'rta qiymat va yig'indi orasidagi bog'lanishni (yangi son qo'shilsa yoki olib tashlansa nima bo'lishini);
 - boshqalardan keskin farq qiluvchi son o'rta qiymat va medianaga qanday ta'sir qilishini;
 - chastotalar jadvalidan o'rta qiymat, mediana va modani topishni;
-- vaznli o'rta qiymatni (ikki guruhning umumiy o'rta qiymatini) o'rganamiz.
+- vaznli o'rta qiymatni (ikki guruhning umumiy o'rta qiymatini);
+- tarqoqlikni kenglik va standart chetlanish yordamida solishtirishni o'rganamiz.
 
 **SAT'da qayerda kerak?** Problem-Solving and Data Analysis bo'limida deyarli har bir testda "What is the mean of...?", "If the value ... is removed, which statement about the mean and median is true?" kabi savollar bor. Ma'lumot ko'pincha ro'yxat, jadval yoki diagramma ko'rinishida beriladi. Bu bob 1–4-boblardagi arifmetikaga va 9-bobdagi chiziqli tenglamalarga tayanadi; diagrammalarni 17-bobda batafsil o'qiymiz.
 
@@ -41,7 +42,7 @@ Kuzatish yoki o'lchash natijasida yig'ilgan sonlar *ma'lumotlar (data)* deyiladi
 
 $$\frac{4 + 7 + 13}{3} = \frac{24}{3} = 8.$$
 
-Ma'nosi: agar umumiy miqdor ($24$) uch kishiga teng bo'lib berilganida, har biriga $8$ tadan tegardi.
+Ma'nosi: agar umumiy miqdor ($24$) uch kishiga teng bo'lib berilsa, har biriga $8$ tadan tegardi.
 
 Bundan muhim qoida kelib chiqadi. $n$ ta qiymatning o'rta qiymati $a$ bo'lsa, ularning yig'indisi $S$ quyidagicha:
 
@@ -133,7 +134,7 @@ Bunday jadvalda:
 
 - qiymatlar soni — chastotalar yig'indisi;
 - qiymatlar yig'indisi — har bir qiymatni chastotasiga ko'paytirib, natijalarni qo'shish;
-- mediana — avval qiymatlar sonidan o'rtadagi o'rin(lar)ni topamiz, keyin chastotalarni chapdan qo'shib borib, shu o'rin qaysi qiymatga to'g'ri kelishini aniqlaymiz;
+- mediana — avval qiymatlar sonidan o'rtadagi o'rin(lar)ni topamiz, keyin chastotalarni chapdan qo'shib borib, shu o'rin qaysi qiymatga to'g'ri kelishini aniqlaymiz; qiymatlar soni juft bo'lsa va o'rtadagi ikki o'rin har xil qiymatlarga tushsa, mediana shu ikki qiymatning o'rta qiymatiga teng;
 - moda — chastotasi eng katta bo'lgan **qiymat** (chastotaning o'zi emas).
 
 ::: {.misol}
@@ -164,7 +165,7 @@ Ikki guruhning o'rta qiymatlari ma'lum bo'lsa, ularning umumiy o'rta qiymatini t
 
 $$\frac{n_1 a_1 + n_2 a_2}{n_1 + n_2},$$
 
-bu yerda $n_1$ va $n_2$ — guruhlardagi qiymatlar soni, $a_1$ va $a_2$ — ularning o'rta qiymatlari. Bunday o'rta qiymat *vaznli o'rta qiymat (weighted average)* deyiladi: kattaroq guruh natijaga kuchliroq ta'sir qiladi. Xuddi shunday, "$3$ kg $12\,000$ so'mdan va $2$ kg $18\,000$ so'mdan" kabi xaridning $1$ kg ga to'g'ri keladigan o'rtacha narxi ham vaznli o'rta qiymat.
+bu yerda $n_1$ va $n_2$ — guruhlardagi qiymatlar soni, $a_1$ va $a_2$ — ularning o'rta qiymatlari. Bunday o'rta qiymat *vaznli o'rta qiymat (weighted average)* deyiladi: kattaroq guruh natijaga kuchliroq ta'sir qiladi. Xuddi shunday, "$4$ kg $9\,000$ so'mdan va $1$ kg $24\,000$ so'mdan" kabi xaridning $1$ kg ga to'g'ri keladigan o'rtacha narxi ham vaznli o'rta qiymat.
 
 ::: {.misol}
 A sinfdagi $20$ o'quvchining test bo'yicha o'rtacha bali $72$, B sinfdagi $30$ o'quvchiniki $82$. Ikkala sinfning umumiy o'rtacha bali qancha?
@@ -210,7 +211,7 @@ Agar $\frac{72 + 82}{2} = 77$ deb hisoblasak, xato bo'lardi: B sinfda o'quvchi k
 
 ## Mashqlar
 
-Javobni butun son yoki o'nli kasr ko'rinishida yozing (masalan, $14.25$). O'lchov birligini (so'm, sm, ball) yozish shart emas.
+Javobni butun son yoki o'nli kasr ko'rinishida yozing (masalan, $14.25$); to'plamlarni solishtirish mashqida to'plam harfini yozing. O'lchov birligini (so'm, sm, ball) yozish shart emas.
 
 ### A daraja
 
@@ -218,8 +219,8 @@ Javobni butun son yoki o'nli kasr ko'rinishida yozing (masalan, $14.25$). O'lcho
 $6$, $11$, $4$, $9$, $15$ sonlarining o'rta qiymatini toping.
 :::
 
-::: {.mashq #m16-2 daraja="A" javob="13"}
-$13$, $5$, $21$, $8$, $17$ sonlarining medianasini toping.
+::: {.mashq #m16-2 daraja="A" javob="Q"}
+Ikki to'plam berilgan. P to'plam: $48$, $49$, $50$, $51$, $52$. Q to'plam: $30$, $40$, $50$, $60$, $70$. Qaysi to'plamning standart chetlanishi kattaroq? Hisoblamasdan, qiymatlarning tarqoqligiga qarab javob bering va to'plam harfini yozing.
 :::
 
 ::: {.mashq #m16-3 daraja="A" javob="14"}
@@ -238,8 +239,8 @@ $16$, $7$, $15$, $10$, $20$, $9$ sonlarining medianasini toping.
 Sardor bir haftada $4$ marta yugurdi: $2.4$ km, $3.1$ km, $4.5$ km va $5.2$ km. U o'rtacha necha kilometr yugurgan?
 :::
 
-::: {.mashq #m16-7 daraja="A" javob="84"}
-Oltita sonning o'rta qiymati $14$ ga teng. Bu sonlarning yig'indisini toping.
+::: {.mashq #m16-7 daraja="A" javob="96"}
+Oltita sonning o'rta qiymati $16$ ga teng. Bu sonlarning yig'indisini toping.
 :::
 
 ::: {.mashq #m16-8 daraja="A" javob="-1"}

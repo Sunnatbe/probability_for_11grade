@@ -6,6 +6,7 @@ avval ro'yxatga "yoyiladi". Bobdagi jadvallar kitob matnidagi jadval bilan solis
 from decimal import Decimal as D
 from fractions import Fraction as F
 from pathlib import Path
+from statistics import pstdev
 
 BOB = Path(__file__).resolve().parent.parent / "boblar" / "16-orta-qiymat.md"
 
@@ -73,13 +74,16 @@ def jadval_matnda(sarlavha, jadval):
 
 # --- A
 m1 = son(orta([6, 11, 4, 9, 15]))
-m2 = son(mediana([13, 5, 21, 8, 17]))
+# m16-2: standart chetlanishni solishtirish (o'rta qiymatlar teng, tarqoqlik har xil)
+_P, _Q = [48, 49, 50, 51, 52], [30, 40, 50, 60, 70]
+assert orta(_P) == orta(_Q)
+m2 = "P" if pstdev(_P) > pstdev(_Q) else "Q"
 m3 = moda([14, 6, 3, 14, 11, 3, 14, 10])
 m4 = kenglik([41, 18, 56, 27, 45])
 m5 = son(mediana([16, 7, 15, 10, 20, 9]))
 m6 = son(orta([F("2.4"), F("3.1"), F("4.5"), F("5.2")]))
-m7 = 6 * 14
-assert orta([14] * 6) * 6 == m7
+m7 = 6 * 16
+assert orta([16] * 6) * 6 == m7
 m8 = son(orta([-3, 2, -5, 0, 4, -4, -1]))
 
 # --- B

@@ -83,7 +83,7 @@ m1 = P(range(1, 21), lambda n: n % 4 == 0)
 m2 = F(5, 7 + 5)
 m3 = onli(1 - F("0.35"))
 m4 = P("MATEMATIKA", lambda h: h == "A")
-m5 = len(list(product(TANGA, SOQQA)))
+m5 = len(list(product(SOQQA, range(1, 6))))
 m6 = foiz(F(40, 500))
 m7 = P(["qizil"] * 3 + ["sariq"] * 4 + ["yashil"], lambda r: r in ("sariq", "yashil"))
 m8 = F(30 - 18, 30)
@@ -106,8 +106,8 @@ assert m17 == F(3, 5) * F(3, 5)
 mos18 = [n for n in range(1, 500) if n - 15 >= 0 and F(n - 15, n) == F(3, 8)]
 assert mos18 == [24]
 m18 = mos18[0]
-mos19 = [x for x in range(0, 500) if F(4 + x, 12 + x) == F(3, 5)]
-assert mos19 == [8]
+mos19 = [x for x in range(0, 500) if F(5 + x, 15 + x) == F(3, 4)]
+assert mos19 == [25]
 m19 = mos19[0]
 m20 = F(T["8-sinf", "Jami"] - T["8-sinf", "Choy"], T["8-sinf", "Jami"])
 # m18-21: 80 a'zo, 45 erkak; suzish: erkaklardan 20, ayollardan 15
@@ -158,6 +158,7 @@ XALTA5 = ["qizil"] * 3 + ["ko'k"] * 2
 MATNDAGI = {matn(v) for v in [
     P(SOQQA, lambda n: n == 6), P(SOQQA, lambda n: n % 2 == 0),                 # tushuntirish
     F(2, 10) * 50,                                                              # kutilgan son misoli
+    2 * 6, 6 * 6, 2 * 2 * 2,                                                    # matnda sanalgan elementar hodisalar soni
     F(3, 40), D("0.075"), "7.5%",                                               # yozuv shakllari misoli
     P(XALTA1, lambda r: r == "yashil"), 1 - P(XALTA1, lambda r: r == "yashil"),  # Misol 1
     P(XALTA1, lambda r: r == "sariq"),

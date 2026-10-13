@@ -42,7 +42,7 @@ Odamlar ikki belgi bo'yicha guruhlansa (masalan, sinfi va tanlagan to'garagi bo'
 
 - qatordagi sonlar yig'indisi shu qatorning "Jami" katagiga teng;
 - ustundagi sonlar yig'indisi shu ustunning "Jami" katagiga teng;
-- pastki o'ng burchakdagi son — umumiy soni.
+- pastki o'ng burchakdagi son — umumiy son.
 
 Shu qoidalar yordamida jadvaldagi noma'lum katakni topish mumkin.
 
@@ -103,7 +103,7 @@ Ikki vaqt orasidagi *o'rtacha o'zgarish tezligi (average rate of change)* 12-bob
 
 $$\frac{y_2 - y_1}{x_2 - x_1},$$
 
-ya'ni miqdorning o'zgarishi o'tgan vaqtga bo'linadi. Birligi "miqdor birligi / vaqt birligi", masalan °C/soat.
+ya'ni miqdorning o'zgarishi o'tgan vaqtga bo'linadi. Birligi "miqdor birligi / vaqt birligi", masalan °C/soat. Miqdor oshsa, tezlik musbat; miqdor kamaysa (masalan, harorat pasaysa), suratdagi ayirma manfiy bo'ladi, demak tezlik ham manfiy.
 
 ![17.2-rasm. Bahor kunida havo harorati (har 2 soatda o'lchangan)](rasmlar/chiqish/17_chiziqli.png){width=75%}
 
@@ -114,17 +114,17 @@ a) Kun davomida o'lchangan eng yuqori harorat qancha va u soat nechada qayd etil
 
 b) Qaysi ikki soatlik oraliqda harorat eng tez ko'tarilgan? Shu oraliqdagi o'zgarish tezligini toping.
 
-c) 6:00 dan 14:00 gacha bo'lgan o'rtacha o'zgarish tezligini toping.
+c) 10:00 dan 14:00 gacha bo'lgan o'rtacha o'zgarish tezligini toping.
 
 *Yechish.*
 
 a) Eng baland nuqta $18$ chizig'ida, vaqt o'qida 14:00. Eng yuqori harorat $18$ °C, soat 14:00 da.
 
-b) Ketma-ket o'lchovlar orasidagi o'zgarishlar: $6 - 2 = 4$, $12 - 6 = 6$, $16 - 12 = 4$, $18 - 16 = 2$, keyin harorat pasaygan. Eng katta o'sish $6$ °C, 8:00 dan 10:00 gacha (grafikda eng tik ko'tariluvchi kesma). Tezlik: $\frac{6}{2} = 3$ °C/soat.
+b) Har bir ikki soatlik kesmani ko'zdan kechiramiz: ko'tariluvchi kesmalar ichida eng tigi — 8:00 dan 10:00 gacha. Bu kesmada harorat $6$ °C dan $12$ °C ga, ya'ni $6$ °C ga ko'tarilgan; qolgan ko'tariluvchi kesmalarda o'sish bundan kam (buni grafikdan o'zingiz tekshiring). Tezlik: $\frac{6}{2} = 3$ °C/soat.
 
-c) 6:00 da $2$ °C, 14:00 da $18$ °C, o'tgan vaqt $8$ soat: $\frac{18 - 2}{14 - 6} = \frac{16}{8} = 2$ °C/soat.
+c) 10:00 da $12$ °C, 14:00 da $18$ °C, o'tgan vaqt $4$ soat: $\frac{18 - 12}{14 - 10} = \frac{6}{4} = 1.5$ °C/soat.
 
-*Javob:* a) $18$ °C, soat 14:00 da; b) 8:00 dan 10:00 gacha, $3$ °C/soat; c) $2$ °C/soat.
+*Javob:* a) $18$ °C, soat 14:00 da; b) 8:00 dan 10:00 gacha, $3$ °C/soat; c) $1.5$ °C/soat.
 :::
 
 ### Nuqtali diagramma va eng mos to'g'ri chiziq
@@ -139,7 +139,7 @@ Nuqtalar qanday joylashganiga qarab ikki miqdor orasidagi *bog'lanish (associati
 
 Nuqtalar taxminan to'g'ri chiziq bo'ylab joylashsa, ularning "o'rtasidan" o'tadigan to'g'ri chiziq chiziladi. U *eng mos to'g'ri chiziq (line of best fit)* deyiladi: nuqtalarning bir qismi undan yuqorida, bir qismi pastda bo'ladi, chiziq esa ularga iloji boricha yaqin o'tadi. Uning tenglamasi $y = mx + b$ (12-bob) bilan *bashorat (prediction)* qilamiz: $x$ ni qo'yib, kutilgan $y$ ni topamiz. Bashorat taxminiy: haqiqiy qiymat undan yuqori yoki past bo'lishi mumkin.
 
-![17.3-rasm. 16 o'quvchining testga tayyorgarlik vaqti va test bali; uzuq chiziq — eng mos to'g'ri chiziq](rasmlar/chiqish/17_nuqtali.png){width=75%}
+![17.3-rasm. O'quvchilarning testga tayyorgarlik vaqti va test bali; uzuq chiziq — eng mos to'g'ri chiziq](rasmlar/chiqish/17_nuqtali.png){width=75%}
 
 E'tibor bering: 17.3-rasmda vertikal o'q $0$ dan emas, $40$ dan boshlanadi. Bo'linmalar: raqamlar har $10$ ballda, chiziqlar har $5$ ballda.
 
@@ -158,7 +158,7 @@ d) $3$ soat tayyorlangan o'quvchi $65$ ball oldi. Uning bali bashoratdan qanchag
 
 a) Nuqtalar chapdan o'ngga qarab ko'tariladi: ko'proq tayyorlangan o'quvchilar odatda yuqoriroq ball olgan. Bu musbat bog'lanish.
 
-b) $5$ — burchak koeffitsiyenti, ya'ni o'zgarish tezligi: har bir qo'shimcha soat tayyorgarlik uchun bashorat qilingan ball $5$ ga oshadi. $45$ — $x = 0$ dagi qiymat: umuman tayyorlanmagan o'quvchi uchun bashorat qilingan ball.
+b) $5$ — burchak koeffitsiyenti, ya'ni o'zgarish tezligi: har bir qo'shimcha soat tayyorgarlik uchun bashorat qilingan ball $5$ ga oshadi. $45$ — $x = 0$ dagi qiymat: umuman tayyorlanmagan o'quvchi uchun bashorat qilingan ball. Lekin $x = 0$ ma'lumotlar oralig'idan ($1$ dan $10$ soatgacha) tashqarida, shuning uchun bu son faqat taxminiy (4-xatoga qarang).
 
 c) $y = 5 \cdot 5.5 + 45 = 27.5 + 45 = 72.5$ ball.
 
@@ -171,7 +171,7 @@ d) Bashorat: $5 \cdot 3 + 45 = 60$. Haqiqiy ball $65$, demak $65 - 60 = 5$ ball 
 
 **1. Ustunlarni o'qning boshlanishiga qaramasdan solishtirish.**
 
-*Noto'g'ri:* vertikal o'qi $80$ dan boshlangan diagrammada $100$ ning ustuni $90$ nikidan ikki baravar baland ko'rinadi, demak qiymati ham ikki baravar katta.
+*Noto'g'ri:* vertikal o'qi $85$ dan boshlangan diagrammada $100$ ning ustuni $90$ nikidan uch baravar baland ko'rinadi, demak qiymati ham uch baravar katta.
 
 *To'g'ri:* qiymatlarni o'qdan o'qiymiz: $100$ soni $90$ dan atigi $10$ taga ko'p. Ustun uzunligini faqat o'q $0$ dan boshlanganda solishtirish mumkin.
 
@@ -183,9 +183,9 @@ d) Bashorat: $5 \cdot 3 + 45 = 60$. Haqiqiy ball $65$, demak $65 - 60 = 5$ ball 
 
 **3. O'zgarish tezligida vaqtga bo'lishni unutish.**
 
-*Noto'g'ri:* 17.2-rasmda 6:00 dan 18:00 gacha harorat $2$ °C dan $8$ °C ga ko'tarilgan, demak o'zgarish tezligi $6$ °C/soat.
+*Noto'g'ri:* 17.2-rasmda 8:00 dan 14:00 gacha harorat $6$ °C dan $18$ °C ga ko'tarilgan, demak o'zgarish tezligi $12$ °C/soat.
 
-*To'g'ri:* $6$ °C — o'zgarishning o'zi. Tezlik uchun uni o'tgan vaqtga bo'lamiz: $\frac{6}{12} = 0.5$ °C/soat.
+*To'g'ri:* $12$ °C — o'zgarishning o'zi. Tezlik uchun uni o'tgan vaqtga bo'lamiz: $\frac{12}{6} = 2$ °C/soat.
 
 **4. Eng mos to'g'ri chiziq bilan ma'lumotlardan juda uzoqda bashorat qilish.**
 
@@ -195,7 +195,7 @@ d) Bashorat: $5 \cdot 3 + 45 = 60$. Haqiqiy ball $65$, demak $65 - 60 = 5$ ball 
 
 ## Mashqlar
 
-Vaqtni soat va daqiqa bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 12:00 gacha" ko'rinishida yozing. Foizni foiz belgisi bilan yozing (masalan, $12.5\%$). O'zgarish tezligini birliksiz son bilan yozing (masalan, $-1.5$). Boshqa javoblarni son bilan yozing.
+Vaqtni soat va daqiqa bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 12:00 gacha" ko'rinishida yozing. Foizni foiz belgisi bilan yozing (masalan, $12.5\%$). O'zgarish tezligini birliksiz son bilan yozing (masalan, $-4.5$). Boshqa javoblarni son bilan yozing.
 
 17.1–17.3-rasmlarga oid mashqlarda kerakli qiymatlarni rasmdan o'qing. 17.5, 17.16, 17.17 va 17.20-mashqlar quyidagi jadvalga tegishli.
 
@@ -217,8 +217,8 @@ Vaqtni soat va daqiqa bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 1
 17.1-rasm bo'yicha eng ko'p kitob berilgan oyda eng kam kitob berilgan oydagidan nechta ko'p kitob berilgan?
 :::
 
-::: {.mashq #m17-3 daraja="A" javob="12"}
-17.2-rasm bo'yicha soat 10:00 da havo harorati necha gradus bo'lgan?
+::: {.mashq #m17-3 daraja="A" javob="14"}
+17.2-rasm bo'yicha soat 16:00 da havo harorati necha gradus bo'lgan?
 :::
 
 ::: {.mashq #m17-4 daraja="A" javob="16"}
@@ -237,8 +237,8 @@ Vaqtni soat va daqiqa bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 1
 17.1-rasm bo'yicha olti oy davomida kutubxonadan jami nechta kitob berilgan?
 :::
 
-::: {.mashq #m17-8 daraja="A" javob="12:00"}
-17.2-rasm bo'yicha o'lchov o'tkazilgan vaqtlardan qaysi birida harorat $16$ °C bo'lgan?
+::: {.mashq #m17-8 daraja="A" javob="18:00"}
+17.2-rasm bo'yicha o'lchov o'tkazilgan vaqtlardan qaysi birida harorat $8$ °C bo'lgan?
 :::
 
 ### B daraja
@@ -251,8 +251,8 @@ Vaqtni soat va daqiqa bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 1
 17.1-rasm bo'yicha sentabrdan oktabrga berilgan kitoblar soni necha foizga oshgan?
 :::
 
-::: {.mashq #m17-11 daraja="B" javob="14"}
-17.2-rasm bo'yicha 6:00 dan 12:00 gacha harorat necha gradusga ko'tarilgan?
+::: {.mashq #m17-11 daraja="B" javob="8"}
+17.2-rasm bo'yicha 12:00 dan 18:00 gacha harorat necha gradusga pasaygan?
 :::
 
 ::: {.mashq #m17-12 daraja="B" javob="-2.5"}
@@ -263,12 +263,12 @@ Vaqtni soat va daqiqa bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 1
 17.2-rasm bo'yicha qaysi ikki soatlik oraliqda harorat eng tez pasaygan?
 :::
 
-::: {.mashq #m17-14 daraja="B" javob="90"}
-17.3-rasmdagi eng mos to'g'ri chiziq $y = 5x + 45$ bo'yicha $9$ soat tayyorlangan o'quvchi uchun bashorat qilingan ball qancha?
+::: {.mashq #m17-14 daraja="B" javob="82.5"}
+17.3-rasmdagi eng mos to'g'ri chiziq $y = 5x + 45$ bo'yicha $7.5$ soat tayyorlangan o'quvchi uchun bashorat qilingan ball qancha?
 :::
 
 ::: {.mashq #m17-15 daraja="B" javob="7"}
-$y = 5x + 45$ modeli bo'yicha bashorat qilingan ball $80$ bo'lishi uchun o'quvchi necha soat tayyorlanishi kerak?
+$y = 5x + 45$ modeli bo'yicha bashorat qilingan ball $80$ ga teng bo'ladigan tayyorgarlik vaqti necha soat?
 :::
 
 ::: {.mashq #m17-16 daraja="B" javob="55%"}
@@ -311,16 +311,16 @@ Ikki o'quvchidan biri ikkinchisiga qaraganda testga $4$ soat ko'proq tayyorlandi
 
 ## SAT ko'prigi
 
-Quyidagi savollar SAT uslubida, inglizcha yozilgan. *survey* — so'rovnoma, *surveyed* — so'ralgan, *scatterplot* — nuqtali diagramma, *line of best fit* — eng mos to'g'ri chiziq, *predicted* — bashorat qilingan, *average rate of change* — o'rtacha o'zgarish tezligi, *high temperature* — kunning eng yuqori harorati, *°F* — Farengeyt gradusi. Javoblar kitob oxirida.
+Quyidagi savollar SAT uslubida, inglizcha yozilgan. *survey* — so'rovnoma, *surveyed* — so'ralgan, *scatterplot* — nuqtali diagramma, *line of best fit* — eng mos to'g'ri chiziq, *predicted* — bashorat qilingan, *average rate of change* — o'rtacha o'zgarish tezligi, *high temperature* — kunning eng yuqori harorati, *°F* — Farengeyt gradusi. Javobi foiz bo'lgan grid-in (javobni o'zingiz yozadigan) savolda SAT'da son % belgisisiz kiritiladi. Javoblar kitob oxirida.
 
 ::: {.sat #s17-1 javob="28"}
 The table shows the results of a survey in which students at a school were asked how they usually get to school.
 
 |  | Walk | Bus | Car | Total |
 |---|---|---|---|---|
-| Grade 9 | $28$ | $34$ | $18$ | $80$ |
+| Grade 9 | $26$ | $36$ | $18$ | $80$ |
 | Grade 10 | $21$ | $39$ | $15$ | $75$ |
-| Total | $49$ | $73$ | $33$ | $155$ |
+| Total | $47$ | $75$ | $33$ | $155$ |
 
 What percentage of the grade 10 students surveyed usually walk to school?
 :::
@@ -347,10 +347,16 @@ The table shows the height of a plant, in centimeters, measured every two weeks.
 What is the average rate of change, in centimeters per week, of the height of the plant from week $2$ to week $6$?
 :::
 
-::: {.sat #s17-4 javob="150"}
-For a water stand, the line of best fit for a scatterplot of the daily high temperature $x$, in degrees Fahrenheit (°F), and the number of bottles of water sold $y$ is $y = 4.5x - 210$. Based on the line of best fit, how many bottles of water are predicted to be sold on a day when the high temperature is $80$°F?
+S17.4 va S17.5-savollar quyidagi ma'lumotga tegishli.
+
+Questions S17.4 and S17.5 refer to the following information.
+
+At a water stand, the line of best fit for a scatterplot of the daily high temperature $x$, in degrees Fahrenheit (°F), and the number of bottles of water sold $y$ is $y = 4.5x - 210$.
+
+::: {.sat #s17-4 javob="168"}
+Based on the line of best fit, how many bottles of water are predicted to be sold on a day when the high temperature is $84$°F?
 :::
 
 ::: {.sat #s17-5 javob="19"}
-At a water stand, the line of best fit for a scatterplot of the daily high temperature $x$, in degrees Fahrenheit (°F), and the number of bottles of water sold $y$ is $y = 4.5x - 210$. On one day, the high temperature was $78$°F and the stand sold $160$ bottles of water. How many more bottles were sold that day than the number predicted by the line of best fit?
+On one day, the high temperature was $78$°F and the stand sold $160$ bottles of water. How many more bottles were sold that day than the number predicted by the line of best fit?
 :::

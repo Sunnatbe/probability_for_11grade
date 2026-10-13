@@ -94,24 +94,24 @@ jadval_matnda(["Badiiy", "Ilmiy-ommabop", "Tarixiy", "Jami"],
 # --- A
 m1 = OY["Noyabr"]
 m2 = max(KITOBLAR) - min(KITOBLAR)
-m3 = HAR[10]
+m3 = HAR[16]
 m4 = len(NUQTALAR)
 m5 = KJAMI[2]
 m6 = sum(1 for x, _ in NUQTALAR if x < 4)
 m7 = sum(KITOBLAR)
-mos8 = [t for t in SOATLAR if HAR[t] == 16]
+mos8 = [t for t in SOATLAR if HAR[t] == 8]
 assert len(mos8) == 1
 m8 = f"{mos8[0]}:00"
 
 # --- B
 m9 = son(F(sum(KITOBLAR), len(KITOBLAR)))
 m10 = foiz(F(OY["Oktabr"] - OY["Sentabr"], OY["Sentabr"]))
-m11 = HAR[12] - HAR[6]
+m11 = HAR[12] - HAR[18]                     # pasayish (musbat son)
 m12 = son(tezlik(14, 18))
 farqlar = [HARORAT[i + 1] - HARORAT[i] for i in range(len(HARORAT) - 1)]
 assert farqlar.count(min(farqlar)) == 1
 m13 = oraliq(farqlar.index(min(farqlar)))
-m14 = bashorat(9)
+m14 = son(bashorat(F(15, 2)))
 mos15 = [F(x, 2) for x in range(0, 41) if bashorat(F(x, 2)) == 80]
 assert len(mos15) == 1
 m15 = son(mos15[0])
@@ -133,11 +133,12 @@ m23 = son(F(sum(yetti), len(yetti)))
 m24 = foiz(F(sum(1 for x, y in NUQTALAR if y > bashorat(x)), len(NUQTALAR)))
 
 # --- SAT
-S1 = {"Grade 9": [28, 34, 18], "Grade 10": [21, 39, 15]}
+S1 = {"Grade 9": [26, 36, 18], "Grade 10": [21, 39, 15]}
 SJAMI = [a + b for a, b in zip(*S1.values())]
 jadval_matnda(["Walk", "Bus", "Car", "Total"],
               {**{k: v + [sum(v)] for k, v in S1.items()}, "Total": SJAMI + [sum(SJAMI)]})
 s1 = son(F(S1["Grade 10"][0], sum(S1["Grade 10"])) * 100)
+assert s1 not in S1["Grade 9"] + S1["Grade 10"] + SJAMI  # noto'g'ri katakni o'qib "topib" bo'lmasin
 # s17-2: y = -1.6x + 24 (narx ming dollarda): har yil bashorat qilingan narx 1600 dollarga kamayadi
 k2 = F("-1.6") * 1000
 s2 = harf([("kamayadi", 16000), ("yangi", 1600), ("kamayadi", 1600), ("oshadi", 1600)],
@@ -147,7 +148,7 @@ _bob = BOB.read_text(encoding="utf-8")
 assert "| Week | " + " | ".join(f"${h}$" for h in BOY) + " |" in _bob
 assert "| Height (cm) | " + " | ".join(f"${v:.1f}$" for v in map(float, BOY.values())) + " |" in _bob
 s3 = son((BOY[6] - BOY[2]) / (6 - 2))
-s4 = son(F("4.5") * 80 - 210)
+s4 = son(F("4.5") * 84 - 210)
 s5 = son(160 - (F("4.5") * 78 - 210))
 
 JAVOBLAR = {
@@ -171,13 +172,16 @@ MATNDAGI = {matn(v) for v in [
     T9[2], T10[1], foiz(F(T10[2], sum(T10))), foiz(F(T9[1], TJAMI[1])),        # Misol 1
     OY["Oktabr"] - OY["Dekabr"], foiz(F(OY["Oktabr"] - OY["Dekabr"], OY["Oktabr"])),  # Misol 2
     max(HARORAT), f"{SOATLAR[HARORAT.index(max(HARORAT))]}:00",              # Misol 3 a)
-    oraliq(eng_tez), son(F(max(farqlar), 2)), son(tezlik(6, 14)),            # Misol 3 b), c)
+    oraliq(eng_tez), son(F(max(farqlar), 2)), son(tezlik(10, 14)),           # Misol 3 b), c)
+    HAR[8], HAR[10], HAR[14],                                                # Misol 3 da o'qilgan qiymatlar
+    OY["Oktabr"], OY["Dekabr"],                                              # Misol 2 da o'qilgan qiymatlar
+    65, bashorat(3),                                                         # Misol 4 d) dagi qiymatlar
     "musbat", M["K"], M["B"], son(bashorat(F(11, 2))), 65 - bashorat(3),   # Misol 4
-    10,                                                                      # xato 1 (100 va 90)
+    10, 85, 90, 100,                                                         # xato 1
     foiz(F(T9[1], sum(T9))),                                                 # xato 2 (noto'g'ri)
-    HAR[18] - HAR[6], son(tezlik(6, 18)),                                    # xato 3
-    bashorat(12),                                                            # xato 4
-    "7:15", "12.5%", D("-1.5"), "10:00 dan 12:00 gacha",                     # format namunalari
+    HAR[14] - HAR[8], son(tezlik(8, 14)), HAR[8], HAR[14],                   # xato 3
+    bashorat(12), 12,                                                        # xato 4
+    "7:15", "12.5%", D("-4.5"), "10:00 dan 12:00 gacha",                     # format namunalari
 ]}
 for _id, _q in JAVOBLAR.items():
     assert matn(_q) not in MATNDAGI, (_id, _q)

@@ -11,7 +11,7 @@ Tanga tashlansa, gerb tushadimi yoki raqam? Ertaga yomg'ir yog'adimi? Lotereya b
 - qarama-qarshi hodisa ehtimolligini;
 - natijalarni ro'yxat va jadval yordamida sanashni;
 - ikki tomonlama jadvaldan ehtimollik va shartli ehtimollikni topishni;
-- bog'liqsiz hodisalarni o'rganamiz.
+- mustaqil hodisalarni o'rganamiz.
 
 **SAT'da qayerda kerak?** Problem-Solving and Data Analysis bo'limida ehtimollik savollari odatda jadval bilan beriladi: "If a person is selected at random from those who..., what is the probability that...?" Bunday savolda asosiy ish — jadvaldan to'g'ri sonlarni olish (17-bob) va kasrni qisqartirish (3-bob).
 
@@ -22,19 +22,21 @@ Tanga tashlansa, gerb tushadimi yoki raqam? Ertaga yomg'ir yog'adimi? Lotereya b
 | tajriba | experiment |
 | elementar hodisa | outcome |
 | elementar hodisalar to'plami | sample space |
-| tasodifiy hodisa | event |
+| tasodifiy hodisa | random event (event) |
 | teng imkoniyatli | equally likely |
 | qulay natija | favorable outcome |
 | ehtimollik | probability |
 | muqarrar hodisa | certain event |
 | mumkin bo'lmagan hodisa | impossible event |
-| qarama-qarshi hodisa | complement |
-| tasodifan tanlash | selecting at random |
+| qarama-qarshi hodisa | complementary event (complement) |
+| tasodifan tanlash | selected at random |
 | shartli ehtimollik | conditional probability |
-| bog'liqsiz hodisalar | independent events |
+| mustaqil hodisalar | independent events |
+| bog'liq hodisalar | dependent events |
 | qaytarib qo'yib | with replacement |
 | qaytarmasdan | without replacement |
 | kutilgan son | expected number |
+| nisbiy chastota | relative frequency |
 
 ## Tushuntirish
 
@@ -42,9 +44,9 @@ Tanga tashlansa, gerb tushadimi yoki raqam? Ertaga yomg'ir yog'adimi? Lotereya b
 
 Natijasini oldindan aniq aytib bo'lmaydigan har qanday harakat *tajriba (experiment)* deyiladi: tanga tashlash, o'yin soqqasini tashlash, xaltadan qaramasdan shar olish. Tajribaning bo'linmaydigan, eng sodda natijasi *elementar hodisa (outcome)* deyiladi. Barcha elementar hodisalar birgalikda *elementar hodisalar to'plami (sample space)* ni tashkil qiladi.
 
-Masalan, o'yin soqqasi (yoqlarida $1$ dan $6$ gacha ko'zlar bor kub) tashlanganda elementar hodisalar oltita: $1$, $2$, $3$, $4$, $5$, $6$.
+Masalan, o'yin soqqasi (yoqlarida $1$ dan $6$ gacha ko'zlar bor kub) tashlanganda elementar hodisalar oltita: $1$, $2$, $3$, $4$, $5$, $6$. Bu bobda tanga va soqqalar to'g'ri (simmetrik) deb olinadi: har bir tomoni bir xil imkoniyat bilan tushadi.
 
-*Tasodifiy hodisa (event)* — tajribada ro'y berishi ham, ro'y bermasligi ham mumkin bo'lgan hodisa. U bir yoki bir nechta elementar hodisadan iborat. Masalan, "juft son tushadi" hodisasi uchta elementar hodisadan iborat: $2$, $4$, $6$. Bu elementar hodisalar shu hodisaga *qulay natijalar (favorable outcomes)* deyiladi. Hodisalarni lotin harflari bilan belgilaymiz: $A$, $B$, ...
+*Tasodifiy hodisa (random event; SAT'da: event)* — tajribada ro'y berishi ham, ro'y bermasligi ham mumkin bo'lgan hodisa. U bir yoki bir nechta elementar hodisadan iborat. Masalan, "juft son tushadi" hodisasi uchta elementar hodisadan iborat: $2$, $4$, $6$. Bu elementar hodisalar shu hodisaga *qulay natijalar (favorable outcomes)* deyiladi. Hodisalarni lotin harflari bilan belgilaymiz: $A$, $B$, ...
 
 ### Ehtimollik
 
@@ -59,11 +61,13 @@ Qulay natijalar soni $0$ dan $n$ gacha bo'lgani uchun har doim $0 \leq P(A) \leq
 - $P(A) = 1$ — hodisa albatta ro'y beradi, u *muqarrar hodisa (certain event)*;
 - $P(A) = 0$ — hodisa hech qachon ro'y bermaydi, u *mumkin bo'lmagan hodisa (impossible event)*.
 
+$P(A) = \frac{m}{n}$ formulasi bu ikki holatni ham qamrab oladi: muqarrar hodisada barcha natijalar qulay ($m = n$), mumkin bo'lmagan hodisada qulay natija yo'q ($m = 0$).
+
 Ehtimollikni kasr, o'nli kasr yoki foiz bilan yozish mumkin: $\frac{3}{40} = 0.075 = 7.5\%$. Hisoblashda $1$ dan katta yoki manfiy son chiqsa, xato bor.
 
-"Xaltadan **tasodifan** shar olinadi", "o'quvchi **tasodifan tanlanadi** (selected at random)" degani — har bir shar (har bir o'quvchi) bir xil imkoniyat bilan tanlanadi. Demak, natijalar teng imkoniyatli va formulani qo'llash mumkin.
+"Xaltadan **tasodifan** shar olinadi", "o'quvchi **tasodifan tanlanadi** (*selected at random*)" degani — har bir shar (har bir o'quvchi) bir xil imkoniyat bilan tanlanadi. Demak, natijalar teng imkoniyatli va formulani qo'llash mumkin.
 
-**Qarama-qarshi hodisa.** $A$ hodisa ro'y bermasligidan iborat hodisa $A$ ga *qarama-qarshi hodisa (complement)* deyiladi. Har bir elementar hodisa yo $A$ ga, yo unga qarama-qarshi hodisaga qulay, shuning uchun ularning ehtimolliklari yig'indisi $1$ ga teng. Demak,
+**Qarama-qarshi hodisa.** $A$ hodisa ro'y bermasligidan iborat hodisa $A$ ga *qarama-qarshi hodisa (complementary event, complement)* deyiladi. Har bir elementar hodisa yo $A$ ga, yo unga qarama-qarshi hodisaga qulay, shuning uchun ularning ehtimolliklari yig'indisi $1$ ga teng. Demak,
 
 **$A$ ro'y bermasligi ehtimolligi $1 - P(A)$ ga teng.**
 
@@ -181,13 +185,15 @@ E'tibor bering: b) va c) bandlarda surat bir xil ($54$), lekin guruhlar (maxrajl
 
 ### Bog'liqsiz hodisalar
 
-Bir hodisaning ro'y berishi ikkinchisining ehtimolligini o'zgartirmasa, ular *bog'liqsiz hodisalar (independent events)* deyiladi. Masalan, tanga tashlash natijasi soqqada qaysi son tushishiga ta'sir qilmaydi. Bog'liqsiz $A$ va $B$ hodisalarning **ikkalasi ham** ro'y berish ehtimolligi:
+Bir hodisaning ro'y berishi ikkinchisining ehtimolligini o'zgartirmasa, ular *mustaqil hodisalar (independent events)* deyiladi, aks holda — *bog'liq hodisalar (dependent events)*. Masalan, tanga tashlash natijasi soqqada qaysi son tushishiga ta'sir qilmaydi. Mustaqil $A$ va $B$ hodisalarning **ikkalasi ham** ro'y berish ehtimolligi:
 
 $$P(A) \cdot P(B).$$
 
-Xaltadan shar olib, uni **qaytarib qo'yib (with replacement)** yana shar olsak, ikkinchi olishda xalta avvalgidek bo'ladi — olishlar bog'liqsiz. Sharni **qaytarmasdan (without replacement)** olsak, ikkinchi olishda xaltadagi sharlar o'zgaradi, hodisalar bog'liq bo'ladi: ikkinchi ehtimollikni o'zgargan xalta bo'yicha hisoblash kerak.
+Xaltadan shar olib, uni **qaytarib qo'yib (with replacement)** yana shar olsak, ikkinchi olishda xalta avvalgidek bo'ladi — olishlar mustaqil. Sharni **qaytarmasdan (without replacement)** olsak, ikkinchi olishda xaltadagi sharlar o'zgaradi, hodisalar bog'liq bo'ladi: ikkinchi ehtimollikni o'zgargan xalta bo'yicha hisoblash kerak.
 
 **Kutilgan son.** Hodisaning ehtimolligi $p$ bo'lsa, tajriba ko'p marta ($N$ marta) takrorlanganda u taxminan $p \cdot N$ marta ro'y beradi. Bu son *kutilgan son (expected number)* deyiladi. Masalan, basketbolchi jarima to'pini $0.2$ ehtimollik bilan o'tkazib yuborsa, $50$ ta otishda u taxminan $0.2 \cdot 50 = 10$ marta o'tkazib yuboradi.
+
+**Nisbiy chastota.** Ba'zan ehtimollik oldindan ma'lum emas, uni kuzatishdan baholaymiz. Hodisa $N$ ta kuzatuvda $k$ marta ro'y bergan bo'lsa, $\frac{k}{N}$ nisbat *nisbiy chastota (relative frequency)* deyiladi. Kuzatuvlar ko'p bo'lsa, nisbiy chastota ehtimollikka yaqin bo'ladi, shuning uchun uni ehtimollik o'rniga ishlatib, kutilgan sonni topish mumkin.
 
 ::: {.misol}
 a) Tanga va soqqa birga tashlanadi. Tangada gerb, soqqada $6$ tushish ehtimolligini toping.
@@ -200,7 +206,7 @@ c) Agar b) banddagi tajribada birinchi shar xaltaga qaytarilmasa-chi?
 
 a) Tanga va soqqa bir-biriga ta'sir qilmaydi: $P = \frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}$. Tekshirish: elementar hodisalar $2 \cdot 6 = 12$ ta, ulardan faqat bittasi (gerb va $6$) qulay.
 
-b) Shar qaytariladi, olishlar bog'liqsiz. Har safar ko'k shar olish ehtimolligi $\frac{2}{5}$: $P = \frac{2}{5} \cdot \frac{2}{5} = \frac{4}{25}$.
+b) Shar qaytariladi, olishlar mustaqil. Har safar ko'k shar olish ehtimolligi $\frac{2}{5}$: $P = \frac{2}{5} \cdot \frac{2}{5} = \frac{4}{25}$.
 
 c) Birinchi shar ko'k bo'lish ehtimolligi $\frac{2}{5}$. Agar u ko'k bo'lsa, xaltada $4$ ta shar qoladi, ulardan $1$ tasi ko'k: ikkinchi olishda ko'k shar ehtimolligi $\frac{1}{4}$. $P = \frac{2}{5} \cdot \frac{1}{4} = \frac{2}{20} = \frac{1}{10}$.
 
@@ -225,7 +231,7 @@ c) Birinchi shar ko'k bo'lish ehtimolligi $\frac{2}{5}$. Agar u ko'k bo'lsa, xal
 
 *Noto'g'ri:* tangada gerb va soqqada $6$ tushish ehtimolligi $\frac{1}{2} + \frac{1}{6} = \frac{2}{3}$.
 
-*To'g'ri:* bog'liqsiz hodisalarning ikkalasi ham ro'y berish ehtimolligi ko'paytiriladi: $\frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}$. Ehtimolliklarni qo'shganda natija, odatda, har biridan katta chiqadi — "ikkalasi ham" esa har biridan kam ehtimolli.
+*To'g'ri:* mustaqil hodisalarning ikkalasi ham ro'y berish ehtimolligi ko'paytiriladi: $\frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}$. Ehtimolliklarni qo'shganda natija, odatda, har biridan katta chiqadi — "ikkalasi ham" ning ehtimolligi esa har biridan katta bo'la olmaydi.
 
 **4. "Kamida bitta" ni qo'shish bilan topish.**
 
@@ -265,12 +271,12 @@ Ob-havo ma'lumotiga ko'ra ertaga yomg'ir yog'ish ehtimolligi $0.35$. Ertaga yomg
 MATEMATIKA so'zining $10$ ta harfi alohida kartochkalarga yozilgan. Kartochkalardan biri tasodifan olinadi. Unda A harfi bo'lish ehtimolligini toping.
 :::
 
-::: {.mashq #m18-5 daraja="A" javob="12"}
-Tanga va soqqa birga tashlanadi. Bu tajribada nechta elementar hodisa bor?
+::: {.mashq #m18-5 daraja="A" javob="30"}
+Soqqa tashlanadi va $1$ dan $5$ gacha raqamlangan $5$ ta teng bo'lakli aylanma g'ildirak aylantiriladi. Bu tajribada nechta elementar hodisa bor?
 :::
 
 ::: {.mashq #m18-6 daraja="A" javob="8%"}
-Lotereyada $500$ ta bilet bor, ulardan $40$ tasi yutuqli. Bitta bilet sotib olingan. Uning yutuqli bo'lish ehtimolligini foizda toping.
+Lotereyada $500$ ta bilet bor, ulardan $40$ tasi yutuqli. Bitta bilet tasodifan sotib olingan. Uning yutuqli bo'lish ehtimolligini foizda toping.
 :::
 
 ::: {.mashq #m18-7 daraja="A" javob="5/8"}
@@ -325,8 +331,8 @@ Aylanma g'ildirak $1$ dan $5$ gacha raqamlangan $5$ ta teng bo'lakka bo'lingan. 
 Xaltada faqat qizil va ko'k sharlar bor. Tasodifan olingan shar qizil bo'lish ehtimolligi $\frac{3}{8}$. Xaltada $15$ ta ko'k shar bor. Xaltada jami nechta shar bor?
 :::
 
-::: {.mashq #m18-19 daraja="C" javob="8"}
-Qutida $4$ ta qizil va $8$ ta ko'k konfet bor. Qutiga nechta qizil konfet qo'shilsa, tasodifan olingan konfet qizil bo'lish ehtimolligi $\frac{3}{5}$ ga teng bo'ladi?
+::: {.mashq #m18-19 daraja="C" javob="25"}
+Qutida $5$ ta qizil va $10$ ta ko'k konfet bor. Qutiga nechta qizil konfet qo'shilsa, tasodifan olingan konfet qizil bo'lish ehtimolligi $\frac{3}{4}$ ga teng bo'ladi?
 :::
 
 ::: {.mashq #m18-20 daraja="C" javob="18/35"}
@@ -346,16 +352,16 @@ Maktab sayohatidan keyin $50$ o'quvchidan so'raldi: ularning $30$ tasi Samarqand
 :::
 
 ::: {.mashq #m18-24 daraja="C" javob="0.42"}
-Maktabga boradigan yo'lda ikkita svetofor bor. Birinchi svetoforda qizil chiroqqa to'xtash ehtimolligi $0.4$, ikkinchisida $0.3$; svetoforlar bir-biriga bog'liq emas deb hisoblang. Ikkala svetoforda ham to'xtamaslik ehtimolligini o'nli kasr ko'rinishida toping.
+Maktabga boradigan yo'lda ikkita svetofor bor. Birinchi svetoforda qizil chiroqqa to'xtash ehtimolligi $0.4$, ikkinchisida $0.3$; svetoforlar bir-biriga bog'liq emas deb hisoblang. Birorta ham svetoforda to'xtamaslik ehtimolligini o'nli kasr ko'rinishida toping.
 :::
 
 ::: {.mashq #m18-25 daraja="C" javob="75"}
-Zavodda tekshirilgan $400$ ta detaldan $6$ tasi nuqsonli chiqdi. Shu ma'lumotga asoslanib, $5\,000$ ta detaldan iborat partiyada nechta nuqsonli detal kutiladi?
+Zavodda tekshirilgan $400$ ta detaldan $6$ tasi nuqsonli chiqdi. Nisbiy chastotani nuqsonli detal chiqish ehtimolligi sifatida olib, $5\,000$ ta detaldan iborat partiyada nechta nuqsonli detal kutiladi?
 :::
 
 ## SAT ko'prigi
 
-Quyidagi savollar SAT uslubida, inglizcha yozilgan. *probability* — ehtimollik, *selected at random* — tasodifan tanlangan, *those who* — ...ganlar, *resident* — aholi (yashovchi), *marble* — shar (sopqon), *integer* — butun son, *multiple of* — ...ga karrali, *defective* — nuqsonli. Javoblar kitob oxirida.
+Quyidagi savollar SAT uslubida, inglizcha yozilgan. *probability* — ehtimollik, *selected at random* — tasodifan tanlangan, *those who* — ...ganlar, *resident* — yashovchi, aholi vakili, *marble* — shar (shisha sharcha), *integer* — butun son, *multiple of* — ...ga karrali, *defective* — nuqsonli. Javoblar kitob oxirida.
 
 Quyidagi jadval S18.1 va S18.2-savollarga tegishli.
 
