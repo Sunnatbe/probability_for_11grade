@@ -183,7 +183,7 @@ E'tibor bering: b) va c) bandlarda surat bir xil ($54$), lekin guruhlar (maxrajl
 *Javob:* a) $\frac{51}{100}$; b) $\frac{9}{17}$; c) $\frac{9}{20}$.
 :::
 
-### Bog'liqsiz hodisalar
+### Mustaqil hodisalar
 
 Bir hodisaning ro'y berishi ikkinchisining ehtimolligini o'zgartirmasa, ular *mustaqil hodisalar (independent events)* deyiladi, aks holda — *bog'liq hodisalar (dependent events)*. Masalan, tanga tashlash natijasi soqqada qaysi son tushishiga ta'sir qilmaydi. Mustaqil $A$ va $B$ hodisalarning **ikkalasi ham** ro'y berish ehtimolligi:
 
@@ -352,7 +352,7 @@ Maktab sayohatidan keyin $50$ o'quvchidan so'raldi: ularning $30$ tasi Samarqand
 :::
 
 ::: {.mashq #m18-24 daraja="C" javob="0.42"}
-Maktabga boradigan yo'lda ikkita svetofor bor. Birinchi svetoforda qizil chiroqqa to'xtash ehtimolligi $0.4$, ikkinchisida $0.3$; svetoforlar bir-biriga bog'liq emas deb hisoblang. Birorta ham svetoforda to'xtamaslik ehtimolligini o'nli kasr ko'rinishida toping.
+Maktabga boradigan yo'lda ikkita svetofor bor. Birinchi svetoforda qizil chiroqqa to'xtash ehtimolligi $0.4$, ikkinchisida $0.3$; svetoforlarni mustaqil deb hisoblang. Birorta ham svetoforda to'xtamaslik ehtimolligini o'nli kasr ko'rinishida toping.
 :::
 
 ::: {.mashq #m18-25 daraja="C" javob="75"}
