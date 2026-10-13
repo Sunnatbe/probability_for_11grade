@@ -55,13 +55,13 @@ Shaklning *perimetri (perimeter)* — uning barcha tomonlari uzunliklarining yig
 
 Shaklning *yuzi (area)* — u egallagan tekislik qismining kattaligi. Yuz *kvadrat birliklarda (square units)* o'lchanadi: tomoni $1$ sm bo'lgan kvadratning yuzi $1$ sm² (kvadrat santimetr), tomoni $1$ m bo'lganiniki $1$ m². Yuz — shaklga nechta shunday birlik kvadrat sig'ishi. Masalan, tomonlari $6$ sm va $4$ sm bo'lgan *to'g'ri to'rtburchak (rectangle)* ga $6 \cdot 4 = 24$ ta birlik kvadrat sig'adi, uning yuzi $24$ sm², perimetri esa $2(6 + 4) = 20$ sm.
 
-Yuzni $S$ harfi bilan belgilaymiz (SAT'da $A$, *area*). Asosiy formulalar:
+Perimetrni $P$, yuzni $S$ harfi bilan belgilaymiz (SAT'da yuz $A$ bilan belgilanadi, *area*). Asosiy formulalar:
 
 - to'g'ri to'rtburchak (tomonlari $a$ va $b$): $P = 2(a + b)$, $S = ab$;
 - kvadrat (tomoni $a$): $P = 4a$, $S = a^2$;
 - uchburchak (asosi $a$, shu asosga tushirilgan balandligi $h$): $S = \frac{1}{2}ah$; to'g'ri burchakli uchburchakda katetlardan biri asos, ikkinchisi balandlik bo'ladi;
 - *parallelogramm (parallelogram)* — qarama-qarshi tomonlari parallel to'rtburchak (asosi $a$, balandligi $h$): $S = ah$;
-- *trapetsiya (trapezoid)* — faqat ikki tomoni parallel to'rtburchak. Parallel tomonlar *trapetsiya asoslari (bases of a trapezoid)* deyiladi ($a$ va $b$), balandlik $h$ — ular orasidagi masofa: $S = \frac{1}{2}(a + b)h$.
+- *trapetsiya (trapezoid)* — faqat bir juft qarama-qarshi tomonlari parallel bo'lgan to'rtburchak. Parallel tomonlar *trapetsiya asoslari (bases of a trapezoid)* deyiladi ($a$ va $b$), balandlik $h$ — ular orasidagi masofa: $S = \frac{1}{2}(a + b)h$.
 
 Bu formulalar bir-biridan kelib chiqadi. Parallelogrammning bir chetidan uchburchakni kesib, ikkinchi chetiga qo'ysak, asosi $a$, bo'yi $h$ bo'lgan to'g'ri to'rtburchak hosil bo'ladi. Ikkita bir xil uchburchakni yonma-yon qo'ysak, parallelogramm chiqadi, shuning uchun uchburchak yuzi uning yarmi. Ikkita bir xil trapetsiyadan asosi $a + b$ bo'lgan parallelogramm yasash mumkin. **Diqqat:** hamma formulada balandlik asosga **perpendikulyar** bo'lishi kerak; qiya tomon balandlik emas.
 
@@ -97,7 +97,7 @@ SAT'da ko'p uchraydigan *bo'yalgan soha (shaded region)* savolida odatda ayirish
 ::: {.misol}
 20.1-rasm a) dagi shaklning perimetri va yuzini toping.
 
-*Yechish.* Rasmda ikki tomon yozilmagan, ularni topamiz. Pastki tomon $10$ sm, yuqori tomon $6$ sm, demak kesikning gorizontal tomoni $10 - 6 = 4$ sm. Chap tomon $8$ sm, kesikning tik tomoni $3$ sm, demak o'ng tomon $8 - 3 = 5$ sm.
+*Yechish.* Bu shaklni tomonlari $10$ sm va $8$ sm bo'lgan to'g'ri to'rtburchakdan o'ng yuqori burchagidagi kichik to'g'ri to'rtburchak (kesik) kesib olingan deb qarash mumkin. Rasmda ikki tomon yozilmagan, ularni topamiz. Pastki tomon $10$ sm, yuqori tomon $6$ sm, demak kesikning gorizontal tomoni $10 - 6 = 4$ sm. Chap tomon $8$ sm, kesikning tik tomoni $3$ sm, demak o'ng tomon $8 - 3 = 5$ sm.
 
 Perimetr — oltita tomon yig'indisi: $10 + 8 + 6 + 3 + 4 + 5 = 36$ sm.
 
@@ -116,7 +116,7 @@ Yuz, ayirish usulida: butun to'g'ri to'rtburchak $10 \cdot 8 = 80$ sm², kesib o
 
 ![20.2-rasm. a) Aylana qismlari; b) yoy, markaziy burchak va sektor](rasmlar/chiqish/20_aylana.png){width=85%}
 
-Har qanday aylanada uzunlikning diametrga nisbati bir xil son. U *pi soni (pi)* deyiladi va $\pi$ deb belgilanadi: $\pi = 3.14159...$ Bu son cheksiz davriy bo'lmagan o'nli kasr, shuning uchun hisobda taxminan $\pi \approx 3.14$ olinadi ($\approx$ — "taxminan teng").
+Har qanday aylanada aylana uzunligining diametrga nisbati bir xil son. U *pi soni (pi)* deyiladi va $\pi$ deb belgilanadi: $\pi = 3.14159...$ Bu son cheksiz va davriy bo'lmagan o'nli kasr, shuning uchun hisobda taxminan $\pi \approx 3.14$ olinadi ($\approx$ — "taxminan teng").
 
 - *Aylana uzunligi (circumference):* $C = 2\pi r = \pi d$.
 - *Doira yuzi:* $S = \pi r^2$.
@@ -206,7 +206,7 @@ Silindr shaklidagi idishning asos radiusi $5$ sm, balandligi $12$ sm. Idishga ne
 
 **4. Parallelogrammda qiya tomonni balandlik deb olish.**
 
-*Noto'g'ri:* parallelogrammning tomonlari $10$ va $6$, balandligi $5$; yuzi $10 \cdot 6 = 60$.
+*Noto'g'ri:* parallelogrammning tomonlari $10$ va $6$, $10$ ga teng tomonga tushirilgan balandligi $5$; yuzi $10 \cdot 6 = 60$.
 
 *To'g'ri:* asosga perpendikulyar balandlik olinadi: $S = 10 \cdot 5 = 50$. Qiya tomon balandlikdan doim uzun, shuning uchun noto'g'ri javob kattaroq chiqadi.
 

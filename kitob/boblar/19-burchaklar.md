@@ -30,6 +30,7 @@ Shu bob bilan kitobning to'rtinchi qismi — geometriya boshlanadi. Geometriyada
 | o'tmas burchak | obtuse angle |
 | yoyiq burchak | straight angle |
 | perpendikulyar | perpendicular |
+| diagonal | diagonal |
 | to'ldiruvchi burchaklar (yig'indisi 90°) | complementary angles |
 | to'ldiruvchi burchaklar (yig'indisi 180°) | supplementary angles |
 | qo'shni burchaklar | linear pair |
@@ -74,7 +75,7 @@ Burchak turlari:
 
 Bitta tomoni umumiy, qolgan ikki tomoni bitta to'g'ri chiziq hosil qiladigan ikki burchak *qo'shni burchaklar (linear pair)* deyiladi. Ular birgalikda yoyiq burchakni tashkil qiladi, shuning uchun **qo'shni burchaklar yig'indisi $180^\circ$**.
 
-Ikki to'g'ri chiziq kesishganda to'rtta burchak hosil bo'ladi. Bir-biriga qarama-qarshi turgan burchaklar *vertikal burchaklar (vertical angles)* deyiladi. **Vertikal burchaklar teng.** Sababi oddiy: $\angle 1$ va $\angle 3$ vertikal bo'lsin, $\angle 2$ esa ikkalasiga qo'shni bo'lsin. Unda $\angle 1 + \angle 2 = 180^\circ$ va $\angle 3 + \angle 2 = 180^\circ$, demak $\angle 1$ va $\angle 3$ ham $180^\circ - \angle 2$ ga teng.
+Ikki to'g'ri chiziq kesishganda to'rtta burchak hosil bo'ladi. Bir-biriga qarama-qarshi turgan burchaklar *vertikal burchaklar (vertical angles)* deyiladi. **Vertikal burchaklar teng.** Sababi oddiy. Masalan, quyidagi 19.1-rasmda $\ell$ va $t$ chiziqlar kesishgan nuqtada $\angle 1$ va $\angle 4$ vertikal, $\angle 2$ esa ikkalasiga qo'shni. Unda $\angle 1 + \angle 2 = 180^\circ$ va $\angle 4 + \angle 2 = 180^\circ$, demak $\angle 1$ ham, $\angle 4$ ham $180^\circ - \angle 2$ ga teng.
 
 ### Parallel to'g'ri chiziqlar va kesuvchi
 
@@ -187,11 +188,11 @@ c) Eng uzun tomon $12$. $7^2 + 9^2 = 49 + 81 = 130$, $12^2 = 144$. $130 \neq 144
 
 ### Maxsus to'g'ri burchakli uchburchaklar
 
-Ikki xil to'g'ri burchakli uchburchakning tomonlari orasidagi nisbatni yoddan bilish foydali (19.4-rasm).
+Ikki xil to'g'ri burchakli uchburchakning tomonlari orasidagi nisbatni yoddan bilish foydali (19.4-rasm). Ularni tushuntirish uchun bitta atama kerak: to'rtburchakning (masalan, kvadratning) qarama-qarshi uchlarini tutashtiruvchi kesma *diagonal (diagonal)* deyiladi.
 
 **$45^\circ$, $45^\circ$, $90^\circ$ uchburchak.** Bu kvadratni diagonal bo'yicha kesganda hosil bo'ladigan teng yonli to'g'ri burchakli uchburchak. Katetlari $x$ bo'lsa, $c^2 = x^2 + x^2 = 2x^2$, ya'ni gipotenuza $x\sqrt{2}$.
 
-**$30^\circ$, $60^\circ$, $90^\circ$ uchburchak.** Bu tomoni $2x$ bo'lgan teng tomonli uchburchakni balandlik bo'yicha teng ikkiga bo'lganda hosil bo'ladi. Gipotenuza $2x$, $30^\circ$ qarshisidagi (qisqa) katet $x$ — gipotenuzaning yarmi. Uzun katet: $(2x)^2 - x^2 = 3x^2$, ya'ni $x\sqrt{3}$.
+**$30^\circ$, $60^\circ$, $90^\circ$ uchburchak.** Bu tomoni $2x$ bo'lgan teng tomonli uchburchakni balandlik bo'yicha teng ikkiga bo'lganda hosil bo'ladi. Gipotenuza $2x$, $30^\circ$ qarshisidagi (qisqa) katet $x$ — gipotenuzaning yarmi. Uzun katetning kvadrati $(2x)^2 - x^2 = 3x^2$, demak uzun katet $\sqrt{3x^2} = x\sqrt{3}$.
 
 ![19.4-rasm. Maxsus to'g'ri burchakli uchburchaklar](rasmlar/chiqish/19_maxsus.png){width=80%}
 
@@ -208,7 +209,7 @@ c) Teng yonli to'g'ri burchakli uchburchakning gipotenuzasi $8$. Katetini toping
 
 *Yechish.*
 
-a) Diagonal kvadratni ikkita $45^\circ$, $45^\circ$, $90^\circ$ uchburchakka ajratadi, uning katetlari $7$. Diagonal — gipotenuza: $7\sqrt{2}$ sm.
+a) Diagonal kvadratni ikkita $45^\circ$, $45^\circ$, $90^\circ$ uchburchakka ajratadi, ularning katetlari $7$ dan. Diagonal — gipotenuza: $7\sqrt{2}$ sm.
 
 b) Qisqa katet gipotenuzaning yarmi: $10 \div 2 = 5$. Uzun katet $5\sqrt{3}$. Tekshirish: $5^2 + \left(5\sqrt{3}\right)^2 = 25 + 75 = 100 = 10^2$.
 
@@ -230,7 +231,7 @@ Bu umumiy nisbat *o'xshashlik koeffitsiyenti (scale factor)* deyiladi. O'xshash 
 ::: {.misol}
 Quyoshli kunda bo'yi $1.8$ m bo'lgan odamning soyasi $1.2$ m. Xuddi shu paytda daraxtning soyasi $6$ m. Daraxtning balandligi qancha?
 
-*Yechish.* Odam va daraxt yerga tik turadi, quyosh nurlari ikkalasiga bir xil burchak ostida tushadi. Demak, "odam — soya" va "daraxt — soya" uchburchaklari o'xshash, mos tomonlari proporsional:
+*Yechish.* Daraxtning balandligi $h$ metr bo'lsin. Odam va daraxt yerga tik turadi, quyosh nurlari ikkalasiga bir xil burchak ostida tushadi. Demak, "odam — soya" va "daraxt — soya" uchburchaklari o'xshash, mos tomonlari proporsional:
 
 $$\frac{h}{6} = \frac{1.8}{1.2}.$$
 
