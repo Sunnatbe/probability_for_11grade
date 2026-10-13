@@ -1,11 +1,13 @@
 import React, { useMemo } from "react";
 import {
   AbsoluteFill,
+  Audio,
   Easing,
   Sequence,
   interpolate,
   random,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
@@ -626,6 +628,7 @@ const Outro: React.FC = () => {
 export const PiVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ fontFamily: FONT }}>
+      <Audio src={staticFile("music.mp3")} volume={0.55} />
       <Background />
       <Sequence durationInFrames={180}>
         <Hook />
