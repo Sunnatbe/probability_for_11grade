@@ -628,7 +628,7 @@ const Outro: React.FC = () => {
 export const PiVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ fontFamily: FONT }}>
-      <Audio src={staticFile("music.mp3")} volume={0.55} />
+      <Audio src={staticFile("music.mp3")} volume={0.22} />
       <Background />
       <Sequence durationInFrames={180}>
         <Hook />
