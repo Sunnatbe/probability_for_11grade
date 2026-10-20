@@ -89,3 +89,5 @@ Task 8: dispatched (BASE d84b01c, kirish + yakuniy test, model opus)
 Task 8: dispatched (BASE a9638d7, kirish + yakuniy test, model opus) — 2026-10-20 resumed in fresh container; env (pandoc, libreoffice-math, pytest) verified
 Task 8: implementer done, commit 82ac80a (193 pp, 39 tests pass); reviewer next. Concerns: ch1 ex 1.17 bracket; SAT facts to confirm; Javoblar label 'Mashqlar:' for d/y
 Task 8: review — blind solve 82/82 match; reviewer: 5 Important (d-25, d-10, y-32, y-18 duplicates of chapter items; kirish l.337 contradiction) + 11 minor; fix round 1 sent to implementer
+Task 8: complete (82ac80a..831729c, blind re-solve 82/82 match). Tooling: Savollar label, TOC one page (blank-page issue resolved: TOC overflowed 2 lines), ch01 m1-17 brackets->parentheses
+Final whole-book review (opus x3): A 2 Imp/22 Min (m2-7, m2-24 leaks), B 0 Imp/8 Min, C 2 Imp/17 Min (m21-10/d-38 triangle, ch18 format example=y-31 answer); fix wave dispatched to implementer a483c53e (one wave, then Task 9)
