@@ -6,6 +6,7 @@ olinadi (14.py: Ifoda; 15.py: yech, nuqta, uchi; 19.py: gr; 20.py: Pi).
 """
 import re
 import runpy
+from functools import lru_cache
 from decimal import ROUND_HALF_UP
 from decimal import Decimal as D
 from fractions import Fraction as F
@@ -114,9 +115,9 @@ assert abs((80 ** 0.5 - 20 ** 0.5) ** 2 - float(y12_qiymat)) < 1e-9
 # y-13 (8-bob)
 y13 = d((3 * (2 * a_ - b_) - 2 * (a_ - 4 * b_) + a_).matn())
 
-# y-14 (9-bob): 3x - 4 = 5(x - 6)  ->  (3 - 5)x = -30 + 4
-y14 = F(-30 + 4, 3 - 5)
-assert (3 * y14 - 4) / 5 == y14 - 6
+# y-14 (9-bob): 3x - 1 = 4(x - 4)  ->  (3 - 4)x = -16 + 1
+y14 = F(-16 + 1, 3 - 4)
+assert (3 * y14 - 1) / 4 == y14 - 4
 
 # y-15 (9-bob): (4 + k)x - 8 = 3x + 5 yechimsiz <=> x koeffitsiyentlari teng, ozod hadlar har xil
 y15 = 3 - 4                       # 4 + k = 3
@@ -132,10 +133,10 @@ s17 = 1 / (F(1, 72) - F(1, 90))
 y17 = s17
 assert s17 / 72 - s17 / 90 == 1
 
-# y-18 (11-bob): b + (2b + 4) = 31
-uka = F(37 - 4, 3)
-y18 = 2 * uka + 4
-assert uka + y18 == 37
+# y-18 (11-bob): Lena = 3b - 7 va Lena = b + 15  ->  3b - 7 = b + 15
+uka = F(15 + 7, 3 - 1)
+y18 = uka + 15
+assert y18 == 3 * uka - 7
 
 # y-19 (12-bob)
 k19 = F(-3 - 9, 3 - (-1))
@@ -143,12 +144,17 @@ b19 = 9 - k19 * (-1)
 assert k19 * 3 + b19 == -3
 y19 = nuqta(-b19 / k19, 0)
 
-# y-20 (12-bob): V = 450 - 15t, burchak koeffitsiyenti -15 — har minutda 15 l kamayadi
-variantlar20 = ["boshlang'ich hajm 15", "15 minutda bo'shaydi", "har minutda 15 l kamayadi",
-                "har minutda 450 l kamayadi"]
+# y-20 (12-bob): V = 450 - 15t. Variantlar (tur, son) juftligi bilan kodlanadi:
+# A) boshlang'ich hajm 15; B) bo'shash vaqti 15; C) minutiga kamayish 15; D) minutiga kamayish 450.
 V = lambda t: 450 - 15 * t  # noqa: E731
-assert V(0) == 450 and V(30) == 0 and all(V(t) - V(t + 1) == 15 for t in range(30))
-y20 = harf(variantlar20, "har minutda 15 l kamayadi")
+boshlangich = V(0)
+bo_shash = next(t for t in range(10_000) if V(t) == 0)
+kamayish = V(0) - V(1)                          # burchak koeffitsiyenti -15 => har minutda 15 l kamayadi
+assert all(V(t) - V(t + 1) == kamayish for t in range(bo_shash))
+variantlar20 = [("boshlang'ich", 15), ("bo'shash", 15), ("kamayish", 15), ("kamayish", 450)]
+haqiqiy = {("boshlang'ich", boshlangich), ("bo'shash", bo_shash), ("kamayish", kamayish)}
+assert [v in haqiqiy for v in variantlar20].count(True) == 1
+y20 = harf(variantlar20, ("kamayish", kamayish))
 
 # y-21 (13-bob): 2m + 3c = 9.50, 4m + c = 10.50 (Kramer)
 det = 2 * 1 - 3 * 4
@@ -179,18 +185,18 @@ y26 = uchi(1, -10, 16)[1]
 
 # ============================================================ III bo'lim (16–18-boblar)
 # y-27 (16-bob)
-y27 = 8 * 15 - 7 * 13
+y27 = F(30 * 81 - 12 * 84, 30 - 12)          # o'g'il bolalar: yig'indi / soni
 
 # y-28 (16-bob): chastotalar jadvali
-CHASTOTA = {0: 3, 1: 5, 2: 6, 3: 4, 4: 2}
-assert sum(CHASTOTA.values()) == 20
-y28 = son(F(sum(k * n for k, n in CHASTOTA.items()), 20))
+CHASTOTA = {1: 1, 2: 3, 3: 6, 4: 8, 5: 6}
+assert sum(CHASTOTA.values()) == 24
+y28 = son(F(sum(k * n for k, n in CHASTOTA.items()), 24))
 
 # y-29 (17-bob)
-JADVAL_29 = {"10-sinf": (27, 33), "11-sinf": (45, 15)}
-assert all(sum(v) == 60 for v in JADVAL_29.values())
+JADVAL_29 = {"10-sinf": (28, 36), "11-sinf": (42, 14)}
+assert sum(JADVAL_29["10-sinf"]) == 64 and sum(JADVAL_29["11-sinf"]) == 56
 kitob = JADVAL_29["10-sinf"][0] + JADVAL_29["11-sinf"][0]
-assert kitob == 72 and JADVAL_29["10-sinf"][1] + JADVAL_29["11-sinf"][1] == 48
+assert kitob == 70 and JADVAL_29["10-sinf"][1] + JADVAL_29["11-sinf"][1] == 50
 y29 = foiz(F(JADVAL_29["11-sinf"][0], kitob))
 
 # y-30 (17-bob)
@@ -201,11 +207,11 @@ y30 = son(bashorat - 57)
 y31 = F(5, 8) * F(5 - 1, 8 - 1)
 
 # y-32 (18-bob)
-JADVAL_32 = {"9": (42, 38), "10": (54, 66)}
-assert sum(JADVAL_32["9"]) == 80 and sum(JADVAL_32["10"]) == 120
-uy_hayvonli = JADVAL_32["9"][0] + JADVAL_32["10"][0]
-assert uy_hayvonli == 96
-y32 = F(JADVAL_32["10"][0], uy_hayvonli)
+JADVAL_32 = {"9": (24, 46), "10": (36, 44)}    # (chaladi, chalmaydi)
+assert sum(JADVAL_32["9"]) == 70 and sum(JADVAL_32["10"]) == 80
+chalmaydi = JADVAL_32["9"][1] + JADVAL_32["10"][1]
+assert chalmaydi == 90 and JADVAL_32["9"][0] + JADVAL_32["10"][0] == 60
+y32 = F(JADVAL_32["9"][1], chalmaydi)
 
 # y-33 (18-bob): mustaqil hodisalar; tub sonlar 2, 3, 5
 tub = [k for k in range(1, 7) if k > 1 and all(k % p for p in range(2, k))]
@@ -216,31 +222,33 @@ y33 = harf([F(1, 24), F(1, 6), F(3, 4), F(1, 8)], y33_qiymat)
 # y-34 (19-bob): u + 2u + 2u = 180
 y34 = gr(F(180, 1 + 2 + 2))
 
-# y-35 (19-bob): 30-60-90: BC = AC * sqrt(3) (60° qarshisidagi katet)
-AC = 11
-y35_qiymat = ildizli(AC, 3)
-assert y35_qiymat + AC ** 2 == (2 * AC) ** 2      # Pifagor: AB = 2*AC
-y35 = harf([ildizli(11, 3), ildizli(22, 1), ildizli(11, 2), F(11, 2) ** 2], y35_qiymat)
+# y-35 (19-, 20-bob): 45-45-90: kvadrat tomoni a, diagonal a*sqrt(2) = 14 => a^2 = 14^2 / 2
+diag = 14
+yuz35 = F(diag ** 2, 2)
+assert yuz35 + yuz35 == diag ** 2                # Pifagor: a^2 + a^2 = d^2
+# variantlar kvadratlari bilan solishtiriladi: 98, 49, 196, 98*sqrt(2)
+y35 = harf([ildizli(98, 1), ildizli(49, 1), ildizli(196, 1), ildizli(98, 2)], ildizli(yuz35, 1))
 
 # y-36 (20-bob)
 y36 = str(20 * 14 - pi * 3 ** 2)
 
 # y-37 (20-bob): yoy uzunligi
-y37_qiymat = F(80, 360) * 2 * pi * 9
-y37 = harf([Pi(0, 2), Pi(0, 18), Pi(0, 4), Pi(0, 36)], y37_qiymat)
+y37_qiymat = F(75, 360) * 2 * pi * 12
+assert F(75, 360) * pi * 12 ** 2 == Pi(0, 30)    # B — sektor yuzi (odatiy xato)
+y37 = harf([Pi(0, F(5, 2)), Pi(0, 30), Pi(0, 5), Pi(0, 24)], y37_qiymat)
 
 # y-38 (20-bob): V = pi r^2 h
 y38 = F(99) / 3 ** 2
 assert pi * 3 ** 2 * y38 == Pi(0, 99)
 
-# y-39 (21-bob): tan A = 33/56 -> tomonlar 33k, 56k, 65k
-gip39 = isqrt(33 ** 2 + 56 ** 2)
-assert gip39 ** 2 == 33 ** 2 + 56 ** 2
-k39 = F(130, gip39)
-y39 = 33 * k39
+# y-39 (21-bob): tan A = 39/80 -> tomonlar 39k, 80k, 89k
+gip39 = isqrt(39 ** 2 + 80 ** 2)
+assert gip39 ** 2 == 39 ** 2 + 80 ** 2
+k39 = F(178, gip39)
+y39 = 39 * k39
 
-# y-40 (21-bob): cos B = BC/AB = 40/41, AC = 9, tan A = BC/AC
-BC, AB = 40, 41
+# y-40 (21-bob): cos B = BC/AB = 63/65, AC = 16, tan A = BC/AC
+BC, AB = 63, 65
 AC40 = isqrt(AB ** 2 - BC ** 2)
 assert AC40 ** 2 + BC ** 2 == AB ** 2
 y40 = F(BC, AC40)
@@ -285,3 +293,75 @@ _DIAG = {norm(v) for v in _yukla("00.py")["JAVOBLAR"].values() if not re.fullmat
 _raqamli = {k: norm(v) for k, v in JAVOBLAR.items() if not re.fullmatch(r"[A-D]", str(v))}
 assert not set(_raqamli.values()) & _DIAG, set(_raqamli.values()) & _DIAG
 assert len(_raqamli) == len(set(_raqamli.values())), "yakuniy test javoblari takrorlanmasin"
+
+
+# ------------------------------------------------ boblar bilan solishtirish
+_DIV = re.compile(r"^::: \{\.(misol|mashq|sat)([^\n]*)\}\n(.*?)^:::$", re.MULTILINE | re.DOTALL)
+
+
+def _sonlar(matn):
+    """Blokdagi 10 dan katta sonlar (sinf raqamlari va minglik bo'shliqlarsiz)."""
+    matn = re.sub(r"(?i)\d+-sinf|grade \d+", "", matn.replace("\\,", "").replace("\\ ", ""))
+    return {s for s in re.findall(r"\d+(?:\.\d+)?", matn) if float(s) >= 10}
+
+
+def _bloklar(matn):
+    for m in _DIV.finditer(matn):
+        id_ = re.search(r"#([\w-]+)", m.group(2))
+        javob = re.search(r'javob="([^"]*)"', m.group(2))
+        yield (id_.group(1) if id_ else "misol"), _sonlar(m.group(3) + " " + (javob.group(1) if javob else "")), m.group(3)
+
+
+def _misol_javoblari(matn):
+    """Misollardagi "*Javob:*" qatorlaridagi formulalar (\\frac{a}{b} -> a/b)."""
+    natija = set()
+    for _, _, ichi in _bloklar(matn):
+        for qator in re.findall(r"\*Javob:\*(.*)", ichi):
+            for f in re.findall(r"\$([^$]+)\$", qator):
+                natija.add(norm(re.sub(r"\\frac\{(-?\d+)\}\{(\d+)\}", r"\1/\2", f)))
+    return natija
+
+
+@lru_cache(maxsize=None)
+def _bob(bob):
+    """(bob matni, bobdagi mashq/SAT javoblari) — harfli javoblarsiz."""
+    matn = next((JAVOBLAR_DIR.parent / "boblar").glob(f"{bob:02d}-*.md")).read_text(encoding="utf-8")
+    javoblar = {norm(v) for v in _yukla(f"{bob:02d}.py")["JAVOBLAR"].values() if not re.fullmatch(r"[A-D]", str(v))}
+    return matn, javoblar
+
+
+def boblar_bilan_solishtir(md_matn, bobi):
+    """Har bir d/y savol o'z bobi bilan solishtiriladi:
+    1) javobi shu bobdagi mashq/SAT javobiga yoki misol javobiga teng emas;
+    2) shu bobdagi biror blokning son qolipini takrorlamaydi: blokdagi (kamida 2 ta) sonlarning
+       hammasi savolda (javobi bilan) bor bo'lsa yoki kamida 3 ta umumiy son bo'lib, ulardan
+       kamida 2 tasi 10 ga karrali bo'lmasa — xato."""
+    xatolar = []
+    for id_, sonlar, _ in _bloklar(md_matn):
+        bob = bobi[id_]
+        bob_md, bob_javoblari = _bob(bob)
+        javob = norm(JAVOBLAR[id_])
+        if not re.fullmatch(r"[a-d]", javob):
+            if javob in bob_javoblari:
+                xatolar.append((id_, javob, "bobdagi mashq/SAT javobi"))
+            if javob in _misol_javoblari(bob_md):
+                xatolar.append((id_, javob, "bobdagi misol javobi"))
+        for b_id, b_sonlar, _ in _bloklar(bob_md):
+            umumiy = sonlar & b_sonlar
+            qolip = len(b_sonlar) >= 2 and b_sonlar <= sonlar
+            kop = len(umumiy) >= 3 and sum(1 for s in umumiy if float(s) % 10) >= 2
+            if qolip or kop:
+                xatolar.append((id_, bob, b_id, sorted(umumiy)))
+    assert not xatolar, xatolar
+
+
+# y-savol -> bob (md dagi "Qaysi savol qaysi bobga tegishli" jadvali bilan bir xil bo'lishi shart)
+BOBI = {f"y-{n}": b for b, savollar in {
+    1: [1], 2: [2], 3: [3, 4], 4: [5, 6], 5: [7, 8], 6: [9, 10], 7: [11, 12], 8: [13], 9: [14, 15],
+    10: [16], 11: [17, 18], 12: [19, 20], 13: [21, 22], 14: [23, 24], 15: [25, 26], 16: [27, 28],
+    17: [29, 30], 18: [31, 32, 33], 19: [34, 35], 20: [36, 37, 38], 21: [39, 40]}.items() for n in savollar}
+_jadval = {f"y-{n.strip()}": int(b) for b, _, ns in re.findall(r"^\| (\d+) \| ([^|]+) \| ([\d, ]+) \|$", _md, re.MULTILINE)
+           for n in ns.split(",")}
+assert _jadval == BOBI and sorted(BOBI) == sorted(JAVOBLAR)
+assert all(BOBI[f"y-{n}"] <= 7 for n in BOLIMLAR["I"]) and all(16 <= BOBI[f"y-{n}"] <= 18 for n in BOLIMLAR["III"])
+boblar_bilan_solishtir(_md, BOBI)

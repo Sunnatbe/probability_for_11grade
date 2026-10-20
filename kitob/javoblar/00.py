@@ -7,6 +7,7 @@ bilan bir xil ko'rinishda yoziladi.
 """
 import re
 import runpy
+from functools import lru_cache
 from decimal import Decimal as D
 from fractions import Fraction as F
 from math import gcd, isqrt
@@ -69,7 +70,7 @@ def ekuk(*sonlar):
 
 
 # ---------------------------------------------------------------- 1-bob
-d1 = -12 + 5 - (-4)
+d1 = -13 + 4 - (-2)
 d2 = -(3 ** 2) + F(18, 3) * 2          # -3^2: daraja minusdan oldin; / va * chapdan o'ngga
 assert d2 == -9 + 12
 
@@ -88,7 +89,7 @@ d8 = D("2.7") / D("0.09")
 
 # ---------------------------------------------------------------- 5-bob
 d9 = 420000 * F(4, 3 + 4)
-d10 = F(15) * 3600 / 1000               # m/s -> km/soat
+d10 = F(35) * 3600 / 1000               # m/s -> km/soat
 
 # ---------------------------------------------------------------- 6-bob
 d11 = 350 * F(18, 100)
@@ -96,12 +97,12 @@ d12 = 90000 / (1 + F(25, 100))
 assert d12 != 90000 * (1 - F(25, 100))  # odatiy xato: 25% ni yangi narxdan ayirish
 
 # ---------------------------------------------------------------- 7-bob
-d13 = F(3) ** 5 * F(3) ** -1 / F(3) ** 2
-# sqrt(48) + sqrt(27) = 4sqrt(3) + 3sqrt(3); variantlar kvadrati bilan solishtiriladi
-assert isqrt(48 // 3) ** 2 * 3 == 48 and isqrt(27 // 3) ** 2 * 3 == 27
-d14_qiymat = ildizli(isqrt(48 // 3) + isqrt(27 // 3), 3)
-d14 = harf([ildizli(1, 75), ildizli(7, 6), ildizli(7, 3), ildizli(12, 3)], d14_qiymat)
-assert abs((48 ** 0.5 + 27 ** 0.5) ** 2 - float(d14_qiymat)) < 1e-9
+d13 = F(5) ** 6 * F(5) ** -2 / F(5) ** 2
+# sqrt(63) + sqrt(28) = 3sqrt(7) + 2sqrt(7); variantlar kvadrati bilan solishtiriladi
+assert isqrt(63 // 7) ** 2 * 7 == 63 and isqrt(28 // 7) ** 2 * 7 == 28
+d14_qiymat = ildizli(isqrt(63 // 7) + isqrt(28 // 7), 7)
+d14 = harf([ildizli(1, 91), ildizli(5, 14), ildizli(5, 7), ildizli(13, 7)], d14_qiymat)
+assert abs((63 ** 0.5 + 28 ** 0.5) ** 2 - float(d14_qiymat)) < 1e-9
 
 # ---------------------------------------------------------------- 8-bob
 a = F(-3)
@@ -109,24 +110,24 @@ d15 = a ** 2 - 4 * a + 1
 d16 = d((4 * (2 * x - 3) - 3 * (x - 5)).matn())
 
 # ---------------------------------------------------------------- 9-bob
-# 5x - 7 = 2x + 17  ->  (5 - 2)x = 17 + 7
-d17 = F(17 + 7, 5 - 2)
-assert 5 * d17 - 7 == 2 * d17 + 17
+# 7x + 4 = 3x - 16  ->  (7 - 3)x = -16 - 4
+d17 = F(-16 - 4, 7 - 3)
+assert 7 * d17 + 4 == 3 * d17 - 16
 # (2x - 1)/3 = (x + 4)/2  ->  2(2x - 1) = 3(x + 4)  ->  (4 - 3)x = 12 + 2
 d18 = F(12 + 2, 4 - 3)
 assert (2 * d18 - 1) / 3 == (d18 + 4) / F(2)
 
 # ---------------------------------------------------------------- 10-bob
-# 7 - 2x > 13  ->  -2x > 6  ->  x < -3 (manfiy songa bo'lganda belgi almashadi)
-chegara = F(13 - 7, -2)
-assert all((7 - 2 * t > 13) == (t < chegara) for t in (F(n, 4) for n in range(-40, 40)))
-d19 = d(f"x < {son(chegara)}")
-d20 = sum(1 for t in range(-50, 50) if -7 <= 3 * t - 1 < 8)
+# 3 - 4x >= 19  ->  -4x >= 16  ->  x <= -4 (manfiy songa bo'lganda belgi almashadi)
+chegara = F(19 - 3, -4)
+assert all((3 - 4 * t >= 19) == (t <= chegara) for t in (F(n, 4) for n in range(-40, 40)))
+d19 = d(f"x \\leq {son(chegara)}")
+d20 = sum(1 for t in range(-50, 50) if -10 < 3 * t + 2 <= 14)
 
 # ---------------------------------------------------------------- 11-bob
-n = F(72 - 3, 3)                         # n + (n + 1) + (n + 2) = 72
-assert n + (n + 1) + (n + 2) == 72
-d21 = n + 2
+daftar21 = F(30000, 1 + 4)                # d + 4d = 30 000
+assert daftar21 + 4 * daftar21 == 30000
+d21 = 4 * daftar21
 t = F(38 - 3 * 6, 3 - 1)                 # 38 + t = 3(6 + t)
 assert 38 + t == 3 * (6 + t)
 d22 = t
@@ -138,10 +139,10 @@ b = y0 - m * x0
 d24 = d(f"y = {(m * x + b).matn()}")
 
 # ---------------------------------------------------------------- 13-bob
-# y = 3x - 2, 2x + y = 13  ->  2x + 3x - 2 = 13
-xs = F(13 + 2, 2 + 3)
-ys = 3 * xs - 2
-assert 2 * xs + ys == 13
+# y = 4x - 3, 3x + y = 11  ->  3x + 4x - 3 = 11
+xs = F(11 + 3, 3 + 4)
+ys = 4 * xs - 3
+assert 3 * xs + ys == 11
 d25 = d(f"({son(xs)}, {son(ys)})")
 # 3d + 2r = 19000, 2d + 3r = 16000 (Kramer qoidasi bilan mustaqil hisob)
 det = 3 * 3 - 2 * 2
@@ -164,21 +165,21 @@ d31 = son(F(tuplam[2] + tuplam[3], 2))
 d32 = 7 * 83 - 6 * 81
 
 # ---------------------------------------------------------------- 17-bob
-JADVAL_17 = {"9-sinf": (18, 12), "10-sinf": (21, 29)}
-assert sum(JADVAL_17["9-sinf"]) == 30 and sum(JADVAL_17["10-sinf"]) == 50
-assert JADVAL_17["9-sinf"][0] + JADVAL_17["10-sinf"][0] == 39
-assert JADVAL_17["9-sinf"][1] + JADVAL_17["10-sinf"][1] == 41
+JADVAL_17 = {"9-sinf": (16, 20), "10-sinf": (26, 14)}
+assert sum(JADVAL_17["9-sinf"]) == 36 and sum(JADVAL_17["10-sinf"]) == 40
+assert JADVAL_17["9-sinf"][0] + JADVAL_17["10-sinf"][0] == 42
+assert JADVAL_17["9-sinf"][1] + JADVAL_17["10-sinf"][1] == 34
 d33 = foiz(F(JADVAL_17["10-sinf"][0], sum(JADVAL_17["10-sinf"])))
 d34 = 12 * 25 - 40
 
 # ---------------------------------------------------------------- 18-bob
-d35 = F(4 + 6, 4 + 6 + 5)
-d36 = F(sum(1 for i in range(1, 7) for j in range(1, 7) if i + j == 10), 36)
+d35 = F(5 + 4, 5 + 4 + 3)
+d36 = F(sum(1 for i in range(1, 7) for j in range(1, 7) if i * j == 18), 36)
 
 # ---------------------------------------------------------------- 19-bob
 d37 = gr(180 - 54 - 71)
-d38 = isqrt(26 ** 2 - 10 ** 2)
-assert d38 ** 2 + 10 ** 2 == 26 ** 2
+d38 = isqrt(53 ** 2 - 28 ** 2)
+assert d38 ** 2 + 28 ** 2 == 53 ** 2
 
 # ---------------------------------------------------------------- 20-bob
 d39 = str(pi * F(14, 2) ** 2)
@@ -186,7 +187,7 @@ d40 = son(F(80 * 50 * 45, 1000))         # 1 l = 1000 sm^3
 
 # ---------------------------------------------------------------- 21-bob
 d41 = 90 - 38                            # sin x = cos (90 - x)
-qarshi, gip = 11, 61
+qarshi, gip = 13, 85
 yopishgan = isqrt(gip ** 2 - qarshi ** 2)
 assert yopishgan ** 2 + qarshi ** 2 == gip ** 2
 d42 = F(qarshi, yopishgan)
@@ -226,3 +227,66 @@ for _id, _q in JAVOBLAR.items():
     assert norm(_q) not in MATNDAGI, (_id, _q)
 _hammasi = [norm(v) for v in JAVOBLAR.values()]
 assert len(_hammasi) == len(set(_hammasi)), "diagnostik test javoblari takrorlanmasin"
+
+
+# ------------------------------------------------ boblar bilan solishtirish
+_DIV = re.compile(r"^::: \{\.(misol|mashq|sat)([^\n]*)\}\n(.*?)^:::$", re.MULTILINE | re.DOTALL)
+
+
+def _sonlar(matn):
+    """Blokdagi 10 dan katta sonlar (sinf raqamlari va minglik bo'shliqlarsiz)."""
+    matn = re.sub(r"(?i)\d+-sinf|grade \d+", "", matn.replace("\\,", "").replace("\\ ", ""))
+    return {s for s in re.findall(r"\d+(?:\.\d+)?", matn) if float(s) >= 10}
+
+
+def _bloklar(matn):
+    for m in _DIV.finditer(matn):
+        id_ = re.search(r"#([\w-]+)", m.group(2))
+        javob = re.search(r'javob="([^"]*)"', m.group(2))
+        yield (id_.group(1) if id_ else "misol"), _sonlar(m.group(3) + " " + (javob.group(1) if javob else "")), m.group(3)
+
+
+def _misol_javoblari(matn):
+    """Misollardagi "*Javob:*" qatorlaridagi formulalar (\\frac{a}{b} -> a/b)."""
+    natija = set()
+    for _, _, ichi in _bloklar(matn):
+        for qator in re.findall(r"\*Javob:\*(.*)", ichi):
+            for f in re.findall(r"\$([^$]+)\$", qator):
+                natija.add(norm(re.sub(r"\\frac\{(-?\d+)\}\{(\d+)\}", r"\1/\2", f)))
+    return natija
+
+
+@lru_cache(maxsize=None)
+def _bob(bob):
+    """(bob matni, bobdagi mashq/SAT javoblari) — harfli javoblarsiz."""
+    matn = next((JAVOBLAR_DIR.parent / "boblar").glob(f"{bob:02d}-*.md")).read_text(encoding="utf-8")
+    javoblar = {norm(v) for v in _yukla(f"{bob:02d}.py")["JAVOBLAR"].values() if not re.fullmatch(r"[A-D]", str(v))}
+    return matn, javoblar
+
+
+def boblar_bilan_solishtir(md_matn, bobi):
+    """Har bir d/y savol o'z bobi bilan solishtiriladi:
+    1) javobi shu bobdagi mashq/SAT javobiga yoki misol javobiga teng emas;
+    2) shu bobdagi biror blokning son qolipini takrorlamaydi: blokdagi (kamida 2 ta) sonlarning
+       hammasi savolda (javobi bilan) bor bo'lsa yoki kamida 3 ta umumiy son bo'lib, ulardan
+       kamida 2 tasi 10 ga karrali bo'lmasa — xato."""
+    xatolar = []
+    for id_, sonlar, _ in _bloklar(md_matn):
+        bob = bobi[id_]
+        bob_md, bob_javoblari = _bob(bob)
+        javob = norm(JAVOBLAR[id_])
+        if not re.fullmatch(r"[a-d]", javob):
+            if javob in bob_javoblari:
+                xatolar.append((id_, javob, "bobdagi mashq/SAT javobi"))
+            if javob in _misol_javoblari(bob_md):
+                xatolar.append((id_, javob, "bobdagi misol javobi"))
+        for b_id, b_sonlar, _ in _bloklar(bob_md):
+            umumiy = sonlar & b_sonlar
+            qolip = len(b_sonlar) >= 2 and b_sonlar <= sonlar
+            kop = len(umumiy) >= 3 and sum(1 for s in umumiy if float(s) % 10) >= 2
+            if qolip or kop:
+                xatolar.append((id_, bob, b_id, sorted(umumiy)))
+    assert not xatolar, xatolar
+
+
+boblar_bilan_solishtir(MATN.read_text(encoding="utf-8"), {f"d-{i}": (i + 1) // 2 for i in range(1, 43)})

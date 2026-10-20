@@ -4,7 +4,7 @@ Bu test butun kitob bo'yicha. Uni kitobni tugatgandan keyin yeching: natija qays
 
 Testda 40 ta savol bor, ular kitobning to'rt qismiga mos to'rt bo'limga ajratilgan. Savollarning yarmi o'zbekcha, yarmi SAT uslubida inglizcha yozilgan. Inglizcha savolda javob variantlari bo'lmasa, javobni o'zingiz yozasiz (*student-produced response*): SAT'dagi kabi javob butun son, kasr yoki o'nli kasr bo'lishi mumkin.
 
-- Vaqt: 65 daqiqa. Bu SAT'dagi sur'atga yaqin: bitta savolga o'rtacha 1.5 daqiqadan sal ko'proq.
+- Vaqt: 65 minut. Bu SAT'dagi sur'atga yaqin: bitta savolga o'rtacha 1.5 minutdan sal ko'proq.
 - SAT'dagi kabi kalkulyatordan foydalanishingiz mumkin, lekin qo'lda tezroq hisoblanadigan joyda vaqtni kalkulyatorga sarflamang.
 - Javoblarni alohida varaqqa yozing, keyin kitob oxiridagi Javoblar bo'limining **Yakuniy test** qismi bilan solishtiring va test oxiridagi jadvallar bo'yicha natijangizni baholang.
 
@@ -86,14 +86,14 @@ D) $5\sqrt{2}$
 
 ## II bo'lim. Algebra asoslari (13–26-savollar)
 
-Inglizcha savollardagi ba'zi so'zlar: *solution* — yechim, *plan* — tarif, *at most* / *no more than* — ko'pi bilan, *twice* — ikki baravar, *drain* — suvni chiqarib yuborish, *interpretation* — izoh, *muffin* — keks, *factor* — ko'paytuvchi, *vertex* — parabolaning uchi.
+Inglizcha savollardagi ba'zi so'zlar: *solution* — yechim, *plan* — tarif, *at most* / *no more than* — ko'pi bilan, *three times* — uch baravar, *older* — katta (yoshi), *drain* — suvni chiqarib yuborish, *interpretation* — izoh, *muffin* — keks, *factor* — ko'paytuvchi, *vertex* — parabolaning uchi.
 
 ::: {.mashq #y-13 daraja="B" javob="$5a + 5b$"}
 Soddalashtiring: $3(2a - b) - 2(a - 4b) + a$.
 :::
 
-::: {.mashq #y-14 daraja="C" javob="13"}
-$$\frac{3x - 4}{5} = x - 6$$
+::: {.mashq #y-14 daraja="C" javob="15"}
+$$\frac{3x - 1}{4} = x - 4$$
 
 What value of $x$ is the solution to the given equation?
 :::
@@ -107,11 +107,11 @@ A phone plan costs \$20 per month plus \$0.05 for each text message sent. Ana wa
 :::
 
 ::: {.mashq #y-17 daraja="B" javob="360"}
-Poyezd $A$ shahardan $B$ shahriga soatiga $90$ km tezlikda bordi va soatiga $72$ km tezlikda qaytdi. Qaytish yo'li borishga qaraganda $1$ soat ko'p vaqt oldi. Shaharlar orasidagi masofa necha kilometr?
+Poyezd $A$ shahridan $B$ shahriga soatiga $90$ km tezlikda bordi va soatiga $72$ km tezlikda qaytdi. Qaytish yo'li borishga qaraganda $1$ soat ko'p vaqt oldi. Shaharlar orasidagi masofa necha kilometr?
 :::
 
 ::: {.mashq #y-18 daraja="C" javob="26"}
-Lena's age is $4$ years more than twice her brother's age. The sum of their ages is $37$ years. How old, in years, is Lena?
+Lena's age is $7$ years less than three times her brother's age. Lena is $15$ years older than her brother. How old, in years, is Lena?
 :::
 
 ::: {.mashq #y-19 daraja="B" javob="$(2, 0)$"}
@@ -168,30 +168,30 @@ In the $xy$-plane, the graph of $y = x^2 - 10x + 16$ is a parabola. What is the 
 
 ## III bo'lim. Ma'lumotlar va ehtimollik (27–33-savollar)
 
-Inglizcha savollardagi ba'zi so'zlar: *mean* — o'rta qiymat, *volunteer* — ko'ngilli, *line of best fit* — eng mos to'g'ri chiziq, *predicted* — bashorat qilingan, *at random* — tasodifan, *spinner* — aylanuvchi strelkali disk, *section* — bo'lak, *prime number* — tub son.
+Inglizcha savollardagi ba'zi so'zlar: *rate* — baho bermoq, *customer* — xaridor, *mean* — o'rta qiymat, *volunteer* — ko'ngilli, *line of best fit* — eng mos to'g'ri chiziq, *predicted* — bashorat qilingan, *musical instrument* — musiqa asbobi, *at random* — tasodifan, *spinner* — aylanuvchi strelkali disk, *section* — bo'lak, *prime number* — tub son.
 
-::: {.mashq #y-27 daraja="B" javob="29"}
-$8$ ta sonning o'rta qiymati $15$ ga teng. Ulardan bittasi olib tashlangach, qolgan $7$ ta sonning o'rta qiymati $13$ bo'ldi. Qaysi son olib tashlangan?
+::: {.mashq #y-27 daraja="B" javob="79"}
+Sinfdagi $30$ o'quvchining test bo'yicha o'rtacha bali $81$. Ulardan $12$ nafari qizlar, qizlarning o'rtacha bali $84$. Sinfdagi o'g'il bolalarning o'rtacha bali qancha?
 :::
 
-::: {.mashq #y-28 daraja="C" javob="1.85"}
-The table shows the number of books that each of $20$ students read during the summer.
+::: {.mashq #y-28 daraja="C" javob="3.625"}
+A café asked $24$ customers to rate its new menu on a scale from $1$ to $5$. The table shows the results.
 
-| Number of books | $0$ | $1$ | $2$ | $3$ | $4$ |
+| Rating | $1$ | $2$ | $3$ | $4$ | $5$ |
 |---|---|---|---|---|---|
-| Number of students | $3$ | $5$ | $6$ | $4$ | $2$ |
+| Number of customers | $1$ | $3$ | $6$ | $8$ | $6$ |
 
-What is the mean number of books read by these $20$ students?
+What is the mean rating given by these $24$ customers?
 :::
 
-::: {.mashq #y-29 daraja="B" javob="62.5%"}
+::: {.mashq #y-29 daraja="B" javob="60%"}
 Maktabdagi 10- va 11-sinf o'quvchilaridan dam olish kunida kitob o'qishni yoki film ko'rishni afzal ko'rishlari so'raldi. Natijalar jadvalda:
 
 |  | Kitob | Film | Jami |
 |---|---|---|---|
-| 10-sinf | $27$ | $33$ | $60$ |
-| 11-sinf | $45$ | $15$ | $60$ |
-| Jami | $72$ | $48$ | $120$ |
+| 10-sinf | $28$ | $36$ | $64$ |
+| 11-sinf | $42$ | $14$ | $56$ |
+| Jami | $70$ | $50$ | $120$ |
 
 Kitobni tanlagan o'quvchilarning necha foizi 11-sinf o'quvchilari?
 :::
@@ -204,16 +204,16 @@ A scatterplot shows the number of hours $x$ that each of $15$ volunteers worked 
 Qutida $5$ ta yaroqli va $3$ ta nuqsonli lampochka bor. Qutidan tasodifan ketma-ket ikkita lampochka qaytarmasdan olinadi. Ikkala lampochka ham yaroqli bo'lish ehtimolligini toping.
 :::
 
-::: {.mashq #y-32 daraja="C" javob="9/16"}
-A survey asked $200$ students at a school whether they have a pet. The results are shown in the table.
+::: {.mashq #y-32 daraja="C" javob="23/45"}
+A survey asked $150$ students at a school whether they play a musical instrument. The results are shown in the table.
 
-|  | Has a pet | No pet | Total |
+|  | Plays | Does not play | Total |
 |---|---|---|---|
-| Grade 9 | $42$ | $38$ | $80$ |
-| Grade 10 | $54$ | $66$ | $120$ |
-| Total | $96$ | $104$ | $200$ |
+| Grade 9 | $24$ | $46$ | $70$ |
+| Grade 10 | $36$ | $44$ | $80$ |
+| Total | $60$ | $90$ | $150$ |
 
-If one of the students who have a pet is selected at random, what is the probability that the student is in grade 10?
+If one of the students who do not play a musical instrument is selected at random, what is the probability that the student is in grade 9?
 :::
 
 ::: {.mashq #y-33 daraja="C" javob="D"}
@@ -230,22 +230,22 @@ D) $\frac{1}{8}$
 
 ## IV bo'lim. Geometriya (34–40-savollar)
 
-Inglizcha savollardagi ba'zi so'zlar: *right triangle* — to'g'ri burchakli uchburchak, *length* — uzunlik, *radius* — radius, *arc* — yoy, *central angle* — markaziy burchak, *value* — qiymat.
+Inglizcha savollardagi ba'zi so'zlar: *right triangle* — to'g'ri burchakli uchburchak, *square* — kvadrat, *diagonal* — diagonal, *area* — yuz, *length* — uzunlik, *radius* — radius, *arc* — yoy, *central angle* — markaziy burchak, *value* — qiymat.
 
 ::: {.mashq #y-34 daraja="B" javob="36°"}
 Teng yonli uchburchakning asosidagi har bir burchagi uchidagi burchakdan (yon tomonlar orasidagi burchakdan) $2$ marta katta. Uchidagi burchakni toping.
 :::
 
 ::: {.mashq #y-35 daraja="C" javob="A"}
-In right triangle $ABC$, angle $C$ is a right angle, the measure of angle $A$ is $60^\circ$, and $AC = 11$. What is the length of $BC$?
+A square has a diagonal of length $14$. What is the area of the square?
 
-A) $11\sqrt{3}$
+A) $98$
 
-B) $22$
+B) $49$
 
-C) $11\sqrt{2}$
+C) $196$
 
-D) $\frac{11}{2}$
+D) $98\sqrt{2}$
 :::
 
 ::: {.mashq #y-36 daraja="B" javob="280 - 9\pi"}
@@ -253,27 +253,27 @@ To'g'ri to'rtburchak shaklidagi bog'ning o'lchamlari $20$ m va $14$ m. Bog'ning 
 :::
 
 ::: {.mashq #y-37 daraja="C" javob="C"}
-A circle has a radius of $9$. What is the length of an arc of this circle with a central angle of $80^\circ$?
+A circle has a radius of $12$. What is the length of an arc of this circle with a central angle of $75^\circ$?
 
-A) $2\pi$
+A) $\frac{5}{2}\pi$
 
-B) $18\pi$
+B) $30\pi$
 
-C) $4\pi$
+C) $5\pi$
 
-D) $36\pi$
+D) $24\pi$
 :::
 
 ::: {.mashq #y-38 daraja="B" javob="11"}
 Silindr shaklidagi suv bakining asos radiusi $3$ m. Bakka $99\pi$ m³ suv sig'adi. Bakning balandligi necha metr?
 :::
 
-::: {.mashq #y-39 daraja="B" javob="66"}
-$\triangle ABC$ da $\angle C = 90^\circ$, $\tan A = \frac{33}{56}$ va $AB = 130$. $BC$ ni toping.
+::: {.mashq #y-39 daraja="B" javob="78"}
+$\triangle ABC$ da $\angle C = 90^\circ$, $\tan A = \frac{39}{80}$ va $AB = 178$. $BC$ ni toping.
 :::
 
-::: {.mashq #y-40 daraja="C" javob="40/9"}
-In right triangle $ABC$, angle $C$ is a right angle and $\cos B = \frac{40}{41}$. What is the value of $\tan A$?
+::: {.mashq #y-40 daraja="C" javob="63/16"}
+In right triangle $ABC$, angle $C$ is a right angle and $\cos B = \frac{63}{65}$. What is the value of $\tan A$?
 :::
 
 ## Natijani baholash
@@ -284,8 +284,8 @@ To'g'ri javoblaringizni sanang va quyidagi jadvalga qarang.
 |-------------|---------------|------------------------------------------------------------|
 | 36–40 | A'lo | Poydevor mustahkam. SAT'ga tayyorgarlik kursini boshlashingiz va rasmiy amaliy testlar bilan ishlashingiz mumkin. |
 | 28–35 | Yaxshi | Xato qilgan savollaringiz qaysi boblarga tegishli ekanini pastdagi jadvaldan toping. Shu boblarning C daraja mashqlari va SAT ko'prigini qayta yeching, keyin SAT kursiga o'ting. |
-| 18–27 | O'rtacha | Xato qilgan har bir savolning bobini qaytadan o'qing va B, C daraja mashqlarini yeching. 2–3 haftadan keyin testni qayta yeching. |
-| 0–17 | Poydevor hali mustahkam emas | Diagnostik test natijalari bilan solishtiring. Kitobni xato eng ko'p bo'lgan qismning birinchi bobidan boshlab qayta o'ting. |
+| 18–27 | O'rtacha | Xato qilgan har bir savolning bobini qaytadan o'qing va B, C daraja mashqlarini yeching. 2–3 haftadan keyin butun testni emas, faqat xato qilgan savollaringizni va shu boblarning SAT ko'prigini qayta yeching. |
+| 0–17 | Poydevor hali mustahkam emas | Diagnostik test natijalari bilan solishtiring. Savollarining yarmidan kamiga to'g'ri javob bergan birinchi bo'limni toping va kitobni shu qismning birinchi bobidan boshlab qayta o'ting. |
 
 Bo'limlar bo'yicha ham qarang. Biror bo'limda savollarning yarmidan kamiga to'g'ri javob bergan bo'lsangiz (I bo'limda 6 tadan, II bo'limda 7 tadan, III va IV bo'limlarda 4 tadan kam), umumiy natijangiz yaxshi bo'lsa ham, shu qismni qaytadan o'qing. Inglizcha savollarda o'zbekchalariga qaraganda ancha ko'p xato qilgan bo'lsangiz, sabab matematikada emas, tilda bo'lishi mumkin: har bobning "Yangi so'zlar" jadvalini va kitob oxiridagi Lug'atni takrorlang.
 

@@ -10,7 +10,7 @@ Shu sababli bu kitobni yozdim. U sizni butun sonlar va amallar tartibidan boshla
 
 Kitobdagi har bir yangi atama yonida uning inglizchasi berilgan, har bob oxirida esa SAT uslubidagi inglizcha savollar bor. Imtihonda *fraction*, *slope* yoki *median* so'zini ko'rganingizda qaysi mavzu haqida gap ketayotganini darrov taniysiz.
 
-Uyni tomidan qurib bo'lmaydi. Matematikada ham shunday: 9-bobdagi tenglamalar 1-bobdagi manfiy sonlarga, 15-bobdagi kvadrat tenglamalar 14-bobdagi ko'paytuvchilarga ajratishga tayanadi. Shuning uchun bob o'tkazib yubormang. Biror mavzu sizga oson tuyulsa, mashqlarini tezroq yeching, lekin baribir yeching.
+Uyni tomidan qurib bo'lmaydi. Matematikada ham shunday: 9-bobdagi tenglamalar 1-bobdagi manfiy sonlarga, 15-bobdagi kvadrat tenglamalar 14-bobdagi ko'paytuvchilarga ajratishga tayanadi. Shuning uchun bob o'tkazib yubormang. Biror mavzu sizga oson tuyulsa, uni tezroq o'ting, lekin kamida "Ko'p uchraydigan xatolar" bo'limini o'qing va C daraja mashqlari bilan SAT ko'prigini baribir yeching.
 
 Kitobdagi barcha tushuntirish va masalalar shu kitob uchun yangidan yozilgan, barcha javoblar esa qayta hisoblab tekshirilgan. Shunga qaramay xato topsangiz, menga xabar bering, keyingi nashrda albatta tuzataman.
 
@@ -60,7 +60,7 @@ Javoblar qanday yozilgani haqida bir-ikki eslatma. Oddiy kasr javoblar qisqarmas
 
 ### SAT haqida qisqacha
 
-Hozirgi raqamli SAT'ning matematika bo'limi ikki moduldan iborat: jami 44 ta savol, 70 daqiqa. Kalkulyatordan butun bo'lim davomida foydalanish mumkin. Savollarning ko'pchiligi to'rt variantli, qolganlarida javobni o'zingiz kiritasiz. Savollar to'rt sohaga bo'linadi: *Algebra*, *Advanced Math*, *Problem-Solving and Data Analysis* va *Geometry and Trigonometry*. Har bob boshida shu bob qaysi sohaga kerakligi yozilgan.
+Hozirgi raqamli SAT'ning matematika bo'limi ikki moduldan iborat: jami 44 ta savol, 70 minut. Ikkinchi modul savollarining qiyinligi birinchi moduldagi natijangizga qarab tanlanadi. Savollarning bir nechtasi ballga qo'shilmaydigan sinov savollari, lekin ular qaysilari ekanini bilib bo'lmaydi, shuning uchun har bir savolga jiddiy yondashing. Kalkulyatordan butun bo'lim davomida foydalanish mumkin. Savollarning ko'pchiligi to'rt variantli, qolganlarida javobni o'zingiz kiritasiz. Savollar to'rt sohaga bo'linadi: *Algebra*, *Advanced Math*, *Problem-Solving and Data Analysis* va *Geometry and Trigonometry*. Har bob boshida shu bob qaysi sohaga kerakligi yozilgan. Savollar soni va vaqt kabi ko'rsatkichlar vaqt o'tishi bilan o'zgarishi mumkin, shuning uchun imtihondan oldin ularni collegeboard.org saytida tekshirib oling.
 
 Kalkulyator bor bo'lsa-da, bu kitobdagi mashqlarni, ayniqsa I va II qismda, qo'lda yeching. Ishorani adashtirsangiz yoki amallarni noto'g'ri tartibda bajarsangiz, kalkulyator ham noto'g'ri javob beradi. Qo'lda tez va xatosiz hisoblay oladigan o'quvchi imtihonda vaqtni yutadi.
 
@@ -68,7 +68,7 @@ Kalkulyator bor bo'lsa-da, bu kitobdagi mashqlarni, ayniqsa I va II qismda, qo'l
 
 Kitobni boshlashdan oldin ushbu Kirish oxiridagi diagnostik testni yeching. Unda 42 ta savol bor: 21 ta bobning har biridan 2 tadan, boblar tartibida. Har juftlikdagi birinchi savol bobning asosiy ko'nikmasini, ikkinchisi esa biroz murakkabroq qo'llanishini tekshiradi.
 
-- Testni kalkulyatorsiz, qog'oz va qalam bilan yeching. Bitta savolga 2 daqiqadan ko'p vaqt sarflamang: bilmasangiz, keyingisiga o'ting.
+- Testni kalkulyatorsiz, qog'oz va qalam bilan yeching. Bitta savolga 2 minutdan ko'p vaqt sarflamang: bilmasangiz, keyingisiga o'ting.
 - Testni bir o'tirishda yoki ikki kunda (1–30 va 31–42-savollar) yechishingiz mumkin.
 - Javoblarni alohida varaqqa yozing, keyin ularni kitob oxiridagi Javoblar bo'limining **Kirish** qismi bilan solishtiring.
 - Natijalarni test oxiridagi **Natijalar jadvali**ga yozing va jadval ostidagi tavsiyaga qarab qaysi bobdan boshlashni aniqlang.
@@ -85,7 +85,7 @@ Har bob uchun taxminan bir hafta ajrating:
 4. **4-kun.** C daraja mashqlari va SAT ko'prigi.
 5. **5-kun.** Xatolar daftarini takrorlash va hafta davomida xato qilgan mashqlarni qayta yechish.
 
-Bu sur'atda kitob taxminan besh oyda tugaydi. Diagnostik testda I qism bo'yicha yaxshi natija ko'rsatgan bo'lsangiz, 1–7-boblarni tezroq (haftasiga ikki bob) o'tib, II qismga ko'proq vaqt ajrating. Kitobni tugatgach, yakuniy testni yeching.
+Bu sur'atda kitob taxminan besh oyda tugaydi. Diagnostik testda natijasi 2 bo'lgan boblarni tezroq o'tasiz (pastdagi Natijalar jadvaliga qarang): ularga bir haftaning o'rniga bir-ikki kun yetadi, tejalgan vaqtni esa qiyinroq boblarga ajrating. Kitobni tugatgach, yakuniy testni yeching.
 
 ### Xatolar daftari
 
@@ -104,8 +104,8 @@ Kalkulyatorsiz yeching. Variantli savollarda bitta harfni (A, B, C yoki D) tanla
 
 ### Sonlar va arifmetika (1–14-savollar)
 
-::: {.mashq #d-1 daraja="A" javob="-3"}
-$-12 + 5 - (-4)$ ni hisoblang.
+::: {.mashq #d-1 daraja="A" javob="-7"}
+$-13 + 4 - (-2)$ ni hisoblang.
 :::
 
 ::: {.mashq #d-2 daraja="B" javob="3"}
@@ -117,7 +117,7 @@ EKUB$(54, 90)$ ni toping.
 :::
 
 ::: {.mashq #d-4 daraja="B" javob="56"}
-Mayoqdagi ikki chiroqdan biri har $8$ soniyada, ikkinchisi har $14$ soniyada bir marta yonadi. Hozir ikkalasi birga yondi. Necha soniyadan keyin ular yana birga yonadi?
+Ali suzish havzasiga har $8$ kunda, Vali esa har $14$ kunda boradi. Bugun ikkalasi havzada uchrashdi. Necha kundan keyin ular havzada yana birga bo'ladi?
 :::
 
 ::: {.mashq #d-5 daraja="A" javob="13/30"}
@@ -137,11 +137,11 @@ $2.7 \div 0.09$ ni hisoblang.
 :::
 
 ::: {.mashq #d-9 daraja="A" javob="240000"}
-Ikki opa-singil $420\,000$ so'mni $3 : 4$ nisbatda bo'lishdi. Ko'proq ulush olgani necha so'm oldi?
+Opa-singil $420\,000$ so'mni $3 : 4$ nisbatda bo'lishdi. Ulardan ko'proq ulush olgani necha so'm oldi?
 :::
 
-::: {.mashq #d-10 daraja="B" javob="54"}
-Avtomobil sekundiga $15$ m tezlikda ketmoqda. Bu tezlik soatiga necha kilometr?
+::: {.mashq #d-10 daraja="B" javob="126"}
+Tezyurar poyezd har soniyada $35$ m yo'l bosadi. Uning tezligi soatiga necha kilometr?
 :::
 
 ::: {.mashq #d-11 daraja="A" javob="63"}
@@ -152,20 +152,20 @@ $350$ ning $18\%$ ini toping.
 Kitob narxi $25\%$ ga oshirilgandan keyin $90\,000$ so'm bo'ldi. Narx oshirilishidan oldin kitob necha so'm turgan?
 :::
 
-::: {.mashq #d-13 daraja="A" javob="9"}
-$\frac{3^5 \cdot 3^{-1}}{3^2}$ ni hisoblang.
+::: {.mashq #d-13 daraja="A" javob="25"}
+$\frac{5^6 \cdot 5^{-2}}{5^2}$ ni hisoblang.
 :::
 
 ::: {.mashq #d-14 daraja="B" javob="C"}
-$\sqrt{48} + \sqrt{27}$ quyidagilardan qaysi biriga teng?
+$\sqrt{63} + \sqrt{28}$ quyidagilardan qaysi biriga teng?
 
-A) $\sqrt{75}$
+A) $\sqrt{91}$
 
-B) $7\sqrt{6}$
+B) $5\sqrt{14}$
 
-C) $7\sqrt{3}$
+C) $5\sqrt{7}$
 
-D) $12\sqrt{3}$
+D) $13\sqrt{7}$
 :::
 
 ### Algebra asoslari (15–30-savollar)
@@ -178,24 +178,24 @@ $a = -3$ bo'lsa, $a^2 - 4a + 1$ ifodaning qiymatini toping.
 Soddalashtiring: $4(2x - 3) - 3(x - 5)$.
 :::
 
-::: {.mashq #d-17 daraja="A" javob="8"}
-Tenglamani yeching: $5x - 7 = 2x + 17$.
+::: {.mashq #d-17 daraja="A" javob="-5"}
+Tenglamani yeching: $7x + 4 = 3x - 16$.
 :::
 
 ::: {.mashq #d-18 daraja="B" javob="14"}
 Tenglamani yeching: $\frac{2x - 1}{3} = \frac{x + 4}{2}$.
 :::
 
-::: {.mashq #d-19 daraja="A" javob="$x < -3$"}
-Tengsizlikni yeching: $7 - 2x > 13$.
+::: {.mashq #d-19 daraja="A" javob="$x \leq -4$"}
+Tengsizlikni yeching: $3 - 4x \geq 19$.
 :::
 
-::: {.mashq #d-20 daraja="B" javob="5"}
-$-7 \leq 3x - 1 < 8$ qo'sh tengsizlikning nechta butun yechimi bor?
+::: {.mashq #d-20 daraja="B" javob="8"}
+$-10 < 3x + 2 \leq 14$ qo'sh tengsizlikning nechta butun yechimi bor?
 :::
 
-::: {.mashq #d-21 daraja="A" javob="25"}
-Uchta ketma-ket butun sonning yig'indisi $72$ ga teng. Ularning eng kattasini toping.
+::: {.mashq #d-21 daraja="A" javob="24000"}
+Kitob daftardan $4$ baravar qimmat. Kitob va daftar birgalikda $30\,000$ so'm turadi. Kitob necha so'm turadi?
 :::
 
 ::: {.mashq #d-22 daraja="B" javob="10"}
@@ -210,12 +210,12 @@ $(-1, 7)$ va $(5, -5)$ nuqtalardan o'tuvchi to'g'ri chiziqning burchak koeffitsi
 Burchak koeffitsiyenti $3$ ga teng va $(2, 1)$ nuqtadan o'tuvchi to'g'ri chiziqning tenglamasini $y = mx + b$ ko'rinishida yozing.
 :::
 
-::: {.mashq #d-25 daraja="A" javob="$(3, 7)$"}
+::: {.mashq #d-25 daraja="A" javob="$(2, 5)$"}
 Sistemani yeching:
 
-$$y = 3x - 2$$
+$$y = 4x - 3$$
 
-$$2x + y = 13$$
+$$3x + y = 11$$
 :::
 
 ::: {.mashq #d-26 daraja="B" javob="5000"}
@@ -248,14 +248,14 @@ Sonlar to'plamining medianasini toping: $7$, $3$, $9$, $4$, $12$, $6$.
 Jasur $6$ ta testdan o'rtacha $81$ ball oldi. $7$ ta test bo'yicha o'rtacha bali $83$ bo'lishi uchun u $7$-testdan necha ball olishi kerak?
 :::
 
-::: {.mashq #d-33 daraja="A" javob="42%"}
+::: {.mashq #d-33 daraja="A" javob="65%"}
 Maktabda 9- va 10-sinf o'quvchilaridan "Kutubxonaga har hafta borasizmi?" deb so'raldi. Natijalar jadvalda:
 
 |  | Ha | Yo'q | Jami |
 |---|---|---|---|
-| 9-sinf | $18$ | $12$ | $30$ |
-| 10-sinf | $21$ | $29$ | $50$ |
-| Jami | $39$ | $41$ | $80$ |
+| 9-sinf | $16$ | $20$ | $36$ |
+| 10-sinf | $26$ | $14$ | $40$ |
+| Jami | $42$ | $34$ | $76$ |
 
 So'ralgan 10-sinf o'quvchilarining necha foizi "Ha" deb javob bergan?
 :::
@@ -264,12 +264,12 @@ So'ralgan 10-sinf o'quvchilarining necha foizi "Ha" deb javob bergan?
 Kafe bir necha kun davomida kunning o'rtacha haroratini va sotilgan muzqaymoqlar sonini yozib bordi. Nuqtali diagramma uchun eng mos to'g'ri chiziq $y = 12x - 40$, bu yerda $x$ — kunning o'rtacha harorati (°C), $y$ — sotilgan muzqaymoqlar soni. O'rtacha harorat $25$ °C bo'lgan kunda nechta muzqaymoq sotilishi bashorat qilinadi?
 :::
 
-::: {.mashq #d-35 daraja="A" javob="2/3"}
-Xaltada $4$ ta qizil, $6$ ta ko'k va $5$ ta oq shar bor. Xaltadan tasodifan bitta shar olinadi. Shar oq **bo'lmaslik** ehtimolligini toping.
+::: {.mashq #d-35 daraja="A" javob="3/4"}
+Xaltada $5$ ta qizil, $4$ ta ko'k va $3$ ta oq shar bor. Xaltadan tasodifan bitta shar olinadi. Shar oq **bo'lmaslik** ehtimolligini toping.
 :::
 
-::: {.mashq #d-36 daraja="B" javob="1/12"}
-Ikkita to'g'ri (simmetrik) o'yin soqqasi tashlanadi. Tushgan sonlar yig'indisi $10$ ga teng bo'lish ehtimolligini toping.
+::: {.mashq #d-36 daraja="B" javob="1/18"}
+Ikkita to'g'ri (simmetrik) o'yin soqqasi tashlanadi. Tushgan sonlar ko'paytmasi $18$ ga teng bo'lish ehtimolligini toping.
 :::
 
 ### Geometriya (37–42-savollar)
@@ -278,8 +278,8 @@ Ikkita to'g'ri (simmetrik) o'yin soqqasi tashlanadi. Tushgan sonlar yig'indisi $
 Uchburchakning ikki burchagi $54^\circ$ va $71^\circ$. Uning uchinchi burchagini toping.
 :::
 
-::: {.mashq #d-38 daraja="B" javob="24"}
-To'g'ri burchakli uchburchakning gipotenuzasi $26$, bir kateti $10$. Ikkinchi katetini toping.
+::: {.mashq #d-38 daraja="B" javob="45"}
+To'g'ri burchakli uchburchakning gipotenuzasi $53$, bir kateti $28$. Ikkinchi katetini toping.
 :::
 
 ::: {.mashq #d-39 daraja="A" javob="49\pi"}
@@ -294,8 +294,8 @@ To'g'ri burchakli parallelepiped shaklidagi suv bakining o'lchamlari $80$ sm, $5
 $\sin 38^\circ = \cos x^\circ$ va $x^\circ$ o'tkir burchak. $x$ ni toping.
 :::
 
-::: {.mashq #d-42 daraja="B" javob="11/60"}
-$A$ o'tkir burchak va $\sin A = \frac{11}{61}$. $\tan A$ ni toping.
+::: {.mashq #d-42 daraja="B" javob="13/84"}
+$A$ o'tkir burchak va $\sin A = \frac{13}{85}$. $\tan A$ ni toping.
 :::
 
 ### Natijalar jadvali
@@ -334,6 +334,6 @@ Har bob uchun natijangizga qarab:
 | 1 | Asosi bor, lekin bo'shliq ham bor. Tushuntirishni o'qing, misollarni qayta yeching, A va B daraja mashqlarini to'liq bajaring. |
 | 0 | Bobni boshidan o'qing va barcha mashqlarni darajalar tartibida yeching. |
 
-**Qayerdan boshlash kerak?** Jadvalda yuqoridan pastga qarang va natijasi 0 yoki 1 bo'lgan birinchi bobni toping. Kitobni shu bobdan boshlang, keyingi boblarni esa tartib bilan o'qing, chunki har bob oldingilariga tayanadi. Natijasi 2 bo'lgan boblarni ham tashlab ketmang: ularni tezroq, yuqoridagi jadvaldagi tavsiya bo'yicha o'ting.
+**Qayerdan boshlash kerak?** Jadvalda yuqoridan pastga qarang va natijasi 0 yoki 1 bo'lgan birinchi bobni toping: bu sizning boshlang'ich bobingiz. Undan oldingi boblarda (ularning hammasida natija 2) faqat yuqoridagi "2" tavsiyasini bajaring, keyin boshlang'ich bobdan boshlab kitobni tartib bilan o'qing. Boshlang'ich bobdan keyingi boblarni ham jadvaldagi tavsiyaga qarab o'ting: natijasi 2 bo'lsa tezroq, 0 yoki 1 bo'lsa to'liq. Hech bir bobni butunlay tashlab ketmang, chunki har bob oldingilariga tayanadi.
 
 Agar 1–14-savollardan 4 tadan ko'pida xato qilgan bo'lsangiz, kitobni 1-bobdan boshlang, hatto ba'zi boblarda natijangiz yaxshi bo'lsa ham. Arifmetikadagi kichik bo'shliqlar algebrada katta muammoga aylanadi.
