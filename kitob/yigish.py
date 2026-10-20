@@ -144,7 +144,8 @@ def javoblar_markdown(boblar: list[Path]) -> str:
             continue
         sarlavha = re.search(r"^# (.+)$", tekshir.kod_qismlarsiz(matn), re.MULTILINE)
         chiqish += [f"## {sarlavha.group(1).strip() if sarlavha else f.stem}", ""]
-        for tur, nom in (("mashq", "Mashqlar"), ("sat", "SAT ko'prigi")):
+        test = f.stem.startswith(("00", "99"))  # kirish va yakuniy test: "Savollar"
+        for tur, nom in (("mashq", "Savollar" if test else "Mashqlar"), ("sat", "SAT ko'prigi")):
             qismlar = [f"**{_yorliq(m.id)}.** {_javob_matni(m.javob)}"
                        for m in royxat if m.tur == tur]
             if qismlar:
@@ -254,6 +255,12 @@ def docx_dan_pdf(docx_yoli: Path, pdf_yoli: Path, kutish: float = 90.0) -> None:
             raise RuntimeError(
                 "LibreOffice formulalarni o'qiy olmadi: libreoffice-math o'rnatilganini tekshiring "
                 "(PDF'da formulalar yo'qolib qolardi)")
+        # Mundarija bir betga sig'ishi uchun qatorlar orasini biroz siqamiz
+        uslublar = hujjat.getStyleFamilies().getByName("ParagraphStyles")
+        for nom_ in ("Contents 1", "Table of Contents 1"):
+            if uslublar.hasByName(nom_):
+                u = uslublar.getByName(nom_)
+                u.ParaTopMargin, u.ParaBottomMargin = 0, 30  # 1/100 mm
         # Mundarija bet raqamlari ikkinchi yangilashda barqaror bo'ladi
         for _ in range(2):
             indekslar = hujjat.getDocumentIndexes()

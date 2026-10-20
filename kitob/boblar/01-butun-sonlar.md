@@ -263,7 +263,7 @@ $|4 - 11| + |-2 \cdot 3|$ ni hisoblang.
 ### C daraja
 
 ::: {.mashq #m1-17 daraja="C" javob="13"}
-$3 \cdot [\,20 - 2 \cdot (5 - 8)\,] \div 6$ ni hisoblang.
+$3 \cdot (20 - 2 \cdot (5 - 8)) \div 6$ ni hisoblang.
 :::
 
 ::: {.mashq #m1-18 daraja="C" javob="-34"}
