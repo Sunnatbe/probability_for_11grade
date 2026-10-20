@@ -86,3 +86,6 @@ Task 7: minor (deferred, ch19/21): ch21:176 aside uses sin 90° (undefined in ch
 Task 7: minor (deferred, ch20): see task-7-findings-B.md items 1–7 (S20.2 distractor C negative; Bu bobda prior list; "yoy 360°" phrase; m20-23 too easy for C; orphan "Misol 1." label; "doim")
 Task 7: complete (commits d33212b..d84b01c, review clean — no gating findings; minors deferred to the final review's triage)
 Task 8: dispatched (BASE d84b01c, kirish + yakuniy test, model opus)
+Task 8: dispatched (BASE a9638d7, kirish + yakuniy test, model opus) — 2026-10-20 resumed in fresh container; env (pandoc, libreoffice-math, pytest) verified
+Task 8: implementer done, commit 82ac80a (193 pp, 39 tests pass); reviewer next. Concerns: ch1 ex 1.17 bracket; SAT facts to confirm; Javoblar label 'Mashqlar:' for d/y
+Task 8: review — blind solve 82/82 match; reviewer: 5 Important (d-25, d-10, y-32, y-18 duplicates of chapter items; kirish l.337 contradiction) + 11 minor; fix round 1 sent to implementer
