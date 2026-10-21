@@ -1,0 +1,1226 @@
+diff --git a/kitob/README.md b/kitob/README.md
+index ed0d21a..5445e38 100644
+--- a/kitob/README.md
++++ b/kitob/README.md
+@@ -5,13 +5,13 @@
+ Tizim paketlari (Ubuntu/Debian):
+ 
+ ```
+-sudo apt-get install pandoc libreoffice-writer libreoffice-math poppler-utils
++sudo apt-get install pandoc libreoffice-writer libreoffice-math python3-uno poppler-utils
+ ```
+ 
+ `libreoffice-math` shart: usiz PDF'da formulalar yo'qolib qoladi (yig'ish bu holda xato beradi).
+ `poppler-utils` (`pdftotext`, `pdfinfo`) testlar uchun kerak.
+ 
+-Python paketlari: `pip install pytest matplotlib python-docx`. LibreOffice'ning Python ko'prigi (`import uno`) tizim `python3` da bo'lishi kerak.
++Python paketlari: `pip install pytest matplotlib python-docx`. LibreOffice'ning Python ko'prigi (`import uno`, Debian/Ubuntu: `python3-uno` paketi) tizim `python3` da bo'lishi kerak.
+ 
+ ## Yig'ish va test
+ 
+diff --git a/kitob/boblar/00-kirish.md b/kitob/boblar/00-kirish.md
+index 69b7153..d6a5682 100644
+--- a/kitob/boblar/00-kirish.md
++++ b/kitob/boblar/00-kirish.md
+@@ -60,7 +60,7 @@ Javoblar qanday yozilgani haqida bir-ikki eslatma. Oddiy kasr javoblar qisqarmas
+ 
+ ### SAT haqida qisqacha
+ 
+-Hozirgi raqamli SAT'ning matematika bo'limi ikki moduldan iborat: jami 44 ta savol, 70 minut. Ikkinchi modul savollarining qiyinligi birinchi moduldagi natijangizga qarab tanlanadi. Savollarning bir nechtasi ballga qo'shilmaydigan sinov savollari, lekin ular qaysilari ekanini bilib bo'lmaydi, shuning uchun har bir savolga jiddiy yondashing. Kalkulyatordan butun bo'lim davomida foydalanish mumkin. Savollarning ko'pchiligi to'rt variantli, qolganlarida javobni o'zingiz kiritasiz. Savollar to'rt sohaga bo'linadi: *Algebra*, *Advanced Math*, *Problem-Solving and Data Analysis* va *Geometry and Trigonometry*. Har bob boshida shu bob qaysi sohaga kerakligi yozilgan. Savollar soni va vaqt kabi ko'rsatkichlar vaqt o'tishi bilan o'zgarishi mumkin, shuning uchun imtihondan oldin ularni collegeboard.org saytida tekshirib oling.
++Hozirgi raqamli SAT'ning matematika bo'limi ikki moduldan iborat: jami 44 ta savol, 70 minut. Ikkinchi modul savollarining qiyinligi birinchi moduldagi natijangizga qarab tanlanadi. Savollarning bir nechtasi ballga qo'shilmaydigan sinov savollari, lekin ular qaysilari ekanini bilib bo'lmaydi, shuning uchun har bir savolga jiddiy yondashing. Kalkulyatordan butun bo'lim davomida foydalanish mumkin. Savollarning ko'pchiligi to'rt variantli, qolganlarida javobni o'zingiz kiritasiz. Savollar to'rt sohaga bo'linadi: *Algebra*, *Advanced Math*, *Problem-Solving and Data Analysis* va *Geometry and Trigonometry*. Har bob boshidagi "SAT bo'limi" qatorida shu bob ana shu to'rt sohadan qaysi biriga kerakligi yozilgan. Savollar soni va vaqt kabi ko'rsatkichlar vaqt o'tishi bilan o'zgarishi mumkin, shuning uchun imtihondan oldin ularni collegeboard.org saytida tekshirib oling.
+ 
+ Kalkulyator bor bo'lsa-da, bu kitobdagi mashqlarni, ayniqsa I va II qismda, qo'lda yeching. Ishorani adashtirsangiz yoki amallarni noto'g'ri tartibda bajarsangiz, kalkulyator ham noto'g'ri javob beradi. Qo'lda tez va xatosiz hisoblay oladigan o'quvchi imtihonda vaqtni yutadi.
+ 
+@@ -117,7 +117,7 @@ EKUB$(54, 90)$ ni toping.
+ :::
+ 
+ ::: {.mashq #d-4 daraja="B" javob="56"}
+-Ali suzish havzasiga har $8$ kunda, Vali esa har $14$ kunda boradi. Bugun ikkalasi havzada uchrashdi. Necha kundan keyin ular havzada yana birga bo'ladi?
++Ikki sport to'garagidan biri har $8$ kunda, ikkinchisi har $14$ kunda musobaqa o'tkazadi. Bugun ikkalasi ham musobaqa o'tkazdi. Necha kundan keyin ular yana bir kunda musobaqa o'tkazadi?
+ :::
+ 
+ ::: {.mashq #d-5 daraja="A" javob="13/30"}
+@@ -178,8 +178,8 @@ $a = -3$ bo'lsa, $a^2 - 4a + 1$ ifodaning qiymatini toping.
+ Soddalashtiring: $4(2x - 3) - 3(x - 5)$.
+ :::
+ 
+-::: {.mashq #d-17 daraja="A" javob="-5"}
+-Tenglamani yeching: $7x + 4 = 3x - 16$.
++::: {.mashq #d-17 daraja="A" javob="-8"}
++Tenglamani yeching: $7x + 4 = 3x - 28$.
+ :::
+ 
+ ::: {.mashq #d-18 daraja="B" javob="14"}
+@@ -274,8 +274,8 @@ Ikkita to'g'ri (simmetrik) o'yin soqqasi tashlanadi. Tushgan sonlar ko'paytmasi
+ 
+ ### Geometriya (37–42-savollar)
+ 
+-::: {.mashq #d-37 daraja="A" javob="55°"}
+-Uchburchakning ikki burchagi $54^\circ$ va $71^\circ$. Uning uchinchi burchagini toping.
++::: {.mashq #d-37 daraja="A" javob="58°"}
++Uchburchakning ikki burchagi $46^\circ$ va $76^\circ$. Uning uchinchi burchagini toping.
+ :::
+ 
+ ::: {.mashq #d-38 daraja="B" javob="45"}
+diff --git a/kitob/boblar/01-butun-sonlar.md b/kitob/boblar/01-butun-sonlar.md
+index 64fa7e6..be30ddd 100644
+--- a/kitob/boblar/01-butun-sonlar.md
++++ b/kitob/boblar/01-butun-sonlar.md
+@@ -46,7 +46,7 @@ Sonlarni *son o'qi (number line)* da tasvirlash qulay. Son o'qida o'ngdagi son h
+ 
+ ![Son o'qi: $-4$ va $3$ sonlarining noldan masofasi](rasmlar/chiqish/01_son_oqi.png){width=85%}
+ 
+-Rasmga qarang: $-4 < 3$, chunki $-4$ chaproqda turadi. Xuddi shunday $-10 < -2$. Bu g'alati tuyulishi mumkin, lekin haroratni eslang: 10 gradus sovuq 2 gradus sovuqdan sovuqroq.
++Rasmga qarang: $-4 < 3$, chunki $-4$ chaproqda turadi (< belgisi "kichik", > belgisi "katta" deb o'qiladi). Xuddi shunday $-10 < -2$. Bu g'alati tuyulishi mumkin, lekin haroratni eslang: 10 gradus sovuq 2 gradus sovuqdan sovuqroq.
+ 
+ Noldan bir xil masofada, lekin turli tomonda turgan ikki son *qarama-qarshi sonlar (opposites)* deyiladi: $5$ va $-5$, $12$ va $-12$.
+ 
+@@ -236,8 +236,8 @@ $12 - 4 \cdot 3$ ni hisoblang.
+ $(12 - 4) \cdot 3$ ni hisoblang.
+ :::
+ 
+-::: {.mashq #m1-11 daraja="B" javob="12"}
+-$36 \div 6 \cdot 2$ ni hisoblang.
++::: {.mashq #m1-11 daraja="B" javob="27"}
++$36 \div 4 \cdot 3$ ni hisoblang.
+ :::
+ 
+ ::: {.mashq #m1-12 daraja="B" javob="11"}
+@@ -270,8 +270,8 @@ $3 \cdot (20 - 2 \cdot (5 - 8)) \div 6$ ni hisoblang.
+ $-2 \cdot 3^2 + 4 \cdot (6 - 2 \cdot 5)$ ni hisoblang.
+ :::
+ 
+-::: {.mashq #m1-19 daraja="C" javob="-5"}
+-Toshkentda fevral kuni ertalab harorat $-7^\circ$C edi. Tushgacha harorat 11 gradusga ko'tarildi, kechqurun esa 9 gradusga pasaydi. Kechqurun harorat necha gradus bo'ldi?
++::: {.mashq #m1-19 daraja="C" javob="-11"}
++Kuz kuni soat 17:00 da harorat $4^\circ$C edi. Shundan keyin harorat har soatda 3 gradusga pasaydi. Soat 22:00 da harorat necha gradus bo'ldi?
+ :::
+ 
+ ::: {.mashq #m1-20 daraja="C" javob="-3"}
+@@ -279,7 +279,7 @@ Maktab futbol jamoasi 6 ta o'yin o'tkazdi: 3 tasida $2:0$, bittasida $1:4$, 2 ta
+ :::
+ 
+ ::: {.mashq #m1-21 daraja="C" javob="28000"}
+-Dilnoza bozorga 100\ 000 so'm bilan bordi. U 3 kg olma (kilosi 12\ 000 so'm) va 2 kg uzum (kilosi 18\ 000 so'm) sotib oldi. Unda necha so'm qoldi?
++Dilnoza bozorga $100\,000$ so'm bilan bordi. U 3 kg olma (kilosi $12\,000$ so'm) va 2 kg uzum (kilosi $18\,000$ so'm) sotib oldi. Unda necha so'm qoldi?
+ :::
+ 
+ ::: {.mashq #m1-22 daraja="C" javob="-30"}
+@@ -314,8 +314,8 @@ C) $13$
+ D) $17$
+ :::
+ 
+-::: {.sat #s1-2 javob="-2"}
+-At 7:00 a.m. the temperature in a town was $-5$ degrees Celsius. By noon, the temperature had risen 14 degrees. By midnight, it had fallen 11 degrees from its noon value. What was the temperature, in degrees Celsius, at midnight?
++::: {.sat #s1-2 javob="23"}
++In January, the lowest temperature recorded in a city was $-17$ degrees Celsius and the highest was $6$ degrees Celsius. How many degrees Celsius greater was the highest temperature than the lowest temperature?
+ :::
+ 
+ ::: {.sat #s1-3 javob="C"}
+diff --git a/kitob/boblar/02-bolinish.md b/kitob/boblar/02-bolinish.md
+index 275e844..eccefd8 100644
+--- a/kitob/boblar/02-bolinish.md
++++ b/kitob/boblar/02-bolinish.md
+@@ -9,7 +9,7 @@ Sonlar qanday "qurilganini" bilsangiz, kasrlar, ifodalar va tenglamalar ancha os
+ - bo'luvchi, karrali va qoldiq tushunchalarini;
+ - bo'linish belgilari yordamida tez tekshirishni;
+ - tub va murakkab sonlarni ajratishni, sonni tub ko'paytuvchilarga ajratishni;
+-- EKUB va EKUK ni topishni hamda ularni "teng bo'lish" va "yana birga" turidagi masalalarda qo'llashni o'rganamiz.
++- EKUB va EKUKni topishni hamda ularni "teng bo'lish" va "yana birga" turidagi masalalarda qo'llashni o'rganamiz.
+ 
+ **SAT'da qayerda kerak?** Problem-Solving and Data Analysis bo'limida guruhlarga bo'lish, takrorlanadigan jadval va qoldiqli masalalar uchraydi. Algebra bo'limida esa EKUB ifodalarni soddalashtirishda, EKUK kasrlarni umumiy maxrajga keltirishda kerak bo'ladi (3-bob va 8-bobda shunga tayanamiz).
+ 
+@@ -45,6 +45,8 @@ $$47 = 6 \cdot 7 + 5.$$
+ 
+ Qoldiq har doim bo'luvchidan kichik bo'ladi: 6 ga bo'lganda qoldiq faqat $0, 1, 2, 3, 4$ yoki $5$ bo'lishi mumkin.
+ 
++Qoldiq takrorlanadigan hodisalarda qo'l keladi. Hafta kunlari har 7 kunda takrorlanadi: 30 kundan keyingi kunni topish uchun $30 = 7 \cdot 4 + 2$ deb yozamiz. To'rt to'liq haftadan keyin yana bugungi kun keladi, demak 30 kundan keyin bugundan 2 kun keyingi kun bo'ladi.
++
+ 2 ga bo'linadigan sonlar *juft sonlar (even numbers)*, bo'linmaydiganlari *toq sonlar (odd numbers)* deyiladi.
+ 
+ ### Bo'linish belgilari
+@@ -85,15 +87,15 @@ Daraja bilan yozamiz: $360 = 2^3 \cdot 3^2 \cdot 5$.
+ 
+ ### EKUB — eng katta umumiy bo'luvchi
+ 
+-Ikki sonning ikkalasini ham bo'ladigan eng katta son ularning *EKUB* i deyiladi (inglizchada *GCF — greatest common factor*). Uni topish uchun:
++Ikki sonning ikkalasini ham bo'ladigan eng katta son ularning *EKUB*i deyiladi (inglizchada *GCF — greatest common factor*). Uni topish uchun:
+ 
+ 1. har bir sonni tub ko'paytuvchilarga ajratamiz;
+ 2. ikkalasida ham bor tub ko'paytuvchilarni olamiz;
+ 3. har biridan kichikroq darajasini olib, ko'paytiramiz.
+ 
+-Uch yoki undan ko'p sonning EKUB i ham xuddi shunday topiladi: hamma sonlarda bor tub ko'paytuvchilarni olamiz.
++Uch yoki undan ko'p sonning EKUBi ham xuddi shunday topiladi: hamma sonlarda bor tub ko'paytuvchilarni olamiz.
+ 
+-EKUB i 1 ga teng sonlar *o'zaro tub sonlar (relatively prime numbers)* deyiladi, masalan $8$ va $15$.
++EKUBi 1 ga teng sonlar *o'zaro tub sonlar (relatively prime numbers)* deyiladi, masalan $8$ va $15$.
+ 
+ ::: {.misol}
+ EKUB$(48, 72)$ ni toping.
+@@ -113,17 +115,17 @@ EKUB$(48, 72)$ ni toping.
+ 
+ ### EKUK — eng kichik umumiy karrali
+ 
+-Ikki sonning ikkalasiga ham bo'linadigan eng kichik musbat son ularning *EKUK* i deyiladi (inglizchada *LCM — least common multiple*). Topish uchun:
++Ikki sonning ikkalasiga ham bo'linadigan eng kichik musbat son ularning *EKUK*i deyiladi (inglizchada *LCM — least common multiple*). Topish uchun:
+ 
+ 1. har bir sonni tub ko'paytuvchilarga ajratamiz;
+ 2. hech bo'lmaganda bittasida uchragan barcha tub ko'paytuvchilarni olamiz;
+ 3. har biridan kattaroq darajasini olib, ko'paytiramiz.
+ 
+-Uch yoki undan ko'p sonning EKUK i ham xuddi shunday topiladi.
++Uch yoki undan ko'p sonning EKUKi ham xuddi shunday topiladi.
+ 
+ Kichik sonlar uchun boshqa yo'l ham bor: kattaroq sonning karralilarini sanab chiqamiz va birinchi bo'lib kichik songa bo'linganini olamiz.
+ 
+-Foydali bog'lanish: ikki sonning EKUB i bilan EKUK ini ko'paytirsak, shu ikki sonning ko'paytmasi chiqadi. Masalan, EKUB$(12, 18) = 6$ va EKUK$(12, 18) = 36$, haqiqatan ham $6 \cdot 36 = 216 = 12 \cdot 18$.
++Foydali bog'lanish: ikki sonning EKUBi bilan EKUKini ko'paytirsak, shu ikki sonning ko'paytmasi chiqadi. Masalan, EKUB$(12, 18) = 6$ va EKUK$(12, 18) = 36$, haqiqatan ham $6 \cdot 36 = 216 = 12 \cdot 18$.
+ 
+ ::: {.misol}
+ EKUK$(12, 18)$ ni toping.
+@@ -184,13 +186,13 @@ Bekatdan ikkita avtobus qatnaydi: birinchisi har 12 minutda, ikkinchisi har 20 m
+ 
+ *To'g'ri:* tub sonning aynan ikkita bo'luvchisi bo'ladi, $1$ ning esa bittasi bor. Javob: $2, 3, 5, 7$.
+ 
+-**2. EKUK ni shunchaki ko'paytma deb olish.**
++**2. EKUKni shunchaki ko'paytma deb olish.**
+ 
+ *Noto'g'ri:* EKUK$(6, 8) = 6 \cdot 8 = 48$.
+ 
+-*To'g'ri:* $6 = 2 \cdot 3$, $8 = 2^3$, demak EKUK$(6, 8) = 2^3 \cdot 3 = 24$. $48$ — umumiy karrali, lekin eng kichigi emas. Ko'paytma faqat o'zaro tub sonlar uchun EKUK ga teng.
++*To'g'ri:* $6 = 2 \cdot 3$, $8 = 2^3$, demak EKUK$(6, 8) = 2^3 \cdot 3 = 24$. $48$ — umumiy karrali, lekin eng kichigi emas. Ko'paytma faqat o'zaro tub sonlar uchun EKUKga teng.
+ 
+-**3. EKUB va EKUK ni almashtirib yuborish.**
++**3. EKUB va EKUKni almashtirib yuborish.**
+ 
+ *Noto'g'ri:* avtobuslar masalasida EKUB$(12, 20) = 4$ ni olib, "4 minutdan keyin birga jo'naydi" deyish. Birinchi avtobus 12 minutdan oldin umuman jo'namaydi-ku!
+ 
+@@ -208,8 +210,8 @@ Tub ko'paytuvchilarga ajratganda javobni daraja bilan yozing, masalan $2^3 \cdot
+ 
+ ### A daraja
+ 
+-::: {.mashq #m2-1 daraja="A" javob="5"}
+-53 ni 6 ga bo'lganda qoldiq nechaga teng?
++::: {.mashq #m2-1 daraja="A" javob="4"}
++58 ni 9 ga bo'lganda qoldiq nechaga teng?
+ :::
+ 
+ ::: {.mashq #m2-2 daraja="A" javob="8"}
+@@ -232,8 +234,8 @@ $21, 23, 27, 29, 33, 37$ sonlari ichidan tub sonlarni ajratib yozing.
+ Raqamlar yig'indisi yordamida $5\,832$ soni 9 ga bo'linishini tekshiring va bo'linmani toping.
+ :::
+ 
+-::: {.mashq #m2-7 daraja="A" javob="$2^3 \cdot 3^2$"}
+-72 ni tub ko'paytuvchilarga ajrating.
++::: {.mashq #m2-7 daraja="A" javob="$2 \cdot 3 \cdot 5^2$"}
++150 ni tub ko'paytuvchilarga ajrating.
+ :::
+ 
+ ::: {.mashq #m2-8 daraja="A" javob="6"}
+@@ -242,8 +244,8 @@ EKUB$(18, 24)$ ni toping.
+ 
+ ### B daraja
+ 
+-::: {.mashq #m2-9 daraja="B" javob="24"}
+-EKUK$(8, 12)$ ni toping.
++::: {.mashq #m2-9 daraja="B" javob="30"}
++EKUK$(10, 15)$ ni toping.
+ :::
+ 
+ ::: {.mashq #m2-10 daraja="B" javob="$2^2 \cdot 3^2 \cdot 7$"}
+@@ -276,8 +278,8 @@ EKUK$(4, 6, 10)$ ni toping.
+ 
+ ### C daraja
+ 
+-::: {.mashq #m2-17 daraja="C" javob="12"}
+-Gul do'konida 60 ta qizil va 84 ta oq atirgul bor. Sotuvchi ulardan bir xil guldastalar yasamoqchi: har bir guldastada qizil atirgullar soni bir xil, oq atirgullar soni ham bir xil bo'lsin va birorta gul ortib qolmasin. Eng ko'pi bilan nechta guldasta yasash mumkin?
++::: {.mashq #m2-17 daraja="C" javob="9"}
++Gul do'konida 63 ta qizil va 81 ta oq atirgul bor. Sotuvchi ulardan bir xil guldastalar yasamoqchi: har bir guldastada qizil atirgullar soni bir xil, oq atirgullar soni ham bir xil bo'lsin va birorta gul ortib qolmasin. Eng ko'pi bilan nechta guldasta yasash mumkin?
+ :::
+ 
+ ::: {.mashq #m2-18 daraja="C" javob="12 kundan keyin, shanba"}
+@@ -304,8 +306,8 @@ Bir-biriga tegib turgan ikki tishli g'ildirakning birida 18 ta, ikkinchisida 30
+ EKUB$(a, 36) = 12$ va EKUK$(a, 36) = 180$ bo'lsa, $a$ sonini toping.
+ :::
+ 
+-::: {.mashq #m2-24 daraja="C" javob="108"}
+-12 ga ham, 18 ga ham bo'linadigan eng kichik uch xonali sonni toping.
++::: {.mashq #m2-24 daraja="C" javob="135"}
++9 ga ham, 15 ga ham bo'linadigan eng kichik uch xonali sonni toping.
+ :::
+ 
+ ## SAT ko'prigi
+diff --git a/kitob/boblar/03-kasrlar.md b/kitob/boblar/03-kasrlar.md
+index c93d821..6402607 100644
+--- a/kitob/boblar/03-kasrlar.md
++++ b/kitob/boblar/03-kasrlar.md
+@@ -4,7 +4,7 @@
+ 
+ ## Bu bobda
+ 
+-Ko'p o'quvchilar uchun kasrlar matematikadagi birinchi "qo'rqinchli" mavzu bo'ladi. Aslida kasrlarning bor-yo'g'i bir nechta qoidasi bor va ularning hammasi 2-bobdagi EKUB va EKUK ga tayanadi. Bu bobda:
++Ko'p o'quvchilar uchun kasrlar matematikadagi birinchi "qo'rqinchli" mavzu bo'ladi. Aslida kasrlarning bor-yo'g'i bir nechta qoidasi bor va ularning hammasi 2-bobdagi EKUB va EKUKga tayanadi. Bu bobda:
+ 
+ - kasr nima ekanini va uni qanday qisqartirishni;
+ - aralash sonni noto'g'ri kasrga va aksincha aylantirishni;
+@@ -48,7 +48,7 @@ Kasrning surati va maxrajini bir xil (noldan farqli) songa ko'paytirsak yoki bo'
+ 
+ $$\frac{1}{2} = \frac{2}{4} = \frac{3}{6} = \frac{50}{100}.$$
+ 
+-Bunday kasrlar *teng kasrlar (equivalent fractions)* deyiladi. Surat va maxrajni ularning umumiy bo'luvchisiga bo'lish *kasrni qisqartirish (simplifying a fraction)* deyiladi. Surat va maxrajni EKUB ga bo'lsak, bir qadamda *qisqarmas kasr (fraction in lowest terms)* hosil bo'ladi.
++Bunday kasrlar *teng kasrlar (equivalent fractions)* deyiladi. Surat va maxrajni ularning umumiy bo'luvchisiga bo'lish *kasrni qisqartirish (simplifying a fraction)* deyiladi. Surat va maxrajni EKUBga bo'lsak, bir qadamda *qisqarmas kasr (fraction in lowest terms)* hosil bo'ladi.
+ 
+ ::: {.misol}
+ $\frac{36}{48}$ kasrini qisqartiring.
+@@ -83,7 +83,7 @@ $10 > 9$, demak $\frac{2}{3} > \frac{3}{5}$.
+ 
+ Faqat maxrajlari bir xil kasrlarni to'g'ridan-to'g'ri qo'shish mumkin: suratlar qo'shiladi, maxraj o'zgarmaydi. Maxrajlar har xil bo'lsa:
+ 
+-1. umumiy maxrajni topamiz (eng qulayi — maxrajlarning EKUK i);
++1. umumiy maxrajni topamiz (eng qulayi — maxrajlarning EKUKi);
+ 2. har bir kasrni shu maxrajga keltiramiz;
+ 3. suratlarni qo'shamiz yoki ayiramiz;
+ 4. natijani qisqartiramiz.
+@@ -151,7 +151,7 @@ $\frac{4}{9} \cdot \frac{15}{8}$ ni hisoblang.
+ :::
+ 
+ ::: {.misol}
+-Azizning 120\ 000 so'm cho'ntak puli bor edi. U bu pulning $\frac{1}{3}$ qismini kitobga, qolgan pulning $\frac{3}{4}$ qismini sport poyabzaliga sarfladi. Unda necha so'm qoldi?
++Azizning $120\,000$ so'm cho'ntak puli bor edi. U bu pulning $\frac{1}{3}$ qismini kitobga, qolgan pulning $\frac{3}{4}$ qismini sport poyabzaliga sarfladi. Unda necha so'm qoldi?
+ 
+ *Yechish.* E'tibor bering: ikkinchi kasr butun pulning emas, **qolgan** pulning qismi.
+ 
+@@ -163,7 +163,7 @@ Azizning 120\ 000 so'm cho'ntak puli bor edi. U bu pulning $\frac{1}{3}$ qismini
+ 
+ 4-qadam: qoldi $80\,000 - 60\,000 = 20\,000$ so'm.
+ 
+-*Javob:* 20\ 000 so'm.
++*Javob:* $20\,000$ so'm.
+ :::
+ 
+ ## Ko'p uchraydigan xatolar
+@@ -198,8 +198,8 @@ Javobni qisqarmas kasr ko'rinishida yozing. Kitob oxiridagi javoblar noto'g'ri k
+ 
+ ### A daraja
+ 
+-::: {.mashq #m3-1 daraja="A" javob="3/4"}
+-$\frac{18}{24}$ kasrini qisqartiring.
++::: {.mashq #m3-1 daraja="A" javob="4/7"}
++$\frac{24}{42}$ kasrini qisqartiring.
+ :::
+ 
+ ::: {.mashq #m3-2 daraja="A" javob="2/3"}
+@@ -275,7 +275,7 @@ $\dfrac{1 + \frac{1}{2}}{1 - \frac{1}{4}}$ ni hisoblang.
+ :::
+ 
+ ::: {.mashq #m3-19 daraja="C" javob="254000"}
+-Onam bozordan $2\frac{1}{2}$ kg go'sht (kilosi 96\ 000 so'm) va $1\frac{3}{4}$ kg sabzi (kilosi 8\ 000 so'm) sotib oldi. U jami necha so'm to'ladi?
++Onam bozordan $2\frac{1}{2}$ kg go'sht (kilosi $96\,000$ so'm) va $1\frac{3}{4}$ kg sabzi (kilosi $8\,000$ so'm) sotib oldi. U jami necha so'm to'ladi?
+ :::
+ 
+ ::: {.mashq #m3-20 daraja="C" javob="8"}
+@@ -295,7 +295,7 @@ Idishning $\frac{2}{3}$ qismi suv bilan to'la. Unga yana 6 litr suv quyilgach, i
+ :::
+ 
+ ::: {.mashq #m3-24 daraja="C" javob="4000000"}
+-Nodir oylik maoshining $\frac{2}{5}$ qismini ijara haqiga, $\frac{1}{4}$ qismini oziq-ovqatga sarfladi va unda 1\ 400\ 000 so'm qoldi. Nodirning oylik maoshi necha so'm?
++Nodir oylik maoshining $\frac{2}{5}$ qismini ijara haqiga, yana butun maoshining $\frac{1}{4}$ qismini oziq-ovqatga sarfladi va unda $1\,400\,000$ so'm qoldi. Nodirning oylik maoshi necha so'm?
+ :::
+ 
+ ::: {.mashq #m3-25 daraja="C" javob="3/10"}
+@@ -307,15 +307,15 @@ $\frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} + \frac{1}{4 \cdot 5}$ ni hisoblang.
+ Quyidagi savollar SAT uslubida, inglizcha yozilgan. Javobni o'zingiz yozadigan savolda kasr javobni $11/6$ ko'rinishida kiritish mumkin. Javoblar kitob oxirida.
+ 
+ ::: {.sat #s3-1 javob="C"}
+-Which of the following is equal to $\frac{5}{6} - \frac{3}{8}$?
++Which of the following is equal to $\frac{7}{9} - \frac{5}{12}$?
+ 
+-A) $\frac{1}{6}$
++A) $\frac{2}{3}$
+ 
+-B) $\frac{1}{3}$
++B) $\frac{1}{6}$
+ 
+-C) $\frac{11}{24}$
++C) $\frac{13}{36}$
+ 
+-D) $\frac{13}{24}$
++D) $\frac{43}{36}$
+ :::
+ 
+ ::: {.sat #s3-2 javob="3/2"}
+diff --git a/kitob/boblar/04-onli-kasrlar.md b/kitob/boblar/04-onli-kasrlar.md
+index f72a73f..5f16053 100644
+--- a/kitob/boblar/04-onli-kasrlar.md
++++ b/kitob/boblar/04-onli-kasrlar.md
+@@ -137,7 +137,7 @@ $7.2 \div 0.08$ ni hisoblang.
+ 3. bu raqam $0, 1, 2, 3, 4$ bo'lsa, xonadagi raqam o'zgarmaydi; $5, 6, 7, 8, 9$ bo'lsa, xonadagi raqamga $1$ qo'shiladi;
+ 4. keyingi raqamlar tashlab yuboriladi (butun qismda esa nolga aylanadi).
+ 
+-Agar oshirilayotgan raqam $9$ bo'lsa, u $0$ ga aylanadi va $1$ chapdagi xonaga o'tadi. Masalan, $2.97$ ni o'ndan birgacha yaxlitlaymiz: keyingi raqam $7$, shuning uchun $9$ ni oshiramiz va $2.97 \approx 3.0$ hosil bo'ladi. Oxiridagi nolni tashlamang: u son o'ndan birgacha yaxlitlanganini ko'rsatadi.
++Agar oshirilayotgan raqam $9$ bo'lsa, u $0$ ga aylanadi va $1$ chapdagi xonaga o'tadi. Masalan, $2.97$ ni o'ndan birgacha yaxlitlaymiz: keyingi raqam $7$, shuning uchun $9$ ni oshiramiz va $2.97 \approx 3.0$ hosil bo'ladi ($\approx$ belgisi "taxminan teng" deb o'qiladi). Oxiridagi nolni tashlamang: u son o'ndan birgacha yaxlitlanganini ko'rsatadi.
+ 
+ Masalan, $3.14159$ ni yaxlitlaymiz:
+ 
+@@ -149,7 +149,7 @@ Masalan, $3.14159$ ni yaxlitlaymiz:
+ Yaxlitlangan son *taxminiy hisoblash (estimation)* da juda qo'l keladi: javobni tez baholab, kalkulyatordagi xatoni darhol sezasiz.
+ 
+ ::: {.misol}
+-Dilfuza bozordan 1.75 kg pomidor sotib oldi. Pomidorning kilosi 12\ 400 so'm. U qancha to'lashi kerak? Natijani minglargacha yaxlitlang.
++Dilfuza bozordan 1.75 kg pomidor sotib oldi. Pomidorning kilosi $12\,400$ so'm. U qancha to'lashi kerak? Natijani minglargacha yaxlitlang.
+ 
+ *Yechish.*
+ 
+@@ -210,8 +210,8 @@ $6.25 + 3.8$ ni hisoblang.
+ $10 - 4.37$ ni hisoblang.
+ :::
+ 
+-::: {.mashq #m4-5 daraja="A" javob="0.42"}
+-$0.6 \cdot 0.7$ ni hisoblang.
++::: {.mashq #m4-5 daraja="A" javob="0.63"}
++$0.9 \cdot 0.7$ ni hisoblang.
+ :::
+ 
+ ::: {.mashq #m4-6 daraja="A" javob="9"}
+@@ -263,11 +263,11 @@ $0.125 \cdot 0.8 + 0.3 \div 0.05$ ni hisoblang.
+ ### C daraja
+ 
+ ::: {.mashq #m4-17 daraja="C" javob="177600"}
+-Bozorda Rustam 2.5 kg kartoshka (kilosi 4\ 800 so'm), 1.2 kg go'sht (kilosi 98\ 000 so'm) va 0.75 kg pishloq (kilosi 64\ 000 so'm) sotib oldi. U jami necha so'm to'ladi?
++Bozorda Rustam 2.5 kg kartoshka (kilosi $4\,800$ so'm), 1.2 kg go'sht (kilosi $98\,000$ so'm) va 0.75 kg pishloq (kilosi $64\,000$ so'm) sotib oldi. U jami necha so'm to'ladi?
+ :::
+ 
+ ::: {.mashq #m4-18 daraja="C" javob="196200"}
+-Avtomobil har 100 km yo'lga 7.5 litr benzin sarflaydi. Benzinning bir litri 10\ 900 so'm. 240 km yo'l uchun benzinga necha so'm ketadi?
++Avtomobil har 100 km yo'lga 7.5 litr benzin sarflaydi. Benzinning bir litri $10\,900$ so'm. 240 km yo'l uchun benzinga necha so'm ketadi?
+ :::
+ 
+ ::: {.mashq #m4-19 daraja="C" javob="0.11"}
+@@ -275,7 +275,7 @@ Maktab musobaqasida 100 metrga yugurishda to'rt o'quvchi quyidagi natijalarni ko
+ :::
+ 
+ ::: {.mashq #m4-20 daraja="C" javob="87000"}
+-Mobil aloqa tarifi oyiga 45\ 000 so'm turadi va unga 10 GB internet kiradi. Har bir qo'shimcha 0.5 GB uchun yana 6\ 000 so'm to'lanadi. Aziz bir oyda 13.5 GB internet ishlatdi. U shu oy uchun jami necha so'm to'laydi?
++Mobil aloqa tarifi oyiga $45\,000$ so'm turadi va unga 10 GB internet kiradi. Har bir qo'shimcha 0.5 GB uchun yana $6\,000$ so'm to'lanadi. Aziz bir oyda 13.5 GB internet ishlatdi. U shu oy uchun jami necha so'm to'laydi?
+ :::
+ 
+ ::: {.mashq #m4-21 daraja="C" javob="200"}
+@@ -283,11 +283,11 @@ $39.8 \cdot 5.1$ ko'paytmani har bir sonni eng yaqin butun songacha yaxlitlab, t
+ :::
+ 
+ ::: {.mashq #m4-22 daraja="C" javob="57500"}
+-28 o'quvchi ekskursiyaga bormoqda. Avtobus ijarasi 1\ 260\ 000 so'm bo'lib, uni hamma teng bo'lib to'laydi. Bundan tashqari, har bir o'quvchi muzeyga kirish uchun 12\ 500 so'mlik chipta oladi. Har bir o'quvchi jami necha so'm sarflaydi?
++28 o'quvchi ekskursiyaga bormoqda. Avtobus ijarasi $1\,260\,000$ so'm bo'lib, uni hamma teng bo'lib to'laydi. Bundan tashqari, har bir o'quvchi muzeyga kirish uchun $12\,500$ so'mlik chipta oladi. Har bir o'quvchi jami necha so'm sarflaydi?
+ :::
+ 
+-::: {.mashq #m4-23 daraja="C" javob="0.375"}
+-$\frac{1}{8} + 0.375 \cdot \frac{2}{3}$ ni hisoblang va javobni o'nli kasr ko'rinishida yozing.
++::: {.mashq #m4-23 daraja="C" javob="0.425"}
++$\frac{1}{8} + 0.375 \cdot \frac{4}{5}$ ni hisoblang va javobni o'nli kasr ko'rinishida yozing.
+ :::
+ 
+ ::: {.mashq #m4-24 daraja="C" javob="3.65"}
+@@ -330,6 +330,6 @@ C) $6.49$
+ D) $6.5$
+ :::
+ 
+-::: {.sat #s4-4 javob="16"}
+-A wooden board is 2.4 meters long. It is cut into pieces that are each 0.15 meter long, with no wood left over. How many pieces are there?
++::: {.sat #s4-4 javob="25"}
++A wooden board is 4.5 meters long. It is cut into pieces that are each 0.18 meter long, with no wood left over. How many pieces are there?
+ :::
+diff --git a/kitob/boblar/05-nisbat.md b/kitob/boblar/05-nisbat.md
+index e688cb9..eaff9bb 100644
+--- a/kitob/boblar/05-nisbat.md
++++ b/kitob/boblar/05-nisbat.md
+@@ -97,7 +97,7 @@ Noma'lum maxrajda tursa ham qoida ishlaydi: $\frac{3}{x} = \frac{12}{20}$ bo'lsa
+ Har xil birlikdagi ikki miqdor nisbati *sur'at (rate)* deyiladi: so'm/kg, km/soat, bet/minut. Agar ikkinchi miqdor $1$ ga keltirilsa, *bir birlikka to'g'ri keladigan miqdor (unit rate)* hosil bo'ladi. Masalan:
+ 
+ - *birlik narx (unit price)* — $1$ kg, $1$ dona yoki $1$ litr narxi;
+-- *tezlik (speed)* — $1$ soatda (yoki $1$ sekundda) bosib o'tilgan masofa. Tezlikni topish uchun masofani vaqtga bo'lamiz, masofani topish uchun esa tezlikni vaqtga ko'paytiramiz: soatiga $60$ km tezlikda $3$ soatda $60 \cdot 3 = 180$ km yuriladi.
++- *tezlik (speed)* — $1$ soatda (yoki $1$ soniyada) bosib o'tilgan masofa. Tezlikni topish uchun masofani vaqtga bo'lamiz, masofani topish uchun esa tezlikni vaqtga ko'paytiramiz: soatiga $60$ km tezlikda $3$ soatda $60 \cdot 3 = 180$ km yuriladi.
+ 
+ Birlik narx ikki xil o'ramni solishtirishda juda qulay: qaysi birida $1$ birlik arzon bo'lsa, o'sha foydaliroq.
+ 
+@@ -129,7 +129,7 @@ Eng ko'p ishlatiladigan *o'lchov birliklari (units of measurement)*:
+ 
+ - uzunlik: $1$ km = $1000$ m, $1$ m = $100$ sm, $1$ sm = $10$ mm;
+ - massa: $1$ t (tonna) = $1000$ kg, $1$ kg = $1000$ g;
+-- vaqt: $1$ soat = $60$ minut, $1$ minut = $60$ sekund, demak $1$ soat = $3600$ sekund;
++- vaqt: $1$ soat = $60$ minut, $1$ minut = $60$ soniya, demak $1$ soat = $3600$ soniya;
+ - hajm (suyuqlik): $1$ l = $1000$ ml.
+ 
+ *Birliklarni almashtirish (unit conversion)* qoidasi: **katta birlikdan kichik birlikka o'tganda ko'paytiramiz, kichikdan kattaga o'tganda bo'lamiz.** $3.2$ km = $3.2 \cdot 1000 = 3200$ m (son kattalashdi, chunki metr kichik birlik). $750$ g = $750 \div 1000 = 0.75$ kg.
+@@ -137,15 +137,15 @@ Eng ko'p ishlatiladigan *o'lchov birliklari (units of measurement)*:
+ Katta birlikda kichik birlikdan nechtasi borligini ko'rsatuvchi son ($1000$, $100$, $60$, $3600$, ...) *o'tish ko'paytuvchisi (conversion factor)* deyiladi. Tezlik kabi sur'atlarda ikkala birlik ham o'zgarishi mumkin. Unda har bir birlikni alohida, qadamma-qadam almashtiramiz.
+ 
+ ::: {.misol}
+-Avtomobil soatiga $72$ km tezlikda ketmoqda. Uning tezligini metr/sekundda (m/s) ifodalang.
++Avtomobil soatiga $72$ km tezlikda ketmoqda. Uning tezligini metr/soniyada (m/s) ifodalang.
+ 
+ *Yechish.*
+ 
+ 1-qadam: $72$ km = $72 \cdot 1000 = 72\,000$ m.
+ 
+-2-qadam: $1$ soat = $3600$ sekund.
++2-qadam: $1$ soat = $3600$ soniya.
+ 
+-3-qadam: $1$ sekundda bosib o'tilgan masofa: $72\,000 \div 3600 = 20$ m.
++3-qadam: $1$ soniyada bosib o'tilgan masofa: $72\,000 \div 3600 = 20$ m.
+ 
+ Bitta yozuvda: $72 \cdot \frac{1000}{3600} = 72 \cdot \frac{5}{18} = 20$.
+ 
+diff --git a/kitob/boblar/06-foizlar.md b/kitob/boblar/06-foizlar.md
+index 6c585f6..8709df9 100644
+--- a/kitob/boblar/06-foizlar.md
++++ b/kitob/boblar/06-foizlar.md
+@@ -41,7 +41,7 @@ Foiz, oddiy kasr va o'nli kasr — bitta sonning uch xil yozuvi:
+ - **foizdan oddiy kasrga:** maxrajga $100$ yozib qisqartiramiz: $35\% = \frac{35}{100} = \frac{7}{20}$;
+ - **kasrdan foizga:** $100$ ga ko'paytiramiz: $0.6 = 60\%$, $\frac{1}{4} = 0.25 = 25\%$.
+ 
+-$100\%$ — butun miqdorning o'zi. $100\%$ dan katta foiz butundan katta qismni bildiradi: $150\%$ — bir yarim barobar.
++$100\%$ — butun miqdorning o'zi. $100\%$ dan katta foiz butundan katta qismni bildiradi: $150\%$ — bir yarim baravar.
+ 
+ Eslab qolish foydali: $50\% = \frac{1}{2}$, $25\% = \frac{1}{4}$, $20\% = \frac{1}{5}$, $10\% = \frac{1}{10}$, $1\% = \frac{1}{100}$.
+ 
+@@ -186,8 +186,8 @@ Foizda so'ralgan javobni foiz belgisi bilan yozing (masalan, $12.5\%$).
+ 
+ ### A daraja
+ 
+-::: {.mashq #m6-1 daraja="A" javob="9/20"}
+-$45\%$ ni qisqarmas oddiy kasr ko'rinishida yozing.
++::: {.mashq #m6-1 daraja="A" javob="13/20"}
++$65\%$ ni qisqarmas oddiy kasr ko'rinishida yozing.
+ :::
+ 
+ ::: {.mashq #m6-2 daraja="A" javob="37.5%"}
+diff --git a/kitob/boblar/08-ifodalar.md b/kitob/boblar/08-ifodalar.md
+index e78df7a..216bce6 100644
+--- a/kitob/boblar/08-ifodalar.md
++++ b/kitob/boblar/08-ifodalar.md
+@@ -12,7 +12,7 @@
+ - taqsimot xossasi yordamida qavslarni ochishni;
+ - ifodalarni soddalashtirishni va umumiy ko'paytuvchini qavsdan chiqarishni o'rganamiz.
+ 
+-**SAT'da qayerda kerak?** Algebra SAT Math'ning eng katta ikki bo'limidan biri, va uning deyarli har bir savoli ifoda bilan ishlashdan boshlanadi. "Which of the following is equivalent to $2(x - 3) + 5x$?" kabi savollar to'g'ridan-to'g'ri shu bobga tayanadi. Keyingi boblardagi tenglama (9-bob), tengsizlik (10-bob) va tenglamalar sistemasi (13-bob) ham avval ikkala tomonni soddalashtirishni talab qiladi.
++**SAT'da qayerda kerak?** Algebra SAT Math'ning eng katta ikki bo'limidan biri va uning deyarli har bir savoli ifoda bilan ishlashdan boshlanadi. "Which of the following is equivalent to $2(x - 3) + 5x$?" kabi savollar to'g'ridan-to'g'ri shu bobga tayanadi. Keyingi boblardagi tenglama (9-bob), tengsizlik (10-bob) va tenglamalar sistemasi (13-bob) ham avval ikkala tomonni soddalashtirishni talab qiladi.
+ 
+ ## Yangi so'zlar
+ 
+@@ -25,6 +25,7 @@
+ | had | term |
+ | koeffitsiyent | coefficient |
+ | ozod had | constant term |
++| o'zgarmas son | constant |
+ | o'xshash hadlar | like terms |
+ | taqsimot xossasi | distributive property |
+ | qavslarni ochish | expanding (removing parentheses) |
+@@ -327,7 +328,7 @@ $5(x - 2) - (5x - 13)$ ifodasi $x$ ning har qanday qiymatida bir xil qiymatga eg
+ 
+ ## SAT ko'prigi
+ 
+-Quyidagi savollar SAT uslubida, inglizcha yozilgan. *Equivalent* — "teng kuchli" (7-bobda ko'rgandik), *constant* — o'zgarmas son. Javoblar kitob oxirida.
++Quyidagi savollar SAT uslubida, inglizcha yozilgan. *Equivalent* — "teng kuchli" (shu bobda ko'rdik), *constant* — o'zgarmas son. Javoblar kitob oxirida.
+ 
+ ::: {.sat #s8-1 javob="B"}
+ Which of the following is equivalent to $4(3x - 2) - (5x - 6)$?
+diff --git a/kitob/boblar/09-chiziqli-tenglamalar.md b/kitob/boblar/09-chiziqli-tenglamalar.md
+index 86e2f00..b71fa8f 100644
+--- a/kitob/boblar/09-chiziqli-tenglamalar.md
++++ b/kitob/boblar/09-chiziqli-tenglamalar.md
+@@ -130,7 +130,7 @@ b) Ayqash ko'paytiramiz: $2(x + 2) = 5(x - 1)$, ya'ni $2x + 4 = 5x - 5$. $x$ li
+ 
+ Ba'zan soddalashtirish jarayonida $x$ butunlay yo'qolib ketadi. Ikki hol bo'lishi mumkin.
+ 
+-- $2(x + 3) = 2x + 1$. Qavsni ochamiz: $2x + 6 = 2x + 1$. Ikkala tomondan $2x$ ni ayirsak, $6 = 1$ chiqadi. Bu noto'g'ri tenglik, va $x$ ning hech bir qiymati uni to'g'ri qila olmaydi. Demak, tenglamaning **yechimi yo'q (no solution)**.
++- $2(x + 3) = 2x + 1$. Qavsni ochamiz: $2x + 6 = 2x + 1$. Ikkala tomondan $2x$ ni ayirsak, $6 = 1$ chiqadi. Bu noto'g'ri tenglik va $x$ ning hech bir qiymati uni to'g'ri qila olmaydi. Demak, tenglamaning **yechimi yo'q (no solution)**.
+ - $3(x - 2) + x = 4x - 6$. Chap tomon: $3x - 6 + x = 4x - 6$. Tenglama $4x - 6 = 4x - 6$ ga aylandi: ikkala tomon bir xil ifoda. U $x$ ning har qanday qiymatida to'g'ri, demak tenglamaning **cheksiz ko'p yechimi (infinitely many solutions)** bor. $x$ ning har qanday qiymatida to'g'ri bo'ladigan tenglik *ayniyat (identity)* deyiladi.
+ 
+ Umumiy qoida: tenglama soddalashtirilib $ax + b = cx + d$ ko'rinishiga keltirilgan bo'lsin.
+@@ -170,6 +170,8 @@ a) $2a$ ni chap tomonga o'tkazamiz: $P - 2a = 2b$. Ikkala tomonni $2$ ga bo'lami
+ 
+ $$b = \frac{-2a + P}{2}.$$
+ 
++Bu $\frac{P - 2a}{2}$ ning o'zi; javobda hadlarni harflar alifbosi tartibida yozamiz (mashqlardagi kabi).
++
+ $P = 30$, $a = 9$ da: $b = \frac{30 - 18}{2} = 6$.
+ 
+ b) Ikkala tomonni $v$ ga bo'lamiz ($v \neq 0$): $t = \frac{d}{v}$. Bundan $t = \frac{270}{90} = 3$ soat.
+diff --git a/kitob/boblar/10-tengsizliklar.md b/kitob/boblar/10-tengsizliklar.md
+index 11091ab..f10cc0b 100644
+--- a/kitob/boblar/10-tengsizliklar.md
++++ b/kitob/boblar/10-tengsizliklar.md
+@@ -23,6 +23,7 @@ Hayotda ko'p narsa aniq son bilan emas, chegara bilan aytiladi: "liftga ko'pi bi
+ | katta | greater than |
+ | kichik yoki teng | less than or equal to |
+ | katta yoki teng | greater than or equal to |
++| qat'iy tengsizlik | strict inequality |
+ | tengsizlikning yechimi | solution of an inequality |
+ | yechimlar to'plami | solution set |
+ | bo'sh doiracha | open circle |
+@@ -91,7 +92,7 @@ b) Ikkala tomonni $-2$ ga bo'lamiz, manfiy son, demak belgi almashadi: $x < \fra
+ 
+ c) Ikkala tomondan $5$ ni ayiramiz: $-3x \leq 12$. Ikkala tomonni $-3$ ga bo'lamiz va belgini almashtiramiz: $x \geq -4$. Son o'qida $-4$ da bo'yalgan doiracha, strelka o'ngga.
+ 
+-*Tekshirish.* c) da $x = 0$ yechimlar to'plamida ($0 \geq -4$). Dastlabki tengsizlikka qo'yamiz: $5 - 0 \leq 17$, to'g'ri. $x = -5$ esa to'plamda emas: $5 + 15 = 20$, va $20 \leq 17$ noto'g'ri. Hammasi mos.
++*Tekshirish.* c) da $x = 0$ yechimlar to'plamida ($0 \geq -4$). Dastlabki tengsizlikka qo'yamiz: $5 - 0 \leq 17$, to'g'ri. $x = -5$ esa to'plamda emas: $5 + 15 = 20$ va $20 \leq 17$ noto'g'ri. Hammasi mos.
+ 
+ *Javob:* a) $x \leq 5$; b) $x < -7$; c) $x \geq -4$.
+ :::
+diff --git a/kitob/boblar/11-matnli-masalalar.md b/kitob/boblar/11-matnli-masalalar.md
+index 7881a76..2ccc37a 100644
+--- a/kitob/boblar/11-matnli-masalalar.md
++++ b/kitob/boblar/11-matnli-masalalar.md
+@@ -165,7 +165,7 @@ Bundan $140t = 350$, $t = 2.5$.
+ 
+ *Tekshirish:* $2.5$ soatda avtomobil $200$ km, avtobus $150$ km yuradi; $200 + 150 = 350$. To'g'ri.
+ 
+-*Javob:* $2.5$ soatdan keyin (2 soat 30 daqiqa).
++*Javob:* $2.5$ soatdan keyin (2 soat 30 minut).
+ :::
+ 
+ ### Aralashma masalalari
+diff --git a/kitob/boblar/12-koordinatalar.md b/kitob/boblar/12-koordinatalar.md
+index 262aeed..e819813 100644
+--- a/kitob/boblar/12-koordinatalar.md
++++ b/kitob/boblar/12-koordinatalar.md
+@@ -42,7 +42,7 @@
+ 
+ ### Koordinatalar tekisligi
+ 
+-1-bobdagi son o'qini eslang. Endi ikkita son o'qini olamiz: biri gorizontal (yotiq), ikkinchisi vertikal (tik), va ularni $0$ nuqtalarida to'g'ri burchak ostida kesishtiramiz. Hosil bo'lgan tekislik *koordinatalar tekisligi (coordinate plane)* deyiladi.
++1-bobdagi son o'qini eslang. Endi ikkita son o'qini olamiz: biri gorizontal (yotiq), ikkinchisi vertikal (tik); ularni $0$ nuqtalarida to'g'ri burchak ostida kesishtiramiz. Hosil bo'lgan tekislik *koordinatalar tekisligi (coordinate plane)* deyiladi.
+ 
+ - Gorizontal o'q *$x$ o'qi (x-axis)*: unda o'ngga musbat, chapga manfiy sonlar.
+ - Vertikal o'q *$y$ o'qi (y-axis)*: unda yuqoriga musbat, pastga manfiy sonlar.
+@@ -186,7 +186,7 @@ c) Parallel chiziqning burchak koeffitsiyenti ham $-4$. $(2, -3)$ ni qo'yamiz: $
+ 
+ ### Hayotiy masaladagi chiziqli model
+ 
+-Ko'p hayotiy miqdorlar bir tekis o'zgaradi: har soatda, har kilometrda yoki har haftada bir xil miqdorga. Bunday bog'lanish $y = mx + b$ ko'rinishidagi chiziqli funksiya bilan yoziladi, va uning ikkala soni ma'noga ega:
++Ko'p hayotiy miqdorlar bir tekis o'zgaradi: har soatda, har kilometrda yoki har haftada bir xil miqdorga. Bunday bog'lanish $y = mx + b$ ko'rinishidagi chiziqli funksiya bilan yoziladi va uning ikkala soni ma'noga ega:
+ 
+ - $m$ — *o'zgarish tezligi (rate of change)*: $x$ bir birlikka (bir soat, bir km, bir hafta) oshganda $y$ qanchaga o'zgaradi. U $y$ birligining $x$ birligiga nisbati bilan o'lchanadi, masalan "so'm/km" yoki "litr/soat" (5-bobdagi sur'at kabi).
+ - $b$ — *boshlang'ich qiymat (initial value)*: $x = 0$ bo'lgandagi $y$, ya'ni hisob boshidagi miqdor.
+diff --git a/kitob/boblar/13-sistemalar.md b/kitob/boblar/13-sistemalar.md
+index 199c13f..133464b 100644
+--- a/kitob/boblar/13-sistemalar.md
++++ b/kitob/boblar/13-sistemalar.md
+@@ -316,8 +316,8 @@ Basketbol o'yinida jamoa faqat $2$ ochkolik va $3$ ochkolik to'plar bilan jami $
+ Qayiq daryo oqimi bo'ylab suzganda uning tezligi qayiqning turg'un suvdagi tezligi va oqim tezligining yig'indisiga, oqimga qarshi suzganda esa ularning ayirmasiga teng. Qayiq oqim bo'ylab $36$ km ni $2$ soatda, oqimga qarshi $24$ km ni ham $2$ soatda bosib o'tdi. Oqim tezligi soatiga necha km?
+ :::
+ 
+-::: {.mashq #m13-23 daraja="C" javob="10"}
+-Ota o'g'lidan $28$ yosh katta. $4$ yildan keyin ota o'g'lidan $3$ baravar katta bo'ladi. O'g'il hozir necha yoshda?
++::: {.mashq #m13-23 daraja="C" javob="15"}
++Ota va o'g'il yoshlarining yig'indisi $60$ ga teng. $5$ yil oldin ota o'g'lidan $4$ baravar katta edi. O'g'il hozir necha yoshda?
+ :::
+ 
+ ::: {.mashq #m13-24 daraja="C" javob="8"}
+diff --git a/kitob/boblar/16-orta-qiymat.md b/kitob/boblar/16-orta-qiymat.md
+index cd71672..10cc54c 100644
+--- a/kitob/boblar/16-orta-qiymat.md
++++ b/kitob/boblar/16-orta-qiymat.md
+@@ -64,13 +64,13 @@ Medianadan oldin qiymatlarni **albatta tartiblash** kerak.
+ *Kenglik (range)* — eng katta va eng kichik qiymatlar ayirmasi. U qiymatlar qanchalik keng sochilganini ko'rsatadi.
+ 
+ ::: {.misol}
+-a) Aziz bir hafta davomida har kuni necha daqiqa kitob o'qiganini yozib bordi: $12$, $8$, $20$, $5$, $14$, $8$, $10$. O'rta qiymat, mediana, moda va kenglikni toping.
++a) Aziz bir hafta davomida har kuni necha minut kitob o'qiganini yozib bordi: $12$, $8$, $20$, $5$, $14$, $8$, $10$. O'rta qiymat, mediana, moda va kenglikni toping.
+ 
+ b) Keyingi haftada u faqat $6$ kun o'qidi: $24$, $30$, $18$, $27$, $21$, $30$. Bu to'plamning o'rta qiymati va medianasini toping.
+ 
+ *Yechish.*
+ 
+-a) Yig'indi: $12 + 8 + 20 + 5 + 14 + 8 + 10 = 77$. Qiymatlar $7$ ta, demak o'rta qiymat $\frac{77}{7} = 11$ daqiqa.
++a) Yig'indi: $12 + 8 + 20 + 5 + 14 + 8 + 10 = 77$. Qiymatlar $7$ ta, demak o'rta qiymat $\frac{77}{7} = 11$ minut.
+ 
+ Tartiblaymiz: $5$, $8$, $8$, $10$, $12$, $14$, $20$. Qiymatlar soni toq, o'rtadagisi $\frac{7 + 1}{2} = 4$-o'rinda: mediana $10$.
+ 
+diff --git a/kitob/boblar/17-grafiklar.md b/kitob/boblar/17-grafiklar.md
+index 7aede70..031a536 100644
+--- a/kitob/boblar/17-grafiklar.md
++++ b/kitob/boblar/17-grafiklar.md
+@@ -51,6 +51,8 @@ Shu qoidalar yordamida jadvaldagi noma'lum katakni topish mumkin.
+ ::: {.misol}
+ Maktabdagi 9- va 10-sinf o'quvchilari bittadan sport to'garagini tanladi. Natijalar 17.1-jadvalda, uning ba'zi kataklari to'ldirilmagan:
+ 
++**17.1-jadval.** Sport to'garaklari bo'yicha so'rovnoma.
++
+ |  | Futbol | Shaxmat | Suzish | Jami |
+ |---|---|---|---|---|
+ | 9-sinf | $30$ | $15$ | ? | $80$ |
+@@ -195,7 +197,7 @@ d) Bashorat: $5 \cdot 3 + 45 = 60$. Haqiqiy ball $65$, demak $65 - 60 = 5$ ball
+ 
+ ## Mashqlar
+ 
+-Vaqtni soat va daqiqa bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 12:00 gacha" ko'rinishida yozing. Foizni foiz belgisi bilan yozing (masalan, $12.5\%$). O'zgarish tezligini birliksiz son bilan yozing (masalan, $-4.5$). Boshqa javoblarni son bilan yozing.
++Vaqtni soat va minut bilan yozing (masalan, 7:15), vaqt oralig'ini "10:00 dan 12:00 gacha" ko'rinishida yozing. Foizni foiz belgisi bilan yozing (masalan, $12.5\%$). O'zgarish tezligini birliksiz son bilan yozing (masalan, $-4.5$). Boshqa javoblarni son bilan yozing.
+ 
+ 17.1–17.3-rasmlarga oid mashqlarda kerakli qiymatlarni rasmdan o'qing. 17.5, 17.16, 17.17 va 17.20-mashqlar quyidagi jadvalga tegishli.
+ 
+diff --git a/kitob/boblar/18-ehtimollik.md b/kitob/boblar/18-ehtimollik.md
+index ad5d131..37c0f57 100644
+--- a/kitob/boblar/18-ehtimollik.md
++++ b/kitob/boblar/18-ehtimollik.md
+@@ -22,6 +22,7 @@ Tanga tashlansa, gerb tushadimi yoki raqam? Ertaga yomg'ir yog'adimi? Lotereya b
+ | tajriba | experiment |
+ | elementar hodisa | outcome |
+ | elementar hodisalar to'plami | sample space |
++| aylanma g'ildirak | spinner |
+ | tasodifiy hodisa | random event (event) |
+ | teng imkoniyatli | equally likely |
+ | qulay natija | favorable outcome |
+@@ -42,7 +43,7 @@ Tanga tashlansa, gerb tushadimi yoki raqam? Ertaga yomg'ir yog'adimi? Lotereya b
+ 
+ ### Tajriba, elementar hodisa, tasodifiy hodisa
+ 
+-Natijasini oldindan aniq aytib bo'lmaydigan har qanday harakat *tajriba (experiment)* deyiladi: tanga tashlash, o'yin soqqasini tashlash, xaltadan qaramasdan shar olish. Tajribaning bo'linmaydigan, eng sodda natijasi *elementar hodisa (outcome)* deyiladi. Barcha elementar hodisalar birgalikda *elementar hodisalar to'plami (sample space)* ni tashkil qiladi.
++Natijasini oldindan aniq aytib bo'lmaydigan har qanday harakat *tajriba (experiment)* deyiladi: tanga tashlash, o'yin soqqasini tashlash, xaltadan qaramasdan shar olish, *aylanma g'ildirak (spinner)* ni aylantirish (strelka qaysi bo'lakda to'xtashini kuzatish). Tajribaning bo'linmaydigan, eng sodda natijasi *elementar hodisa (outcome)* deyiladi. Barcha elementar hodisalar birgalikda *elementar hodisalar to'plami (sample space)* ni tashkil qiladi.
+ 
+ Masalan, o'yin soqqasi (yoqlarida $1$ dan $6$ gacha ko'zlar bor kub) tashlanganda elementar hodisalar oltita: $1$, $2$, $3$, $4$, $5$, $6$. Bu bobda tanga va soqqalar to'g'ri (simmetrik) deb olinadi: har bir tomoni bir xil imkoniyat bilan tushadi.
+ 
+@@ -241,7 +242,7 @@ c) Birinchi shar ko'k bo'lish ehtimolligi $\frac{2}{5}$. Agar u ko'k bo'lsa, xal
+ 
+ ## Mashqlar
+ 
+-Ehtimollikni qisqarmas kasr ko'rinishida yozing (masalan, $\frac{5}{14}$). Savolda o'nli kasr yoki foiz so'ralsa, javobni shunday yozing (masalan, $0.85$ yoki $85\%$). Boshqa javoblarni son bilan yozing.
++Ehtimollikni qisqarmas kasr ko'rinishida yozing (masalan, $\frac{4}{21}$). Savolda o'nli kasr yoki foiz so'ralsa, javobni shunday yozing (masalan, $0.85$ yoki $85\%$). Boshqa javoblarni son bilan yozing.
+ 
+ 18.13–18.16 va 18.20-mashqlar quyidagi jadvalga tegishli.
+ 
+@@ -361,7 +362,7 @@ Zavodda tekshirilgan $400$ ta detaldan $6$ tasi nuqsonli chiqdi. Nisbiy chastota
+ 
+ ## SAT ko'prigi
+ 
+-Quyidagi savollar SAT uslubida, inglizcha yozilgan. *probability* — ehtimollik, *selected at random* — tasodifan tanlangan, *those who* — ...ganlar, *resident* — yashovchi, aholi vakili, *marble* — shar (shisha sharcha), *integer* — butun son, *multiple of* — ...ga karrali, *defective* — nuqsonli. Javoblar kitob oxirida.
++Quyidagi savollar SAT uslubida, inglizcha yozilgan. *probability* — ehtimollik, *selected at random* — tasodifan tanlangan, *those who* — ...ganlar, *resident* — yashovchi, aholi vakili, *marble* — shar (shisha sharcha), *integer* — butun son, *multiple of* — ...ga karrali, *1 through 40, inclusive* — $1$ dan $40$ gacha (ikkala chegara ham kiradi), *defective* — nuqsonli. Javoblar kitob oxirida.
+ 
+ Quyidagi jadval S18.1 va S18.2-savollarga tegishli.
+ 
+diff --git a/kitob/boblar/19-burchaklar.md b/kitob/boblar/19-burchaklar.md
+index dd12333..808e8a3 100644
+--- a/kitob/boblar/19-burchaklar.md
++++ b/kitob/boblar/19-burchaklar.md
+@@ -55,6 +55,7 @@ Shu bob bilan kitobning to'rtinchi qismi — geometriya boshlanadi. Geometriyada
+ | o'xshash uchburchaklar | similar triangles |
+ | o'xshashlik koeffitsiyenti | scale factor |
+ | masshtabsiz chizilgan | not drawn to scale |
++| maxrajni ildizdan qutqarish | rationalizing the denominator |
+ 
+ ## Tushuntirish
+ 
+@@ -196,7 +197,7 @@ Ikki xil to'g'ri burchakli uchburchakning tomonlari orasidagi nisbatni yoddan bi
+ 
+ ![19.4-rasm. Maxsus to'g'ri burchakli uchburchaklar](rasmlar/chiqish/19_maxsus.png){width=80%}
+ 
+-Tomonlar nisbati: $x : x : x\sqrt{2}$ va $x : x\sqrt{3} : 2x$. Ba'zan gipotenuza berilib, katet so'raladi, va javobda maxrajda ildiz chiqadi. Uni odatda maxrajda ildiz qolmaydigan qilib yozamiz: surat va maxrajni shu ildizga ko'paytiramiz (bu kasrning qiymatini o'zgartirmaydi, chunki $\frac{\sqrt{2}}{\sqrt{2}} = 1$):
++Tomonlar nisbati: $x : x : x\sqrt{2}$ va $x : x\sqrt{3} : 2x$. Ba'zan gipotenuza berilib, katet so'raladi, va javobda maxrajda ildiz chiqadi. Uni odatda maxrajda ildiz qolmaydigan qilib yozamiz: surat va maxrajni shu ildizga ko'paytiramiz (bu kasrning qiymatini o'zgartirmaydi, chunki $\frac{\sqrt{2}}{\sqrt{2}} = 1$). Bu usul *maxrajni ildizdan qutqarish (rationalizing the denominator)* deyiladi:
+ 
+ $$\frac{1}{\sqrt{2}} = \frac{1 \cdot \sqrt{2}}{\sqrt{2} \cdot \sqrt{2}} = \frac{\sqrt{2}}{2}.$$
+ 
+@@ -274,7 +275,7 @@ $\frac{1.8}{1.2} = 1.5$, demak $h = 6 \cdot 1.5 = 9$ m. Mantiqan tekshiramiz: od
+ 
+ ## Mashqlar
+ 
+-Burchakni gradus belgisi bilan yozing (masalan, 41°). Uzunlikni birliksiz son bilan yozing (masalan, $4.5$). Ildizli javobni soddalashtirilgan ko'rinishda yozing (masalan, $2\sqrt{6}$). 19.1-rasmga oid mashqlarda $\ell \parallel m$ va rasm masshtabsiz chizilgan.
++Burchakni gradus belgisi bilan yozing (masalan, 41°). Tenglamadan $x$ so'ralsa, uni gradus belgisisiz son bilan yozing. Uzunlikni birliksiz son bilan yozing (masalan, $4.5$). Ildizli javobni soddalashtirilgan ko'rinishda yozing (masalan, $2\sqrt{6}$). 19.1-rasmga oid mashqlarda $\ell \parallel m$ va rasm masshtabsiz chizilgan.
+ 
+ ### A daraja
+ 
+@@ -366,8 +367,8 @@ Uzunligi $10$ m bo'lgan narvon tik devorga suyab qo'yildi. Narvonning pastki uch
+ Koordinatalar tekisligida $(-2, 3)$ va $(10, 38)$ nuqtalar orasidagi masofani toping. (Ko'rsatma: ikki nuqtani tutashtiruvchi kesma to'g'ri burchakli uchburchakning gipotenuzasi bo'ladi, uning katetlari — $x$ koordinatalar farqi va $y$ koordinatalar farqi.)
+ :::
+ 
+-::: {.mashq #m19-22 daraja="C" javob="35"}
+-Teng yonli uchburchakning yon tomonlari $37$ dan, asosi $24$. Asosga tushirilgan balandligini toping.
++::: {.mashq #m19-22 daraja="C" javob="30"}
++Teng yonli uchburchakning yon tomonlari $34$ dan, asosi $32$. Asosga tushirilgan balandligini toping.
+ :::
+ 
+ ::: {.mashq #m19-23 daraja="C" javob="7\sqrt{3}"}
+@@ -379,7 +380,7 @@ Bo'yi $1.5$ m bo'lgan Dilnozaning soyasi $2$ m. Xuddi shu paytda televizion mino
+ :::
+ 
+ ::: {.mashq #m19-25 daraja="C" javob="80°"}
+-$\triangle ABC$ da $\angle A$ burchak $\angle B$ dan $20^\circ$ katta, $\angle C$ esa $\angle B$ dan $2$ marta katta. $\angle C$ ni toping.
++$\triangle ABC$ da $A$ burchak $B$ burchakdan $20^\circ$ katta, $C$ burchak esa $B$ burchakdan $2$ marta katta. $\angle C$ ni toping.
+ :::
+ 
+ ::: {.mashq #m19-26 daraja="C" javob="5\sqrt{2}"}
+diff --git a/kitob/boblar/20-yuz-hajm.md b/kitob/boblar/20-yuz-hajm.md
+index e4707e8..9c38f1c 100644
+--- a/kitob/boblar/20-yuz-hajm.md
++++ b/kitob/boblar/20-yuz-hajm.md
+@@ -4,7 +4,7 @@
+ 
+ ## Bu bobda
+ 
+-Xonaga necha metr plintus kerak? Polga nechta plitka ketadi? Bakka necha litr suv sig'adi? Bularning hammasi perimetr, yuz va hajm haqidagi savollar. 8- va 11-boblarda to'g'ri to'rtburchakning perimetrini, 7- va 14-boblarda kvadratning yuzini va kubning hajmini uchratgan edik. Endi bu mavzuni to'liq ko'rib chiqamiz. Bu bobda:
++Xonaga necha metr plintus kerak? Polga nechta plitka ketadi? Bakka necha litr suv sig'adi? Bularning hammasi perimetr, yuz va hajm haqidagi savollar. 8-, 9- va 11-boblarda to'g'ri to'rtburchakning perimetrini, 14- va 15-boblarda uning yuzini, 7-bobda kvadratning yuzini va kubning hajmini uchratgan edik. Endi bu mavzuni to'liq ko'rib chiqamiz. Bu bobda:
+ 
+ - perimetrni va to'g'ri to'rtburchak, uchburchak, parallelogramm, trapetsiyaning yuzini;
+ - murakkab shakllarning perimetri va yuzini (bo'yalgan soha);
+@@ -13,7 +13,7 @@ Xonaga necha metr plintus kerak? Polga nechta plitka ketadi? Bakka necha litr su
+ - to'g'ri burchakli parallelepiped, kub va silindrning hajmini;
+ - yuz va hajm birliklarini almashtirishni o'rganamiz.
+ 
+-**SAT'da qayerda kerak?** Geometry and Trigonometry bo'limida "What is the area of the shaded region?", "What is the volume, in cubic centimeters, of the cylinder?", "What is the length of arc AB?" kabi savollar keladi. SAT formulalar ro'yxatida (reference sheet) to'g'ri to'rtburchak va uchburchak yuzi, aylana uzunligi va doira yuzi, parallelepiped va silindr hajmi bor; aylanadagi yoy $360^\circ$ ekani ham yozilgan. Bu bob 5-bobdagi birliklarni almashtirishga, 7-bobdagi darajalarga va 19-bobdagi uchburchaklarga tayanadi.
++**SAT'da qayerda kerak?** Geometry and Trigonometry bo'limida "What is the area of the shaded region?", "What is the volume, in cubic centimeters, of the cylinder?", "What is the length of arc AB?" kabi savollar keladi. SAT formulalar ro'yxatida (reference sheet) to'g'ri to'rtburchak va uchburchak yuzi, aylana uzunligi va doira yuzi, parallelepiped va silindr hajmi bor; butun aylana $360^\circ$ li yoyga teng ekani ham yozilgan. Bu bob 5-bobdagi birliklarni almashtirishga, 7-bobdagi darajalarga va 19-bobdagi uchburchaklarga tayanadi.
+ 
+ ## Yangi so'zlar
+ 
+@@ -208,7 +208,7 @@ Silindr shaklidagi idishning asos radiusi $5$ sm, balandligi $12$ sm. Idishga ne
+ 
+ *Noto'g'ri:* parallelogrammning tomonlari $10$ va $6$, $10$ ga teng tomonga tushirilgan balandligi $5$; yuzi $10 \cdot 6 = 60$.
+ 
+-*To'g'ri:* asosga perpendikulyar balandlik olinadi: $S = 10 \cdot 5 = 50$. Qiya tomon balandlikdan doim uzun, shuning uchun noto'g'ri javob kattaroq chiqadi.
++*To'g'ri:* asosga perpendikulyar balandlik olinadi: $S = 10 \cdot 5 = 50$. Qiya tomon balandlikdan uzunroq, shuning uchun noto'g'ri javob kattaroq chiqadi.
+ 
+ **5. Doira yuzida $r^2$ o'rniga $2r$ yozish.**
+ 
+@@ -314,8 +314,8 @@ Akvarium to'g'ri burchakli parallelepiped shaklida: uzunligi $50$ sm, eni $30$ s
+ Silindr shaklidagi suv bakining asos radiusi $1$ m, balandligi $2$ m. Bakka necha litr suv sig'adi? $\pi \approx 3.14$ deb oling.
+ :::
+ 
+-::: {.mashq #m20-23 daraja="C" javob="9"}
+-Doiraning radiusi $3$ marta oshirildi. Uning yuzi necha marta oshdi?
++::: {.mashq #m20-23 daraja="C" javob="128\pi"}
++Doiraning radiusi $4$ sm edi, u $3$ marta oshirildi. Doira yuzi necha sm² ga oshdi? Javobni $\pi$ orqali yozing.
+ :::
+ 
+ ::: {.mashq #m20-24 daraja="C" javob="49"}
+@@ -359,7 +359,7 @@ A) $128 - 16\pi$
+ 
+ B) $128 - 32\pi$
+ 
+-C) $128 - 64\pi$
++C) $64 - 16\pi$
+ 
+ D) $32\pi$
+ :::
+diff --git a/kitob/boblar/21-trigonometriya.md b/kitob/boblar/21-trigonometriya.md
+index e7a3e2a..cae3c56 100644
+--- a/kitob/boblar/21-trigonometriya.md
++++ b/kitob/boblar/21-trigonometriya.md
+@@ -95,7 +95,7 @@ $$\sin 30^\circ = \frac{x}{2x} = \frac{1}{2}$$
+ 
+ $$\tan 30^\circ = \frac{x}{x\sqrt{3}} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$$
+ 
+-(oxirgi qadamda 19-bobdagidek maxrajdagi ildizdan qutuldik).
++(oxirgi qadamda 19-bobdagidek maxrajni ildizdan qutqardik).
+ 
+ $45^\circ$, $45^\circ$, $90^\circ$ uchburchakda tomonlar $x$, $x$, $x\sqrt{2}$: $\sin 45^\circ = \frac{x}{x\sqrt{2}} = \frac{\sqrt{2}}{2}$, $\tan 45^\circ = \frac{x}{x} = 1$. Qolganlarini ham shunday topamiz:
+ 
+@@ -173,7 +173,7 @@ To'g'ri chiziq $(1, -3)$ va $(9, 12)$ nuqtalardan o'tadi va $x$ o'qining musbat
+ 
+ *Noto'g'ri:* $\sin 60^\circ = \sin (2 \cdot 30^\circ) = 2 \cdot \sin 30^\circ = 2 \cdot \frac{1}{2} = 1$.
+ 
+-*To'g'ri:* sinus burchakka proporsional emas. Jadvaldan $\sin 60^\circ = \frac{\sqrt{3}}{2}$, bu $1$ dan kichik. ($\sin x^\circ = 1$ faqat $x = 90$ da bo'ladi, o'tkir burchak uchun esa sinus doim $1$ dan kichik.)
++*To'g'ri:* sinus burchakka proporsional emas. Jadvaldan $\sin 60^\circ = \frac{\sqrt{3}}{2}$, bu $1$ dan kichik. (O'tkir burchakning sinusi doim $1$ dan kichik, chunki katet gipotenuzadan qisqa.)
+ 
+ **3. Tangensni teskari yozish.**
+ 
+@@ -233,8 +233,8 @@ To'g'ri burchakli uchburchakning gipotenuzasi $46$, o'tkir burchaklaridan biri $
+ $A$ o'tkir burchak va $\tan A = \frac{9}{40}$. $\sin A$ ni toping.
+ :::
+ 
+-::: {.mashq #m21-10 daraja="B" javob="45/28"}
+-$A$ o'tkir burchak va $\cos A = \frac{28}{53}$. $\tan A$ ni toping.
++::: {.mashq #m21-10 daraja="B" javob="72/65"}
++$A$ o'tkir burchak va $\cos A = \frac{65}{97}$. $\tan A$ ni toping.
+ :::
+ 
+ ::: {.mashq #m21-11 daraja="B" javob="3.5"}
+diff --git a/kitob/boblar/99-yakuniy-test.md b/kitob/boblar/99-yakuniy-test.md
+index 91f19cf..0e9233e 100644
+--- a/kitob/boblar/99-yakuniy-test.md
++++ b/kitob/boblar/99-yakuniy-test.md
+@@ -52,8 +52,8 @@ At a market, apples cost \$2.35 per pound. What is the total cost, in dollars, o
+ $\frac{5}{7}$ ni o'nli kasrga aylantiring va mingdan birgacha yaxlitlang.
+ :::
+ 
+-::: {.mashq #y-7 daraja="B" javob="350000"}
+-Avtomobil har $100$ km yo'lga $8$ litr benzin sarflaydi. Benzinning bir litri $12\,500$ so'm turadi. $350$ km yo'l uchun benzinga necha so'm kerak bo'ladi?
++::: {.mashq #y-7 daraja="B" javob="337500"}
++Novvoyxona har $8$ ta non uchun $5$ kg un sarflaydi. Unning bir kilogrammi $9\,000$ so'm turadi. $60$ ta non yopish uchun unga necha so'm ketadi?
+ :::
+ 
+ ::: {.mashq #y-8 daraja="C" javob="21.6"}
+@@ -168,7 +168,7 @@ In the $xy$-plane, the graph of $y = x^2 - 10x + 16$ is a parabola. What is the
+ 
+ ## III bo'lim. Ma'lumotlar va ehtimollik (27–33-savollar)
+ 
+-Inglizcha savollardagi ba'zi so'zlar: *rate* — baho bermoq, *customer* — xaridor, *mean* — o'rta qiymat, *volunteer* — ko'ngilli, *line of best fit* — eng mos to'g'ri chiziq, *predicted* — bashorat qilingan, *musical instrument* — musiqa asbobi, *at random* — tasodifan, *spinner* — aylanuvchi strelkali disk, *section* — bo'lak, *prime number* — tub son.
++Inglizcha savollardagi ba'zi so'zlar: *rate* — baho bermoq, *customer* — xaridor, *mean* — o'rta qiymat, *volunteer* — ko'ngilli, *line of best fit* — eng mos to'g'ri chiziq, *predicted* — bashorat qilingan, *musical instrument* — musiqa asbobi, *at random* — tasodifan, *spinner* — aylanma g'ildirak, *fair six-sided die* — to'g'ri (simmetrik) o'yin soqqasi, *section* — bo'lak, *prime number* — tub son.
+ 
+ ::: {.mashq #y-27 daraja="B" javob="79"}
+ Sinfdagi $30$ o'quvchining test bo'yicha o'rtacha bali $81$. Ulardan $12$ nafari qizlar, qizlarning o'rtacha bali $84$. Sinfdagi o'g'il bolalarning o'rtacha bali qancha?
+diff --git a/kitob/javoblar/00.py b/kitob/javoblar/00.py
+index e4c7528..f348355 100644
+--- a/kitob/javoblar/00.py
++++ b/kitob/javoblar/00.py
+@@ -110,9 +110,9 @@ d15 = a ** 2 - 4 * a + 1
+ d16 = d((4 * (2 * x - 3) - 3 * (x - 5)).matn())
+ 
+ # ---------------------------------------------------------------- 9-bob
+-# 7x + 4 = 3x - 16  ->  (7 - 3)x = -16 - 4
+-d17 = F(-16 - 4, 7 - 3)
+-assert 7 * d17 + 4 == 3 * d17 - 16
++# 7x + 4 = 3x - 28  ->  (7 - 3)x = -28 - 4
++d17 = F(-28 - 4, 7 - 3)
++assert 7 * d17 + 4 == 3 * d17 - 28
+ # (2x - 1)/3 = (x + 4)/2  ->  2(2x - 1) = 3(x + 4)  ->  (4 - 3)x = 12 + 2
+ d18 = F(12 + 2, 4 - 3)
+ assert (2 * d18 - 1) / 3 == (d18 + 4) / F(2)
+@@ -177,7 +177,7 @@ d35 = F(5 + 4, 5 + 4 + 3)
+ d36 = F(sum(1 for i in range(1, 7) for j in range(1, 7) if i * j == 18), 36)
+ 
+ # ---------------------------------------------------------------- 19-bob
+-d37 = gr(180 - 54 - 71)
++d37 = gr(180 - 46 - 76)
+ d38 = isqrt(53 ** 2 - 28 ** 2)
+ assert d38 ** 2 + 28 ** 2 == 53 ** 2
+ 
+@@ -252,10 +252,19 @@ def _misol_javoblari(matn):
+     for _, _, ichi in _bloklar(matn):
+         for qator in re.findall(r"\*Javob:\*(.*)", ichi):
+             for f in re.findall(r"\$([^$]+)\$", qator):
+-                natija.add(norm(re.sub(r"\\frac\{(-?\d+)\}\{(\d+)\}", r"\1/\2", f)))
++                f = re.sub(r"\\frac\{(-?\d+)\}\{(\d+)\}", r"\1/\2", f)
++                natija.add(norm(f))
++                natija.add(norm(f.split("=")[-1]))  # "\angle C = 55^\circ" -> "55"
+     return natija
+ 
+ 
++@lru_cache(maxsize=None)
++def _bob_matndagi(bob):
++    """Bob javoblar faylidagi MATNDAGI (misol, xato namunasi, format namunasi qiymatlari) va norm."""
++    modul = _yukla(f"{bob:02d}.py")
++    return modul.get("MATNDAGI", set()), modul.get("norm")
++
++
+ @lru_cache(maxsize=None)
+ def _bob(bob):
+     """(bob matni, bobdagi mashq/SAT javoblari) — harfli javoblarsiz."""
+@@ -264,6 +273,10 @@ def _bob(bob):
+     return matn, javoblar
+ 
+ 
++# Bob MATNDAGI bilan tasodifiy (mazmunan bog'liq bo'lmagan) mos kelishlar
++MATNDAGI_ISTISNO = set()
++
++
+ def boblar_bilan_solishtir(md_matn, bobi):
+     """Har bir d/y savol o'z bobi bilan solishtiriladi:
+     1) javobi shu bobdagi mashq/SAT javobiga yoki misol javobiga teng emas;
+@@ -280,6 +293,9 @@ def boblar_bilan_solishtir(md_matn, bobi):
+                 xatolar.append((id_, javob, "bobdagi mashq/SAT javobi"))
+             if javob in _misol_javoblari(bob_md):
+                 xatolar.append((id_, javob, "bobdagi misol javobi"))
++            matndagi, bob_norm = _bob_matndagi(bob)
++            if bob_norm and bob_norm(JAVOBLAR[id_]) in matndagi and id_ not in MATNDAGI_ISTISNO:
++                xatolar.append((id_, javob, "bob matnidagi qiymat (MATNDAGI)"))
+         for b_id, b_sonlar, _ in _bloklar(bob_md):
+             umumiy = sonlar & b_sonlar
+             qolip = len(b_sonlar) >= 2 and b_sonlar <= sonlar
+diff --git a/kitob/javoblar/01.py b/kitob/javoblar/01.py
+index 4ee5c79..9ae7b8f 100644
+--- a/kitob/javoblar/01.py
++++ b/kitob/javoblar/01.py
+@@ -48,7 +48,7 @@ JAVOBLAR = {
+     # B
+     "m1-9": 12 - 4 * 3,
+     "m1-10": (12 - 4) * 3,
+-    "m1-11": 36 // 6 * 2,
++    "m1-11": 36 // 4 * 3,
+     "m1-12": -2 * (7 - 10) + 5,
+     "m1-13": 5 ** 2 - 3 * 6,
+     "m1-14": -(4 ** 2) + (-4) ** 2,
+@@ -57,7 +57,7 @@ JAVOBLAR = {
+     # C
+     "m1-17": 3 * (20 - 2 * (5 - 8)) // 6,
+     "m1-18": -2 * 3 ** 2 + 4 * (6 - 2 * 5),
+-    "m1-19": -7 + 11 - 9,
++    "m1-19": 4 - (22 - 17) * 3,
+     "m1-20": (3 * 2 + 1 * 1 + 2 * 0) - (3 * 0 + 1 * 4 + 2 * 3),
+     "m1-21": 100000 - (3 * 12000 + 2 * 18000),
+     "m1-22": -120 + 6 * 15,
+@@ -66,11 +66,11 @@ JAVOBLAR = {
+     "m1-25": 13 * 4 + 5 * (-1) + (20 - 13 - 5) * 0,
+     # SAT
+     "s1-1": harf(s1_variant, -3 * (4 - 9) + 2),
+-    "s1-2": -5 + 14 - 11,
++    "s1-2": 6 - (-17),
+     "s1-3": harf(s3_variant, abs(7 - 12) - abs(-4)),
+     "s1-4": harf([eval(v) for v in s4_variant], -18 + 7 - 4),
+ }
+ 
+ # bo'lishlar butun chiqishini tekshiramiz (// qoldiqsiz bo'lsin)
+-assert (-42) % (-7) == 0 and 36 % 6 == 0 and (18 - 6) % 3 == 0
++assert (-42) % (-7) == 0 and 36 % 4 == 0 and (18 - 6) % 3 == 0
+ assert (3 * (20 - 2 * (5 - 8))) % 6 == 0
+diff --git a/kitob/javoblar/02.py b/kitob/javoblar/02.py
+index de03cef..73ece67 100644
+--- a/kitob/javoblar/02.py
++++ b/kitob/javoblar/02.py
+@@ -56,8 +56,8 @@ assert len(m20) == 1
+ a23 = 12 * 180 // 36
+ assert gcd(a23, 36) == 12 and lcm(a23, 36) == 180
+ 
+-# m2-24: 12 ga ham, 18 ga ham bo'linadigan eng kichik uch xonali son
+-m24 = next(n for n in range(100, 1000) if n % lcm(12, 18) == 0)
++# m2-24: 9 ga ham, 15 ga ham bo'linadigan eng kichik uch xonali son
++m24 = next(n for n in range(100, 1000) if n % lcm(9, 15) == 0)
+ 
+ # s2-4: n ni 7 ga bo'lganda qoldiq 4; n + 10 ni 7 ga bo'lgandagi qoldiq
+ s4 = {(n + 10) % 7 for n in range(1, 500) if n % 7 == 4}
+@@ -65,16 +65,16 @@ assert len(s4) == 1
+ 
+ JAVOBLAR = {
+     # A
+-    "m2-1": 53 % 6,
++    "m2-1": 58 % 9,
+     "m2-2": len(bo_luvchilar(30)),
+     "m2-3": ", ".join(str(n) for n in [21, 23, 27, 29, 33, 37] if tubmi(n)),
+     "m2-4": sum(1 for n in range(1, 21) if tubmi(n)),
+     "m2-5": max(n for n in range(1, 50) if n % 7 == 0),
+     "m2-6": 5832 // 9 if raqamlar_yigindisi(5832) % 9 == 0 else None,
+-    "m2-7": ajratma_matn(72),
++    "m2-7": ajratma_matn(150),
+     "m2-8": gcd(18, 24),
+     # B
+-    "m2-9": lcm(8, 12),
++    "m2-9": lcm(10, 15),
+     "m2-10": ajratma_matn(252),
+     "m2-11": gcd(84, 126),
+     "m2-12": lcm(15, 35),
+@@ -83,7 +83,7 @@ JAVOBLAR = {
+     "m2-15": lcm(4, 6, 10),
+     "m2-16": m16[0],
+     # C
+-    "m2-17": gcd(60, 84),
++    "m2-17": gcd(63, 81),
+     "m2-18": f"{lcm(4, 6)} kundan keyin, {KUNLAR[(0 + lcm(4, 6)) % 7]}",
+     "m2-19": m19,
+     "m2-20": m20[0],
+diff --git a/kitob/javoblar/03.py b/kitob/javoblar/03.py
+index 8f19a34..b1cf079 100644
+--- a/kitob/javoblar/03.py
++++ b/kitob/javoblar/03.py
+@@ -32,7 +32,7 @@ s3 = 140 / (F(3, 5) - F(1, 4))
+ 
+ JAVOBLAR = {
+     # A
+-    "m3-1": F(18, 24),
++    "m3-1": F(24, 42),
+     "m3-2": F(28, 42),
+     "m3-3": aralash(3, 2, 7),
+     "m3-4": F(2, 9) + F(5, 9),
+@@ -60,7 +60,7 @@ JAVOBLAR = {
+     "m3-24": m24,
+     "m3-25": F(1, 2 * 3) + F(1, 3 * 4) + F(1, 4 * 5),
+     # SAT
+-    "s3-1": harf([F(1, 6), F(1, 3), F(11, 24), F(13, 24)], F(5, 6) - F(3, 8)),
++    "s3-1": harf([F(2, 3), F(1, 6), F(13, 36), F(43, 36)], F(7, 9) - F(5, 12)),
+     "s3-2": aralash(2, 1, 4) * F(2, 3),
+     "s3-3": s3,
+     "s3-4": harf([F(27, 32), F(2, 3), F(3, 2), F(32, 27)], F(3, 4) / F(9, 8)),
+diff --git a/kitob/javoblar/04.py b/kitob/javoblar/04.py
+index 6091a71..7df625e 100644
+--- a/kitob/javoblar/04.py
++++ b/kitob/javoblar/04.py
+@@ -54,7 +54,7 @@ JAVOBLAR = {
+     "m4-2": D(7) / D(8),
+     "m4-3": D("6.25") + D("3.8"),
+     "m4-4": 10 - D("4.37"),
+-    "m4-5": D("0.6") * D("0.7"),
++    "m4-5": D("0.9") * D("0.7"),
+     "m4-6": D("3.6") / D("0.4"),
+     "m4-7": yaxlitla("5.678", "0.1"),
+     "m4-8": max(D("0.7"), D("0.68"), D("0.705"), D("0.07")),
+@@ -74,12 +74,12 @@ JAVOBLAR = {
+     "m4-20": m20,
+     "m4-21": m21,
+     "m4-22": D(1260000) / 28 + D(12500),
+-    "m4-23": onli(F(1, 8) + F(D("0.375")) * F(2, 3)),
++    "m4-23": onli(F(1, 8) + F(D("0.375")) * F(4, 5)),
+     "m4-24": m24,
+     "m4-25": m25,
+     # SAT
+     "s4-1": harf([F(6, 25), F(5, 16), F(5, 8), F(8, 5)], F(D("0.625"))),
+     "s4-2": 3 * D("2.45") + D("1.30"),
+     "s4-3": harf(s3_variant, D(yaxlitla("6.4873", "0.01"))),
+-    "s4-4": D("2.4") / D("0.15"),
++    "s4-4": D("4.5") / D("0.18"),
+ }
+diff --git a/kitob/javoblar/06.py b/kitob/javoblar/06.py
+index 3659b74..8c4b7a8 100644
+--- a/kitob/javoblar/06.py
++++ b/kitob/javoblar/06.py
+@@ -37,7 +37,7 @@ def butun(qiymat):
+ 
+ 
+ # m6-1: 45% qisqarmas kasr
+-m1 = F(45, 100)
++m1 = F(65, 100)
+ 
+ # m6-13: 80 ni 25% oshirib, keyin 25% kamaytirish
+ m13 = 80 * (1 + foiz(25)) * (1 - foiz(25))
+diff --git a/kitob/javoblar/13.py b/kitob/javoblar/13.py
+index 60d81c7..4e4dbe9 100644
+--- a/kitob/javoblar/13.py
++++ b/kitob/javoblar/13.py
+@@ -237,8 +237,8 @@ ikki21, uch21 = sistema((1, 1, 28), (2, 3, 68))
+ m21 = uch21
+ qayiq22, oqim22 = sistema((1, 1, F(36, 2)), (1, -1, F(24, 2)))
+ m22 = oqim22
+-ota23, ogil23 = sistema((1, -1, 28), (1, -3, 12 - 4))  # f = s + 28; f + 4 = 3(s + 4)
+-assert ota23 + 4 == 3 * (ogil23 + 4)
++ota23, ogil23 = sistema((1, 1, 60), (1, -4, 5 - 20))  # f + s = 60; f - 5 = 4(s - 5)
++assert ota23 + ogil23 == 60 and ota23 - 5 == 4 * (ogil23 - 5)
+ m23 = ogil23
+ x24, y24 = sistema((5, 3, 34), (3, 5, 30))
+ m24 = x24 + y24
+diff --git a/kitob/javoblar/18.py b/kitob/javoblar/18.py
+index ee958ac..3644b8a 100644
+--- a/kitob/javoblar/18.py
++++ b/kitob/javoblar/18.py
+@@ -173,7 +173,7 @@ MATNDAGI = {matn(v) for v in [
+     F(N["9-sinf", "Yo'q"], N["Jami", "Jami"]), F(N["9-sinf", "Yo'q"], N["Jami", "Yo'q"]),  # xato 2
+     F(1, 2) + F(1, 6),                                                          # xato 3
+     F(1, 2) + F(1, 2), P(product(TANGA, repeat=2), lambda n: "G" in n),         # xato 4
+-    F(5, 14), D("0.85"), "85%",                                                 # format namunasi
++    F(4, 21), D("0.85"), "85%",                                                 # format namunasi
+ ]}
+ for _id, _q in JAVOBLAR.items():
+     assert matn(_q) not in MATNDAGI, (_id, _q)
+diff --git a/kitob/javoblar/19.py b/kitob/javoblar/19.py
+index 4ca5a28..0305acf 100644
+--- a/kitob/javoblar/19.py
++++ b/kitob/javoblar/19.py
+@@ -124,7 +124,7 @@ m19 = (48 + 64) - diag
+ m20 = katet(10, D("2.8"))
+ assert kv(m20) + F("2.8") ** 2 == 100
+ m21 = gipotenuza(10 - (-2), 38 - 3)
+-m22 = katet(37, F(24, 2))                      # balandlik asosni teng ikkiga bo'ladi
++m22 = katet(34, F(32, 2))                      # balandlik asosni teng ikkiga bo'ladi
+ m23 = ildiz(14 ** 2 - 7 ** 2)
+ assert m23 == "7\\sqrt{3}"
+ m24 = son(F(46) * F("1.5") / 2)
+diff --git a/kitob/javoblar/20.py b/kitob/javoblar/20.py
+index ffa64a7..30f0cd4 100644
+--- a/kitob/javoblar/20.py
++++ b/kitob/javoblar/20.py
+@@ -145,7 +145,7 @@ assert (5 * 100) % 20 == 0 and (4 * 100) % 20 == 0     # plitkalar kesilmaydi
+ m20 = pol // (20 * 20)
+ m21 = son(F(50 * 30 * 36, 1000))                       # sm^3 -> litr
+ m22 = son(F((doira_yuzi(1) * 2).taxminiy()) * 1000)     # m^3 -> litr
+-m23 = son(doira_yuzi(3 * 7).b / doira_yuzi(7).b)       # istalgan radius uchun bir xil
++m23 = str(doira_yuzi(3 * 4) - doira_yuzi(4))            # 144pi - 16pi
+ qirra24 = [a for a in range(1, 100) if a ** 3 == 343]
+ assert len(qirra24) == 1
+ m24 = qirra24[0] ** 2
+@@ -158,7 +158,7 @@ r1 = F(18, 2)
+ assert aylana_uzunligi(r1) == 18 * pi
+ s1 = harf([9 * pi, 18 * pi, 36 * pi, 81 * pi], doira_yuzi(r1))
+ SW, SH, SR = M["SAT_ENI"], M["SAT_BOYI"], M["SAT_RADIUS"]
+-s2 = harf([128 - 16 * pi, 128 - 32 * pi, 128 - 64 * pi, 32 * pi], SW * SH - 2 * doira_yuzi(SR))
++s2 = harf([128 - 16 * pi, 128 - 32 * pi, 64 - 16 * pi, 32 * pi], SW * SH - 2 * doira_yuzi(SR))
+ assert SW * SH == 128
+ s3 = harf([36 * pi, 72 * pi, 144 * pi, 288 * pi], doira_yuzi(4) * 9)
+ s4 = son(F(504, 12 * 3))
+diff --git a/kitob/javoblar/21.py b/kitob/javoblar/21.py
+index 6bcdc8f..0a42e95 100644
+--- a/kitob/javoblar/21.py
++++ b/kitob/javoblar/21.py
+@@ -150,8 +150,8 @@ m8 = javob(46 * SIN[30])
+ # --- B
+ c9 = gipotenuza(9, 40)
+ m9 = F(9) / c9
+-q10 = katet(53, 28)
+-m10 = q10 / 28
++q10 = katet(97, 65)
++m10 = q10 / 65
+ m11 = son(javob(7 * COS[60]))
+ m12 = javob(30 * SIN[45])
+ m13 = javob(R(9) / COS[60])
+diff --git a/kitob/javoblar/99.py b/kitob/javoblar/99.py
+index 14bec02..564f8ad 100644
+--- a/kitob/javoblar/99.py
++++ b/kitob/javoblar/99.py
+@@ -89,8 +89,8 @@ y5 = D("2.35") * D("3.8")
+ y6 = (D(5) / D(7)).quantize(D("0.001"), rounding=ROUND_HALF_UP)
+ 
+ # y-7 (5-bob)
+-litr = F(350, 100) * 8
+-y7 = litr * 12500
++un = F(60, 8) * 5                         # 60 ta non uchun un, kg
++y7 = un * 9000
+ 
+ # y-8 (5-bob): m/s -> km/soat
+ y8 = son(F(6) * 3600 / 1000)
+@@ -318,10 +318,19 @@ def _misol_javoblari(matn):
+     for _, _, ichi in _bloklar(matn):
+         for qator in re.findall(r"\*Javob:\*(.*)", ichi):
+             for f in re.findall(r"\$([^$]+)\$", qator):
+-                natija.add(norm(re.sub(r"\\frac\{(-?\d+)\}\{(\d+)\}", r"\1/\2", f)))
++                f = re.sub(r"\\frac\{(-?\d+)\}\{(\d+)\}", r"\1/\2", f)
++                natija.add(norm(f))
++                natija.add(norm(f.split("=")[-1]))  # "\angle C = 55^\circ" -> "55"
+     return natija
+ 
+ 
++@lru_cache(maxsize=None)
++def _bob_matndagi(bob):
++    """Bob javoblar faylidagi MATNDAGI (misol, xato namunasi, format namunasi qiymatlari) va norm."""
++    modul = _yukla(f"{bob:02d}.py")
++    return modul.get("MATNDAGI", set()), modul.get("norm")
++
++
+ @lru_cache(maxsize=None)
+ def _bob(bob):
+     """(bob matni, bobdagi mashq/SAT javoblari) — harfli javoblarsiz."""
+@@ -330,6 +339,10 @@ def _bob(bob):
+     return matn, javoblar
+ 
+ 
++# Bob MATNDAGI bilan tasodifiy (mazmunan bog'liq bo'lmagan) mos kelishlar
++MATNDAGI_ISTISNO = {"y-34"}  # 36° — 19-bobdagi 36 burchak emas, 6^2 (xato 1)
++
++
+ def boblar_bilan_solishtir(md_matn, bobi):
+     """Har bir d/y savol o'z bobi bilan solishtiriladi:
+     1) javobi shu bobdagi mashq/SAT javobiga yoki misol javobiga teng emas;
+@@ -346,6 +359,9 @@ def boblar_bilan_solishtir(md_matn, bobi):
+                 xatolar.append((id_, javob, "bobdagi mashq/SAT javobi"))
+             if javob in _misol_javoblari(bob_md):
+                 xatolar.append((id_, javob, "bobdagi misol javobi"))
++            matndagi, bob_norm = _bob_matndagi(bob)
++            if bob_norm and bob_norm(JAVOBLAR[id_]) in matndagi and id_ not in MATNDAGI_ISTISNO:
++                xatolar.append((id_, javob, "bob matnidagi qiymat (MATNDAGI)"))
+         for b_id, b_sonlar, _ in _bloklar(bob_md):
+             umumiy = sonlar & b_sonlar
+             qolip = len(b_sonlar) >= 2 and b_sonlar <= sonlar
+diff --git a/kitob/rasmlar/20_malumotlar.py b/kitob/rasmlar/20_malumotlar.py
+index b1eb82c..bd3acf1 100644
+--- a/kitob/rasmlar/20_malumotlar.py
++++ b/kitob/rasmlar/20_malumotlar.py
+@@ -3,14 +3,14 @@
+ Bu fayl yig'ishda skript sifatida ham ishga tushiriladi; u hech narsa chizmaydi.
+ """
+ 
+-# 20.2-rasm a): L shaklidagi shakl (sm). To'g'ri to'rtburchakning o'ng yuqori burchagidan
++# 20.1-rasm a): L shaklidagi shakl (sm). To'g'ri to'rtburchakning o'ng yuqori burchagidan
+ # kesik_eni x kesik_boyi o'lchamli to'g'ri to'rtburchak kesib olingan.
+ L_ENI, L_BOYI = 10, 8
+ L_KESIK_ENI, L_KESIK_BOYI = 4, 3
+ # rasmda yozilgan tomonlar: pastki (L_ENI), chap (L_BOYI), yuqori chap qism, kesikning tik tomoni
+ L_YUQORI = L_ENI - L_KESIK_ENI
+ 
+-# 20.2-rasm b): sport maydonchasi — to'g'ri to'rtburchak va ikki yarim doira (m)
++# 20.1-rasm b): sport maydonchasi — to'g'ri to'rtburchak va ikki yarim doira (m)
+ STADION_UZUNLIK = 30      # to'g'ri qismining uzunligi
+ STADION_ENI = 20          # eni = yarim doiralar diametri
+ 

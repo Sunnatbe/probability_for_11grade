@@ -18,3 +18,8 @@ Branch: `claude/magical-gauss-anbzr8`, oxirgi kitob commiti `d84b01c`.
 - Dasturlar: `pandoc`, `libreoffice-writer`, **`libreoffice-math`**, `poppler-utils`; `pip install pytest matplotlib python-docx` (batafsil: `kitob/README.md`).
 - Ish tartibi: `superpowers:subagent-driven-development`. Bu papkadagi fayllarni `.superpowers/sdd/2026-10-12-matematika-poydevori/` ichiga nusxalang (`common.md`, `progress.md`, `chapter-dispatch.md`, `chapter-review.md`); `progress.md` da Task 1–7 "complete" ekani yozilgan, Task 8 dan davom eting. `common.md` — qoidalar R1–R17 va darslar; har bir yordamchiga shu fayl majburiy.
 - `.superpowers/` git'da e'tiborga olinmaydi (`.git/info/exclude`); bu papka — uning nusxasi.
+
+## Yangilanish (2026-10-21): holat
+- Bajarildi va push qilindi: Task 8 (kirish + diagnostik + yakuniy test, 2 tuzatish bosqichi, mustaqil yechuvchi bilan 82/82 mos), mundarija bir betga sig'di, test javoblari "Savollar:" deb chiqadi, 1.17 mashq qavslari tuzatildi. Hozirgi PDF: 192 bet.
+- Butun kitob bo'yicha 3 ta mustaqil tekshiruv o'tdi (final-review-A/B/C.md): jami 4 ta Important (m2-7 va m2-24 javob oshkor bo'lishi; m21-10 va d-38 bir xil 28-45-53 uchburchak; 18-bobdagi format misoli 5/14 = y-31 javobi) + mayda tahrirlar. Matematika hamma joyda to'g'ri chiqdi.
+- Tuzatish to'lqini API limiti sababli yarim yo'lda to'xtadi (tekshirilmagan, commit qilinmagan o'zgarishlar 34 fayl). Ular `final-fix-wave-partial.patch` fayliga saqlandi, ishchi daraxt toza. Foydalanuvchi "to'xtat" dedi (2026-10-21) — davom ettirish faqat foydalanuvchi so'rasa. Davom ettirilsa: patch'ni `git apply` bilan qo'llab, har bir o'zgargan javobni qayta tekshirish yoki final-review-*.md bo'yicha noldan bajarish; keyin Task 9.
